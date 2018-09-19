@@ -1,0 +1,66 @@
+@import "variables";
+@import "nib";
+.tag-container {
+  font-size: $font-size;
+  padding-top: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  padding-left: 2em;
+  .tag-title {
+    position: relative;
+    padding-left: 1em;
+    font-size: 1.5em;
+    &::after {
+      content: " ";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      margin-left: -0.25em;
+      margin-top: -0.25em;
+      width: 0.5em;
+      height: 0.5em;
+      background: $grey;
+      border-radius: 50%;
+    }
+  }
+  .tag-post {
+    background: white;
+    position: relative;
+    padding-left: 1em;
+    font-size: 1.2em;
+    .post-title {
+      padding: 0.25em 0;
+    }
+    &::after {
+      content: " ";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      margin-left: -0.25em;
+      margin-top: -0.25em;
+      width: 0.5em;
+      height: 0.5em;
+      background: $grey;
+      border-radius: 50%;
+    }
+    .post-date {
+      font-size: 0.8em;
+      color: $color-link;
+    }
+    .post-title-link {
+      display: inline-block;
+      position: relative;
+      text-decoration: none;
+      color: $color-link;
+      border-bottom: 0.05em dashed $grey;
+      transition: 0.3s ease-in-out;
+      &:hover {
+        color: $color-link-hover;
+        border-bottom: 0.05em solid $color-link-hover;
+      }
+      &:active {
+        top: 0.1em;
+      }
+    }
+  }
+}

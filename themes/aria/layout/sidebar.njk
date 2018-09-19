@@ -1,0 +1,24 @@
+{% block sidebar %}
+<aside class="sidebar" id="sidebar">
+  {% if theme.search %}
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i> <input type="text" id="search-input" name="q" results="0" placeholder="{{ __("search") }}" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  {% endif %}
+  {% include "info.njk" %}
+  <div class="sidebar-sticky">
+    {% if page.content %}
+    {% include "toc.njk" %}
+    {% endif %}
+    {% if theme.social %}
+    {% include "sociallink.njk" %}
+    {% endif %}
+    {% if theme.blogroll %}
+    {% include "blogroll.njk" %}
+    {% endif %}
+  </div>
+</aside>
+{% endblock %}

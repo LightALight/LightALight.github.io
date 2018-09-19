@@ -1,0 +1,67 @@
+@import "variables";
+@import "nib";
+.header {
+  font-size: $font-size;
+  padding-bottom: $search-height;
+  margin-bottom: 0;
+  background: $color-header-background;
+  color: $color-header-font;
+  flex-shrink: 0;
+  flex-grow: 0;
+  .header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    width: auto;
+    .header-title {
+      text-align: left;
+      width: 50%;
+      word-wrap: break-word;
+      flex-grow: 2;
+      color: $color-title;
+      padding: 0.5em;
+      a {
+        color: $color-title;
+        text-decoration: none;
+        border-bottom: none;
+        &:hover {
+          color: $color-title;
+          border-bottom: none;
+        }
+      }
+      .title {
+        font-size: $font-size-title;
+      }
+      .subtitle {
+        font-style: italic;
+        text-shadow: 0 0.05em rgba(0, 0, 0, 0.2);
+      }
+    }
+    .logo {
+      text-align: right;
+      width: 50%;
+      flex-grow: 1;
+      text-align: center;
+      padding-top: 1em;
+      img {
+        max-width: 20em;
+        width: 100%;
+      }
+    }
+  }
+  @media (max-width: 40em) {
+    .header-container {
+      flex-direction: column-reverse;
+      .header-title {
+        text-align: center;
+        width: auto;
+      }
+      .logo {
+        text-align: center;
+        width: auto;
+      }
+    }
+  }
+}
