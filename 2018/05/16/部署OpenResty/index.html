@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://lightalight.github.io">
   <title>部署OpenResty | Keep It Simple Do It Well</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="OpenResty是一个基于Nginx的可伸缩的Web平台，默认集成了Lua开发环境。文件介绍如何在居于Centos7.5安装OpenResty。">
+  <meta name="description" content="OpenResty是一个基于Nginx的可伸缩的Web平台，默认集成了Lua开发环境。文章介绍如何在居于Centos7.5安装OpenResty。">
 <meta name="keywords" content="环境部署,nginx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="部署OpenResty">
 <meta property="og:url" content="https://lightalight.github.io/2018/05/16/部署OpenResty/index.html">
 <meta property="og:site_name" content="Keep It Simple Do It Well">
-<meta property="og:description" content="OpenResty是一个基于Nginx的可伸缩的Web平台，默认集成了Lua开发环境。文件介绍如何在居于Centos7.5安装OpenResty。">
+<meta property="og:description" content="OpenResty是一个基于Nginx的可伸缩的Web平台，默认集成了Lua开发环境。文章介绍如何在居于Centos7.5安装OpenResty。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-25T11:54:23.544Z">
+<meta property="og:updated_time" content="2019-02-25T14:18:45.399Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="部署OpenResty">
-<meta name="twitter:description" content="OpenResty是一个基于Nginx的可伸缩的Web平台，默认集成了Lua开发环境。文件介绍如何在居于Centos7.5安装OpenResty。">
+<meta name="twitter:description" content="OpenResty是一个基于Nginx的可伸缩的Web平台，默认集成了Lua开发环境。文章介绍如何在居于Centos7.5安装OpenResty。">
   
     <link rel="alternative" href="/atom.xml" title="Keep It Simple Do It Well" type="application/atom+xml">
   
@@ -177,7 +177,7 @@
     <div id="toc-article" class="toc-article">
         <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
       <strong class="toc-title">文章目录</strong>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#部署准备"><span class="toc-number">1.1.</span> <span class="toc-text">部署准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装和配置"><span class="toc-number">1.2.</span> <span class="toc-text">安装和配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简单实例"><span class="toc-number">1.3.</span> <span class="toc-text">简单实例</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Deploy"><span class="toc-number">1.</span> <span class="toc-text">Quick Deploy</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#部署准备"><span class="toc-number">1.1.</span> <span class="toc-text">部署准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装和配置"><span class="toc-number">1.2.</span> <span class="toc-text">安装和配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重要目录说明"><span class="toc-number">1.3.</span> <span class="toc-text">重要目录说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简单实例"><span class="toc-number">1.4.</span> <span class="toc-text">简单实例</span></a></li></ol></li></ol>
           </div>
     <script type="text/javascript">
       function showToc(){
@@ -197,16 +197,15 @@
   <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>OpenResty是一个基于Nginx的可伸缩的Web平台，默认集成了Lua开发环境。文件介绍如何在居于Centos7.5安装OpenResty。<br><a id="more"></a></p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="部署准备"><a href="#部署准备" class="headerlink" title="部署准备"></a>部署准备</h3><ul>
+        <p>OpenResty是一个基于Nginx的可伸缩的Web平台，默认集成了Lua开发环境。文章介绍如何在居于Centos7.5安装OpenResty。<br><a id="more"></a></p>
+<h2 id="Quick-Deploy"><a href="#Quick-Deploy" class="headerlink" title="Quick Deploy"></a>Quick Deploy</h2><h3 id="部署准备"><a href="#部署准备" class="headerlink" title="部署准备"></a>部署准备</h3><ul>
 <li>1.检查依赖库(perl 5.6.1+, libreadline, libpcre, libssl, gcc, curl)</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ldconfig  -v | grep -E <span class="string">'readline|pcre|openssl'</span></span><br><span class="line">yum list installed | grep -E <span class="string">'perl|gcc|curl'</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>2.安装依赖库(也可以不检查,直接使用下面命令安装)</li>
-<li><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install readline-devel pcre-devel openssl-devel perl gcc curl</span><br></pre></td></tr></table></figure>
-</li>
 </ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install readline-devel pcre-devel openssl-devel perl gcc curl</span><br></pre></td></tr></table></figure>
 <h3 id="安装和配置"><a href="#安装和配置" class="headerlink" title="安装和配置"></a>安装和配置</h3><ul>
 <li>1.下载安装包</li>
 </ul>
@@ -219,6 +218,24 @@
 <li>3.编译(默认情况下程序会安装到 /usr/local/openresty 目录,你可以使用 ./configure –help 查看更多的配置选项)</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> openresty-1.13.6.2</span><br><span class="line">./configure</span><br><span class="line">make </span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<h3 id="重要目录说明"><a href="#重要目录说明" class="headerlink" title="重要目录说明"></a>重要目录说明</h3><ul>
+<li>nginx <ul>
+<li>sbin<ul>
+<li>nignx 启动程序</li>
+</ul>
+</li>
+<li>logs<ul>
+<li>access.log 访问日志</li>
+<li>error.log 错误日志</li>
+</ul>
+</li>
+<li>conf<ul>
+<li>nginx.con 配置文件</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h3 id="简单实例"><a href="#简单实例" class="headerlink" title="简单实例"></a>简单实例</h3><ul>
 <li>1.创建日志和配置目录</li>
 </ul>
@@ -230,7 +247,7 @@
 <ul>
 <li>3.新增配置</li>
 </ul>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">worker_processes  <span class="number">1</span>;</span><br><span class="line">error_log logs/<span class="built_in">error</span>.<span class="built_in">log</span>;</span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections <span class="number">1024</span>;</span><br><span class="line">&#125;</span><br><span class="line">http &#123;</span><br><span class="line">    server &#123;</span><br><span class="line">        listen <span class="number">9000</span>;</span><br><span class="line">        location / &#123;</span><br><span class="line">            default_type text/html;</span><br><span class="line">            content_by_lua <span class="string">'</span></span><br><span class="line"><span class="string">                ngx.say("&lt;p&gt;Hello, World!&lt;/p&gt;")</span></span><br><span class="line"><span class="string">            '</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#启动进程一个</span><br><span class="line">worker_processes  <span class="number">1</span>; </span><br><span class="line">#设置错误日志目录</span><br><span class="line">error_log logs/<span class="built_in">error</span>.<span class="built_in">log</span>;</span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections <span class="number">1024</span>;</span><br><span class="line">&#125;</span><br><span class="line">http &#123;</span><br><span class="line">    server &#123;</span><br><span class="line">        #设置端口</span><br><span class="line">        listen <span class="number">9000</span>;</span><br><span class="line">        #设置访问路径</span><br><span class="line">        location / &#123;</span><br><span class="line">            default_type text/html;</span><br><span class="line">            #设置返回内容</span><br><span class="line">            content_by_lua <span class="string">'</span></span><br><span class="line"><span class="string">                ngx.say("&lt;p&gt;Hello, World!&lt;/p&gt;")</span></span><br><span class="line"><span class="string">            '</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>3.启动 OpenResty (如果没有任何输出，说明启动成功，-p 指定我们的项目目录，-c 指定配置文件)</li>
 </ul>
@@ -326,6 +343,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/05/26/部署Tomcat/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          部署Tomcat
+        
+      </div>
+    </a>
   
   
     <a href="/2018/05/07/部署博客/" id="article-nav-older" class="article-nav-link-wrap">
@@ -481,11 +507,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">环境部署</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">环境部署</a>
+                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
