@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lightalight.github.io">
-  <title>部署OpenResty.md | Keep It Simple Do It Well</title>
+  <title>部署OpenResty | Keep It Simple Do It Well</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="OpenResty是一个基于Nginx的可伸缩的Web平台，默认集成了Lua开发环境。文件介绍如何在居于Centos7.5安装OpenResty。">
 <meta name="keywords" content="环境部署,nginx">
 <meta property="og:type" content="article">
-<meta property="og:title" content="部署OpenResty.md">
+<meta property="og:title" content="部署OpenResty">
 <meta property="og:url" content="https://lightalight.github.io/2018/05/16/部署OpenResty/index.html">
 <meta property="og:site_name" content="Keep It Simple Do It Well">
 <meta property="og:description" content="OpenResty是一个基于Nginx的可伸缩的Web平台，默认集成了Lua开发环境。文件介绍如何在居于Centos7.5安装OpenResty。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-25T11:48:19.351Z">
+<meta property="og:updated_time" content="2019-02-25T11:54:23.544Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="部署OpenResty.md">
+<meta name="twitter:title" content="部署OpenResty">
 <meta name="twitter:description" content="OpenResty是一个基于Nginx的可伸缩的Web平台，默认集成了Lua开发环境。文件介绍如何在居于Centos7.5安装OpenResty。">
   
     <link rel="alternative" href="/atom.xml" title="Keep It Simple Do It Well" type="application/atom+xml">
@@ -152,7 +152,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      部署OpenResty.md
+      部署OpenResty
     </h1>
   
 
@@ -201,7 +201,7 @@
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="部署准备"><a href="#部署准备" class="headerlink" title="部署准备"></a>部署准备</h3><ul>
 <li>1.检查依赖库(perl 5.6.1+, libreadline, libpcre, libssl, gcc, curl)</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ldconfig  -v | grep -E <span class="string">'readline|pcre|openssl'</span></span><br><span class="line">yum list installed | grep -E <span class="string">'perl|gcc|curl'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ldconfig  -v | grep -E <span class="string">'readline|pcre|openssl'</span></span><br><span class="line">yum list installed | grep -E <span class="string">'perl|gcc|curl'</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>2.安装依赖库(也可以不检查,直接使用下面命令安装)</li>
 <li><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install readline-devel pcre-devel openssl-devel perl gcc curl</span><br></pre></td></tr></table></figure>
