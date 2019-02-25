@@ -1,19 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title><![CDATA[部署博客]]></title>
-    <url>%2F2018%2F05%2F07%2F%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%2F</url>
-    <content type="text"><![CDATA[这是一个简单的指导说明，介绍如何使用github和hexo搭建一个自己的博客. Quick Start部署准备 1.本地安装git和nodejs 2.去github申请账号,并创建一个仓库(仓库名为账户名.github.io) 安装和配置hexo 1.安装hexo 1$ npm install -g hexo-cli 2.安装git部署工具 1$ npm install hexo-deployer-git --save 3.创建hexo的工程目录 1$ hexo init source.账户名.github.io 4.设置git部署仓库 123456$ cd source.账户名.github.io$ vim _config.yml$ deploy: type: git repo: https://github.com/账户名/账户名.github.io.git branch: master 部署hexo 1.克隆仓库到本地 1$ git clone https://github.com/账户名/账户名.github.io.git 2.创建分支 123$ cd 账户名.github.io$ git checkout -b source$ git branch -a 3.移动hexo工程到仓库 1$ mv source.账户名.github.io/* 账户名.github.io 4.保存源码到仓库 123$ git add -A$ git commit -m "add source file"$ git push origin source 5.部署hexo 1$ hexo d 6.访问博客 1$ https://账户名.github.io 修改主题 1.下载主题放入themes目录下 2.修改_config.yml的theme为对应主题名 3.使主题生效 1234$ hexo clean$ hexo g$ hexo d$ hexo d More info: 优化主题]]></content>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hexo命令参考文档]]></title>
-    <url>%2F2018%2F05%2F07%2FHexo%E5%91%BD%E4%BB%A4%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
+<search> 
+  
+    
+    <entry>
+      <title>部署博客</title>
+      <link href="/2018/05/07/%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2/"/>
+      <url>/2018/05/07/%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2/</url>
+      <content type="html"><![CDATA[<p>这是一个简单的指导说明，介绍如何使用github和hexo搭建一个自己的博客.<br><a id="more"></a></p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="部署准备"><a href="#部署准备" class="headerlink" title="部署准备"></a>部署准备</h3><ul><li>1.本地安装<a href="https://git-scm.com/" target="_blank" rel="noopener">git</a>和<a href="https://nodejs.org/en/" target="_blank" rel="noopener">nodejs</a></li><li>2.去<a href="https://github.com/" target="_blank" rel="noopener">github</a>申请账号,并创建一个仓库(仓库名为账户名.github.io)</li></ul><h3 id="安装和配置hexo"><a href="#安装和配置hexo" class="headerlink" title="安装和配置hexo"></a>安装和配置hexo</h3><ul><li>1.安装hexo</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure><ul><li>2.安装git部署工具</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure><ul><li>3.创建hexo的工程目录</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  hexo init <span class="built_in">source</span>.账户名.github.io</span><br></pre></td></tr></table></figure><ul><li>4.设置git部署仓库</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> <span class="built_in">source</span>.账户名.github.io</span><br><span class="line">$ vim _config.yml</span><br><span class="line">$ deploy:</span><br><span class="line">    <span class="built_in">type</span>: git</span><br><span class="line">    repo: https://github.com/账户名/账户名.github.io.git</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure><h3 id="部署hexo"><a href="#部署hexo" class="headerlink" title="部署hexo"></a>部署hexo</h3><ul><li>1.克隆仓库到本地</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/账户名/账户名.github.io.git</span><br></pre></td></tr></table></figure><ul><li>2.创建分支</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> 账户名.github.io</span><br><span class="line">$ git checkout -b <span class="built_in">source</span></span><br><span class="line">$ git branch -a</span><br></pre></td></tr></table></figure><ul><li>3.移动hexo工程到仓库</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mv <span class="built_in">source</span>.账户名.github.io/* 账户名.github.io</span><br></pre></td></tr></table></figure><ul><li>4.保存源码到仓库</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add -A</span><br><span class="line">$ git commit -m <span class="string">"add source file"</span></span><br><span class="line">$ git push origin <span class="built_in">source</span></span><br></pre></td></tr></table></figure><ul><li>5.部署hexo</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure><ul><li>6.访问博客</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ https://账户名.github.io</span><br></pre></td></tr></table></figure><h3 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h3><ul><li><p>1.下载主题放入themes目录下</p></li><li><p>2.修改_config.yml的theme为对应主题名</p></li><li><p>3.使主题生效</p></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure><p>More info: <a href="https://blog.csdn.net/qq_33699981/article/details/72716951" target="_blank" rel="noopener">优化主题</a></p>]]></content>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Hexo命令参考文档</title>
+      <link href="/2018/05/07/Hexo%E5%91%BD%E4%BB%A4%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3/"/>
+      <url>/2018/05/07/Hexo%E5%91%BD%E4%BB%A4%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><a id="more"></a><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+  
+  
 </search>
