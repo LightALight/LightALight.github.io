@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Keep It Simple Do It Well">
 <meta property="og:description" content="OpenResty是一个基于Nginx的可伸缩的Web平台，默认集成了Lua开发环境。文章介绍如何在居于Centos7.5安装OpenResty。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-25T14:18:45.399Z">
+<meta property="og:updated_time" content="2019-02-25T15:56:32.371Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="部署OpenResty">
 <meta name="twitter:description" content="OpenResty是一个基于Nginx的可伸缩的Web平台，默认集成了Lua开发环境。文章介绍如何在居于Centos7.5安装OpenResty。">
@@ -201,7 +201,7 @@
 <h2 id="Quick-Deploy"><a href="#Quick-Deploy" class="headerlink" title="Quick Deploy"></a>Quick Deploy</h2><h3 id="部署准备"><a href="#部署准备" class="headerlink" title="部署准备"></a>部署准备</h3><ul>
 <li>1.检查依赖库(perl 5.6.1+, libreadline, libpcre, libssl, gcc, curl)</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ldconfig  -v | grep -E <span class="string">'readline|pcre|openssl'</span></span><br><span class="line">yum list installed | grep -E <span class="string">'perl|gcc|curl'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ldconfig  -v | grep -E <span class="string">'readline|pcre|openssl'</span></span><br><span class="line">yum list installed | grep -E <span class="string">'perl|gcc|curl'</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>2.安装依赖库(也可以不检查,直接使用下面命令安装)</li>
 </ul>
@@ -247,7 +247,7 @@
 <ul>
 <li>3.新增配置</li>
 </ul>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#启动进程一个</span><br><span class="line">worker_processes  <span class="number">1</span>; </span><br><span class="line">#设置错误日志目录</span><br><span class="line">error_log logs/<span class="built_in">error</span>.<span class="built_in">log</span>;</span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections <span class="number">1024</span>;</span><br><span class="line">&#125;</span><br><span class="line">http &#123;</span><br><span class="line">    server &#123;</span><br><span class="line">        #设置端口</span><br><span class="line">        listen <span class="number">9000</span>;</span><br><span class="line">        #设置访问路径</span><br><span class="line">        location / &#123;</span><br><span class="line">            default_type text/html;</span><br><span class="line">            #设置返回内容</span><br><span class="line">            content_by_lua <span class="string">'</span></span><br><span class="line"><span class="string">                ngx.say("&lt;p&gt;Hello, World!&lt;/p&gt;")</span></span><br><span class="line"><span class="string">            '</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#启动一个进程</span><br><span class="line">worker_processes  <span class="number">1</span>; </span><br><span class="line">#设置错误日志目录</span><br><span class="line">error_log logs/<span class="built_in">error</span>.<span class="built_in">log</span>;</span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections <span class="number">1024</span>;</span><br><span class="line">&#125;</span><br><span class="line">http &#123;</span><br><span class="line">    server &#123;</span><br><span class="line">        #设置端口</span><br><span class="line">        listen <span class="number">9000</span>;</span><br><span class="line">        #设置访问路径</span><br><span class="line">        location / &#123;</span><br><span class="line">            default_type text/html;</span><br><span class="line">            #设置返回内容</span><br><span class="line">            content_by_lua <span class="string">'</span></span><br><span class="line"><span class="string">                ngx.say("&lt;p&gt;Hello, World!&lt;/p&gt;")</span></span><br><span class="line"><span class="string">            '</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>3.启动 OpenResty (如果没有任何输出，说明启动成功，-p 指定我们的项目目录，-c 指定配置文件)</li>
 </ul>
@@ -511,7 +511,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -519,7 +519,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
               </li>
             
             <div class="clearfix"></div>
