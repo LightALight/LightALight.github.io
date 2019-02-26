@@ -16,14 +16,14 @@
 <meta property="og:site_name" content="Keep It Simple Do It Well">
 <meta property="og:description" content="Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。文章介绍如何在居于Centos7.5安装Docker CE(社区免费版)。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://lightalight.github.io/2018/07/23/image/部署Docker_001.png">
-<meta property="og:image" content="https://lightalight.github.io/2018/07/23/image/部署Docker_002.png">
-<meta property="og:image" content="https://lightalight.github.io/2018/07/23/image/部署Docker_003.png">
-<meta property="og:updated_time" content="2019-02-26T14:55:21.182Z">
+<meta property="og:image" content="https://lightalight.github.io/image/部署Docker_001.png">
+<meta property="og:image" content="https://lightalight.github.io/image/部署Docker_002.png">
+<meta property="og:image" content="https://lightalight.github.io/image/部署Docker_003.png">
+<meta property="og:updated_time" content="2019-02-26T14:58:11.398Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="部署Docker">
 <meta name="twitter:description" content="Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。文章介绍如何在居于Centos7.5安装Docker CE(社区免费版)。">
-<meta name="twitter:image" content="https://lightalight.github.io/2018/07/23/image/部署Docker_001.png">
+<meta name="twitter:image" content="https://lightalight.github.io/image/部署Docker_001.png">
   
     <link rel="alternative" href="/atom.xml" title="Keep It Simple Do It Well" type="application/atom+xml">
   
@@ -205,7 +205,7 @@
 <h2 id="Quick-Guide"><a href="#Quick-Guide" class="headerlink" title="Quick Guide"></a>Quick Guide</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul>
 <li><p>1.前提条件:Docker 运行在 CentOS 7 上，要求系统为64位且系统内核版本为 3.10 以上。</p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -r</span><br></pre></td></tr></table></figure>
-<p>  <img src="../image/部署Docker_001.png" alt=""></p>
+<p>  <img src="/image/部署Docker_001.png" alt=""></p>
 </li>
 <li><p>2.移除旧的版本</p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sudo yum remove docker \</span><br><span class="line">              docker-client \</span><br><span class="line">              docker-client-latest \</span><br><span class="line">              docker-common \</span><br><span class="line">              docker-latest \</span><br><span class="line">              docker-latest-logrotate \</span><br><span class="line">              docker-logrotate \</span><br><span class="line">              docker-selinux \</span><br><span class="line">              docker-engine-selinux \</span><br><span class="line">              docker-engine</span><br></pre></td></tr></table></figure>
@@ -227,13 +227,13 @@
 </li>
 <li><p>8.测试运行 hello-world</p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run hello-world</span><br></pre></td></tr></table></figure>
-<p>  <img src="../image/部署Docker_002.png" alt=""></p>
+<p>  <img src="/image/部署Docker_002.png" alt=""></p>
 </li>
 <li><p>9.查看docker信息</p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker version <span class="comment"># 查看docker的版本号，包括客户端、服务端、依赖的Go等</span></span><br><span class="line">docker info <span class="comment"># 查看系统(docker)层面信息，包括管理的images, containers数等</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="关于镜像、容器、仓库的基本命令"><a href="#关于镜像、容器、仓库的基本命令" class="headerlink" title="关于镜像、容器、仓库的基本命令"></a>关于镜像、容器、仓库的基本命令</h3><p><img src="../image/部署Docker_003.png" alt=""></p>
+<h3 id="关于镜像、容器、仓库的基本命令"><a href="#关于镜像、容器、仓库的基本命令" class="headerlink" title="关于镜像、容器、仓库的基本命令"></a>关于镜像、容器、仓库的基本命令</h3><p><img src="/image/部署Docker_003.png" alt=""></p>
 <h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><ul>
 <li>镜像（Image）类似于虚拟机的镜像，可以将他理解为一个面向Docker引擎的只读模板，包含了文件系统</li>
 <li>容器（Container）类似于一个轻量级的沙箱子，是镜像的一个运行实例，但它带有额外的可写层</li>
@@ -559,6 +559,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">环境部署</a>
               </li>
              
@@ -567,15 +575,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>
