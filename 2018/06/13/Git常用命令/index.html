@@ -16,12 +16,12 @@
 <meta property="og:site_name" content="Keep It Simple Do It Well">
 <meta property="og:description" content="Git是一个开源的分布式版本控制系统，用于敏捷高效地处理项目。文章介绍Git的常用命令。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://lightalight.github.io/2018/06/13/image/Git常用命令_001.jpg">
-<meta property="og:updated_time" content="2019-02-26T11:55:39.014Z">
+<meta property="og:image" content="https://lightalight.github.io/image/Git常用命令_001.jpg">
+<meta property="og:updated_time" content="2019-02-26T12:05:21.198Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git常用命令">
 <meta name="twitter:description" content="Git是一个开源的分布式版本控制系统，用于敏捷高效地处理项目。文章介绍Git的常用命令。">
-<meta name="twitter:image" content="https://lightalight.github.io/2018/06/13/image/Git常用命令_001.jpg">
+<meta name="twitter:image" content="https://lightalight.github.io/image/Git常用命令_001.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Keep It Simple Do It Well" type="application/atom+xml">
   
@@ -202,7 +202,7 @@
         <p>Git是一个开源的分布式版本控制系统，用于敏捷高效地处理项目。文章介绍Git的常用命令。<br><a id="more"></a></p>
 <h2 id="Quick-Guide"><a href="#Quick-Guide" class="headerlink" title="Quick Guide"></a>Quick Guide</h2><h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><ul>
 <li><p>1.工作区域</p>
-<p>  <img src="../image/Git常用命令_001.jpg" alt=""></p>
+<p>  <img src="/image/Git常用命令_001.jpg" alt=""></p>
 <ul>
 <li>工作区(workspace)：就是你在电脑里能看到的目录。</li>
 <li>暂存区(Index/Stage)：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。</li>
@@ -219,7 +219,7 @@
 <li>已推送(Pushed)</li>
 </ul>
 </li>
-<li><p>3.基本步骤</p>
+<li><p>3.基本操作</p>
 <ul>
 <li><p>git add:把工作区的文件放入暂存区</p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;path&gt; <span class="comment"># 把工作区的文件修改提交到暂存区</span></span><br><span class="line">git add . <span class="comment"># 提交工作区的所有文件修改</span></span><br></pre></td></tr></table></figure>
@@ -281,7 +281,10 @@
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git merge &lt;分支&gt;1… &lt;分支2&gt;… <span class="comment"># 合并分支到当前分支</span></span><br><span class="line">git merge &lt;远程主机名/分支名&gt; <span class="comment"># 合并fetch的分支到当前分支</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>git rebase:用于把一个分支的修改合并到当前分支,放弃一个分支的记录</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">    git rebase &lt;分支&gt;1… &lt;分支2&gt;… <span class="comment"># 合并分支到当前分支</span></span><br><span class="line">    git rebase &lt;远程主机名/分支名&gt; <span class="comment"># 合并fetch的分支到当前分支</span></span><br><span class="line">    ``</span><br><span class="line"></span><br><span class="line">- git remote:管理一组跟踪的存储库</span><br><span class="line"></span><br><span class="line">    ```bash</span><br><span class="line">    git remote -v <span class="comment"># 列出已经存在的远程分支的详细信息</span></span><br><span class="line">    git remote add &lt;shortname&gt; &lt;url&gt; <span class="comment"># 添加远程仓库</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git rebase &lt;分支&gt;1… &lt;分支2&gt;… <span class="comment"># 合并分支到当前分支</span></span><br><span class="line">git rebase &lt;远程主机名/分支名&gt; <span class="comment"># 合并fetch的分支到当前分支</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git remote:管理一组跟踪的存储库</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote -v <span class="comment"># 列出已经存在的远程分支的详细信息</span></span><br><span class="line">git remote add &lt;shortname&gt; &lt;url&gt; <span class="comment"># 添加远程仓库</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>git help:显示有关Git的帮助信息。</p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">help</span> &lt;verb&gt; <span class="comment"># 显示命令的帮助信息</span></span><br><span class="line">git &lt;verb&gt; --<span class="built_in">help</span> <span class="comment"># 显示命令的帮助信息</span></span><br></pre></td></tr></table></figure>
@@ -553,11 +556,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -565,11 +568,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
               </li>
             
             <div class="clearfix"></div>
