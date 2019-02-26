@@ -6,24 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lightalight.github.io">
-  <title>部署Tomcat | Keep It Simple Do It Well</title>
+  <title>Git常用命令 | Keep It Simple Do It Well</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Tomcat 是由 Apache 开发的一个 Servlet 容器，实现了对 Servlet 和 JSP 的支持，并提供了作为Web服务器的一些特有功能。文章介绍如何在居于Centos7.5安装Tomcat。">
-<meta name="keywords" content="环境部署,tomcat">
+  <meta name="description" content="Git是一个开源的分布式版本控制系统，用于敏捷高效地处理项目。文章介绍Git的常用命令。">
+<meta name="keywords" content="git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="部署Tomcat">
-<meta property="og:url" content="https://lightalight.github.io/2018/05/26/部署Tomcat/index.html">
+<meta property="og:title" content="Git常用命令">
+<meta property="og:url" content="https://lightalight.github.io/2018/06/13/Git常用命令/index.html">
 <meta property="og:site_name" content="Keep It Simple Do It Well">
-<meta property="og:description" content="Tomcat 是由 Apache 开发的一个 Servlet 容器，实现了对 Servlet 和 JSP 的支持，并提供了作为Web服务器的一些特有功能。文章介绍如何在居于Centos7.5安装Tomcat。">
+<meta property="og:description" content="Git是一个开源的分布式版本控制系统，用于敏捷高效地处理项目。文章介绍Git的常用命令。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://lightalight.github.io/image/部署OpenResty_001.png">
-<meta property="og:image" content="https://lightalight.github.io/image/部署OpenResty_002.png">
-<meta property="og:image" content="https://lightalight.github.io/image/部署OpenResty_003.png">
-<meta property="og:updated_time" content="2019-02-26T00:30:17.125Z">
+<meta property="og:image" content="https://lightalight.github.io/2018/06/13/image/Git常用命令_001.jpg">
+<meta property="og:updated_time" content="2019-02-26T11:55:39.014Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="部署Tomcat">
-<meta name="twitter:description" content="Tomcat 是由 Apache 开发的一个 Servlet 容器，实现了对 Servlet 和 JSP 的支持，并提供了作为Web服务器的一些特有功能。文章介绍如何在居于Centos7.5安装Tomcat。">
-<meta name="twitter:image" content="https://lightalight.github.io/image/部署OpenResty_001.png">
+<meta name="twitter:title" content="Git常用命令">
+<meta name="twitter:description" content="Git是一个开源的分布式版本控制系统，用于敏捷高效地处理项目。文章介绍Git的常用命令。">
+<meta name="twitter:image" content="https://lightalight.github.io/2018/06/13/image/Git常用命令_001.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Keep It Simple Do It Well" type="application/atom+xml">
   
@@ -149,20 +147,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-部署Tomcat" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Git常用命令" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      部署Tomcat
+      Git常用命令
     </h1>
   
 
         
-        <a href="/2018/05/26/部署Tomcat/" class="archive-article-date">
-  	<time datetime="2018-05-26T12:04:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-26</time>
+        <a href="/2018/06/13/Git常用命令/" class="archive-article-date">
+  	<time datetime="2018-06-13T12:12:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-13</time>
 </a>
         
         
@@ -181,7 +179,7 @@
     <div id="toc-article" class="toc-article">
         <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
       <strong class="toc-title">文章目录</strong>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Deploy"><span class="toc-number">1.</span> <span class="toc-text">Quick Deploy</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#部署准备"><span class="toc-number">1.1.</span> <span class="toc-text">部署准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装和配置"><span class="toc-number">1.2.</span> <span class="toc-text">安装和配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重要目录说明"><span class="toc-number">1.3.</span> <span class="toc-text">重要目录说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-工程发布（例如jenkin）"><span class="toc-number">1.4.</span> <span class="toc-text">web 工程发布（例如jenkin）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-项目路径结构"><span class="toc-number">1.5.</span> <span class="toc-text">web 项目路径结构</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本命令"><span class="toc-number">1.1.</span> <span class="toc-text">基本命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他"><span class="toc-number">1.2.</span> <span class="toc-text">其他</span></a></li></ol></li></ol>
           </div>
     <script type="text/javascript">
       function showToc(){
@@ -201,175 +199,123 @@
   <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Tomcat 是由 Apache 开发的一个 Servlet 容器，实现了对 Servlet 和 JSP 的支持，并提供了作为Web服务器的一些特有功能。文章介绍如何在居于Centos7.5安装Tomcat。<br><a id="more"></a></p>
-<h2 id="Quick-Deploy"><a href="#Quick-Deploy" class="headerlink" title="Quick Deploy"></a>Quick Deploy</h2><h3 id="部署准备"><a href="#部署准备" class="headerlink" title="部署准备"></a>部署准备</h3><ul>
-<li>1.参照下表格检查环境的JDK版本是否满足(Tomcat 8.5 要求 JDK 版本为 1.7 以上)</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Servlet Spec</th>
-<th>JSP Spec</th>
-<th>EL Spec</th>
-<th>WebSocket Spec</th>
-<th>JASPIC Spec</th>
-<th>Apache Tomcat Version</th>
-<th>Latest Released Version</th>
-<th>Supported Java Versions</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>4.0</td>
-<td>2.3</td>
-<td>3.0</td>
-<td>1.1</td>
-<td>1.1</td>
-<td>9.0.x</td>
-<td>9.0.6</td>
-<td>8 and later</td>
-</tr>
-<tr>
-<td>3.1</td>
-<td>2.3</td>
-<td>3.0</td>
-<td>1.1</td>
-<td>1.1</td>
-<td>8.5.x</td>
-<td>8.5.29</td>
-<td>7 and later</td>
-</tr>
-<tr>
-<td>3.1</td>
-<td>2.3</td>
-<td>3.0</td>
-<td>1.1</td>
-<td>N/A</td>
-<td>8.0.x (superseded)</td>
-<td>8.0.50 (superseded)</td>
-<td>7 and later</td>
-</tr>
-<tr>
-<td>3.0</td>
-<td>2.2</td>
-<td>2.2</td>
-<td>1.1</td>
-<td>N/A</td>
-<td>7.0.x</td>
-<td>7.0.85</td>
-<td>6 and later(7 and later for WebSocket)</td>
-</tr>
-<tr>
-<td>2.5</td>
-<td>2.1</td>
-<td>2.1</td>
-<td>N/A</td>
-<td>N/A</td>
-<td>6.0.x (archived)</td>
-<td>6.0.53 (archived)</td>
-<td>5 and later</td>
-</tr>
-<tr>
-<td>2.4</td>
-<td>2.0</td>
-<td>N/A</td>
-<td>N/A</td>
-<td>N/A</td>
-<td>5.5.x (archived)</td>
-<td>5.5.36 (archived)</td>
-<td>1.4 and later</td>
-</tr>
-<tr>
-<td>2.3</td>
-<td>1.2</td>
-<td>N/A</td>
-<td>N/A</td>
-<td>N/A</td>
-<td>4.1.x (archived)</td>
-<td>4.1.40 (archived)</td>
-<td>1.3 and later</td>
-</tr>
-<tr>
-<td>2.2</td>
-<td>1.1</td>
-<td>N/A</td>
-<td>N/A</td>
-<td>N/A</td>
-<td>3.3.x (archived)</td>
-<td>3.3.2 (archived)</td>
-<td>1.1 and later</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whereis java</span><br></pre></td></tr></table></figure>
+        <p>Git是一个开源的分布式版本控制系统，用于敏捷高效地处理项目。文章介绍Git的常用命令。<br><a id="more"></a></p>
+<h2 id="Quick-Guide"><a href="#Quick-Guide" class="headerlink" title="Quick Guide"></a>Quick Guide</h2><h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><ul>
+<li><p>1.工作区域</p>
+<p>  <img src="../image/Git常用命令_001.jpg" alt=""></p>
 <ul>
-<li>2.安装JDK(详细请自行查询)</li>
-</ul>
-<h3 id="安装和配置"><a href="#安装和配置" class="headerlink" title="安装和配置"></a>安装和配置</h3><ul>
-<li>1.下载安装包</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://mirrors.hust.edu.cn/apache/tomcat/tomcat-8/v8.5.37/bin/apache-tomcat-8.5.37.tar.gz</span><br></pre></td></tr></table></figure>
-<ul>
-<li>2.解压安装包</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf apache-tomcat-8.5.37.tar.gz</span><br></pre></td></tr></table></figure>
-<ul>
-<li>3.启动 Tomcat</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./apache-tomcat-8.5.37/bin/startup.sh</span><br></pre></td></tr></table></figure>
-<ul>
-<li>4.通过curl或者浏览器访问</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http://localhost:8080</span><br></pre></td></tr></table></figure>
-<p><img src="/image/部署OpenResty_001.png" alt=""></p>
-<h3 id="重要目录说明"><a href="#重要目录说明" class="headerlink" title="重要目录说明"></a>重要目录说明</h3><ul>
-<li>bin - Tomcat 脚本存放目录（如启动、关闭脚本）。 <em>.sh 文件用于 Unix 系统,</em>.bat 文件用于 Windows 系统</li>
-<li>conf - Tomcat 配置文件目录<ul>
-<li>server.xml 配置文件中的根元素。它的属性代表了整个 servlet 容器的特性。</li>
+<li>工作区(workspace)：就是你在电脑里能看到的目录。</li>
+<li>暂存区(Index/Stage)：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。</li>
+<li>版本库(master):工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。</li>
+<li>远端仓库(Remote): Git服务器的仓库(自己搭建或者托管平台),存储对应项目代码</li>
 </ul>
 </li>
-<li>logs - Tomcat 默认日志目录</li>
-<li>webapps - webapp 运行的目录</li>
-</ul>
-<h3 id="web-工程发布（例如jenkin）"><a href="#web-工程发布（例如jenkin）" class="headerlink" title="web 工程发布（例如jenkin）"></a>web 工程发布（例如jenkin）</h3><ul>
-<li>1.打包好的 war 包放在 Tomcat 安装目录下的 webapps 目录下</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv jenkins.war apache-tomcat-8.5.37/webapps/</span><br></pre></td></tr></table></figure>
+<li><p>2.文件的状态</p>
 <ul>
-<li>2.启动Tomcat(Tomcat 会自动解压 webapps 目录下的 war 包)</li>
+<li>未修改(Origin)</li>
+<li>已修改(Modified)</li>
+<li>已暂存(Staged)</li>
+<li>已提交(Committed)</li>
+<li>已推送(Pushed)</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./apache-tomcat-8.5.37/bin/startup.sh</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>3.基本步骤</p>
 <ul>
-<li>3.通过curl或者浏览器访问</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http://localhost:8080/jenkins</span><br></pre></td></tr></table></figure>
-<p><img src="/image/部署OpenResty_002.png" alt=""></p>
-<h3 id="web-项目路径结构"><a href="#web-项目路径结构" class="headerlink" title="web 项目路径结构"></a>web 项目路径结构</h3><ul>
-<li>webapp                         站点根目录(例如解压后的jenkins目录)<ul>
-<li>META-INF                   存放工程自身相关的一些信息，元文件信息，通常由开发工具，环境自动生成。<ul>
-<li>MANIFEST.MF            配置清单文件</li>
+<li><p>git add:把工作区的文件放入暂存区</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;path&gt; <span class="comment"># 把工作区的文件修改提交到暂存区</span></span><br><span class="line">git add . <span class="comment"># 提交工作区的所有文件修改</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git commit：把文件从暂存区提交进本地仓库</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">"the commit message"</span> <span class="comment"># 提交当前暂存区的修改记录</span></span><br><span class="line">git commit -a <span class="comment"># 会先把所有已经track的文件的改动`git add`进来，然后提交。</span></span><br><span class="line">git commit --amend <span class="comment"># 增补提交，会使用与当前提交节点相同的父节点进行一次新的提交，旧的提交将会被取消。</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git push:把文件从本地仓库推送进远程仓库</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt; <span class="comment"># 从 Git 本地仓库中更新到远端仓库</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
-<li>WEB-INF                   Java web应用的安全目录。所谓安全就是客户端无法访问，只有服务端可以访问的目录<ul>
-<li>classes                存放程序所需要的所有 Java class 文件<ul>
-<li>*.class            程序需要的 class 文件</li>
-<li>*.xml              程序需要的 xml 文件</li>
+<li><p>4.检查修改以及回滚</p>
+<ul>
+<li><p>git diff:在提交前工作目录中当前文件和暂存区域快照之间的差异,。如果错误，可以撤回提交（git reset HEAD）</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git diff &lt;file&gt; <span class="comment"># 比较当前文件和暂存区文件差异</span></span><br><span class="line">git diff &lt;id1&gt;&lt;id1&gt;&lt;id2&gt; <span class="comment"># 比较两次提交之间的差异</span></span><br><span class="line">git diff &lt;branch1&gt; &lt;branch2&gt; <span class="comment"># 在两个分支之间比较</span></span><br><span class="line">git diff <span class="comment"># 比较未修改和已修改后差异---已修改，未暂存</span></span><br><span class="line">git diff --staged <span class="comment"># 比较暂存区和版本库差异---已未暂存，未提交</span></span><br><span class="line">git diff --cached <span class="comment"># 比较暂存区和版本库差异---已未暂存，未提交</span></span><br><span class="line">git diff &lt;当前分支&gt; &lt;远程主机名/远端分支&gt; <span class="comment"># 比较本地分支和远端分支的差异---已提交，未推送</span></span><br><span class="line">git diff --<span class="built_in">stat</span> <span class="comment"># 仅仅比较统计信息</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git reset:将HEAD指向的位置改变为之前存在的某个版本,用于撤消之前的一些操作(add, commit)</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard <span class="comment"># 回退到上个版本，放弃版本后的修改、暂存和提交</span></span><br><span class="line">git reset --mixed <span class="comment"># mixed是默认参数，回退到上个版本，放弃版本后的暂存和提交</span></span><br><span class="line">git reset --soft <span class="comment"># 回退到上个版本，放弃版本后的提交</span></span><br><span class="line">git reset --hard HEAD~n <span class="comment"># 回退n个版本</span></span><br><span class="line">git reset --hard &lt;commit_id&gt; <span class="comment"># 回滚到指定版本，修改不能保存</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git revert:同reset，只不过撤销操作之前和之后的commit和history都会保留，并且把这次撤销作为一次最新的提交</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git revert HEAD <span class="comment"># 撤销前一次 commit</span></span><br><span class="line">git revert HEAD^ <span class="comment"># 撤销前前一次 commit</span></span><br><span class="line">git revert &lt;commit-id&gt; <span class="comment"># 撤回指定commit-id</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
-<li>lib                    库文件夹<ul>
-<li>*.jar              程序需要的 jar 包</li>
-</ul>
+<li><p>5.其他基本命令</p>
+<ul>
+<li><p>git init：初始化一个 Git 仓库</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init newrepo <span class="comment"># 指定目录作为Git仓库</span></span><br></pre></td></tr></table></figure>
 </li>
-<li>web.xml                Web应用程序的部署描述文件。它是工程中最重要的配置文件，它描述了 servlet 和组成应用的其它组件，以及应用初始化参数、安全管理约束等。</li>
-</ul>
+<li><p>git config：命令用于获取并设置存储库或全局选项</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"xiaoming"</span> <span class="comment"># 设置全局用户名</span></span><br><span class="line">git config --global user.email <span class="string">"xiaoming@gmail.com"</span> <span class="comment"># 设置全局邮箱</span></span><br><span class="line">git config --global core.editor emacs <span class="comment"># 设置编缉器</span></span><br><span class="line">git config --global merge.tool vimdiff <span class="comment"># 设置比较工具，比较工具用来解决合并时的冲突</span></span><br><span class="line">git config --list <span class="comment"># 检查配置</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><userdir>                  自定义的目录</userdir></li>
-<li><userfiles>                自定义的资源文件</userfiles></li>
+<li><p>git clone:克隆 Git 资源作为工作目录。</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> &lt;repo&gt; &lt;directory&gt; <span class="comment"># 从现有 Git 仓库中拷贝项目克隆到指定的目录</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git pull:是从远程获取最新版本到本地，并自动merge</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt; <span class="comment"># 从 Git 远端仓库中更新到本地仓库</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git status:显示文件修改是否被暂存或者tracked。</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git branch：用于列出，创建或删除分支。</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch <span class="comment"># 查看当前有哪些分支</span></span><br><span class="line">git branch &lt;分支&gt; <span class="comment"># 新建分支</span></span><br><span class="line">git branch -d &lt;分支&gt; <span class="comment"># 删除分支</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git checkout:用于切换分支或恢复工作树文件。</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git checkout &lt;文件&gt; <span class="comment"># 还原文件的修改</span></span><br><span class="line">git checkout &lt;分支&gt; <span class="comment"># 切换分支</span></span><br><span class="line">git checkout -b &lt;分支&gt; <span class="comment"># 创建并切换分支</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git log:用于显示提交日志信息</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> [&lt;options&gt;] [&lt;revision range&gt;] [[\--] &lt;path&gt;…]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git stash:用于将改过的被追踪的文件和暂存的变更储藏在脏工作目录中（refs/stas）</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git stash <span class="comment"># 将当前的修改和暂存储藏存储起来，用于更新远端分支产生冲突时候</span></span><br><span class="line">git stash list <span class="comment"># 查看储藏</span></span><br><span class="line">git stash pop <span class="comment"># 释放储藏</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git fetch:命令用于从另一个存储库下载对象和引用。</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin <span class="comment"># 从远程refs/heads/命名空间复制所有分支，并将它们存储到本地的refs/remotes/origin/命名空间中</span></span><br><span class="line">git fetch &lt;远程主机名&gt; &lt;分支名&gt; <span class="comment"># 更新远程主机的分支到本地</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git merge:用于将两个或两个以上的开发历史加入(合并)一起</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git merge &lt;分支&gt;1… &lt;分支2&gt;… <span class="comment"># 合并分支到当前分支</span></span><br><span class="line">git merge &lt;远程主机名/分支名&gt; <span class="comment"># 合并fetch的分支到当前分支</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git rebase:用于把一个分支的修改合并到当前分支,放弃一个分支的记录</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">    git rebase &lt;分支&gt;1… &lt;分支2&gt;… <span class="comment"># 合并分支到当前分支</span></span><br><span class="line">    git rebase &lt;远程主机名/分支名&gt; <span class="comment"># 合并fetch的分支到当前分支</span></span><br><span class="line">    ``</span><br><span class="line"></span><br><span class="line">- git remote:管理一组跟踪的存储库</span><br><span class="line"></span><br><span class="line">    ```bash</span><br><span class="line">    git remote -v <span class="comment"># 列出已经存在的远程分支的详细信息</span></span><br><span class="line">    git remote add &lt;shortname&gt; &lt;url&gt; <span class="comment"># 添加远程仓库</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git help:显示有关Git的帮助信息。</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">help</span> &lt;verb&gt; <span class="comment"># 显示命令的帮助信息</span></span><br><span class="line">git &lt;verb&gt; --<span class="built_in">help</span> <span class="comment"># 显示命令的帮助信息</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
 </ul>
-<p><img src="/image/部署OpenResty_003.png" alt=""></p>
-<p>More info: <a href="https://wiki.apache.org/tomcat/FrontPage" target="_blank" rel="noopener">Tomcat Wiki</a></p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
+<li><p>git rm：用于从工作区和索引中删除文件</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm [-f | --force] [-n] [-r] [--cached] [--ignore-unmatch] [--quiet] [--] &lt;file&gt;…</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git mv：用于移动或重命名文件，目录或符号链接</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git mv &lt;options&gt;… &lt;args&gt;…</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git mergetool:用于运行合并冲突解决工具来解决合并冲突</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git mergetool [--tool=&lt;tool&gt;] [-y | --[no-]prompt] [&lt;file&gt;…]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git tag：用于创建，列出，删除或验证使用GPG签名的标签对象。</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git tag <span class="comment"># 列显已有的标签</span></span><br><span class="line">git tag -a &lt;tag-name&gt;-m <span class="string">'version info'</span> <span class="comment"># 创建标签</span></span><br><span class="line">git tag -s &lt;tag-name&gt;-m <span class="string">'version info'</span> <span class="comment"># 签署标签</span></span><br><span class="line">git tag -d <span class="comment"># 删除标签</span></span><br><span class="line">git tag &lt;tag-name&gt; <span class="comment"># 创建轻量级标签</span></span><br><span class="line">git tag -v &lt;tag-name&gt; <span class="comment"># 验证标签</span></span><br><span class="line">git tag -a &lt;tag-name&gt; &lt;<span class="built_in">command</span>-id&gt; <span class="comment"># 后期加注标签</span></span><br><span class="line">git push origin [tagname] <span class="comment"># 分享标签</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git submodule:用于初始化，更新或检查子模块(另外一个仓库)</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git submodule add &lt;url&gt; <span class="comment"># 添加子模块</span></span><br><span class="line">git submodule init <span class="comment"># 初始化本地配置文件的子模块</span></span><br><span class="line">git submodule update <span class="comment"># 更新子模块</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git show:用于显示各种类型的对象</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git show [options] &lt;object&gt;…​ <span class="comment"># 显示一个或多个对象(blobs，树，标签和提交)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git shortlog:用于汇总git日志输出</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git shortlog <span class="comment"># 返回这个 git repository 底下每个用户进行 commit 的次数，以及每次 commit 的注释</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git describe:显示离当前提交最近的标签。</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git describe [--all] [--tags] [--contains] [--abbrev=&lt;n&gt;] [&lt;commit-ish&gt;…​]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>More info: <a href="https://git-scm.com/docs" target="_blank" rel="noopener">Git 完整命令手册</a></p>
 
       
 
@@ -383,11 +329,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">环境部署</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">tomcat</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
         		</li>
       		
 		</ul>
@@ -443,7 +385,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://lightalight.github.io/2018/05/26/部署Tomcat/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://lightalight.github.io/2018/06/13/Git常用命令/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -457,18 +399,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/06/13/Git常用命令/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Git常用命令
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/05/16/部署OpenResty/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">部署OpenResty</div>
+    <a href="/2018/05/26/部署Tomcat/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">部署Tomcat</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -517,7 +450,7 @@ if(true){
   	repo: 'gitment',
   	owner: 'lightalight',
   	admin: ['lightalight'],
-  	id: 'Sat May 26 2018 20:04:16 GMT+0800',
+  	id: 'Wed Jun 13 2018 20:12:32 GMT+0800',
   	distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container') 
