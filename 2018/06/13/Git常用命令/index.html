@@ -17,7 +17,7 @@
 <meta property="og:description" content="Git是一个开源的分布式版本控制系统，用于敏捷高效地处理项目。文章介绍Git的常用命令。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://lightalight.github.io/image/Git常用命令_001.jpg">
-<meta property="og:updated_time" content="2019-02-26T12:05:21.198Z">
+<meta property="og:updated_time" content="2019-02-26T12:07:28.551Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git常用命令">
 <meta name="twitter:description" content="Git是一个开源的分布式版本控制系统，用于敏捷高效地处理项目。文章介绍Git的常用命令。">
@@ -228,7 +228,7 @@
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">"the commit message"</span> <span class="comment"># 提交当前暂存区的修改记录</span></span><br><span class="line">git commit -a <span class="comment"># 会先把所有已经track的文件的改动`git add`进来，然后提交。</span></span><br><span class="line">git commit --amend <span class="comment"># 增补提交，会使用与当前提交节点相同的父节点进行一次新的提交，旧的提交将会被取消。</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>git push:把文件从本地仓库推送进远程仓库</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt; <span class="comment"># 从 Git 本地仓库中更新到远端仓库</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt; <span class="comment"># 从 Git 本地仓库中更新到远端仓库</span></span><br><span class="line">git push origin [tagname] <span class="comment"># 分享标签</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -303,7 +303,7 @@
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git mergetool [--tool=&lt;tool&gt;] [-y | --[no-]prompt] [&lt;file&gt;…]</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>git tag：用于创建，列出，删除或验证使用GPG签名的标签对象。</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git tag <span class="comment"># 列显已有的标签</span></span><br><span class="line">git tag -a &lt;tag-name&gt;-m <span class="string">'version info'</span> <span class="comment"># 创建标签</span></span><br><span class="line">git tag -s &lt;tag-name&gt;-m <span class="string">'version info'</span> <span class="comment"># 签署标签</span></span><br><span class="line">git tag -d <span class="comment"># 删除标签</span></span><br><span class="line">git tag &lt;tag-name&gt; <span class="comment"># 创建轻量级标签</span></span><br><span class="line">git tag -v &lt;tag-name&gt; <span class="comment"># 验证标签</span></span><br><span class="line">git tag -a &lt;tag-name&gt; &lt;<span class="built_in">command</span>-id&gt; <span class="comment"># 后期加注标签</span></span><br><span class="line">git push origin [tagname] <span class="comment"># 分享标签</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git tag <span class="comment"># 列显已有的标签</span></span><br><span class="line">git tag -a &lt;tag-name&gt;-m <span class="string">'version info'</span> <span class="comment"># 创建标签</span></span><br><span class="line">git tag -s &lt;tag-name&gt;-m <span class="string">'version info'</span> <span class="comment"># 签署标签</span></span><br><span class="line">git tag -d <span class="comment"># 删除标签</span></span><br><span class="line">git tag &lt;tag-name&gt; <span class="comment"># 创建轻量级标签</span></span><br><span class="line">git tag -v &lt;tag-name&gt; <span class="comment"># 验证标签</span></span><br><span class="line">git tag -a &lt;tag-name&gt; &lt;<span class="built_in">command</span>-id&gt; <span class="comment"># 后期加注标签</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>git submodule:用于初始化，更新或检查子模块(另外一个仓库)</p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git submodule add &lt;url&gt; <span class="comment"># 添加子模块</span></span><br><span class="line">git submodule init <span class="comment"># 初始化本地配置文件的子模块</span></span><br><span class="line">git submodule update <span class="comment"># 更新子模块</span></span><br></pre></td></tr></table></figure>
@@ -401,6 +401,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/07/23/部署Docker/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          部署Docker
+        
+      </div>
+    </a>
   
   
     <a href="/2018/05/26/部署Tomcat/" id="article-nav-older" class="article-nav-link-wrap">
@@ -556,10 +565,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
@@ -568,11 +573,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>
