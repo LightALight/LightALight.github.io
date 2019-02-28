@@ -9,7 +9,7 @@
   <title>Kubernetes常用命令 | Keep It Simple Do It Well</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Kubernetes（k8s）是Google(基于borg)开源的容器集群管理系统，使用Docker对应用程序包装、实例化、运行，能方便地管理跨机器运行容器化的应用，自我修复机制使得容器集群总是运行在用户期望的状态。文章介绍Kubernetes常用命令。">
-<meta name="keywords" content="docker,k8s">
+<meta name="keywords" content="k8s,docker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Kubernetes常用命令">
 <meta property="og:url" content="https://lightalight.github.io/2018/11/11/Kubernetes常用命令/index.html">
@@ -17,7 +17,7 @@
 <meta property="og:description" content="Kubernetes（k8s）是Google(基于borg)开源的容器集群管理系统，使用Docker对应用程序包装、实例化、运行，能方便地管理跨机器运行容器化的应用，自我修复机制使得容器集群总是运行在用户期望的状态。文章介绍Kubernetes常用命令。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://lightalight.github.io/image/Kubernetes常用命令_001.png">
-<meta property="og:updated_time" content="2019-02-28T08:56:05.601Z">
+<meta property="og:updated_time" content="2019-02-28T09:21:04.105Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kubernetes常用命令">
 <meta name="twitter:description" content="Kubernetes（k8s）是Google(基于borg)开源的容器集群管理系统，使用Docker对应用程序包装、实例化、运行，能方便地管理跨机器运行容器化的应用，自我修复机制使得容器集群总是运行在用户期望的状态。文章介绍Kubernetes常用命令。">
@@ -264,7 +264,7 @@
 <li><p>11.Annotation：与Lable类似，也使用key/value 键值对的形式定义，不同于Lable定义Kubernetes的元数据，它是用户任意定义的附加信息，以便于外部工具进行查找</p>
 </li>
 </ul>
-<h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建集群</span></span><br><span class="line">kubeadm init --apiserver-advertise-address=&lt;master_ip&gt; --kubernetes-version=&lt;kube_version&gt; --pod-network-cidr=&lt;ip/netmasks&gt;  <span class="comment"># 初始化</span></span><br><span class="line">kubectl join --token &lt;node&gt; &lt;master_ip:port&gt; <span class="comment"># 在子节点执行,加入这个集群</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 部署应用</span></span><br><span class="line">kubectl run &lt;apply_name&gt; \</span><br><span class="line">      --image=&lt;image&gt; \</span><br><span class="line">      --port=&lt;应用对外服务的端口&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 发布应用</span></span><br><span class="line">kubectl expose delpoyment &lt;apply_name&gt; --tpye=&lt;nodeport&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 扩展应用</span></span><br><span class="line">kubectl scale delpoyment/&lt;apply_name&gt; --replicas=2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新应用</span></span><br><span class="line">kubectl <span class="built_in">set</span> image delpoyment/&lt;apply_name&gt; &lt;apply_name&gt;=&lt;image&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建集群</span></span><br><span class="line">kubeadm init --apiserver-advertise-address=&lt;master_ip&gt; --kubernetes-version=&lt;kube_version&gt; --pod-network-cidr=&lt;ip/netmasks&gt;  <span class="comment"># 初始化</span></span><br><span class="line">kubeadm reset <span class="comment"># 还原kubeadm init或join操作</span></span><br><span class="line">kubectl join --token &lt;node&gt; &lt;master_ip:master_port&gt; <span class="comment"># 在子节点执行,加入这个集群</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 部署应用</span></span><br><span class="line">kubectl run &lt;apply_name&gt; \</span><br><span class="line">      --image=&lt;image&gt; \</span><br><span class="line">      --port=&lt;nodeport&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 发布应用</span></span><br><span class="line">kubectl expose delpoyment &lt;apply_name&gt; --<span class="built_in">type</span>=<span class="string">"NodePort"</span> --port &lt;nodeport&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 扩展应用</span></span><br><span class="line">kubectl scale delpoyment/&lt;apply_name&gt; --replicas=2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新应用</span></span><br><span class="line">kubectl <span class="built_in">set</span> image delpoyment/&lt;apply_name&gt; &lt;apply_name&gt;=&lt;image&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><ul>
 <li><p>1.help：获取命令的相关帮助信息</p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl &lt;<span class="built_in">command</span>&gt; --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
@@ -346,11 +346,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">k8s</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">k8s</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
         		</li>
       		
 		</ul>
@@ -574,15 +574,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -591,6 +587,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">环境部署</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
