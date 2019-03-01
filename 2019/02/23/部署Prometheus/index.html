@@ -16,28 +16,28 @@
 <meta property="og:site_name" content="Keep It Simple Do It Well">
 <meta property="og:description" content="Prometheus（普罗米修斯）是一套开源的监控、报警和时间序列数据库的组合,通过HTTP协议周期性抓取被监控组件的状态，适合虚拟化环境比如VM或者Docker。文章介绍如何centos7.5下部署Prometheus。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://lightalight.github.io/2019/02/23/image/部署Prometheus_001.png">
-<meta property="og:image" content="https://lightalight.github.io/2019/02/23/image/部署Prometheus_002.png">
-<meta property="og:image" content="https://lightalight.github.io/2019/02/23/image/部署Prometheus_003.png">
-<meta property="og:image" content="https://lightalight.github.io/2019/02/23/image/部署Prometheus_004.png">
-<meta property="og:image" content="https://lightalight.github.io/2019/02/23/image/部署Prometheus_005.png">
-<meta property="og:image" content="https://lightalight.github.io/2019/02/23/image/部署Prometheus_006.png">
-<meta property="og:image" content="https://lightalight.github.io/2019/02/23/image/部署Prometheus_007.png">
-<meta property="og:image" content="https://lightalight.github.io/2019/02/23/image/部署Prometheus_008.png">
-<meta property="og:image" content="https://lightalight.github.io/2019/02/23/image/部署Prometheus_009.png">
-<meta property="og:image" content="https://lightalight.github.io/2019/02/23/image/部署Prometheus_010.png">
-<meta property="og:image" content="https://lightalight.github.io/2019/02/23/image/部署Prometheus_011.png">
-<meta property="og:image" content="https://lightalight.github.io/2019/02/23/image/部署Prometheus_012.png">
-<meta property="og:image" content="https://lightalight.github.io/2019/02/23/image/部署Prometheus_013.png">
-<meta property="og:image" content="https://lightalight.github.io/2019/02/23/image/部署Prometheus_014.png">
-<meta property="og:image" content="https://lightalight.github.io/2019/02/23/image/部署Prometheus_015.png">
-<meta property="og:image" content="https://lightalight.github.io/2019/02/23/image/部署Prometheus_016.png">
-<meta property="og:image" content="https://lightalight.github.io/2019/02/23/image/部署Prometheus_017.png">
-<meta property="og:updated_time" content="2019-03-01T09:01:25.533Z">
+<meta property="og:image" content="https://lightalight.github.io/image/部署Prometheus_001.png">
+<meta property="og:image" content="https://lightalight.github.io/image/部署Prometheus_002.png">
+<meta property="og:image" content="https://lightalight.github.io/image/部署Prometheus_003.png">
+<meta property="og:image" content="https://lightalight.github.io/image/部署Prometheus_004.png">
+<meta property="og:image" content="https://lightalight.github.io/image/部署Prometheus_005.png">
+<meta property="og:image" content="https://lightalight.github.io/image/部署Prometheus_006.png">
+<meta property="og:image" content="https://lightalight.github.io/image/部署Prometheus_007.png">
+<meta property="og:image" content="https://lightalight.github.io/image/部署Prometheus_008.png">
+<meta property="og:image" content="https://lightalight.github.io/image/部署Prometheus_009.png">
+<meta property="og:image" content="https://lightalight.github.io/image/部署Prometheus_010.png">
+<meta property="og:image" content="https://lightalight.github.io/image/部署Prometheus_011.png">
+<meta property="og:image" content="https://lightalight.github.io/image/部署Prometheus_012.png">
+<meta property="og:image" content="https://lightalight.github.io/image/部署Prometheus_013.png">
+<meta property="og:image" content="https://lightalight.github.io/image/部署Prometheus_014.png">
+<meta property="og:image" content="https://lightalight.github.io/image/部署Prometheus_015.png">
+<meta property="og:image" content="https://lightalight.github.io/image/部署Prometheus_016.png">
+<meta property="og:image" content="https://lightalight.github.io/image/部署Prometheus_017.png">
+<meta property="og:updated_time" content="2019-03-01T09:05:29.606Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="部署Prometheus">
 <meta name="twitter:description" content="Prometheus（普罗米修斯）是一套开源的监控、报警和时间序列数据库的组合,通过HTTP协议周期性抓取被监控组件的状态，适合虚拟化环境比如VM或者Docker。文章介绍如何centos7.5下部署Prometheus。">
-<meta name="twitter:image" content="https://lightalight.github.io/2019/02/23/image/部署Prometheus_001.png">
+<meta name="twitter:image" content="https://lightalight.github.io/image/部署Prometheus_001.png">
   
     <link rel="alternative" href="/atom.xml" title="Keep It Simple Do It Well" type="application/atom+xml">
   
@@ -216,7 +216,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Prometheus（普罗米修斯）是一套开源的监控、报警和时间序列数据库的组合,通过HTTP协议周期性抓取被监控组件的状态，适合虚拟化环境比如VM或者Docker。文章介绍如何centos7.5下部署Prometheus。<br><a id="more"></a></p>
-<h2 id="Quick-Guide"><a href="#Quick-Guide" class="headerlink" title="Quick Guide"></a>Quick Guide</h2><h3 id="安装Prometheus"><a href="#安装Prometheus" class="headerlink" title="安装Prometheus"></a>安装Prometheus</h3><p><img src="../image/部署Prometheus_001.png" alt=""></p>
+<h2 id="Quick-Guide"><a href="#Quick-Guide" class="headerlink" title="Quick Guide"></a>Quick Guide</h2><h3 id="安装Prometheus"><a href="#安装Prometheus" class="headerlink" title="安装Prometheus"></a>安装Prometheus</h3><p><img src="/image/部署Prometheus_001.png" alt=""></p>
 <ul>
 <li><p>1.下载安装</p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/prometheus/prometheus/releases/download/v2.7.1/prometheus-2.7.1.linux-amd64.tar.gz</span><br><span class="line">tar -C /usr/<span class="built_in">local</span>/ -zxvf prometheus-2.7.1.linux-amd64.tar.gz</span><br><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/prometheus-2.7.1.linux-amd64/</span><br></pre></td></tr></table></figure>
@@ -240,7 +240,7 @@
 <li><p>6.使用浏览器访问&lt;service_ip:9090&gt;</p>
 </li>
 </ul>
-<p><img src="../image/部署Prometheus_002.png" alt=""></p>
+<p><img src="/image/部署Prometheus_002.png" alt=""></p>
 <h3 id="安装node-exporter"><a href="#安装node-exporter" class="headerlink" title="安装node_exporter"></a>安装node_exporter</h3><p>Prometheus Server并不直接服务监控特定的目标，其主要任务负责数据的收集，存储并且对外提供数据查询支持。因此需要在被监控主机上安装Exporter,Prometheus周期性的从Exporter暴露的HTTP服务地址（通常是/metrics）拉取监控样本数据。</p>
 <ul>
 <li><p>1.部署</p>
@@ -262,7 +262,7 @@
 <li><p>5.使用浏览器访问&lt;service_ip:9100&gt;</p>
 </li>
 </ul>
-<p><img src="../image/部署Prometheus_003.png" alt=""></p>
+<p><img src="/image/部署Prometheus_003.png" alt=""></p>
 <h3 id="配置Prometheus"><a href="#配置Prometheus" class="headerlink" title="配置Prometheus"></a>配置Prometheus</h3><ol>
 <li><p>修改配置</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 新增配置到配置文件</span></span><br><span class="line">vim /usr/<span class="built_in">local</span>/prometheus-2.7.1.linux-amd64/prometheus.yml</span><br></pre></td></tr></table></figure>
@@ -274,7 +274,7 @@
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl  start prometheus</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>3.使用浏览器访问&lt;monitor_ip:9100&gt;,点击status的targets</p>
-<p>  <img src="../image/部署Prometheus_004.png" alt=""><br>  <img src="../image/部署Prometheus_005.png" alt=""></p>
+<p>  <img src="/image/部署Prometheus_004.png" alt=""><br>  <img src="/image/部署Prometheus_005.png" alt=""></p>
 </li>
 </ul>
 <h3 id="部署grafana"><a href="#部署grafana" class="headerlink" title="部署grafana"></a>部署grafana</h3><p>为了监控数据展示更好看,我们安装Grafana.它是用于可视化大型测量数据的开源程序，能Dashboard中显示了你不同metric数据源中的数据。</p>
@@ -296,16 +296,16 @@
 <li><p>添加数据源</p>
 <ul>
 <li><p>使用浏览器访问http://&lt;server_ip&gt;:3000，默认账号/密码：admin/admin</p>
-<p> <img src="../image/部署Prometheus_006.png" alt=""></p>
+<p> <img src="/image/部署Prometheus_006.png" alt=""></p>
 </li>
 <li><p>在登陆首页，点击”Add data source”按钮，选择Prometheus,</p>
-<p> <img src="../image/部署Prometheus_007.png" alt=""><br> <img src="../image/部署Prometheus_008.png" alt=""></p>
+<p> <img src="/image/部署Prometheus_007.png" alt=""><br> <img src="/image/部署Prometheus_008.png" alt=""></p>
 </li>
 <li><p>取消Default的勾选,URL选择一下默认配置,其他不变,然后点击Save&amp;Test</p>
-<p> <img src="../image/部署Prometheus_009.png" alt=""><br> <img src="../image/部署Prometheus_010.png" alt=""></p>
+<p> <img src="/image/部署Prometheus_009.png" alt=""><br> <img src="/image/部署Prometheus_010.png" alt=""></p>
 </li>
 <li><p>在”Dashboards”页签下”import”自带的模版</p>
-<p> <img src="../image/部署Prometheus_011.png" alt=""></p>
+<p> <img src="/image/部署Prometheus_011.png" alt=""></p>
 </li>
 </ul>
 </li>
@@ -314,23 +314,23 @@
 <li><p>6.下载模板导入dashboard(可选)</p>
 <ul>
 <li><p>选择左上角图标+–&gt;import</p>
-<p>  <img src="../image/部署Prometheus_012.png" alt=""></p>
+<p>  <img src="/image/部署Prometheus_012.png" alt=""></p>
 </li>
 <li><p>填写url或者id(例如<a href="https://grafana.com/dashboards/405),点击Upload会自动下载模板" target="_blank" rel="noopener">https://grafana.com/dashboards/405),点击Upload会自动下载模板</a></p>
-<p>  <img src="../image/部署Prometheus_013.png" alt=""></p>
+<p>  <img src="/image/部署Prometheus_013.png" alt=""></p>
 </li>
 <li><p>数据源选择”prometheus”，即添加的数据源name，点击”Import”按钮</p>
-<p>  <img src="../image/部署Prometheus_014.png" alt=""></p>
+<p>  <img src="/image/部署Prometheus_014.png" alt=""></p>
 </li>
 </ul>
 </li>
 <li><p>7.查看dashboard</p>
 <ul>
 <li><p>选择Dashboard–&gt;Home</p>
-<p>  <img src="../image/部署Prometheus_015.png" alt=""></p>
+<p>  <img src="/image/部署Prometheus_015.png" alt=""></p>
 </li>
 <li><p>列表中可见有已添加的两个dashboard，选择1个即可，如下：</p>
-<p>  <img src="../image/部署Prometheus_016.png" alt=""><br>  <img src="../image/部署Prometheus_017.png" alt=""></p>
+<p>  <img src="/image/部署Prometheus_016.png" alt=""><br>  <img src="/image/部署Prometheus_017.png" alt=""></p>
 </li>
 </ul>
 </li>
@@ -577,19 +577,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">环境部署</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">监控</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -601,11 +593,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color5">环境部署</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">监控</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
               </li>
             
             <div class="clearfix"></div>
