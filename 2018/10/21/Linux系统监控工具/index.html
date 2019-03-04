@@ -18,7 +18,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://lightalight.github.io/image/Linux系统监控工具_001.png">
 <meta property="og:image" content="https://lightalight.github.io/image/Linux系统监控工具_002.png">
-<meta property="og:updated_time" content="2019-03-04T08:58:36.017Z">
+<meta property="og:updated_time" content="2019-03-04T09:05:42.489Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux系统监控工具">
 <meta name="twitter:description" content="多数 Linux 发行版都附带了监控工具。这些工具提供了获取系统活动的相关指标,可以用来查找问题的可能原因。文章介绍使用监控工具的基本命令。">
@@ -235,7 +235,7 @@
 </ul>
 </li>
 <li><p>6.交互命令<br>在top 命令执行过程中可以使用的一些交互命令。这些命令都是单字母的，如果在命令行中使用了s 选项，其中一些命令可能会被屏蔽。</p>
-<p>交互命令| 用法<br>——|——-<br>m |是否显示内存信息<br>A |根据各种系统资源的利用率对进程进行排序，有助于快速识别系统中性能不佳的任务。<br>f或者F |进入 top 的交互式配置屏幕，用于根据特定的需求而设置 top 的显示。<br>o或者O |交互式地调整 top 每一列的顺序。<br>z |切换彩色或黑白模式<br>h |显示帮助画面，给出一些简短的命令总结说明<br>k |终止一个进程。<br>i |忽略闲置和僵死进程。这是一个开关式命令。<br>q |退出程序<br>r |重新安排一个进程的优先级别<br>S |切换到累计模式<br>s |改变两次刷新之间的延迟时间（单位为s），如果有小数，就换算成m s。输入0值则系统将不断刷新，默认值是5 s<br>l |切换显示平均负载和启动时间信息<br>t |切换显示进程和CPU状态信息<br>c |切换显示命令名称和完整命令行<br>M |根据驻留内存大小进行排序<br>P |根据CPU使用百分比大小进行排序<br>T |根据时间/累计时间进行排序<br>W |将当前设置写入~/.toprc文件中</p>
+<p>交互命令| 用法<br>——-|———<br>m |是否显示内存信息<br>A |根据各种系统资源的利用率对进程进行排序，有助于快速识别系统中性能不佳的任务。<br>f或者F |进入 top 的交互式配置屏幕，用于根据特定的需求而设置 top 的显示。<br>o或者O |交互式地调整 top 每一列的顺序。<br>z |切换彩色或黑白模式<br>h |显示帮助画面，给出一些简短的命令总结说明<br>k |终止一个进程。<br>i |忽略闲置和僵死进程。这是一个开关式命令。<br>q |退出程序<br>r |重新安排一个进程的优先级别<br>S |切换到累计模式<br>s |改变两次刷新之间的延迟时间（单位为s），如果有小数，就换算成m s。输入0值则系统将不断刷新，默认值是5 s<br>l |切换显示平均负载和启动时间信息<br>t |切换显示进程和CPU状态信息<br>c |切换显示命令名称和完整命令行<br>M |根据驻留内存大小进行排序<br>P |根据CPU使用百分比大小进行排序<br>T |根据时间/累计时间进行排序<br>W |将当前设置写入~/.toprc文件中</p>
 </li>
 </ul>
 <h4 id="VmStat-虚拟内存统计"><a href="#VmStat-虚拟内存统计" class="headerlink" title="VmStat - 虚拟内存统计"></a>VmStat - 虚拟内存统计</h4><ul>
@@ -376,9 +376,113 @@
 </ul>
 </li>
 <li><p>5.交互命令</p>
-<p>交互命令|交互命令|作用<br>——|———|————<br>h, ?  | F1  | 查看htop使用说明<br>S | F2  | htop 设定<br>/ | F3  | 搜索进程<br>\ | F4  | 增量进程过滤器<br>t | F5  | 显示树形结构<br>&lt;, &gt;  | F6  | 选择排序方式<br>[ | F7  | 可减少nice值可以提高对应进程的优先级<br>] | F8  | 可增加nice值，降低对应进程的优先级<br>k | F9  | 可对进程传递信号<br>q | F10 | 结束htop<br>u | 只显示一个给定的用户的过程<br>U | 取消标记所有的进程<br>H | 显示或隐藏用户线程<br>K | 显示或隐藏内核线程<br>F | 跟踪进程<br>P | 按CPU 使用排序<br>M | 按内存使用排序<br>T   | 按Time+ 使用排序<br>l | 显示进程打开的文件<br>I | 倒转排序顺序<br>s | 选择某进程，按s:用strace追踪进程的系统调用   </p>
 </li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>交互命令</th>
+<th>交互命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>h, ?</td>
+<td>F1</td>
+<td>查看htop使用说明</td>
+</tr>
+<tr>
+<td>S</td>
+<td>F2</td>
+<td>htop 设定</td>
+</tr>
+<tr>
+<td>/</td>
+<td>F3</td>
+<td>搜索进程</td>
+</tr>
+<tr>
+<td>\</td>
+<td>F4</td>
+<td>增量进程过滤器</td>
+</tr>
+<tr>
+<td>t</td>
+<td>F5</td>
+<td>显示树形结构</td>
+</tr>
+<tr>
+<td>&lt;, &gt;</td>
+<td>F6</td>
+<td>选择排序方式</td>
+</tr>
+<tr>
+<td>[</td>
+<td>F7</td>
+<td>可减少nice值可以提高对应进程的优先级</td>
+</tr>
+<tr>
+<td>]</td>
+<td>F8</td>
+<td>可增加nice值，降低对应进程的优先级</td>
+</tr>
+<tr>
+<td>k</td>
+<td>F9</td>
+<td>可对进程传递信号</td>
+</tr>
+<tr>
+<td>q</td>
+<td>F10</td>
+<td>结束htop</td>
+</tr>
+<tr>
+<td>u</td>
+<td>只显示一个给定的用户的过程   </td>
+</tr>
+<tr>
+<td>U</td>
+<td>取消标记所有的进程   </td>
+</tr>
+<tr>
+<td>H</td>
+<td>显示或隐藏用户线程   </td>
+</tr>
+<tr>
+<td>K</td>
+<td>显示或隐藏内核线程   </td>
+</tr>
+<tr>
+<td>F</td>
+<td>跟踪进程    </td>
+</tr>
+<tr>
+<td>P</td>
+<td>按CPU 使用排序   </td>
+</tr>
+<tr>
+<td>M</td>
+<td>按内存使用排序   </td>
+</tr>
+<tr>
+<td>T</td>
+<td>按Time+ 使用排序   </td>
+</tr>
+<tr>
+<td>l</td>
+<td>显示进程打开的文件   </td>
+</tr>
+<tr>
+<td>I</td>
+<td>倒转排序顺序    </td>
+</tr>
+<tr>
+<td>s</td>
+<td>选择某进程，按s:用strace追踪进程的系统调用   </td>
+</tr>
+</tbody>
+</table>
 <h4 id="Sar-系统活动情况报告"><a href="#Sar-系统活动情况报告" class="headerlink" title="Sar - 系统活动情况报告"></a>Sar - 系统活动情况报告</h4><ul>
 <li><p>1.命令格式：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sar [options] [-A] [-o file] t [n]</span><br><span class="line"></span><br><span class="line"><span class="comment"># t为采样间隔，n为采样次数，默认值是1；</span></span><br><span class="line"><span class="comment"># -o file表示将命令结果以二进制格式存放在文件中，file 是文件名。</span></span><br></pre></td></tr></table></figure>
@@ -654,6 +758,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">性能</a>
               </li>
              
@@ -662,23 +774,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">环境部署</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
               <li class="article-tag-list-item">
