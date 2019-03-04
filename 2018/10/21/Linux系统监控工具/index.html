@@ -18,7 +18,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://lightalight.github.io/image/Linux系统监控工具_001.png">
 <meta property="og:image" content="https://lightalight.github.io/image/Linux系统监控工具_002.png">
-<meta property="og:updated_time" content="2019-03-04T09:05:42.489Z">
+<meta property="og:updated_time" content="2019-03-04T09:08:04.926Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux系统监控工具">
 <meta name="twitter:description" content="多数 Linux 发行版都附带了监控工具。这些工具提供了获取系统活动的相关指标,可以用来查找问题的可能原因。文章介绍使用监控工具的基本命令。">
@@ -235,9 +235,94 @@
 </ul>
 </li>
 <li><p>6.交互命令<br>在top 命令执行过程中可以使用的一些交互命令。这些命令都是单字母的，如果在命令行中使用了s 选项，其中一些命令可能会被屏蔽。</p>
-<p>交互命令| 用法<br>——-|———<br>m |是否显示内存信息<br>A |根据各种系统资源的利用率对进程进行排序，有助于快速识别系统中性能不佳的任务。<br>f或者F |进入 top 的交互式配置屏幕，用于根据特定的需求而设置 top 的显示。<br>o或者O |交互式地调整 top 每一列的顺序。<br>z |切换彩色或黑白模式<br>h |显示帮助画面，给出一些简短的命令总结说明<br>k |终止一个进程。<br>i |忽略闲置和僵死进程。这是一个开关式命令。<br>q |退出程序<br>r |重新安排一个进程的优先级别<br>S |切换到累计模式<br>s |改变两次刷新之间的延迟时间（单位为s），如果有小数，就换算成m s。输入0值则系统将不断刷新，默认值是5 s<br>l |切换显示平均负载和启动时间信息<br>t |切换显示进程和CPU状态信息<br>c |切换显示命令名称和完整命令行<br>M |根据驻留内存大小进行排序<br>P |根据CPU使用百分比大小进行排序<br>T |根据时间/累计时间进行排序<br>W |将当前设置写入~/.toprc文件中</p>
 </li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>交互命令</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>m</td>
+<td>是否显示内存信息</td>
+</tr>
+<tr>
+<td>A</td>
+<td>根据各种系统资源的利用率对进程进行排序，有助于快速识别系统中性能不佳的任务。</td>
+</tr>
+<tr>
+<td>f或者F</td>
+<td>进入 top 的交互式配置屏幕，用于根据特定的需求而设置 top 的显示。</td>
+</tr>
+<tr>
+<td>o或者O</td>
+<td>交互式地调整 top 每一列的顺序。</td>
+</tr>
+<tr>
+<td>z</td>
+<td>切换彩色或黑白模式</td>
+</tr>
+<tr>
+<td>h</td>
+<td>显示帮助画面，给出一些简短的命令总结说明</td>
+</tr>
+<tr>
+<td>k</td>
+<td>终止一个进程。</td>
+</tr>
+<tr>
+<td>i</td>
+<td>忽略闲置和僵死进程。这是一个开关式命令。</td>
+</tr>
+<tr>
+<td>q</td>
+<td>退出程序</td>
+</tr>
+<tr>
+<td>r</td>
+<td>重新安排一个进程的优先级别</td>
+</tr>
+<tr>
+<td>S</td>
+<td>切换到累计模式</td>
+</tr>
+<tr>
+<td>s</td>
+<td>改变两次刷新之间的延迟时间（单位为s），如果有小数，就换算成m s。输入0值则系统将不断刷新，默认值是5 s</td>
+</tr>
+<tr>
+<td>l</td>
+<td>切换显示平均负载和启动时间信息</td>
+</tr>
+<tr>
+<td>t</td>
+<td>切换显示进程和CPU状态信息</td>
+</tr>
+<tr>
+<td>c</td>
+<td>切换显示命令名称和完整命令行</td>
+</tr>
+<tr>
+<td>M</td>
+<td>根据驻留内存大小进行排序</td>
+</tr>
+<tr>
+<td>P</td>
+<td>根据CPU使用百分比大小进行排序</td>
+</tr>
+<tr>
+<td>T</td>
+<td>根据时间/累计时间进行排序</td>
+</tr>
+<tr>
+<td>W</td>
+<td>将当前设置写入~/.toprc文件中</td>
+</tr>
+</tbody>
+</table>
 <h4 id="VmStat-虚拟内存统计"><a href="#VmStat-虚拟内存统计" class="headerlink" title="VmStat - 虚拟内存统计"></a>VmStat - 虚拟内存统计</h4><ul>
 <li><p>1.命令格式：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vmstat [-a] [-n] [-t] [-S unit] [delay [ count]]</span><br><span class="line">vmstat [-s] [-n] [-S unit]</span><br><span class="line">vmstat [-m] [-n] [delay [ count]]</span><br><span class="line">vmstat [-d] [-n] [delay [ count]]</span><br><span class="line">vmstat [-p disk partition] [-n] [delay [ count]]</span><br><span class="line">vmstat [-f]</span><br><span class="line">vmstat [-V]</span><br></pre></td></tr></table></figure>
@@ -251,12 +336,12 @@
 <ul>
 <li><p>参数说明：vmstat</p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">   procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----</span><br><span class="line">r  b   swpd   free   buff  cache   si   so    bi    bo   <span class="keyword">in</span>   cs us sy id wa st</span><br><span class="line">2  0 141824  75964 112312 1470536    0    0    62    22    3    2  0  0 99  0  0</span><br></pre></td></tr></table></figure>
-<p>  Procs（进程）参数| 含义| 说明<br>  ————|——|———-<br>  r |等待执行的任务数|展示了正在执行和等待cpu资源的任务个数。当这个值超过了cpu个数，就会出现cpu瓶颈。<br>  b | 等待IO的进程数量</p>
-<p>  Memory(内存)参数| 含义| 说明<br>  ————|——|———-<br>  swpd |正在使用虚拟的内存大小，单位k|<br>  free | 空闲内存大小<br>  buff | 已用的buff大小，对块设备的读写进行缓冲<br>  cache | 已用的cache大小，文件系统的cache<br>  inact | 非活跃内存大小，即被标明可回收的内存，区别于free和active<br>  active |活跃的内存大小</p>
-<p>  Swap参数| 含义| 说明<br>  ————|——|———-<br>  si |每秒从交换区写入内存的大小（单位：kb/s）<br>  so | 每秒从内存写到交换区的大小</p>
-<p>  IO参数| 含义| 说明<br>  ————|——|———-<br>  bi |每秒读取的块数（读磁盘）<br>  bo | 每秒写入的块数（写磁盘）</p>
-<p>  system参数| 含义| 说明<br>  ————|——|———-<br>  in |每秒中断数，包括时钟中断|值越大，会看到由内核消耗的cpu时间会越多<br>  cs |每秒上下文切换数|这两个值越大，会看到由内核消耗的cpu时间会越多</p>
-<p>  CPU（以百分比表示）参数| 含义| 说明<br>  ————|——|———-<br>  Us |用户进程执行消耗cpu时间(user time)|us的值比较高时，说明用户进程消耗的cpu时间多，但是如果长期超过50%的使用，那么我们就该考虑优化程序算法或其他措施了<br>  Sy |系统进程消耗cpu时间(system time)|sys的值过高时，说明系统内核消耗的cpu资源多，这个不是良性的表现，我们应该检查原因。<br>  Id |空闲时间(包括IO等待时间)<br>  wa |等待IO时间|Wa过高时，说明io等待比较严重，这可能是由于磁盘大量随机访问造成的，也有可能是磁盘的带宽出现瓶颈。</p>
+<p>Procs（进程）参数| 含义| 说明<br>————|——|———-<br>r |等待执行的任务数|展示了正在执行和等待cpu资源的任务个数。当这个值超过了cpu个数，就会出现cpu瓶颈。<br>b | 等待IO的进程数量</p>
+<p>Memory(内存)参数| 含义| 说明<br>————|——|———-<br>swpd |正在使用虚拟的内存大小，单位k|<br>free | 空闲内存大小<br>buff | 已用的buff大小，对块设备的读写进行缓冲<br>cache | 已用的cache大小，文件系统的cache<br>inact | 非活跃内存大小，即被标明可回收的内存，区别于free和active<br>active |活跃的内存大小</p>
+<p>Swap参数| 含义| 说明<br>————|——|———-<br>si |每秒从交换区写入内存的大小（单位：kb/s）<br>so | 每秒从内存写到交换区的大小</p>
+<p>IO参数| 含义| 说明<br>————|——|———-<br>bi |每秒读取的块数（读磁盘）<br>bo | 每秒写入的块数（写磁盘）</p>
+<p>system参数| 含义| 说明<br>————|——|———-<br>in |每秒中断数，包括时钟中断|值越大，会看到由内核消耗的cpu时间会越多<br>cs |每秒上下文切换数|这两个值越大，会看到由内核消耗的cpu时间会越多</p>
+<p>CPU（以百分比表示）参数| 含义| 说明<br>————|——|———-<br>Us |用户进程执行消耗cpu时间(user time)|us的值比较高时，说明用户进程消耗的cpu时间多，但是如果长期超过50%的使用，那么我们就该考虑优化程序算法或其他措施了<br>Sy |系统进程消耗cpu时间(system time)|sys的值过高时，说明系统内核消耗的cpu资源多，这个不是良性的表现，我们应该检查原因。<br>Id |空闲时间(包括IO等待时间)<br>wa |等待IO时间|Wa过高时，说明io等待比较严重，这可能是由于磁盘大量随机访问造成的，也有可能是磁盘的带宽出现瓶颈。</p>
 </li>
 <li><p>显示活跃和非活跃内存：vmstat –a</p>
 </li>
@@ -754,11 +839,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -766,19 +851,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">性能</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">监控</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">环境部署</a>
+                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
+                <a href="javascript:void(0)" class="js-tag color3">性能</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">环境部署</a>
               </li>
              
               <li class="article-tag-list-item">
