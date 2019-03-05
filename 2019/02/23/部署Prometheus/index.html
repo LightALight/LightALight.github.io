@@ -9,7 +9,7 @@
   <title>部署Prometheus | Keep It Simple Do It Well</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Prometheus（普罗米修斯）是一套开源的监控、报警和时间序列数据库的组合,通过HTTP协议周期性抓取被监控组件的状态，适合虚拟化环境比如VM或者Docker。文章介绍如何centos7.5下部署Prometheus。">
-<meta name="keywords" content="环境部署,监控">
+<meta name="keywords" content="监控,环境部署">
 <meta property="og:type" content="article">
 <meta property="og:title" content="部署Prometheus">
 <meta property="og:url" content="https://lightalight.github.io/2019/02/23/部署Prometheus/index.html">
@@ -347,11 +347,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">环境部署</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">监控</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">监控</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">环境部署</a>
         		</li>
       		
 		</ul>
@@ -442,6 +442,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Prometheus"><span class="toc-number">1.1.</span> <span class="toc-text">安装Prometheus</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Node-Exporter"><span class="toc-number">1.2.</span> <span class="toc-text">安装Node_Exporter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置Prometheus"><span class="toc-number">1.3.</span> <span class="toc-text">配置Prometheus</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#部署Grafana"><span class="toc-number">1.4.</span> <span class="toc-text">部署Grafana</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -575,27 +588,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">性能</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">环境部署</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -604,6 +597,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">监控</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">性能</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">环境部署</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
               <li class="article-tag-list-item">

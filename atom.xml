@@ -32,9 +32,9 @@
     </summary>
     
     
-      <category term="环境部署" scheme="https://lightalight.github.io/tags/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/"/>
-    
       <category term="监控" scheme="https://lightalight.github.io/tags/%E7%9B%91%E6%8E%A7/"/>
+    
+      <category term="环境部署" scheme="https://lightalight.github.io/tags/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/"/>
     
   </entry>
   
@@ -94,9 +94,9 @@
     </summary>
     
     
-      <category term="k8s" scheme="https://lightalight.github.io/tags/k8s/"/>
-    
       <category term="docker" scheme="https://lightalight.github.io/tags/docker/"/>
+    
+      <category term="k8s" scheme="https://lightalight.github.io/tags/k8s/"/>
     
   </entry>
   
