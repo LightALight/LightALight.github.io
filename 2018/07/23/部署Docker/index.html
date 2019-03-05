@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://lightalight.github.io/image/部署Docker_001.png">
 <meta property="og:image" content="https://lightalight.github.io/image/部署Docker_002.png">
 <meta property="og:image" content="https://lightalight.github.io/image/部署Docker_003.png">
-<meta property="og:updated_time" content="2019-02-26T15:01:41.021Z">
+<meta property="og:updated_time" content="2019-03-05T12:00:07.540Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="部署Docker">
 <meta name="twitter:description" content="Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。文章介绍如何在居于Centos7.5安装Docker CE(社区免费版)。">
@@ -181,7 +181,7 @@
     <div id="toc-article" class="toc-article">
         <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
       <strong class="toc-title">文章目录</strong>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-number">1.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于镜像、容器、仓库的基本命令"><span class="toc-number">1.2.</span> <span class="toc-text">关于镜像、容器、仓库的基本命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本概念"><span class="toc-number">1.2.1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#镜像"><span class="toc-number">1.2.2.</span> <span class="toc-text">镜像</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#镜像-1"><span class="toc-number">1.2.3.</span> <span class="toc-text">镜像</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#仓库"><span class="toc-number">1.2.4.</span> <span class="toc-text">仓库</span></a></li></ol></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-number">1.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于镜像、容器、仓库的基本命令"><span class="toc-number">1.2.</span> <span class="toc-text">关于镜像、容器、仓库的基本命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本概念"><span class="toc-number">1.2.1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#镜像"><span class="toc-number">1.2.2.</span> <span class="toc-text">镜像</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#容器"><span class="toc-number">1.2.3.</span> <span class="toc-text">容器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#仓库"><span class="toc-number">1.2.4.</span> <span class="toc-text">仓库</span></a></li></ol></li></ol></li></ol>
           </div>
     <script type="text/javascript">
       function showToc(){
@@ -265,7 +265,7 @@
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker push &lt;user/image:tag&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h4 id="镜像-1"><a href="#镜像-1" class="headerlink" title="镜像"></a>镜像</h4><ul>
+<h4 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h4><ul>
 <li><p>1.创建容器</p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker create -it &lt;image:tag&gt;</span><br></pre></td></tr></table></figure>
 </li>
@@ -568,11 +568,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -580,7 +576,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">监控</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -592,11 +588,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">监控</a>
               </li>
              
               <li class="article-tag-list-item">
