@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://lightalight.github.io/image/接口工具HttpRunner_010.png">
 <meta property="og:image" content="https://lightalight.github.io/image/接口工具HttpRunner_011.png">
 <meta property="og:image" content="https://lightalight.github.io/image/接口工具HttpRunner_012.png">
-<meta property="og:updated_time" content="2019-03-14T14:42:33.406Z">
+<meta property="og:updated_time" content="2019-03-14T14:45:04.416Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="接口工具HttpRunner">
 <meta name="twitter:description" content="HttpRunner 是一款面向 HTTP(S) 协议的通用测试框架，只需编写维护一份 YAML/JSON 脚本，即可实现自动化测试、性能测试、线上监控、持续集成等多种测试需求。本文章介绍在Windows7如何安装和使用HttpRunner。">
@@ -272,29 +272,133 @@
 </ul>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123;</span><br><span class="line">    "config": &#123;...&#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    "test": &#123;...&#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    "test": &#123;...&#125;</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>1.config参数说明</p>
+<li><p>config参数说明</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">"config": &#123;</span><br><span class="line">    "name": "testcase description",</span><br><span class="line">    "parameters": [</span><br><span class="line">        &#123;"user_agent": ["iOS/10.1", "iOS/10.2", "iOS/10.3"]&#125;,</span><br><span class="line">        &#123;"app_version": "$&#123;P(app_version.csv)&#125;"&#125;,</span><br><span class="line">        &#123;<span class="attr">"os_platform"</span>: <span class="string">"$&#123;get_os_platform()&#125;"</span>&#125;</span><br><span class="line">    ],</span><br><span class="line">    "variables": [</span><br><span class="line">        &#123;"user_agent": "iOS/10.3"&#125;,</span><br><span class="line">        &#123;"device_sn": "$&#123;gen_random_string(15)&#125;"&#125;,</span><br><span class="line">        &#123;<span class="attr">"os_platform"</span>: <span class="string">"ios"</span>&#125;</span><br><span class="line">    ],</span><br><span class="line">    "request": &#123;</span><br><span class="line">        "base_url": "http://127.0.0.1:5000",</span><br><span class="line">        "headers": &#123;</span><br><span class="line">            "Content-Type": "application/json",</span><br><span class="line">            "device_sn": "$device_sn"</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    "output": [</span><br><span class="line">        <span class="string">"token"</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Key |required    |format    |descrption<br>—-|————|——|————<br>name    |Yes    |string    |测试用例的名称，在测试报告中将作为标题<br>variables    |No    |list of dict    |定义的全局变量，作用域为整个用例<br>parameters    |No    |list of dict    |全局参数，用于实现数据化驱动，作用域为整个用例<br>request    |No    |dict    |request 的公共参数，作用域为整个用例；常用参数包括 base_url 和 headers<br>base_url    |No    |string    |测试用例请求 URL 的公共 host，指定该参数后，test 中的 url 可以只描述 path 部分<br>headers    |No    |dict    |request 中 headers 的公共参数，作用域为整个用例<br>output    |No    |list    |整个用例输出的参数列表，可输出的参数包括公共的 variable 和 extract 的参数; 在 log-level 为 debug 模式下，会在 terminal 中打印出参数内容</p>
 </li>
 </ul>
 </li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>required</th>
+<th>format</th>
+<th>descrption</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>Yes</td>
+<td>string</td>
+<td>测试用例的名称，在测试报告中将作为标题</td>
+</tr>
+<tr>
+<td>variables</td>
+<td>No</td>
+<td>list of dict</td>
+<td>定义的全局变量，作用域为整个用例</td>
+</tr>
+<tr>
+<td>parameters</td>
+<td>No</td>
+<td>list of dict</td>
+<td>全局参数，用于实现数据化驱动，作用域为整个用例</td>
+</tr>
+<tr>
+<td>request</td>
+<td>No</td>
+<td>dict</td>
+<td>request 的公共参数，作用域为整个用例；常用参数包括 base_url 和 headers</td>
+</tr>
+<tr>
+<td>base_url</td>
+<td>No</td>
+<td>string</td>
+<td>测试用例请求 URL 的公共 host，指定该参数后，test 中的 url 可以只描述 path 部分</td>
+</tr>
+<tr>
+<td>headers</td>
+<td>No</td>
+<td>dict</td>
+<td>request 中 headers 的公共参数，作用域为整个用例</td>
+</tr>
+<tr>
+<td>output</td>
+<td>No</td>
+<td>list</td>
+<td>整个用例输出的参数列表，可输出的参数包括公共的 variable 和 extract 的参数; 在 log-level 为 debug 模式下，会在 terminal 中打印出参数内容</td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li><p>2.test参数说明</p>
+<li><p>test参数说明</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">"test": &#123;</span><br><span class="line">    "name": "get token with $user_agent, $os_platform, $app_version",</span><br><span class="line">    "request": &#123;</span><br><span class="line">        "url": "/api/get-token",</span><br><span class="line">        "method": "POST",</span><br><span class="line">        "headers": &#123;</span><br><span class="line">            "app_version": "$app_version",</span><br><span class="line">            "os_platform": "$os_platform",</span><br><span class="line">            "user_agent": "$user_agent"</span><br><span class="line">        &#125;,</span><br><span class="line">        "json": &#123;</span><br><span class="line">            "sign": "$&#123;get_sign($user_agent, $device_sn, $os_platform, $app_version)&#125;"</span><br><span class="line">        &#125;,</span><br><span class="line">        "extract": [</span><br><span class="line">            &#123;<span class="attr">"token"</span>: <span class="string">"content.token"</span>&#125;</span><br><span class="line">        ],</span><br><span class="line">        "validate": [</span><br><span class="line">            &#123;"eq": ["status_code", 200]&#125;,</span><br><span class="line">            &#123;"eq": ["headers.Content-Type", "application/json"]&#125;,</span><br><span class="line">            &#123;<span class="attr">"eq"</span>: [<span class="string">"content.success"</span>, <span class="literal">true</span>]&#125;</span><br><span class="line">        ],</span><br><span class="line">        "setup_hooks": [],</span><br><span class="line">        "teardown_hooks": []</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Key    |required    |format    |descrption<br>—-|——–|——–|———–<br>name    |Yes    |string    |测试步骤的名称，在测试报告中将作为测试步骤的名称<br>request    |Yes    |dict    |HTTP 请求的详细内容；可用参数详见 python-requests 官方文档<br>variables    |No    |list of dict    |测试步骤中定义的变量，作用域为当前测试步骤<br>extract    |No    |list    |从当前 HTTP 请求的响应结果中提取参数，并保存到参数变量中（例如token），后续测试用例可通过$token的形式进行引用<br>validate    |No    |list    |测试用例中定义的结果校验项，作用域为当前测试用例，用于实现对当前测试用例运行结果的校验<br>setup_hooks    |No    |list    |在 HTTP 请求发送前执行 hook 函数，主要用于准备工作<br>teardown_hooks    |No    |list    |在 HTTP 请求发送后执行 hook 函数，主要用户测试后的清理工作</p>
 </li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>required</th>
+<th>format</th>
+<th>descrption</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>Yes</td>
+<td>string</td>
+<td>测试步骤的名称，在测试报告中将作为测试步骤的名称</td>
+</tr>
+<tr>
+<td>request</td>
+<td>Yes</td>
+<td>dict</td>
+<td>HTTP 请求的详细内容；可用参数详见 python-requests 官方文档</td>
+</tr>
+<tr>
+<td>variables</td>
+<td>No</td>
+<td>list of dict</td>
+<td>测试步骤中定义的变量，作用域为当前测试步骤</td>
+</tr>
+<tr>
+<td>extract</td>
+<td>No</td>
+<td>list</td>
+<td>从当前 HTTP 请求的响应结果中提取参数，并保存到参数变量中（例如token），后续测试用例可通过$token的形式进行引用</td>
+</tr>
+<tr>
+<td>validate</td>
+<td>No</td>
+<td>list</td>
+<td>测试用例中定义的结果校验项，作用域为当前测试用例，用于实现对当前测试用例运行结果的校验</td>
+</tr>
+<tr>
+<td>setup_hooks</td>
+<td>No</td>
+<td>list</td>
+<td>在 HTTP 请求发送前执行 hook 函数，主要用于准备工作</td>
+</tr>
+<tr>
+<td>teardown_hooks</td>
+<td>No</td>
+<td>list</td>
+<td>在 HTTP 请求发送后执行 hook 函数，主要用户测试后的清理工作</td>
+</tr>
+</tbody>
+</table>
 <ul>
 <li><p>6.创建测试用例文件</p>
 <p><img src="/image/接口工具HttpRunner_003.png" alt=""></p>
 </li>
 </ul>
 <ul>
-<li><ol start="7">
-<li>运行<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hrun test_demo.yaml</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
+<li><p>7.运行</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hrun test_demo.yaml</span><br></pre></td></tr></table></figure>
 <p><img src="/image/接口工具HttpRunner_004.png" alt=""></p>
 </li>
 <li><p>8.报告</p>
@@ -607,11 +711,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">监控</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -623,15 +727,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">监控</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">接口</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">环境部署</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
