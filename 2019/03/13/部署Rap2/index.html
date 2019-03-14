@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://lightalight.github.io/image/部署Rap2_012.png">
 <meta property="og:image" content="https://lightalight.github.io/image/部署Rap2_013.png">
 <meta property="og:image" content="https://lightalight.github.io/image/部署Rap2_014.png">
-<meta property="og:updated_time" content="2019-03-14T02:31:19.520Z">
+<meta property="og:updated_time" content="2019-03-14T02:44:25.993Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="部署Rap2">
 <meta name="twitter:description" content="Rap2是一个可视化接口管理工具,通过分析接口结构，动态生成模拟数据，校验真实接口正确性.本文章介绍如何在Centos7.5下面使用dokcer部署Rap2。">
@@ -192,7 +192,7 @@
     <div id="toc-article" class="toc-article">
         <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
       <strong class="toc-title">文章目录</strong>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#直接使用"><span class="toc-number">1.1.</span> <span class="toc-text">直接使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-number">1.2.</span> <span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#前置"><span class="toc-number">1.2.1.</span> <span class="toc-text">前置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#后端部署"><span class="toc-number">1.2.2.</span> <span class="toc-text">后端部署</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#前端部署"><span class="toc-number">1.2.3.</span> <span class="toc-text">前端部署</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本使用"><span class="toc-number">1.3.</span> <span class="toc-text">基本使用</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#直接使用"><span class="toc-number">1.1.</span> <span class="toc-text">直接使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-number">1.2.</span> <span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#前置"><span class="toc-number">1.2.1.</span> <span class="toc-text">前置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#后端部署"><span class="toc-number">1.2.2.</span> <span class="toc-text">后端部署</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#前端部署"><span class="toc-number">1.2.3.</span> <span class="toc-text">前端部署</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本操作"><span class="toc-number">1.3.</span> <span class="toc-text">基本操作</span></a></li></ol></li></ol>
           </div>
     <script type="text/javascript">
       function showToc(){
@@ -266,7 +266,7 @@
 </li>
 </ul>
 <p><img src="/image/部署Rap2_006.png" alt=""></p>
-<h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><ul>
+<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><ul>
 <li><p>1.注册帐号<br>  <img src="/image/部署Rap2_007.png" alt=""></p>
 </li>
 <li><p>2.注册成功后，进去创建一个项目仓库<br>  <img src="/image/部署Rap2_008.png" alt=""><br>  <img src="/image/部署Rap2_009.png" alt=""></p>
@@ -391,7 +391,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#直接使用"><span class="toc-number">1.1.</span> <span class="toc-text">直接使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-number">1.2.</span> <span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#前置"><span class="toc-number">1.2.1.</span> <span class="toc-text">前置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#后端部署"><span class="toc-number">1.2.2.</span> <span class="toc-text">后端部署</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#前端部署"><span class="toc-number">1.2.3.</span> <span class="toc-text">前端部署</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本使用"><span class="toc-number">1.3.</span> <span class="toc-text">基本使用</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#直接使用"><span class="toc-number">1.1.</span> <span class="toc-text">直接使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-number">1.2.</span> <span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#前置"><span class="toc-number">1.2.1.</span> <span class="toc-text">前置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#后端部署"><span class="toc-number">1.2.2.</span> <span class="toc-text">后端部署</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#前端部署"><span class="toc-number">1.2.3.</span> <span class="toc-text">前端部署</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本操作"><span class="toc-number">1.3.</span> <span class="toc-text">基本操作</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -529,11 +529,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -549,19 +557,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">接口</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
+                <a href="javascript:void(0)" class="js-tag color3">接口</a>
               </li>
              
               <li class="article-tag-list-item">
