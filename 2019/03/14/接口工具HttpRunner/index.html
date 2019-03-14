@@ -25,7 +25,7 @@
 <meta property="og:image" content="https://lightalight.github.io/image/接口工具HttpRunner_007.png">
 <meta property="og:image" content="https://lightalight.github.io/image/接口工具HttpRunner_008.png">
 <meta property="og:image" content="https://lightalight.github.io/image/接口工具HttpRunner_009.png">
-<meta property="og:updated_time" content="2019-03-14T13:56:03.837Z">
+<meta property="og:updated_time" content="2019-03-14T14:13:40.581Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="接口工具HttpRunner">
 <meta name="twitter:description" content="HttpRunner 是一款面向 HTTP(S) 协议的通用测试框架，只需编写维护一份 YAML/JSON 脚本，即可实现自动化测试、性能测试、线上监控、持续集成等多种测试需求。本文章介绍在Windows7如何安装和使用HttpRunner。">
@@ -187,7 +187,7 @@
     <div id="toc-article" class="toc-article">
         <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
       <strong class="toc-title">文章目录</strong>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-number">1.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本使用"><span class="toc-number">1.2.</span> <span class="toc-text">基本使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HttpRunnerManager"><span class="toc-number">1.3.</span> <span class="toc-text">HttpRunnerManager</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-number">1.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本使用"><span class="toc-number">1.2.</span> <span class="toc-text">基本使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HttpRunnerManager"><span class="toc-number">1.3.</span> <span class="toc-text">HttpRunnerManager</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#性能测试"><span class="toc-number">1.4.</span> <span class="toc-text">性能测试</span></a></li></ol></li></ol>
           </div>
     <script type="text/javascript">
       function showToc(){
@@ -330,13 +330,15 @@
 </li>
 <li><p>8.访问</p>
 <ul>
-<li><p>注册用户:浏览器输入<a href="http://127.0.0.1:8000/api/register/,平台的使用可以参考[新手入门指导](https://github.com/HttpRunner/HttpRunnerManager#%E6%96%B0%E6%89%8B%E5%85%A5%E9%97%A8%E6%89%8B%E5%86%8C)" target="_blank" rel="noopener">http://127.0.0.1:8000/api/register/,平台的使用可以参考[新手入门指导](https://github.com/HttpRunner/HttpRunnerManager#%E6%96%B0%E6%89%8B%E5%85%A5%E9%97%A8%E6%89%8B%E5%86%8C)</a><br><img src="/image/接口工具HttpRunner_006.png" alt=""><br><img src="/image/接口工具HttpRunner_007.png" alt=""><br><img src="/image/接口工具HttpRunner_008.png" alt=""></p>
-</li>
-<li><p>浏览器输入:<a href="http://127.0.0.1:8000/admin/" target="_blank" rel="noopener">http://127.0.0.1:8000/admin/</a> 输入之前创建的用户名、密码，登录后台运维管理系统，可后台管理数据<br><img src="/image/接口工具HttpRunner_009.png" alt=""></p>
-</li>
+<li>注册用户:浏览器输入<a href="http://127.0.0.1:8000/api/register/,平台的使用可以参考[新手入门指导](https://github.com/HttpRunner/HttpRunnerManager#%E6%96%B0%E6%89%8B%E5%85%A5%E9%97%A8%E6%89%8B%E5%86%8C)" target="_blank" rel="noopener">http://127.0.0.1:8000/api/register/,平台的使用可以参考[新手入门指导](https://github.com/HttpRunner/HttpRunnerManager#%E6%96%B0%E6%89%8B%E5%85%A5%E9%97%A8%E6%89%8B%E5%86%8C)</a></li>
+</ul>
+<p><img src="/image/接口工具HttpRunner_006.png" alt=""><br><img src="/image/接口工具HttpRunner_007.png" alt=""><br><img src="/image/接口工具HttpRunner_008.png" alt=""></p>
+<ul>
+<li>浏览器输入:<a href="http://127.0.0.1:8000/admin/" target="_blank" rel="noopener">http://127.0.0.1:8000/admin/</a> 输入之前创建的用户名、密码，登录后台运维管理系统，可后台管理数据<br><img src="/image/接口工具HttpRunner_009.png" alt=""></li>
 </ul>
 </li>
 </ul>
+<h3 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h3><p>httprunner可以复用python的开源测试框架locust,使用locust对yml用例中的接口进行压测</p>
 <p>More info: <a href="https://cn.httprunner.org/" target="_blank" rel="noopener">中文文档</a></p>
 
       
@@ -450,7 +452,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-number">1.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本使用"><span class="toc-number">1.2.</span> <span class="toc-text">基本使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HttpRunnerManager"><span class="toc-number">1.3.</span> <span class="toc-text">HttpRunnerManager</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-number">1.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本使用"><span class="toc-number">1.2.</span> <span class="toc-text">基本使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HttpRunnerManager"><span class="toc-number">1.3.</span> <span class="toc-text">HttpRunnerManager</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#性能测试"><span class="toc-number">1.4.</span> <span class="toc-text">性能测试</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -600,11 +602,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">监控</a>
+                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
+                <a href="javascript:void(0)" class="js-tag color3">监控</a>
               </li>
              
               <li class="article-tag-list-item">
