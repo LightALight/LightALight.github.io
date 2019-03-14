@@ -6,15 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lightalight.github.io">
-  <title>部署Rap2 | Keep It Simple Do It Well</title>
+  <title>部署Prometheus | Keep It Simple Do It Well</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="RAP通过GUI工具帮助WEB工程师更高效的管理接口文档，同时通过分析接口结构自动生成Mock数据、校验真实接口的正确性，使接口文档成为开发流程中的强依赖。有了结构化的API数据，RAP可以做的更多，而我们可以避免更多重复劳动。">
+  <meta name="description" content="Prometheus是一个开源的服务监控系统，它通过HTTP协议从远程的机器收集数据并存储在本地的时序数据库上。本文章介绍如何在Centos7.5下面部署一套监控系统（Prometheus+Node_Exporter+Grafana）。">
 <meta name="keywords" content="环境部署,接口">
 <meta property="og:type" content="article">
-<meta property="og:title" content="部署Rap2">
-<meta property="og:url" content="https://lightalight.github.io/2019/03/13/部署Prometheus/index.html">
+<meta property="og:title" content="部署Prometheus">
+<meta property="og:url" content="https://lightalight.github.io/2019/02/11/部署Prometheus/index.html">
 <meta property="og:site_name" content="Keep It Simple Do It Well">
-<meta property="og:description" content="RAP通过GUI工具帮助WEB工程师更高效的管理接口文档，同时通过分析接口结构自动生成Mock数据、校验真实接口的正确性，使接口文档成为开发流程中的强依赖。有了结构化的API数据，RAP可以做的更多，而我们可以避免更多重复劳动。">
+<meta property="og:description" content="Prometheus是一个开源的服务监控系统，它通过HTTP协议从远程的机器收集数据并存储在本地的时序数据库上。本文章介绍如何在Centos7.5下面部署一套监控系统（Prometheus+Node_Exporter+Grafana）。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://lightalight.github.io/image/部署Prometheus_001.png">
 <meta property="og:image" content="https://lightalight.github.io/image/部署Prometheus_002.png">
@@ -33,10 +33,10 @@
 <meta property="og:image" content="https://lightalight.github.io/image/部署Prometheus_015.png">
 <meta property="og:image" content="https://lightalight.github.io/image/部署Prometheus_016.png">
 <meta property="og:image" content="https://lightalight.github.io/image/部署Prometheus_017.png">
-<meta property="og:updated_time" content="2019-03-13T14:32:49.576Z">
+<meta property="og:updated_time" content="2019-03-14T02:40:51.047Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="部署Rap2">
-<meta name="twitter:description" content="RAP通过GUI工具帮助WEB工程师更高效的管理接口文档，同时通过分析接口结构自动生成Mock数据、校验真实接口的正确性，使接口文档成为开发流程中的强依赖。有了结构化的API数据，RAP可以做的更多，而我们可以避免更多重复劳动。">
+<meta name="twitter:title" content="部署Prometheus">
+<meta name="twitter:description" content="Prometheus是一个开源的服务监控系统，它通过HTTP协议从远程的机器收集数据并存储在本地的时序数据库上。本文章介绍如何在Centos7.5下面部署一套监控系统（Prometheus+Node_Exporter+Grafana）。">
 <meta name="twitter:image" content="https://lightalight.github.io/image/部署Prometheus_001.png">
   
     <link rel="alternative" href="/atom.xml" title="Keep It Simple Do It Well" type="application/atom+xml">
@@ -170,13 +170,13 @@
         
   
     <h1 class="article-title" itemprop="name">
-      部署Rap2
+      部署Prometheus
     </h1>
   
 
         
-        <a href="/2019/03/13/部署Prometheus/" class="archive-article-date">
-  	<time datetime="2019-03-13T14:23:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-13</time>
+        <a href="/2019/02/11/部署Prometheus/" class="archive-article-date">
+  	<time datetime="2019-02-11T13:23:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-11</time>
 </a>
         
         
@@ -215,7 +215,7 @@
   <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>RAP通过GUI工具帮助WEB工程师更高效的管理接口文档，同时通过分析接口结构自动生成Mock数据、校验真实接口的正确性，使接口文档成为开发流程中的强依赖。有了结构化的API数据，RAP可以做的更多，而我们可以避免更多重复劳动。<br><a id="more"></a></p>
+        <p>Prometheus是一个开源的服务监控系统，它通过HTTP协议从远程的机器收集数据并存储在本地的时序数据库上。本文章介绍如何在Centos7.5下面部署一套监控系统（Prometheus+Node_Exporter+Grafana）。<br><a id="more"></a></p>
 <h2 id="Quick-Guide"><a href="#Quick-Guide" class="headerlink" title="Quick Guide"></a>Quick Guide</h2><h3 id="安装Prometheus"><a href="#安装Prometheus" class="headerlink" title="安装Prometheus"></a>安装Prometheus</h3><p><img src="/image/部署Prometheus_001.png" alt=""></p>
 <ul>
 <li><p>1.下载安装</p>
@@ -407,7 +407,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://lightalight.github.io/2019/03/13/部署Prometheus/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://lightalight.github.io/2019/02/11/部署Prometheus/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -421,9 +421,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2019/03/13/部署Rap2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          部署Rap2
+        
+      </div>
+    </a>
   
-    <a href="/2019/03/13/部署Rap2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">部署Rap2</div>
+  
+    <a href="/2019/01/11/性能工具ab/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">性能工具ab</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -485,7 +494,7 @@ if(true){
   	repo: 'gitment',
   	owner: 'lightalight',
   	admin: ['lightalight'],
-  	id: 'Wed Mar 13 2019 22:23:32 GMT+0800',
+  	id: 'Mon Feb 11 2019 21:23:32 GMT+0800',
   	distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container') 
@@ -588,35 +597,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">性能</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">环境部署</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -624,7 +609,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">性能</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">环境部署</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">接口</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
               </li>
             
             <div class="clearfix"></div>
