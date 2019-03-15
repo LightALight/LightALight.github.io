@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://lightalight.github.io/image/接口工具HttpRunner_010.png">
 <meta property="og:image" content="https://lightalight.github.io/image/接口工具HttpRunner_011.png">
 <meta property="og:image" content="https://lightalight.github.io/image/接口工具HttpRunner_012.png">
-<meta property="og:updated_time" content="2019-03-14T14:54:35.421Z">
+<meta property="og:updated_time" content="2019-03-14T23:55:57.995Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="接口工具HttpRunner">
 <meta name="twitter:description" content="HttpRunner 是一款面向 HTTP(S) 协议的通用测试框架，只需编写维护一份 YAML/JSON 脚本，即可实现自动化测试、性能测试、线上监控、持续集成等多种测试需求。本文章介绍在Windows7如何安装和使用HttpRunner。">
@@ -222,7 +222,7 @@
 </ul>
 <h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><ul>
 <li><p>1.新建测试项目</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hrun --startproject NewApiTest</span><br></pre></td></tr></table></figure>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hrun --startproject NewApiTest</span><br></pre></td></tr></table></figure>
 <p><img src="/image/接口工具HttpRunner_002.png" alt=""></p>
 </li>
 </ul>
@@ -418,7 +418,7 @@
 <figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/HttpRunner/HttpRunnerManager.git</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>3.修改配置</p>
-<p>打开HttpRunnerManager/HttpRunnerManager/settings.py</p>
+<p>打开HttpRunnerManager/HttpRunnerManager/settings.py配置对应mysql和rabbitmq信息</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改DATABASES字典为创建的mysql数据库信息和邮件发送账号</span></span><br><span class="line"><span class="keyword">if</span> DEBUG:</span><br><span class="line">    DATABASES = &#123;</span><br><span class="line">        <span class="string">'default'</span>: &#123;</span><br><span class="line">            <span class="string">'ENGINE'</span>: <span class="string">'django.db.backends.mysql'</span>,</span><br><span class="line">            <span class="string">'NAME'</span>: <span class="string">'HttpRunnerManager'</span>,  <span class="comment"># 新建数据库名</span></span><br><span class="line">            <span class="string">'USER'</span>: <span class="string">'root'</span>,  <span class="comment"># 数据库登录名</span></span><br><span class="line">            <span class="string">'PASSWORD'</span>: <span class="string">''</span>,  <span class="comment"># 数据库登录密码</span></span><br><span class="line">            <span class="string">'HOST'</span>: <span class="string">'127.0.0.1'</span>,  <span class="comment"># 数据库所在服务器ip地址</span></span><br><span class="line">            <span class="string">'PORT'</span>: <span class="string">'3306'</span>,  <span class="comment"># 监听端口 默认3306即可</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    STATICFILES_DIRS = (</span><br><span class="line">        os.path.join(BASE_DIR, <span class="string">'static'</span>),  <span class="comment"># 静态文件额外目录</span></span><br><span class="line">    )</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    DATABASES = &#123;</span><br><span class="line">        <span class="string">'default'</span>: &#123;</span><br><span class="line">            <span class="string">'ENGINE'</span>: <span class="string">'django.db.backends.mysql'</span>,</span><br><span class="line">            <span class="string">'NAME'</span>: <span class="string">'HttpRunnerManager'</span>,  <span class="comment"># 新建数据库名</span></span><br><span class="line">            <span class="string">'USER'</span>: <span class="string">'root'</span>,  <span class="comment"># 数据库登录名</span></span><br><span class="line">            <span class="string">'PASSWORD'</span>: <span class="string">''</span>,  <span class="comment"># 数据库登录密码</span></span><br><span class="line">            <span class="string">'HOST'</span>: <span class="string">'127.0.0.1'</span>,  <span class="comment"># 数据库所在服务器ip地址</span></span><br><span class="line">            <span class="string">'PORT'</span>: <span class="string">'3306'</span>,  <span class="comment"># 监听端口 默认3306即可</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    STATIC_ROOT = os.path.join(BASE_DIR, <span class="string">'static'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改worker配置为搭建rabbitmq的信息</span></span><br><span class="line">djcelery.setup_loader()</span><br><span class="line">CELERY_ENABLE_UTC = <span class="keyword">True</span></span><br><span class="line">CELERY_TIMEZONE = <span class="string">'Asia/Shanghai'</span></span><br><span class="line">BROKER_URL = <span class="string">'amqp://guest:guest@127.0.0.1:5672//'</span>  <span class="comment"># 127.0.0.1即为rabbitmq-server所在服务器ip地址</span></span><br><span class="line">CELERYBEAT_SCHEDULER = <span class="string">'djcelery.schedulers.DatabaseScheduler'</span></span><br><span class="line">CELERY_RESULT_BACKEND = <span class="string">'djcelery.backends.database:DatabaseBackend'</span></span><br><span class="line">CELERY_ACCEPT_CONTENT = [<span class="string">'application/json'</span>]</span><br><span class="line">CELERY_TASK_SERIALIZER = <span class="string">'json'</span></span><br><span class="line">CELERY_RESULT_SERIALIZER = <span class="string">'json'</span></span><br><span class="line"></span><br><span class="line">CELERY_TASK_RESULT_EXPIRES = <span class="number">7200</span>  <span class="comment"># celery任务执行结果的超时时间，</span></span><br><span class="line">CELERYD_CONCURRENCY = <span class="number">10</span>  <span class="comment"># celery worker的并发数 也是命令行-c指定的数目 根据服务器配置实际更改 默认10</span></span><br><span class="line">CELERYD_MAX_TASKS_PER_CHILD = <span class="number">100</span>  <span class="comment"># 每个worker执行了多少任务就会死掉，我建议数量可以大一些，默认100</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>4.安装依赖</p>
@@ -446,7 +446,7 @@
 </li>
 </ul>
 <h3 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h3><ul>
-<li><p>httprunner可以复用python的开源测试框架locust,使用locust对yaml/json用例文件中的接口进行压测</p>
+<li><p>httprunner可以复用python的开源测试框架locust,locust的安装与使用可以看<a href="性能工具Locust.md">这里</a>，使用locust对yaml/json用例文件中的接口进行压测</p>
 <figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">locusts -f D://testcases//test_demo.yaml</span><br></pre></td></tr></table></figure>
 <p><img src="/image/接口工具HttpRunner_010.png" alt=""></p>
 </li>
@@ -539,6 +539,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/03/15/性能工具Locust/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          性能工具Locust
+        
+      </div>
+    </a>
   
   
     <a href="/2019/03/13/部署Rap2/" id="article-nav-older" class="article-nav-link-wrap">
@@ -711,27 +720,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">性能</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">监控</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">环境部署</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -739,11 +732,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">环境部署</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">监控</a>
               </li>
             
             <div class="clearfix"></div>
