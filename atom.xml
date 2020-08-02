@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lightalight.github.io/"/>
-  <updated>2020-08-02T12:37:04.113Z</updated>
+  <updated>2020-08-02T12:40:00.352Z</updated>
   <id>https://lightalight.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://lightalight.github.io/2019/10/15/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%9504/"/>
     <id>https://lightalight.github.io/2019/10/15/自动化测试04/</id>
     <published>2019-10-15T11:23:32.000Z</published>
-    <updated>2020-08-02T12:37:04.113Z</updated>
+    <updated>2020-08-02T12:40:00.352Z</updated>
     
-    <content type="html"><![CDATA[<p>本文章介绍自动化测试方案的扩展和展望。</p><a id="more"></a><h2 id="Quick-Guide"><a href="#Quick-Guide" class="headerlink" title="Quick Guide"></a>Quick Guide</h2><h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><ul><li>需求管理<ul><li>创建和跟踪需求</li></ul></li><li>文档管理<ul><li>用例文档管理</li><li>业务文档</li><li>公共资料</li></ul></li><li>问题单管理</li><li>自动化管理和运行<ul><li>创建用例<ul><li>支持多种来源导入用例模板，然后根据用例版面自动填充用例</li><li>复制已有用例进行修改</li><li>可以复用已有用例</li></ul></li><li>运行用例<ul><li>支持主流框架运行</li><li>支持页面发起测试并展示结果，支持用例调试与问题定位</li><li>支持任务包含用例集合，通过任务定时调度，生成报告发送责任人</li><li>用例支持环境变量切换运行不同环境 </li><li>执行结果入库，进行同接口纵向对比统计和分析</li></ul></li></ul></li><li>自定义API<ul><li>业务API支持在线调用</li><li>常用工具计算API  </li></ul></li><li>数据统计<ul><li>需求量和消耗时间</li><li>问题数和线上问题</li></ul></li></ul><h3 id="功能模块的关联关系"><a href="#功能模块的关联关系" class="headerlink" title="功能模块的关联关系"></a>功能模块的关联关系</h3><ul><li>项目<ul><li>功能特性<ul><li>需求<ul><li>关联问题单</li><li>用例文档</li><li>自动化用例</li></ul></li></ul></li><li>业务文档</li></ul></li><li>公共文档<ul><li>环境信息</li><li>常用工具和流程 </li></ul></li></ul><h3 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h3><p><img src="自动化测试04_001.png" alt=""></p><h3 id="发展趋势"><a href="#发展趋势" class="headerlink" title="发展趋势"></a>发展趋势</h3><ul><li>通过接口或者业务定义自动生成用例</li><li>支持专项测试</li><li>通过项目的数据分析,判断项目风险程度</li></ul>]]></content>
+    <content type="html"><![CDATA[<p>本文章介绍自动化测试方案的扩展和展望。</p><a id="more"></a><h2 id="Quick-Guide"><a href="#Quick-Guide" class="headerlink" title="Quick Guide"></a>Quick Guide</h2><h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><ul><li>需求管理<ul><li>创建和跟踪需求</li></ul></li><li>文档管理<ul><li>用例文档管理</li><li>业务文档</li><li>公共资料</li></ul></li><li>问题单管理</li><li>自动化管理和运行<ul><li>创建用例<ul><li>支持多种来源导入用例模板，然后根据用例版面自动填充用例</li><li>复制已有用例进行修改</li><li>可以复用已有用例</li></ul></li><li>运行用例<ul><li>支持主流框架运行</li><li>支持页面发起测试并展示结果，支持用例调试与问题定位</li><li>支持任务包含用例集合，通过任务定时调度，生成报告发送责任人</li><li>用例支持环境变量切换运行不同环境 </li><li>执行结果入库，进行同接口纵向对比统计和分析</li></ul></li></ul></li><li>自定义API<ul><li>业务API支持在线调用</li><li>常用工具计算API  </li></ul></li><li>数据统计<ul><li>需求量和消耗时间</li><li>问题数和线上问题</li></ul></li></ul><h3 id="功能模块的关联关系"><a href="#功能模块的关联关系" class="headerlink" title="功能模块的关联关系"></a>功能模块的关联关系</h3><ul><li>项目<ul><li>功能特性<ul><li>需求<ul><li>关联问题单</li><li>用例文档</li><li>自动化用例</li></ul></li></ul></li><li>业务文档</li></ul></li><li>公共文档<ul><li>环境信息</li><li>常用工具和流程 </li></ul></li></ul><h3 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h3><p><img src="/image/自动化测试04_001.png" alt=""></p><h3 id="发展趋势"><a href="#发展趋势" class="headerlink" title="发展趋势"></a>发展趋势</h3><ul><li>通过接口或者业务定义自动生成用例</li><li>支持专项测试</li><li>通过项目的数据分析,判断项目风险程度</li></ul>]]></content>
     
     <summary type="html">
     
