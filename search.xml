@@ -253,9 +253,9 @@
       
         <tags>
             
-            <tag> k8s </tag>
-            
             <tag> docker </tag>
+            
+            <tag> k8s </tag>
             
         </tags>
       
