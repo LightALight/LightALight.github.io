@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lightalight.github.io">
-  <title>Tag: 性能 | Keep It Simple Do It Well</title>
+  <title>大数据（五） | Keep It Simple Do It Well</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Keep It Simple Do It Well">
-<meta property="og:url" content="https://lightalight.github.io/tags/性能/index.html">
+  <meta name="description" content="本文章主要介绍大数据过程以及业务应用。">
+<meta name="keywords" content="大数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大数据（五）">
+<meta property="og:url" content="https://lightalight.github.io/2020/03/15/大数据05/index.html">
 <meta property="og:site_name" content="Keep It Simple Do It Well">
+<meta property="og:description" content="本文章主要介绍大数据过程以及业务应用。">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://lightalight.github.io/image/大数据05_001.png">
+<meta property="og:updated_time" content="2020-08-09T15:25:30.882Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Keep It Simple Do It Well">
+<meta name="twitter:title" content="大数据（五）">
+<meta name="twitter:description" content="本文章主要介绍大数据过程以及业务应用。">
+<meta name="twitter:image" content="https://lightalight.github.io/image/大数据05_001.png">
   
     <link rel="alternative" href="/atom.xml" title="Keep It Simple Do It Well" type="application/atom+xml">
   
@@ -140,260 +147,284 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-大数据05" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      大数据（五）
+    </h1>
+  
+
+        
+        <a href="/2020/03/15/大数据05/" class="archive-article-date">
+  	<time datetime="2020-03-15T11:23:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-15</time>
+</a>
+        
+        
+          <span class="archive-article-date">
+              阅读量 <span id="busuanzi_value_page_pv"></span>
+          </span>
+        
+      </header>
     
+  <!-- 目录内容 -->
+  
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+            <span class="btn-bg"></span>
+            <span class="btn-text">文章导航</span>
+            </p>
+    <div id="toc-article" class="toc-article">
+        <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+      <strong class="toc-title">文章目录</strong>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#大数据流程"><span class="toc-number">1.1.</span> <span class="toc-text">大数据流程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数据采集"><span class="toc-number">1.1.1.</span> <span class="toc-text">数据采集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据提取"><span class="toc-number">1.1.2.</span> <span class="toc-text">数据提取</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#数据清洗"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">数据清洗</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#企业数仓"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">企业数仓</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据应用"><span class="toc-number">1.1.3.</span> <span class="toc-text">数据应用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#大数据数据流"><span class="toc-number">1.1.4.</span> <span class="toc-text">大数据数据流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#大数据业务"><span class="toc-number">1.1.5.</span> <span class="toc-text">大数据业务</span></a></li></ol></li></ol></li></ol>
+          </div>
+    <script type="text/javascript">
+      function showToc(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:block");
+        show_toc_btn.setAttribute("style","display:none");
+        };
+      function showBtn(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:none");
+        show_toc_btn.setAttribute("style","display:block");
+        };
+    </script>
+      
+  <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文章主要介绍大数据过程以及业务应用。</p>
+<a id="more"></a>
+<h2 id="Quick-Guide"><a href="#Quick-Guide" class="headerlink" title="Quick Guide"></a>Quick Guide</h2><h3 id="大数据流程"><a href="#大数据流程" class="headerlink" title="大数据流程"></a>大数据流程</h3><ul>
+<li><a href="#数据采集">数据采集</a></li>
+<li><a href="#数据提取">数据提取</a></li>
+<li><a href="#数据应用">数据应用</a></li>
+</ul>
+<h4 id="数据采集"><a href="#数据采集" class="headerlink" title="数据采集"></a>数据采集</h4><p>数据采集就是使用不同的方式去各种数据源采集数据</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">数据来源</th>
+<th style="text-align:center">外部</th>
+<th style="text-align:center">内部</th>
+<th style="text-align:center">内部</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">数据类型</td>
+<td style="text-align:center">公开的信息</td>
+<td style="text-align:center">用户的行为信息</td>
+<td style="text-align:center">用户信息</td>
+</tr>
+<tr>
+<td style="text-align:center">获取方式</td>
+<td style="text-align:center">爬虫</td>
+<td style="text-align:center">埋点</td>
+<td style="text-align:center">业务数据库</td>
+</tr>
+</tbody>
+</table>
+<h4 id="数据提取"><a href="#数据提取" class="headerlink" title="数据提取"></a>数据提取</h4><h5 id="数据清洗"><a href="#数据清洗" class="headerlink" title="数据清洗"></a>数据清洗</h5><p>数据清洗：数据由于来自各个源，为了使用方便和隐私考虑，需要清洗</p>
+<ul>
+<li>判断是否加密信息<ul>
+<li>加密信息解密，获取明文数据</li>
+<li>脱敏数据，跳过清洗</li>
+</ul>
+</li>
+<li>数据规则：例如去掉空格和一些特殊字符，让数据变得有效/和统一规范</li>
+<li>数据统一加密，生成衍生加密表</li>
+</ul>
+<h5 id="企业数仓"><a href="#企业数仓" class="headerlink" title="企业数仓"></a>企业数仓</h5><p>清洗的数据最后统一存储到企业数仓,在企业数仓通过数据整理分类和分析,提取有效的应用信息</p>
+<ul>
+<li>数据分类,形成基础信息表</li>
+<li>通过基础信息表,形成综合信息表(宽表 维度表)</li>
+<li>通过业务综合表进行一定数据计算形成应用标签存储<strong>数据集市</strong></li>
+</ul>
+<h4 id="数据应用"><a href="#数据应用" class="headerlink" title="数据应用"></a>数据应用</h4><ul>
+<li>通过业务综合表进行一定数据计算形成应用标签存储<strong>数据集市</strong></li>
+<li>通过接口查询或者报表展示</li>
+</ul>
+<h4 id="大数据数据流"><a href="#大数据数据流" class="headerlink" title="大数据数据流"></a>大数据数据流</h4><p><img src="/image/大数据05_001.png" alt=""></p>
+<h4 id="大数据业务"><a href="#大数据业务" class="headerlink" title="大数据业务"></a>大数据业务</h4><ul>
+<li>精准营销:<ul>
+<li>从数据集市获取用户特征(行为/角色标签) </li>
+<li>组合不同的特征形成不一样受众群体</li>
+<li>针对不同的受众群体制定不同的策略去营销:,通过不同方式(短信/邮件/软件的消息和广告位)去推荐商品</li>
+</ul>
+</li>
+<li>风险控制<ul>
+<li>从数据获取用户的风险信息</li>
+<li>通过风控策略区分不同风险级别，采取不同风险控制</li>
+</ul>
+</li>
+<li>数据报表<ul>
+<li>从数据集市获取产品和公司的运行信息</li>
+<li>通过不同图表去展示，反应产品和公司的状况</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/15/性能测试03/" class="archive-article-date">
-  	<time datetime="2019-06-15T11:23:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/15/性能测试03/">性能测试（三）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">性能</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">大数据</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/15/性能测试02/" class="archive-article-date">
-  	<time datetime="2019-05-15T11:23:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/15/性能测试02/">性能测试（二）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">性能</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/15/性能测试01/" class="archive-article-date">
-  	<time datetime="2019-04-15T11:23:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/15/性能测试01/">性能测试（一）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">性能</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/15/性能工具Locust/" class="archive-article-date">
-  	<time datetime="2019-03-15T12:11:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/15/性能工具Locust/">性能工具Locust</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">性能</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/11/性能工具ab/" class="archive-article-date">
-  	<time datetime="2019-01-11T13:25:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/11/性能工具ab/">性能工具ab</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">性能</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
       
-        </div></section>
+
       
+
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/21/性能工具wrk/" class="archive-article-date">
-  	<time datetime="2018-12-21T11:35:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/21/性能工具wrk/">性能工具wrk</a>
-    </h1>
-  
+      </div>
+    </span>
+  </div>
+</div>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">性能</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://lightalight.github.io/2020/03/15/大数据05/" alt="微信分享二维码">
+    </div>
+</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/02/15/大数据04/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">大数据（四）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#大数据流程"><span class="toc-number">1.1.</span> <span class="toc-text">大数据流程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数据采集"><span class="toc-number">1.1.1.</span> <span class="toc-text">数据采集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据提取"><span class="toc-number">1.1.2.</span> <span class="toc-text">数据提取</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#数据清洗"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">数据清洗</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#企业数仓"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">企业数仓</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据应用"><span class="toc-number">1.1.3.</span> <span class="toc-text">数据应用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#大数据数据流"><span class="toc-number">1.1.4.</span> <span class="toc-text">大数据数据流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#大数据业务"><span class="toc-number">1.1.5.</span> <span class="toc-text">大数据业务</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
   
 
+  
+
+  
+
+  
+
+  
+
+  
+    <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: '3defdfe6cd1359252f32',
+  	clientSecret: 'e85ffee30787cd76a45267a10c3a354731a9fe92',
+  	repo: 'gitment',
+  	owner: 'lightalight',
+  	admin: ['lightalight'],
+  	id: 'Sun Mar 15 2020 19:23:32 GMT+0800',
+  	distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
     
+
 
 
           </div>
@@ -427,9 +458,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
