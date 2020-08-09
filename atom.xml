@@ -396,9 +396,9 @@
     </summary>
     
     
-      <category term="docker" scheme="https://lightalight.github.io/tags/docker/"/>
-    
       <category term="k8s" scheme="https://lightalight.github.io/tags/k8s/"/>
+    
+      <category term="docker" scheme="https://lightalight.github.io/tags/docker/"/>
     
   </entry>
   
