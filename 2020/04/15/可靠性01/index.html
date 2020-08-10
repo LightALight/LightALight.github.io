@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lightalight.github.io">
-  <title>Archives | Keep It Simple Do It Well</title>
+  <title>可靠性（一） | Keep It Simple Do It Well</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Keep It Simple Do It Well">
-<meta property="og:url" content="https://lightalight.github.io/archives/index.html">
+  <meta name="description" content="软件是一种逻辑实体，具有抽象性，没有明显的制造过程，虽然没有磨损、老化的问题，但为了适应硬件、环境以及需求的变化而进行修改，这些修改常常会引入错误，导致软件失效率升高，软件质量降低。因此大量的软件系统其可靠性得不到保证，几乎没有不存在错误的软件系统。本文章主要介绍如何进行软件的可靠性测试。">
+<meta name="keywords" content="可靠性">
+<meta property="og:type" content="article">
+<meta property="og:title" content="可靠性（一）">
+<meta property="og:url" content="https://lightalight.github.io/2020/04/15/可靠性01/index.html">
 <meta property="og:site_name" content="Keep It Simple Do It Well">
+<meta property="og:description" content="软件是一种逻辑实体，具有抽象性，没有明显的制造过程，虽然没有磨损、老化的问题，但为了适应硬件、环境以及需求的变化而进行修改，这些修改常常会引入错误，导致软件失效率升高，软件质量降低。因此大量的软件系统其可靠性得不到保证，几乎没有不存在错误的软件系统。本文章主要介绍如何进行软件的可靠性测试。">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-08-10T13:46:03.507Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Keep It Simple Do It Well">
+<meta name="twitter:title" content="可靠性（一）">
+<meta name="twitter:description" content="软件是一种逻辑实体，具有抽象性，没有明显的制造过程，虽然没有磨损、老化的问题，但为了适应硬件、环境以及需求的变化而进行修改，这些修改常常会引入错误，导致软件失效率升高，软件质量降低。因此大量的软件系统其可靠性得不到保证，几乎没有不存在错误的软件系统。本文章主要介绍如何进行软件的可靠性测试。">
   
     <link rel="alternative" href="/atom.xml" title="Keep It Simple Do It Well" type="application/atom+xml">
   
@@ -140,36 +145,113 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-可靠性01" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/15/可靠性01/" class="archive-article-date">
-  	<time datetime="2020-04-15T11:23:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-15</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/15/可靠性01/">可靠性（一）</a>
+    <h1 class="article-title" itemprop="name">
+      可靠性（一）
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/04/15/可靠性01/" class="archive-article-date">
+  	<time datetime="2020-04-15T11:23:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-15</time>
+</a>
+        
+        
+          <span class="archive-article-date">
+              阅读量 <span id="busuanzi_value_page_pv"></span>
+          </span>
+        
+      </header>
+    
+  <!-- 目录内容 -->
+  
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+            <span class="btn-bg"></span>
+            <span class="btn-text">文章导航</span>
+            </p>
+    <div id="toc-article" class="toc-article">
+        <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+      <strong class="toc-title">文章目录</strong>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义"><span class="toc-number">1.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试类型"><span class="toc-number">1.2.</span> <span class="toc-text">测试类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试环境"><span class="toc-number">1.3.</span> <span class="toc-text">测试环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试场景设计"><span class="toc-number">1.4.</span> <span class="toc-text">测试场景设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试步骤"><span class="toc-number">1.5.</span> <span class="toc-text">测试步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结果和分析"><span class="toc-number">1.6.</span> <span class="toc-text">结果和分析</span></a></li></ol></li></ol>
+          </div>
+    <script type="text/javascript">
+      function showToc(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:block");
+        show_toc_btn.setAttribute("style","display:none");
+        };
+      function showBtn(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:none");
+        show_toc_btn.setAttribute("style","display:block");
+        };
+    </script>
+      
+  <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>软件是一种逻辑实体，具有抽象性，没有明显的制造过程，虽然没有磨损、老化的问题，但为了适应硬件、环境以及需求的变化而进行修改，这些修改常常会引入错误，导致软件失效率升高，软件质量降低。因此大量的软件系统其可靠性得不到保证，几乎没有不存在错误的软件系统。<br>本文章主要介绍如何进行软件的可靠性测试。</p>
+<a id="more"></a>
+<h2 id="Quick-Guide"><a href="#Quick-Guide" class="headerlink" title="Quick Guide"></a>Quick Guide</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>软件的可靠性：在各种异常情况下，产品的容错性和恢复能力。</p>
+<h3 id="测试类型"><a href="#测试类型" class="headerlink" title="测试类型"></a>测试类型</h3><ul>
+<li>外界输入，引起内部故障<ul>
+<li>异常值输入：属于<strong>功能测试</strong>，一种使用系统不允许用户输入的数值（即异常值）作为测试输入的可靠性测试方法。</li>
+<li>稳定性和压力测试：属于<strong>性能测试</strong></li>
+</ul>
+</li>
+<li>环境因素<ul>
+<li>故障注入： 把系统放在有问题的环境中进行测试的一种可靠性测试法 </li>
+</ul>
+</li>
+</ul>
+<h3 id="测试环境"><a href="#测试环境" class="headerlink" title="测试环境"></a>测试环境</h3><ul>
+<li>组网方式跟生产一样：不同组件之间和同一组件内部</li>
+<li>各个组件不可缺少</li>
+</ul>
+<h3 id="测试场景设计"><a href="#测试场景设计" class="headerlink" title="测试场景设计"></a>测试场景设计</h3><ul>
+<li>从用户的业务环境中，筛选出哪些故障、错误或问题</li>
+<li>常用环境因素考虑<ul>
+<li>网络：弱网、断网</li>
+<li>硬件（硬盘）：硬盘占满、内存占满、机器重启</li>
+<li>软件：内存泄漏、内核故障、文件丢失</li>
+</ul>
+</li>
+<li>组网方式：<ul>
+<li>单点故障</li>
+<li>集群故障</li>
+</ul>
+</li>
+<li>影响级别<ul>
+<li>造成重大损失，</li>
+<li>造成较大损失</li>
+<li>造成较小损失</li>
+<li>不造成损失</li>
+</ul>
+</li>
+</ul>
+<h3 id="测试步骤"><a href="#测试步骤" class="headerlink" title="测试步骤"></a>测试步骤</h3><ol>
+<li>验证功能是否正常</li>
+<li>注入故障</li>
+<li>验证功能是否受到影响</li>
+<li>恢复故障</li>
+<li>验证功能是否恢复</li>
+</ol>
+<h3 id="结果和分析"><a href="#结果和分析" class="headerlink" title="结果和分析"></a>结果和分析</h3><p>通过测试结果进行分析，生成可靠性评估报告</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -181,375 +263,142 @@
 		</ul>
 	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/15/大数据05/" class="archive-article-date">
-  	<time datetime="2020-03-15T11:23:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/15/大数据05/">大数据（五）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">大数据</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/15/大数据04/" class="archive-article-date">
-  	<time datetime="2020-02-15T11:23:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/15/大数据04/">大数据（四）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">大数据</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/15/大数据03/" class="archive-article-date">
-  	<time datetime="2020-01-15T11:23:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/15/大数据03/">大数据（三）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">大数据</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
       
-        </div></section>
+
       
+
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/15/大数据02/" class="archive-article-date">
-  	<time datetime="2019-12-15T11:23:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/15/大数据02/">大数据（二）</a>
-    </h1>
-  
+      </div>
+    </span>
+  </div>
+</div>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">大数据</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://lightalight.github.io/2020/04/15/可靠性01/" alt="微信分享二维码">
+    </div>
+</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/15/大数据01/" class="archive-article-date">
-  	<time datetime="2019-11-15T11:23:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-15</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/15/大数据05/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">大数据（五）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/15/大数据01/">大数据（一）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">大数据</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义"><span class="toc-number">1.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试类型"><span class="toc-number">1.2.</span> <span class="toc-text">测试类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试环境"><span class="toc-number">1.3.</span> <span class="toc-text">测试环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试场景设计"><span class="toc-number">1.4.</span> <span class="toc-text">测试场景设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试步骤"><span class="toc-number">1.5.</span> <span class="toc-text">测试步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结果和分析"><span class="toc-number">1.6.</span> <span class="toc-text">结果和分析</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: '3defdfe6cd1359252f32',
+  	clientSecret: 'e85ffee30787cd76a45267a10c3a354731a9fe92',
+  	repo: 'gitment',
+  	owner: 'lightalight',
+  	admin: ['lightalight'],
+  	id: 'Wed Apr 15 2020 19:23:32 GMT+0800',
+  	distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/15/自动化测试04/" class="archive-article-date">
-  	<time datetime="2019-10-15T11:23:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/15/自动化测试04/">自动化测试（四）</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">自动化</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/15/自动化测试03/" class="archive-article-date">
-  	<time datetime="2019-09-15T11:23:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/15/自动化测试03/">自动化测试（三）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">自动化</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/15/自动化测试02/" class="archive-article-date">
-  	<time datetime="2019-08-15T11:23:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/15/自动化测试02/">自动化测试（二）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">自动化</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/15/自动化测试01/" class="archive-article-date">
-  	<time datetime="2019-07-15T11:23:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/15/自动化测试01/">自动化测试（一）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">自动化</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -583,8 +432,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
