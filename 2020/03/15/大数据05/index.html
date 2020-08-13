@@ -17,7 +17,7 @@
 <meta property="og:description" content="本文章主要介绍大数据过程以及业务应用。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://lightalight.github.io/image/大数据05_001.png">
-<meta property="og:updated_time" content="2020-08-09T15:33:43.260Z">
+<meta property="og:updated_time" content="2020-08-13T11:43:01.382Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大数据（五）">
 <meta name="twitter:description" content="本文章主要介绍大数据过程以及业务应用。">
@@ -179,7 +179,7 @@
     <div id="toc-article" class="toc-article">
         <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
       <strong class="toc-title">文章目录</strong>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#大数据流程"><span class="toc-number">1.1.</span> <span class="toc-text">大数据流程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数据采集"><span class="toc-number">1.1.1.</span> <span class="toc-text">数据采集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据提取"><span class="toc-number">1.1.2.</span> <span class="toc-text">数据提取</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#数据清洗"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">数据清洗</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#企业数仓"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">企业数仓</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据应用"><span class="toc-number">1.1.3.</span> <span class="toc-text">数据应用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#大数据数据流"><span class="toc-number">1.2.</span> <span class="toc-text">大数据数据流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#大数据业务"><span class="toc-number">1.3.</span> <span class="toc-text">大数据业务</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#大数据流程"><span class="toc-number">1.1.</span> <span class="toc-text">大数据流程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数据采集"><span class="toc-number">1.1.1.</span> <span class="toc-text">数据采集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据提取"><span class="toc-number">1.1.2.</span> <span class="toc-text">数据提取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据应用"><span class="toc-number">1.1.3.</span> <span class="toc-text">数据应用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#大数据数据流"><span class="toc-number">1.2.</span> <span class="toc-text">大数据数据流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#大数据业务"><span class="toc-number">1.3.</span> <span class="toc-text">大数据业务</span></a></li></ol></li></ol>
           </div>
     <script type="text/javascript">
       function showToc(){
@@ -231,7 +231,8 @@
 </tr>
 </tbody>
 </table>
-<h4 id="数据提取"><a href="#数据提取" class="headerlink" title="数据提取"></a>数据提取</h4><h5 id="数据清洗"><a href="#数据清洗" class="headerlink" title="数据清洗"></a>数据清洗</h5><p>数据清洗：数据由于来自各个源，为了使用方便和隐私考虑，需要清洗</p>
+<h4 id="数据提取"><a href="#数据提取" class="headerlink" title="数据提取"></a>数据提取</h4><ul>
+<li><p>数据清洗：数据由于来自各个源，为了使用方便和隐私考虑，需要清洗</p>
 <ul>
 <li>判断是否加密信息<ul>
 <li>加密信息解密，获取明文数据</li>
@@ -241,11 +242,14 @@
 <li>数据规则：例如去掉空格和一些特殊字符，让数据变得有效和统一规范</li>
 <li>数据统一加密，生成衍生加密表</li>
 </ul>
-<h5 id="企业数仓"><a href="#企业数仓" class="headerlink" title="企业数仓"></a>企业数仓</h5><p>清洗的数据最后统一存储到企业数仓,在企业数仓通过数据整理分类和分析,提取有效的应用信息</p>
+</li>
+<li><p>企业数仓：清洗的数据最后统一存储到企业数仓,在企业数仓通过数据整理分类和分析,提取有效的应用信息</p>
 <ul>
 <li>数据分类,形成基础信息表</li>
 <li>通过基础信息表,形成综合信息表(宽表 维度表)</li>
 <li>通过业务综合表进行一定数据计算形成应用标签存储<strong>数据集市</strong></li>
+</ul>
+</li>
 </ul>
 <h4 id="数据应用"><a href="#数据应用" class="headerlink" title="数据应用"></a>数据应用</h4><ul>
 <li>通过业务综合表进行一定数据计算（算法模型/决策）形成应用标签存储<strong>数据集市</strong></li>
@@ -353,11 +357,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/04/15/可靠性01/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/04/15/可靠性测试01/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          可靠性（一）
+          可靠性测试（一）
         
       </div>
     </a>
@@ -391,7 +395,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#大数据流程"><span class="toc-number">1.1.</span> <span class="toc-text">大数据流程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数据采集"><span class="toc-number">1.1.1.</span> <span class="toc-text">数据采集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据提取"><span class="toc-number">1.1.2.</span> <span class="toc-text">数据提取</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#数据清洗"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">数据清洗</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#企业数仓"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">企业数仓</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据应用"><span class="toc-number">1.1.3.</span> <span class="toc-text">数据应用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#大数据数据流"><span class="toc-number">1.2.</span> <span class="toc-text">大数据数据流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#大数据业务"><span class="toc-number">1.3.</span> <span class="toc-text">大数据业务</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#大数据流程"><span class="toc-number">1.1.</span> <span class="toc-text">大数据流程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数据采集"><span class="toc-number">1.1.1.</span> <span class="toc-text">数据采集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据提取"><span class="toc-number">1.1.2.</span> <span class="toc-text">数据提取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据应用"><span class="toc-number">1.1.3.</span> <span class="toc-text">数据应用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#大数据数据流"><span class="toc-number">1.2.</span> <span class="toc-text">大数据数据流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#大数据业务"><span class="toc-number">1.3.</span> <span class="toc-text">大数据业务</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -529,14 +533,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">监控</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
@@ -545,7 +541,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -553,15 +557,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">安全性</a>
+                <a href="javascript:void(0)" class="js-tag color3">监控</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">性能</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
               </li>
              
               <li class="article-tag-list-item">
