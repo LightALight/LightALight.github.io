@@ -6,15 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lightalight.github.io">
-  <title>Tag: 环境部署 | Keep It Simple Do It Well</title>
+  <title>云计算（四） | Keep It Simple Do It Well</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Keep It Simple Do It Well">
-<meta property="og:url" content="https://lightalight.github.io/tags/环境部署/index.html">
+  <meta name="description" content="OpenStack 是当今最具影响力的云计算管理工具——通过命令或者基于 Web 的可视化控制面板来管理 IaaS 云端的资源池（服务器、存储和网络）。它最先由美国国家航空航天局（NASA）和 Rackspace 在 2010 年合作研发，现在参与的人员和组织汇集了来自 100 多个国家的超过 9500 名的个人和 850 多个世界上赫赫有名的企业，如 NASA、谷歌、惠普、Intel、IBM、微">
+<meta name="keywords" content="云计算">
+<meta property="og:type" content="article">
+<meta property="og:title" content="云计算（四）">
+<meta property="og:url" content="https://lightalight.github.io/2020/08/16/云计算04/index.html">
 <meta property="og:site_name" content="Keep It Simple Do It Well">
+<meta property="og:description" content="OpenStack 是当今最具影响力的云计算管理工具——通过命令或者基于 Web 的可视化控制面板来管理 IaaS 云端的资源池（服务器、存储和网络）。它最先由美国国家航空航天局（NASA）和 Rackspace 在 2010 年合作研发，现在参与的人员和组织汇集了来自 100 多个国家的超过 9500 名的个人和 850 多个世界上赫赫有名的企业，如 NASA、谷歌、惠普、Intel、IBM、微">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://lightalight.github.io/image/云计算03/云计算04_001.jpg">
+<meta property="og:image" content="https://lightalight.github.io/image/云计算03/云计算04_002.jpg">
+<meta property="og:image" content="https://lightalight.github.io/image/云计算03/云计算04_003.jpg">
+<meta property="og:updated_time" content="2020-08-17T12:49:55.334Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Keep It Simple Do It Well">
+<meta name="twitter:title" content="云计算（四）">
+<meta name="twitter:description" content="OpenStack 是当今最具影响力的云计算管理工具——通过命令或者基于 Web 的可视化控制面板来管理 IaaS 云端的资源池（服务器、存储和网络）。它最先由美国国家航空航天局（NASA）和 Rackspace 在 2010 年合作研发，现在参与的人员和组织汇集了来自 100 多个国家的超过 9500 名的个人和 850 多个世界上赫赫有名的企业，如 NASA、谷歌、惠普、Intel、IBM、微">
+<meta name="twitter:image" content="https://lightalight.github.io/image/云计算03/云计算04_001.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Keep It Simple Do It Well" type="application/atom+xml">
   
@@ -140,322 +149,318 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-云计算04" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      云计算（四）
+    </h1>
+  
+
+        
+        <a href="/2020/08/16/云计算04/" class="archive-article-date">
+  	<time datetime="2020-08-16T11:23:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-16</time>
+</a>
+        
+        
+          <span class="archive-article-date">
+              阅读量 <span id="busuanzi_value_page_pv"></span>
+          </span>
+        
+      </header>
     
+  <!-- 目录内容 -->
+  
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+            <span class="btn-bg"></span>
+            <span class="btn-text">文章导航</span>
+            </p>
+    <div id="toc-article" class="toc-article">
+        <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+      <strong class="toc-title">文章目录</strong>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#组件"><span class="toc-number">1.1.</span> <span class="toc-text">组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#部署"><span class="toc-number">1.2.</span> <span class="toc-text">部署</span></a></li></ol></li></ol>
+          </div>
+    <script type="text/javascript">
+      function showToc(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:block");
+        show_toc_btn.setAttribute("style","display:none");
+        };
+      function showBtn(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:none");
+        show_toc_btn.setAttribute("style","display:block");
+        };
+    </script>
+      
+  <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>OpenStack 是当今最具影响力的云计算管理工具——通过命令或者基于 Web 的可视化控制面板来管理 IaaS 云端的资源池（服务器、存储和网络）。它最先由美国国家航空航天局（NASA）和 Rackspace 在 2010 年合作研发，现在参与的人员和组织汇集了来自 100 多个国家的超过 9500 名的个人和 850 多个世界上赫赫有名的企业，如 NASA、谷歌、惠普、Intel、IBM、微软等。<br>本文章主要介绍OpenStack的基本知识。</p>
+<a id="more"></a>
+<h2 id="Quick-Guide"><a href="#Quick-Guide" class="headerlink" title="Quick Guide"></a>Quick Guide</h2><p>OpenStack 采用 Python 语言开发，遵循 Apache 开源协议，因此相比 CloudStack 来说，更轻量化，效率更高。</p>
+<ul>
+<li><a href="https://www.openstack.org/user-stories" target="_blank" rel="noopener">OpenStack目前被广泛应用在各行各业</a></li>
+<li><a href="https://docs.openstack.org/nova/latest/user/support-matrix.html" target="_blank" rel="noopener">OpenStack 支持 KVM、Xen、Lvc、Docker 等虚拟机软件或容器，默认为 KVM</a></li>
+<li><a href="https://releases.openstack.org/" target="_blank" rel="noopener">各个版本的发行时间表参考网</a></li>
+</ul>
+<h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><p>OpenStack 组件的主要作用是充当”中间人”，它不履行具体的实际任务，而由各种第三方软件来完成，比如虚拟机软件由 KVM 承担，网站任务由 Apache 承担，虚拟网络任务由 iptables、DNSmasq、Linux vSwitch、Linux 网桥承担或者统一由 OpenContrail 承担，结构化数据存储任务由 MySQL 或者 PostgreSQL 承担，中央存储任务由 Ceph 承担（也可采用其他产品）。当然，OpenStack 中也有实现具体功能的组件，比如 Swift 做中央存储，我们也可以选择相对发展多年并且被大量使用的第三方产品，如 Ceph。</p>
+<p><img src="/image/云计算03/云计算04_001.jpg" alt=""></p>
+<table>
+<thead>
+<tr>
+<th>分类</th>
+<th>组件名称</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>核心组件</td>
+<td>Nova</td>
+<td>管理虚拟机的整个生命周期:创建、运行、挂起、调度、关闭、销毁等。这是真正的执行部件。接受 DashBoard 发來的命令并完成具体的动作。但是 Nova 不是虛拟机软件，所以还需要虚拟机软件（如 KVM、Xen、Hyper-v 等）配合</td>
+</tr>
+<tr>
+<td>核心组件</td>
+<td>Neutron</td>
+<td>管理网络资源，提供/一组应用编程接口(API)，用户可以调用它们来定义网络(如 VLAN )，并把定义好的网络附加给租户。Networking 是一个插件式结构，支持当前主流的网络设备和最新网铬技术</td>
+</tr>
+<tr>
+<td>核心组件</td>
+<td>Swift</td>
+<td>是 <a href="http://c.biancheng.net/nosql/" target="_blank" rel="noopener">NoSQL</a> 数据库，类似 <a href="http://c.biancheng.net/hbase/" target="_blank" rel="noopener">HBase</a>，为虚拟机提供非结构化数据存储，它把相同的数据存储在多台计箅机上，以确保数据不会丢失。用户可通过 RESTful 和 HTTP 类型的 API 来和它通信。这是实际的存储项目，类似 Ceph，不过在 OpcnStack 具体实施时，人们更愿意采用 Ceph。</td>
+</tr>
+<tr>
+<td>核心组件</td>
+<td>Cinder</td>
+<td>管理块设备，为虚拟机管理 SAN 设备源。但是它本身不是块设备源， 需要一个存储后端来提供实际的块设备源（如 iSCSI、FC等）。Cinder 相当于一个管家，当虚拟机需要块设备时，询问管家去哪里获取具体的块设备。它也是插件式的，安装在具体的 SAN 设备里。Cinder 支持的存储后端品牌参见 <a href="https://wiki.openstack.org/wiki/CinderSupportMatrix，驱动参见" target="_blank" rel="noopener">https://wiki.openstack.org/wiki/CinderSupportMatrix，驱动参见</a> <a href="https://github.com/openstack/cinder/tree/master/cinder/volume/drivers。" target="_blank" rel="noopener">https://github.com/openstack/cinder/tree/master/cinder/volume/drivers。</a></td>
+</tr>
+<tr>
+<td>核心组件</td>
+<td>Keystone</td>
+<td>为其他服务提供身份验证、权限管理、令牌管理及服务名册管理。要使用云计算的所有用户事先需要在 Keystone 中建立账号和密码，并定义权限（注意:这里的“用户”不是指虚拟机里的系统账户，如 Windows 7 中的 Administrator )。另外，OpenStack 服务（如 Nova、Neutron、Swift、Cinder 等）也要在里面注册，并且登记具体的 API，Keystone 本身也要注册和登记 API</td>
+</tr>
+<tr>
+<td>核心组件</td>
+<td>Glance</td>
+<td>存取虚拟机磁盘镜像文件，Compute 服务在启动虚拟机时需要从这里获取镜像文件。这个组件不同于上面的 Swift 和 Cinder，这两者提供的 存储是在虚拟机里使用的</td>
+</tr>
+<tr>
+<td>可选组件</td>
+<td>Horizon</td>
+<td>提供了一个网页界面，用户登录后可以做这些操作：管理虚拟机、配置权限、分配 IP 地址、创建租户和用户等。本质上就是通过图形化的 操作界面控制其他服务（如 Compute、Networking 等)。当然，如果你熟悉命令，也可以直接采用命令来完成相应的任务</td>
+</tr>
+<tr>
+<td>可选组件</td>
+<td>Heat</td>
+<td>如果要在成千上万个虚拟机里安装和配置同一个软件，该怎么办？采用 Orchestrates 是一个不错的主意，它向每个虚拟机里注人一个名叫 heat-cfntools 的客户端工具，然后就能同时操作很多虚拟机</td>
+</tr>
+<tr>
+<td>可选组件</td>
+<td>Sahana</td>
+<td>使用户能够在 OpenStack 平台上（利用虚拟机）一键式创建和管理 Hadoop 集群，实现类似 AWS 的 EMR（Amazon Elastic MapReduce Service）功能。用户只需要提供简单的配置参数和模板，如版本信息（CDH 版本）、集群拓扑（几个 Slave、几个 Datanode）、节点配置信息（CPU、内存）等，Sahara 服务就能够在几分钟内根据提供的模板快速 部署 Hadoop、Spark 及 Storm 集群。Sahana 是一个<a href="http://c.biancheng.net/big_data/" target="_blank" rel="noopener">大数据</a>分析项目</td>
+</tr>
+<tr>
+<td>可选组件</td>
+<td>Ironic</td>
+<td>把裸金属机器（与虚拟机相对）加人到资源池中</td>
+</tr>
+<tr>
+<td>可选组件</td>
+<td>Zaqar</td>
+<td>Zaqar 为 Web 和移动开发者提供多租户云消息和通知服务，开发人员可以通过 REST API 在其云应用的不同组件中通过不同的通信模式（如 生产者/消费者或发布者/订阅者）来传递消息</td>
+</tr>
+<tr>
+<td>可选组件</td>
+<td>Ceilometer</td>
+<td>结合 Aodh、CloudKitty 两个组件，完成计费任务，如结算、消耗的 资源统计、性能监控等。OpenStack 之所以能管理公共云，一是因为 Ceilometer 的存在，二是因为引人了租户的概念</td>
+</tr>
+<tr>
+<td>可选组件</td>
+<td>Barbican</td>
+<td>是 OpenStack 的密钥管理组件，其他组件可以调用 Barbican 对外暴露的 REST API 来存储和访问密钥</td>
+</tr>
+<tr>
+<td>可选组件</td>
+<td>Manila</td>
+<td>为虚拟机提供文件共享服务，不过需要存储后端的配合</td>
+</tr>
+<tr>
+<td>可选组件</td>
+<td>其他组件：Congress（策略服务）、Designate（DNS 服务）、Freezer（备份及还原服务）、Magnum（容器支持）、Mistral（工作流服务）、Monasca（监控服务）、Searchlight（索引和搜索）、Senlin（集群服务）、Solum（APP集成开发平台）、Tacker（网络功能 虚拟化）、Trove（数据库服务）</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/image/云计算03/云计算04_002.jpg" alt=""></p>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><p>部署 OpenStack 时应该遵循”逐步扩展部署法”:</p>
+<ol>
+<li>最小系统具备基本的 IaaS 功能，能通过命令来进行管理，这一步只需安装 OpenStack 的 Keystone、Neutron、Nova 和 Glance 四个组件；</li>
+<li>安装 Horizon 就成了小系统，这时可通过 Web 图形化界面来执行管理；</li>
+<li>安装 Swift 和 Cinder 就成了准系统</li>
+<li>给虚拟机附加磁盘块设备，并能满足大规模的存储需求；再加上计费组件 Ceilometer，就上升为一般系统，一般系统具备公有 IaaS 的功能。</li>
+<li>一般系统跨到生产系统，需要完成的工作就特别多，其中性能和安全是两个不得不面对的棘手问题。 Iptables（设立门卫）、Selinux 或 Apparmor（加固系统）和 Snort（巡逻）都是为了强化安全,Keepalive监听服务器状态.</li>
+</ol>
+<p><img src="/image/云计算03/云计算04_003.jpg" alt=""></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/13/部署Rap2/" class="archive-article-date">
-  	<time datetime="2019-03-13T14:23:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/13/部署Rap2/">部署Rap2</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">环境部署</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">云计算</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/11/部署Prometheus/" class="archive-article-date">
-  	<time datetime="2019-02-11T13:23:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/11/部署Prometheus/">部署Prometheus</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">接口</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">环境部署</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
       
-        </div></section>
+
       
+
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/04/部署Gitea/" class="archive-article-date">
-  	<time datetime="2018-09-04T11:03:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/04/部署Gitea/">部署Gitea</a>
-    </h1>
-  
+      </div>
+    </span>
+  </div>
+</div>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">环境部署</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://lightalight.github.io/2020/08/16/云计算04/" alt="微信分享二维码">
+    </div>
+</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/21/部署GitLab/" class="archive-article-date">
-  	<time datetime="2018-08-21T14:01:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-21</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/08/15/云计算03/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">云计算（三）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/21/部署GitLab/">部署GitLab</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">环境部署</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#组件"><span class="toc-number">1.1.</span> <span class="toc-text">组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#部署"><span class="toc-number">1.2.</span> <span class="toc-text">部署</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: '3defdfe6cd1359252f32',
+  	clientSecret: 'e85ffee30787cd76a45267a10c3a354731a9fe92',
+  	repo: 'gitment',
+  	owner: 'lightalight',
+  	admin: ['lightalight'],
+  	id: 'Sun Aug 16 2020 19:23:32 GMT+0800',
+  	distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/23/部署Docker/" class="archive-article-date">
-  	<time datetime="2018-07-23T13:32:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/23/部署Docker/">部署Docker</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">环境部署</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/26/部署Tomcat/" class="archive-article-date">
-  	<time datetime="2018-05-26T12:04:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/26/部署Tomcat/">部署Tomcat</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">环境部署</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">tomcat</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/16/部署OpenResty/" class="archive-article-date">
-  	<time datetime="2018-05-16T13:03:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/16/部署OpenResty/">部署OpenResty</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">环境部署</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">nginx</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -489,9 +494,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
