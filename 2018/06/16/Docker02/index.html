@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lightalight.github.io">
-  <title>Archives: 2018 | Keep It Simple Do It Well</title>
+  <title>Docker（二） | Keep It Simple Do It Well</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Keep It Simple Do It Well">
-<meta property="og:url" content="https://lightalight.github.io/archives/2018/page/2/index.html">
+  <meta name="description" content="文章介绍Docker的如何运行和基本命令。">
+<meta name="keywords" content="docker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker（二）">
+<meta property="og:url" content="https://lightalight.github.io/2018/06/16/Docker02/index.html">
 <meta property="og:site_name" content="Keep It Simple Do It Well">
+<meta property="og:description" content="文章介绍Docker的如何运行和基本命令。">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://lightalight.github.io/image/Docker02/Docker02_001.png">
+<meta property="og:image" content="https://lightalight.github.io/image/Docker02/Docker02_002.png">
+<meta property="og:updated_time" content="2020-08-19T23:24:48.165Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Keep It Simple Do It Well">
+<meta name="twitter:title" content="Docker（二）">
+<meta name="twitter:description" content="文章介绍Docker的如何运行和基本命令。">
+<meta name="twitter:image" content="https://lightalight.github.io/image/Docker02/Docker02_001.png">
   
     <link rel="alternative" href="/atom.xml" title="Keep It Simple Do It Well" type="application/atom+xml">
   
@@ -140,102 +148,349 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Docker02" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/07/部署博客/" class="archive-article-date">
-  	<time datetime="2018-05-07T14:09:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-07</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/07/部署博客/">部署博客</a>
+    <h1 class="article-title" itemprop="name">
+      Docker（二）
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/06/16/Docker02/" class="archive-article-date">
+  	<time datetime="2018-06-16T13:32:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
+</a>
+        
+        
+          <span class="archive-article-date">
+              阅读量 <span id="busuanzi_value_page_pv"></span>
+          </span>
+        
+      </header>
+    
+  <!-- 目录内容 -->
+  
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+            <span class="btn-bg"></span>
+            <span class="btn-text">文章导航</span>
+            </p>
+    <div id="toc-article" class="toc-article">
+        <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+      <strong class="toc-title">文章目录</strong>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker的构成"><span class="toc-number">1.1.</span> <span class="toc-text">Docker的构成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker的技术支柱"><span class="toc-number">1.2.</span> <span class="toc-text">Docker的技术支柱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用Docker-运行程序"><span class="toc-number">1.3.</span> <span class="toc-text">使用Docker 运行程序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-创建镜像"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.创建镜像</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-运行容器"><span class="toc-number">1.3.2.</span> <span class="toc-text">2.运行容器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于镜像、容器、仓库的基本命令"><span class="toc-number">1.4.</span> <span class="toc-text">关于镜像、容器、仓库的基本命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#镜像"><span class="toc-number">1.4.1.</span> <span class="toc-text">镜像</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#容器"><span class="toc-number">1.4.2.</span> <span class="toc-text">容器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#仓库"><span class="toc-number">1.4.3.</span> <span class="toc-text">仓库</span></a></li></ol></li></ol></li></ol>
+          </div>
+    <script type="text/javascript">
+      function showToc(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:block");
+        show_toc_btn.setAttribute("style","display:none");
+        };
+      function showBtn(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:none");
+        show_toc_btn.setAttribute("style","display:block");
+        };
+    </script>
+      
+  <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>文章介绍Docker的如何运行和基本命令。<br><a id="more"></a></p>
+<h2 id="Quick-Guide"><a href="#Quick-Guide" class="headerlink" title="Quick Guide"></a>Quick Guide</h2><h3 id="Docker的构成"><a href="#Docker的构成" class="headerlink" title="Docker的构成"></a>Docker的构成</h3><p>Docker有三个组件和三个基本元素:</p>
+<p>三个组件分别是：</p>
+<ul>
+<li><strong>Docker Client</strong> ：是用户界面，它支持用户与 <strong>Docker Daemon</strong> 之间通信。 </li>
+<li><strong>Docker Daemon</strong>： 运行于主机上，处理服务请求。 </li>
+<li><strong>Docker Registry</strong>：是中央registry，拥有Docker容器镜像备份的公有和私有访问权限。</li>
+</ul>
+<p> 三个基本要素分别是： </p>
+<ul>
+<li><strong>Docker Containers</strong>： 负责应用程序的运行，包括操作系统、用户添加的文件以及元数据。 镜像（Image）和容器（Container）的关系，就像是面向对象程序设计中的类和实例一样，镜像是静态的定义，容器是镜像运行时的实体。容器可以被创建、启动、停止、删除、暂停等。</li>
+<li><strong>Docker Images</strong>： 是一个只读模板，用来运行Docker容器。 就相当于是一个 root 文件系统。比如官方镜像 ubuntu:16.04 就包含了完整的一套 Ubuntu16.04 最小系统的 root 文件系统。</li>
+<li><strong>DockerFile</strong> ：是文件指令集，用来说明如何自动创建Docker镜像。 </li>
+</ul>
+<p><img src="/image/Docker02/Docker02_001.png" alt=""></p>
+<h3 id="Docker的技术支柱"><a href="#Docker的技术支柱" class="headerlink" title="Docker的技术支柱"></a>Docker的技术支柱</h3><p>Docker使用以下操作系统的功能来提高容器技术效率：</p>
+<ul>
+<li><strong>Namespaces</strong> 充当隔离的第一级。确保一个容器中运行一个进程而且不能看到或影响容器外的其它进程。 </li>
+<li><strong>Control Groups</strong>是LXC的重要组成部分，具有资源核算与限制的关键功能。 </li>
+<li><strong>UnionFS</strong>（文件系统）作为容器的构建块。为了支持Docker的轻量级以及速度快的特性，它创建了用户层。 </li>
+</ul>
+<h3 id="使用Docker-运行程序"><a href="#使用Docker-运行程序" class="headerlink" title="使用Docker 运行程序"></a>使用Docker 运行程序</h3><h4 id="1-创建镜像"><a href="#1-创建镜像" class="headerlink" title="1.创建镜像"></a>1.创建镜像</h4><ul>
+<li><p>1.1.Docker Client 发送给Docker Daemon命令:需要创建的镜像以及需要在容器内运行的命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t ubuntu:15.10 .</span><br></pre></td></tr></table></figure>
+<p>各个参数解析：</p>
+<ul>
+<li><strong>docker:</strong> Docker 的二进制执行文件。</li>
+<li><strong>run:</strong> 与前面的 docker 组合来创建镜像 。</li>
+<li><strong>ubuntu:15.10</strong> 指定要创建的镜像名称:镜像标签 </li>
+<li><strong>.</strong>  指定镜像构建过程中的上下文环境的目录 </li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>1.2.镜像创建完成，就可以将它们推送到中央Registry：Docker Registry，以供他人使用。Docker Index为镜像提供了两个级别的访问权限：公有访问和私有访问。公有仓库是可搜索和可重复使用的，而私有仓库只能给那些拥有访问权限的成员使用.你可以将镜像存储在私有仓库，Docker官网有私有仓库的套餐可以供你选择。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 仓库地址在 /etc/docker 下的daemon.json文件下可以找到</span></span><br><span class="line">docker login # 登陆仓库</span><br><span class="line">docker tag ubuntu:15.10 &lt;仓库地址&gt;/ubuntu:15.10 # 修改镜像标签</span><br><span class="line">docker push &lt;仓库地址&gt;/ubuntu:15.10 # 镜像推送</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="2-运行容器"><a href="#2-运行容器" class="headerlink" title="2.运行容器"></a>2.运行容器</h4><p>运行容器源于我们在第一步中创建的镜像。当容器被启动后，一个读写层会被添加到镜像的顶层。当分配到合适的网络和IP地址后，需要的应用程序就可以在容器中运行了。 </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run ubuntu:15.10 /bin/echo "Hello world"</span><br></pre></td></tr></table></figure>
+<p>各个参数解析：</p>
+<ul>
+<li><strong>docker:</strong> Docker 的二进制执行文件。</li>
+<li><strong>run:</strong> 与前面的 docker 组合来运行一个容器。</li>
+<li><strong>ubuntu:15.10</strong> 指定要运行的镜像，Docker 首先从本地主机上查找镜像是否存在，如果不存在，Docker 就会从镜像仓库 <strong>Docker Hub</strong> 下载公共镜像。</li>
+<li><strong>/bin/echo “Hello world”:</strong> 在启动的容器里执行的命令</li>
+</ul>
+<h3 id="关于镜像、容器、仓库的基本命令"><a href="#关于镜像、容器、仓库的基本命令" class="headerlink" title="关于镜像、容器、仓库的基本命令"></a>关于镜像、容器、仓库的基本命令</h3><p><img src="/image/Docker02/Docker02_002.png" alt=""></p>
+<h4 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h4><ul>
+<li><p>1.获取镜像</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search &lt;image&gt; <span class="comment"># 在docker index中搜索image</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>2.获取镜像</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull &lt;image&gt;  <span class="comment"># 从docker registry server 中下拉image</span></span><br><span class="line">docker pull &lt;server:port/image:tag&gt; <span class="comment"># 获取image</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>3.查看镜像</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker images： <span class="comment"># 列出images</span></span><br><span class="line">docker images -a <span class="comment"># 列出所有的images（包含历史）</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>4.删除镜像</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi  &lt;image ID&gt; <span class="comment"># 删除一个或多个image</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>5.创建镜像</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker commit -m <span class="string">"add new image"</span> -a &lt;container_id&gt; &lt;new_image_name&gt; <span class="comment"># 基于已有镜像的容器创建</span></span><br><span class="line">cat &lt;本地模板&gt; | Docker import - image:tag <span class="comment"># 基于本地模板导入</span></span><br><span class="line">docker build -t &lt;image:tag&gt; &lt;docker_file_dir. <span class="comment"># 基于dockerfile创建</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>6.存出镜像</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker save -o &lt;image_file&gt; &lt;image:tag&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>7.载入镜像</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker save -o &lt;image_file&gt; &lt;image:tag&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>8.上传镜像</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker push &lt;user/image:tag&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h4><ul>
+<li><p>1.创建容器</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker create -it &lt;image:tag&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>2.创建并启动容器</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it &lt;image:tag&gt; /bin/bash</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>3.守护态运行</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ddocker run -d &lt;image:tag&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>4.查看容器信息</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker ps <span class="comment"># 列出当前所有正在运行的container</span></span><br><span class="line">docker ps -l <span class="comment"># 列出最近一次启动的container</span></span><br><span class="line">docker ps -a <span class="comment"># 列出所有的container（包含历史，即运行过的container）</span></span><br><span class="line">docker ps -q <span class="comment"># 列出最近一次运行的container ID</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>5.获取容器的输出信息</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs -f &lt;image:tag&gt;或&lt;container_id&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>6.终止容器</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop &lt;image:tag&gt;或&lt;container_id&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>7.启动容器</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker start &lt;image:tag&gt;或&lt;container_id&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>8.重启容器</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker restart &lt;image:tag&gt;或&lt;container_id&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>9.进入容器</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker attach &lt;image:tag&gt;或&lt;container_id&gt;</span><br><span class="line">docker <span class="built_in">exec</span> -it &lt;image:tag&gt;或&lt;container_id&gt; /bin/bash </span><br><span class="line">nsenter --target &lt;docker_pid&gt; --mount --uts --ipc --net --pid</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>10.删除容器</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker rm &lt;container_id&gt; <span class="comment">#：删除一个或多个container</span></span><br><span class="line">docker rm `docker ps -a -q` <span class="comment">#：删除所有的container</span></span><br><span class="line">docker ps -a -q | xargs docker rm <span class="comment"># 同上, 删除所有的container</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>11.导出容器</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">export</span> &lt;container_id&gt; &gt;test.tar</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>12.容器快照导入到本地镜像库</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat &lt;container_snapshot&gt; | docker import - &lt;user/image:tag&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h4><ul>
+<li><p>1.登录</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker login</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>2.更新镜像标签</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker tag &lt;server:port/image:tag&gt; &lt;image:tag&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>3.创建私有仓库</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 5000:5000 registry:&lt;registry_version&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>4.管理私有仓库镜像</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker tag &lt;image:tag&gt; &lt;私有仓库IP:端口/new_tag&gt; <span class="comment"># 重新标记一个本地镜像为私有仓库的版本</span></span><br><span class="line">docker push &lt;私有仓库IP:端口/image:new_tag&gt;</span><br><span class="line">curl http://&lt;私有仓库IP:端口&gt;/v2/&lt;image&gt;/tags/list <span class="comment"># 查看私有仓库中的镜像列表</span></span><br><span class="line">docker pull &lt;私有仓库IP:端口/image:new_tag&gt; <span class="comment"># 拉取本地仓库中的镜像</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>More info: <a href="https://www.flux7.com/tutorial/docker-tutorial-series-part-1-an-introduction-docker-components/" target="_blank" rel="noopener">Docker教程</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://lightalight.github.io/2018/06/16/Docker02/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/07/Hexo命令参考文档/" class="archive-article-date">
-  	<time datetime="2018-05-07T12:53:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-07</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2018/07/16/Docker03/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Docker（三）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/13/Git常用命令/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Git常用命令</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/07/Hexo命令参考文档/">Hexo命令参考文档</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker的构成"><span class="toc-number">1.1.</span> <span class="toc-text">Docker的构成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker的技术支柱"><span class="toc-number">1.2.</span> <span class="toc-text">Docker的技术支柱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用Docker-运行程序"><span class="toc-number">1.3.</span> <span class="toc-text">使用Docker 运行程序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-创建镜像"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.创建镜像</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-运行容器"><span class="toc-number">1.3.2.</span> <span class="toc-text">2.运行容器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于镜像、容器、仓库的基本命令"><span class="toc-number">1.4.</span> <span class="toc-text">关于镜像、容器、仓库的基本命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#镜像"><span class="toc-number">1.4.1.</span> <span class="toc-text">镜像</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#容器"><span class="toc-number">1.4.2.</span> <span class="toc-text">容器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#仓库"><span class="toc-number">1.4.3.</span> <span class="toc-text">仓库</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
+        
+    </div>
+</aside>
+
+
+
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2018/">&laquo; Prev</a><a class="page-number" href="/archives/2018/">1</a><span class="page-number current">2</span>
-    </nav>
   
+
+  
+
+  
+
+  
+
+  
+    <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: '3defdfe6cd1359252f32',
+  	clientSecret: 'e85ffee30787cd76a45267a10c3a354731a9fe92',
+  	repo: 'gitment',
+  	owner: 'lightalight',
+  	admin: ['lightalight'],
+  	id: 'Sat Jun 16 2018 21:32:11 GMT+0800',
+  	distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
+    
+
 
 
           </div>
@@ -269,8 +524,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
@@ -331,31 +586,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">监控</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">云计算</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">可靠性</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -363,11 +598,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+                <a href="javascript:void(0)" class="js-tag color4">云计算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">监控</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">可靠性</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">性能</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -388,6 +639,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>

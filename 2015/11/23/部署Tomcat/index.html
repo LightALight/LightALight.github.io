@@ -6,20 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lightalight.github.io">
-  <title>Dockerfile常用命令 | Keep It Simple Do It Well</title>
+  <title>部署Tomcat | Keep It Simple Do It Well</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Dockerfile 是记录了镜像是如何被构建出来的配置文件, 可以被 docker 直接执行以创建一个镜像。文章介绍Dockerfile常用命令。">
-<meta name="keywords" content="docker">
+  <meta name="description" content="Tomcat 是由 Apache 开发的一个 Servlet 容器，实现了对 Servlet 和 JSP 的支持，并提供了作为Web服务器的一些特有功能。文章介绍如何在居于Centos7.5安装Tomcat。">
+<meta name="keywords" content="环境部署,tomcat">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Dockerfile常用命令">
-<meta property="og:url" content="https://lightalight.github.io/2018/10/12/Dockerfile常用命令/index.html">
+<meta property="og:title" content="部署Tomcat">
+<meta property="og:url" content="https://lightalight.github.io/2015/11/23/部署Tomcat/index.html">
 <meta property="og:site_name" content="Keep It Simple Do It Well">
-<meta property="og:description" content="Dockerfile 是记录了镜像是如何被构建出来的配置文件, 可以被 docker 直接执行以创建一个镜像。文章介绍Dockerfile常用命令。">
+<meta property="og:description" content="Tomcat 是由 Apache 开发的一个 Servlet 容器，实现了对 Servlet 和 JSP 的支持，并提供了作为Web服务器的一些特有功能。文章介绍如何在居于Centos7.5安装Tomcat。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-27T23:50:04.000Z">
+<meta property="og:image" content="https://lightalight.github.io/image/部署OpenResty_001.png">
+<meta property="og:image" content="https://lightalight.github.io/image/部署OpenResty_002.png">
+<meta property="og:image" content="https://lightalight.github.io/image/部署OpenResty_003.png">
+<meta property="og:updated_time" content="2020-08-19T23:34:50.433Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dockerfile常用命令">
-<meta name="twitter:description" content="Dockerfile 是记录了镜像是如何被构建出来的配置文件, 可以被 docker 直接执行以创建一个镜像。文章介绍Dockerfile常用命令。">
+<meta name="twitter:title" content="部署Tomcat">
+<meta name="twitter:description" content="Tomcat 是由 Apache 开发的一个 Servlet 容器，实现了对 Servlet 和 JSP 的支持，并提供了作为Web服务器的一些特有功能。文章介绍如何在居于Centos7.5安装Tomcat。">
+<meta name="twitter:image" content="https://lightalight.github.io/image/部署OpenResty_001.png">
   
     <link rel="alternative" href="/atom.xml" title="Keep It Simple Do It Well" type="application/atom+xml">
   
@@ -145,20 +149,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Dockerfile常用命令" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-部署Tomcat" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Dockerfile常用命令
+      部署Tomcat
     </h1>
   
 
         
-        <a href="/2018/10/12/Dockerfile常用命令/" class="archive-article-date">
-  	<time datetime="2018-10-12T11:55:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-12</time>
+        <a href="/2015/11/23/部署Tomcat/" class="archive-article-date">
+  	<time datetime="2015-11-23T12:04:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-11-23</time>
 </a>
         
         
@@ -177,7 +181,7 @@
     <div id="toc-article" class="toc-article">
         <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
       <strong class="toc-title">文章目录</strong>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本结构"><span class="toc-number">1.1.</span> <span class="toc-text">基本结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本命令"><span class="toc-number">1.2.</span> <span class="toc-text">基本命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建镜像"><span class="toc-number">1.3.</span> <span class="toc-text">创建镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注意事项"><span class="toc-number">1.4.</span> <span class="toc-text">注意事项</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Deploy"><span class="toc-number">1.</span> <span class="toc-text">Quick Deploy</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#部署准备"><span class="toc-number">1.1.</span> <span class="toc-text">部署准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装和配置"><span class="toc-number">1.2.</span> <span class="toc-text">安装和配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重要目录说明"><span class="toc-number">1.3.</span> <span class="toc-text">重要目录说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-工程发布（例如jenkin）"><span class="toc-number">1.4.</span> <span class="toc-text">web 工程发布（例如jenkin）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-项目路径结构"><span class="toc-number">1.5.</span> <span class="toc-text">web 项目路径结构</span></a></li></ol></li></ol>
           </div>
     <script type="text/javascript">
       function showToc(){
@@ -197,183 +201,175 @@
   <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Dockerfile 是记录了镜像是如何被构建出来的配置文件, 可以被 docker 直接执行以创建一个镜像。文章介绍Dockerfile常用命令。<br><a id="more"></a></p>
-<h2 id="Quick-Guide"><a href="#Quick-Guide" class="headerlink" title="Quick Guide"></a>Quick Guide</h2><h3 id="基本结构"><a href="#基本结构" class="headerlink" title="基本结构"></a>基本结构</h3><p>分为四部分：基础镜像信息、维护者信息、镜像操作指令和容器启动时执行指令。‘#’ 为 Dockerfile 中的注释。例如:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This my first nginx Dockerfile</span></span><br><span class="line"><span class="comment"># Version 1.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Base images 基础镜像</span></span><br><span class="line">FROM centos</span><br><span class="line"></span><br><span class="line"><span class="comment">#MAINTAINER 维护者信息</span></span><br><span class="line">MAINTAINER xiaoming </span><br><span class="line"></span><br><span class="line"><span class="comment">#ENV 设置环境变量</span></span><br><span class="line">ENV PATH /usr/<span class="built_in">local</span>/nginx/sbin:<span class="variable">$PATH</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#ADD  文件放在当前目录下，拷过去会自动解压</span></span><br><span class="line">ADD nginx-1.8.0.tar.gz /usr/<span class="built_in">local</span>/  </span><br><span class="line">ADD epel-release-latest-7.noarch.rpm /usr/<span class="built_in">local</span>/  </span><br><span class="line"></span><br><span class="line"><span class="comment">#RUN 执行以下命令 </span></span><br><span class="line">RUN rpm -ivh /usr/<span class="built_in">local</span>/epel-release-latest-7.noarch.rpm</span><br><span class="line">RUN yum install -y wget lftp gcc gcc-c++ make openssl-devel pcre-devel pcre &amp;&amp; yum clean all</span><br><span class="line">RUN useradd -s /sbin/nologin -M www</span><br><span class="line"></span><br><span class="line"><span class="comment">#WORKDIR 相当于cd</span></span><br><span class="line">WORKDIR /usr/<span class="built_in">local</span>/nginx-1.8.0 </span><br><span class="line"></span><br><span class="line">RUN ./configure --prefix=/usr/<span class="built_in">local</span>/nginx --user=www --group=www --with-http_ssl_module --with-pcre &amp;&amp; make &amp;&amp; make install</span><br><span class="line"></span><br><span class="line">RUN <span class="built_in">echo</span> <span class="string">"daemon off;"</span> &gt;&gt; /etc/nginx.conf</span><br><span class="line"></span><br><span class="line"><span class="comment">#EXPOSE 映射端口</span></span><br><span class="line">EXPOSE 80</span><br><span class="line"></span><br><span class="line"><span class="comment">#CMD 运行以下命令</span></span><br><span class="line">CMD [<span class="string">"nginx"</span>]</span><br></pre></td></tr></table></figure></p>
-<h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><table>
+        <p>Tomcat 是由 Apache 开发的一个 Servlet 容器，实现了对 Servlet 和 JSP 的支持，并提供了作为Web服务器的一些特有功能。文章介绍如何在居于Centos7.5安装Tomcat。<br><a id="more"></a></p>
+<h2 id="Quick-Deploy"><a href="#Quick-Deploy" class="headerlink" title="Quick Deploy"></a>Quick Deploy</h2><h3 id="部署准备"><a href="#部署准备" class="headerlink" title="部署准备"></a>部署准备</h3><ul>
+<li>1.参照下表格检查环境的JDK版本是否满足(Tomcat 8.5 要求 JDK 版本为 1.7 以上)</li>
+</ul>
+<table>
 <thead>
 <tr>
-<th>指令</th>
-<th>说明</th>
+<th>Servlet Spec</th>
+<th>JSP Spec</th>
+<th>EL Spec</th>
+<th>WebSocket Spec</th>
+<th>JASPIC Spec</th>
+<th>Apache Tomcat Version</th>
+<th>Latest Released Version</th>
+<th>Supported Java Versions</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>FROM</td>
-<td>指定所创建镜像的基础镜像</td>
+<td>4.0</td>
+<td>2.3</td>
+<td>3.0</td>
+<td>1.1</td>
+<td>1.1</td>
+<td>9.0.x</td>
+<td>9.0.6</td>
+<td>8 and later</td>
 </tr>
 <tr>
-<td>MAINTAINER</td>
-<td>指定维护者信息</td>
+<td>3.1</td>
+<td>2.3</td>
+<td>3.0</td>
+<td>1.1</td>
+<td>1.1</td>
+<td>8.5.x</td>
+<td>8.5.29</td>
+<td>7 and later</td>
 </tr>
 <tr>
-<td>RUN</td>
-<td>运行命令</td>
+<td>3.1</td>
+<td>2.3</td>
+<td>3.0</td>
+<td>1.1</td>
+<td>N/A</td>
+<td>8.0.x (superseded)</td>
+<td>8.0.50 (superseded)</td>
+<td>7 and later</td>
 </tr>
 <tr>
-<td>CMD</td>
-<td>指定启动容器时默认执行的命令</td>
+<td>3.0</td>
+<td>2.2</td>
+<td>2.2</td>
+<td>1.1</td>
+<td>N/A</td>
+<td>7.0.x</td>
+<td>7.0.85</td>
+<td>6 and later(7 and later for WebSocket)</td>
 </tr>
 <tr>
-<td>LABEL</td>
-<td>指定生成镜像的元数据标签信息</td>
+<td>2.5</td>
+<td>2.1</td>
+<td>2.1</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>6.0.x (archived)</td>
+<td>6.0.53 (archived)</td>
+<td>5 and later</td>
 </tr>
 <tr>
-<td>EXPOSE</td>
-<td>声明镜像内服务所监听的端口</td>
+<td>2.4</td>
+<td>2.0</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>5.5.x (archived)</td>
+<td>5.5.36 (archived)</td>
+<td>1.4 and later</td>
 </tr>
 <tr>
-<td>ENV</td>
-<td>指定环境变量</td>
+<td>2.3</td>
+<td>1.2</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>4.1.x (archived)</td>
+<td>4.1.40 (archived)</td>
+<td>1.3 and later</td>
 </tr>
 <tr>
-<td>ADD</td>
-<td>赋值指定的路径下的内容到容器中的路径下，可以为URL；如果为tar文件，会自动解压到路径下</td>
-</tr>
-<tr>
-<td>COPY</td>
-<td>赋值本地主机的路径下的内容到容器中的路径下；一般情况下推荐使用COPY而不是ADD</td>
-</tr>
-<tr>
-<td>ENTRYPOINT</td>
-<td>指定镜像的默认入口</td>
-</tr>
-<tr>
-<td>VOLUME</td>
-<td>创建数据挂载点</td>
-</tr>
-<tr>
-<td>USER</td>
-<td>指定运行容器时的用户名或UID</td>
-</tr>
-<tr>
-<td>WORKDIR</td>
-<td>配置工作目录</td>
-</tr>
-<tr>
-<td>ARG</td>
-<td>指定镜像内使用的参数(例如版本号信息等)</td>
-</tr>
-<tr>
-<td>ONBUILD</td>
-<td>配置当前所创建的镜像作为其他镜像的基础镜像时，所执行的创建操作的命令</td>
-</tr>
-<tr>
-<td>STOPSIGNAL</td>
-<td>容器退出的信号</td>
-</tr>
-<tr>
-<td>HEALTHCHECK</td>
-<td>如何进行健康检查</td>
-</tr>
-<tr>
-<td>SHELL</td>
-<td>指定使用SHELL时的默认SHELL类型</td>
+<td>2.2</td>
+<td>1.1</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>3.3.x (archived)</td>
+<td>3.3.2 (archived)</td>
+<td>1.1 and later</td>
 </tr>
 </tbody>
 </table>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whereis java</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>1.FROM:指定基础镜像，要在哪个镜像建立</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 格式</span></span><br><span class="line">FROM &lt;image&gt; </span><br><span class="line">FROM &lt;image&gt;:&lt;tag&gt;</span><br></pre></td></tr></table></figure>
-<p>  第一条指令必须为 FROM 指令。FROM命令会指定镜像基于哪个基础镜像创建，接下来的命令也会基于这个基础镜像（CentOS和Ubuntu有些命令可是不一样的）。FROM命令可以多次使用，表示会创建多个镜像。</p>
-</li>
-<li><p>2.MAINTAINER：指定维护者信息</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 格式</span></span><br><span class="line">MAINTAINER &lt;name&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>3.ARG:指定一些镜像内使用的参数(例如版本号信息等)，这些参数在执行docker build命令时才以–build-arg<varname>=<value>格式传入。</value></varname></p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 格式</span></span><br><span class="line">ARG&lt;name&gt;[=&lt;default value&gt;]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>4.RUN：在镜像中要执行的命令</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 格式</span></span><br><span class="line">RUN &lt;<span class="built_in">command</span>&gt;</span><br><span class="line">RUN [<span class="string">"executable"</span>, <span class="string">"param1"</span>, <span class="string">"param2"</span>]</span><br></pre></td></tr></table></figure>
-<p>  前者默认将在 shell 终端中运行命令，即 /bin/bash -c ；后者则使用 exec 执行。指定使用其它终端可以通过第二种方式实现，例如 RUN [“/bin/bash”, “-c”,”echo hello”] 。<br>  每条RUN指令将在当前镜像的基础上执行指定命令，并提交为新的镜像。当命令较长时可以使用\换行。</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">RUN apt-get update \</span><br><span class="line">    &amp;&amp; apt-get install -y libsnappy-dev zliblg-dev libbz2-dev \</span><br><span class="line">    &amp;&amp; rm -rf /var/cache/apt</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>5.WORKDIR：指定当前工作目录，相当于 cd</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 格式</span></span><br><span class="line">WORKDIR /path/to/workdir</span><br></pre></td></tr></table></figure>
-<p>  为后续的 RUN 、 CMD 、 ENTRYPOINT 指令配置工作目录。<br>  可以使用多个 WORKDIR 指令，后续命令如果参数是相对路径，则会基于之前命令指定的路径。</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 例如</span></span><br><span class="line">WORKDIR /a</span><br><span class="line">WORKDIR b</span><br><span class="line">WORKDIR c</span><br><span class="line">RUN <span class="built_in">pwd</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>6.EXPOSE：指定容器要打开的端口</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 格式</span></span><br><span class="line">EXPOSE &lt;port&gt; [&lt;port&gt;...]</span><br></pre></td></tr></table></figure>
-<p>  告诉 Docker 服务端容器暴露的端口号，供互联系统使用。在启动容器时需要通过 -P，Docker 主机会自动分配一个端口转发到指定的端口。<br>  注意：<br>  该命令只是起到声明租用，并不会自动完成端口映射。<br>  在容器启动时需要使用-P(大写P)，Docker主机会自动分配一个宿主机未被使用的临时端口转发到指定的端口；使用-p(小写p)，则可以具体指定哪个宿主机的本地端口映射过来。</p>
-</li>
+<li>2.安装JDK(详细请自行查询)</li>
 </ul>
+<h3 id="安装和配置"><a href="#安装和配置" class="headerlink" title="安装和配置"></a>安装和配置</h3><ul>
+<li>1.下载安装包</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://mirrors.hust.edu.cn/apache/tomcat/tomcat-8/v8.5.37/bin/apache-tomcat-8.5.37.tar.gz</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>7.ENV：定义环境变量</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 格式</span></span><br><span class="line">ENV &lt;key&gt; &lt;value&gt; <span class="comment"># 指定一个环境变量，会被后续 RUN 指令使用，并在容器运行时保持。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 例如</span></span><br><span class="line">ENV PATH /usr/<span class="built_in">local</span>/nginx/sbin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
-<p>  指令指定的环境变量在运行时可以被覆盖掉，如docker run –env <key>=<value> built_image。</value></key></p>
+<li>2.解压安装包</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf apache-tomcat-8.5.37.tar.gz</span><br></pre></td></tr></table></figure>
+<ul>
+<li>3.启动 Tomcat</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./apache-tomcat-8.5.37/bin/startup.sh</span><br></pre></td></tr></table></figure>
+<ul>
+<li>4.通过curl或者浏览器访问</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http://localhost:8080</span><br></pre></td></tr></table></figure>
+<p><img src="/image/部署OpenResty_001.png" alt=""></p>
+<h3 id="重要目录说明"><a href="#重要目录说明" class="headerlink" title="重要目录说明"></a>重要目录说明</h3><ul>
+<li>bin - Tomcat 脚本存放目录（如启动、关闭脚本）。 <em>.sh 文件用于 Unix 系统,</em>.bat 文件用于 Windows 系统</li>
+<li>conf - Tomcat 配置文件目录<ul>
+<li>server.xml 配置文件中的根元素。它的属性代表了整个 servlet 容器的特性。</li>
+</ul>
 </li>
-<li><p>8.COPY ：复制本地主机的 （为 Dockerfile 所在目录的相对路径）到容器中的</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 格式</span></span><br><span class="line">COPY</span><br></pre></td></tr></table></figure>
+<li>logs - Tomcat 默认日志目录</li>
+<li>webapps - webapp 运行的目录</li>
+</ul>
+<h3 id="web-工程发布（例如jenkin）"><a href="#web-工程发布（例如jenkin）" class="headerlink" title="web 工程发布（例如jenkin）"></a>web 工程发布（例如jenkin）</h3><ul>
+<li>1.打包好的 war 包放在 Tomcat 安装目录下的 webapps 目录下</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv jenkins.war apache-tomcat-8.5.37/webapps/</span><br></pre></td></tr></table></figure>
+<ul>
+<li>2.启动Tomcat(Tomcat 会自动解压 webapps 目录下的 war 包)</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./apache-tomcat-8.5.37/bin/startup.sh</span><br></pre></td></tr></table></figure>
+<ul>
+<li>3.通过curl或者浏览器访问</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http://localhost:8080/jenkins</span><br></pre></td></tr></table></figure>
+<p><img src="/image/部署OpenResty_002.png" alt=""></p>
+<h3 id="web-项目路径结构"><a href="#web-项目路径结构" class="headerlink" title="web 项目路径结构"></a>web 项目路径结构</h3><ul>
+<li>webapp                         站点根目录(例如解压后的jenkins目录)<ul>
+<li>META-INF                   存放工程自身相关的一些信息，元文件信息，通常由开发工具，环境自动生成。<ul>
+<li>MANIFEST.MF            配置清单文件</li>
+</ul>
 </li>
-<li><p>9.ADD：相当于 COPY，但是比 COPY 功能更强大</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 格式</span></span><br><span class="line">ADD &lt;src&gt; &lt;dest&gt;</span><br></pre></td></tr></table></figure>
-<p>  该命令将复制指定的 到容器中的 。 其中<src> 可以是Dockerfile所在目录的一个相对路径；也可以是一个 URL；还可以是一个 tar 文件，复制进容器会自动解压。<br>  <dest>可以使镜像内的绝对路径，或者相当于工作目录(WORKDIR)的相对路径，支持正则表达式。</dest></src></p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 例如</span></span><br><span class="line">ADD *.c /code/</span><br></pre></td></tr></table></figure>
+<li>WEB-INF                   Java web应用的安全目录。所谓安全就是客户端无法访问，只有服务端可以访问的目录<ul>
+<li>classes                存放程序所需要的所有 Java class 文件<ul>
+<li>*.class            程序需要的 class 文件</li>
+<li>*.xml              程序需要的 xml 文件</li>
+</ul>
 </li>
-<li><p>10.VOLUME：挂载目录</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 格式</span></span><br><span class="line">USER daemon</span><br></pre></td></tr></table></figure>
-<p>  指定运行容器时的用户名或 UID，后续的 RUN 也会使用指定用户。当服务不需要管理员权限时，可以通过该命令指定运行用户。并且可以在之前创建所需要的用户，例如： RUN useradd -s /sbin/nologin -M www。</p>
+<li>lib                    库文件夹<ul>
+<li>*.jar              程序需要的 jar 包</li>
+</ul>
 </li>
-<li><p>11.LABEL:用来生成用于生成镜像的元数据的标签信息</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 格式</span></span><br><span class="line">LABEL &lt;key&gt;=&lt;value&gt; &lt;key&gt;=&lt;value&gt; &lt;key&gt;=&lt;value&gt; ...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 例如</span></span><br><span class="line">LABEL version=<span class="string">"1.0"</span></span><br><span class="line">LABEL description=<span class="string">"This text illustrates \ that label-values can span multiple lines."</span></span><br></pre></td></tr></table></figure>
+<li>web.xml                Web应用程序的部署描述文件。它是工程中最重要的配置文件，它描述了 servlet 和组成应用的其它组件，以及应用初始化参数、安全管理约束等。</li>
+</ul>
 </li>
-<li><p>12.ENTRYPOINT:指定镜像的默认入口命令，该入口命令会在启动容器时作为根命令执行，所有传入值作为该命令的参数</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 格式</span></span><br><span class="line">ENTRYPOINT [<span class="string">"executable"</span>, <span class="string">"param1"</span>, <span class="string">"param2"</span>]</span><br><span class="line">ENTRYPOINT <span class="built_in">command</span> param1 param2 <span class="comment">#（shell中执行）</span></span><br></pre></td></tr></table></figure>
-<p>  此时，CMD指令指定值将作为根命令的参数。<br>  每个Dockerfile中只能有一个ENTRYPOINT，当指定多个时，只有最后一个有效。<br>  在运行时可以被–entrypoint参数覆盖掉，如docker run –entrypoint。</p>
-</li>
-<li><p>13.CMD:指定启动容器时执行的命令</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 格式</span></span><br><span class="line">CMD [<span class="string">"executable"</span>,<span class="string">"param1"</span>,<span class="string">"param2"</span>] 使用 <span class="built_in">exec</span> 执行，推荐方式；</span><br><span class="line">CMD <span class="built_in">command</span> param1 param2 在 /bin/bash 中执行，提供给需要交互的应用；</span><br><span class="line">CMD [<span class="string">"param1"</span>,<span class="string">"param2"</span>] 提供给 ENTRYPOINT 的默认参数；</span><br></pre></td></tr></table></figure>
-<p>  每个 Dockerfile 只能有一条 CMD 命令。如果指定了多条命令，只有最后一条会被执行。如果用户启动容器时候指定了运行的命令，则会覆盖掉 CMD 指定的命令。</p>
-</li>
-<li><p>14.ONBUILD：在构建本镜像时不生效，在基于此镜像构建镜像时生效</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 格式</span></span><br><span class="line">ONBUILD [INSTRUCTION]</span><br></pre></td></tr></table></figure>
-<p>  配置当所创建的镜像作为其它新创建镜像的基础镜像时，所执行的操作指令。</p>
-</li>
-<li><p>15.STOPSIGNAL:指定所创建镜像启动的容器接收退出的信号值</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 例如</span></span><br><span class="line">STOPSIGNAL singnal</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>16.HEALTHCHECK：配置所启动容器如何进行健康检查(如何判断是否健康)，自Docker 1.12开始支持</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 格式</span></span><br><span class="line">HEALTHCHECK [OPTIONS] CMD <span class="built_in">command</span> <span class="comment"># 根据所执行命令返回值是否为0判断；</span></span><br><span class="line">HEALTHCHECK NONE <span class="comment"># 禁止基础镜像中的健康检查。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># [OPTION]参数</span></span><br><span class="line">--inerval=DURATION  <span class="comment"># (默认为：30s)：多久检查一次；</span></span><br><span class="line">--timeout=DURATION  <span class="comment"># (默认为：30s)：每次检查等待结果的超时时间；</span></span><br><span class="line">--retries=N 　　     <span class="comment"># (默认为：3)：如果失败了，重试几次才最终确定失败。</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>17.SHELL：指定其他命令使用shell时的默认shell类型（默认值为 [“bin/sh”,”-c”]）</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 格式</span></span><br><span class="line">SHELL [<span class="string">"executable"</span>,<span class="string">"parameters"</span>]</span><br></pre></td></tr></table></figure>
-<p>  默认值为 [“bin/sh”,”-c”]</p>
+<li><userdir>                  自定义的目录</userdir></li>
+<li><userfiles>                自定义的资源文件</userfiles></li>
+</ul>
 </li>
 </ul>
-<h3 id="创建镜像"><a href="#创建镜像" class="headerlink" title="创建镜像"></a>创建镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker build [options] PATH | URL</span><br><span class="line"></span><br><span class="line"><span class="comment"># [OPTIONS]</span></span><br><span class="line">-t &lt;指定镜像的名字&gt;</span><br><span class="line">-f &lt;指定构建镜像的 Dockerfile 文件（Dockerfile 可不在当前路径下）&gt;</span><br><span class="line">PATH|URL <span class="comment"># 指定构建镜像的上下文的路径，构建镜像的过程中，可以且只可以引用上下文中的任何文件</span></span><br></pre></td></tr></table></figure>
-<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
-<li>对于Windows系统，建议在Dockerfile开头添加# escape=`来指定转移信息</li>
-<li>ENTRYPOINT 和 CMD 的区别：ENTRYPOINT 不能被执行时的参数覆盖掉，CMD 可以被覆盖掉默认的参数。ENTRYPOINT 指定了该镜像启动时的入口默认参数，CMD 则指定了容器启动时的命令。</li>
-<li>调试dockerfile，使用dockerfile需要好久的时间，建议进入容器手动先执行dockerfile命令实践。</li>
-<li>编写.dockerignore文件(过滤Dockerfile所在目录中的其他文件)</li>
-<li>容器只运行单个应用</li>
-<li>将多个RUN指令合并为一个</li>
-<li>基础镜像的标签不要用latest</li>
-<li>每个RUN指令后删除多余文件</li>
-<li>选择合适的基础镜像(alpine版本最好)</li>
-<li>设置WORKDIR和CMD</li>
-<li>使用ENTRYPOINT (可选)</li>
-<li>在entrypoint脚本中使用exec</li>
-<li>COPY与ADD优先使用前者</li>
-<li>合理调整COPY与RUN的顺序</li>
-<li>设置默认的环境变量，映射端口和数据卷</li>
-<li>使用LABEL设置镜像元数据</li>
-<li>添加HEALTHCHECK</li>
-<li>最小化镜像的层数。</li>
-<li>多行参数时应该分类，在每个换行符\前都增加一个空格。</li>
-<li>对构建缓存要有清楚的认识</li>
-</ul>
-<p>More info: <a href="https://docs.docker.com/engine/reference/builder/#shell" target="_blank" rel="noopener">官方文档</a></p>
+<p><img src="/image/部署OpenResty_003.png" alt=""></p>
+<p>More info: <a href="https://wiki.apache.org/tomcat/FrontPage" target="_blank" rel="noopener">Tomcat Wiki</a></p>
 
       
 
@@ -387,7 +383,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">环境部署</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">tomcat</a>
         		</li>
       		
 		</ul>
@@ -443,7 +443,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://lightalight.github.io/2018/10/12/Dockerfile常用命令/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://lightalight.github.io/2015/11/23/部署Tomcat/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -457,18 +457,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/10/21/Linux系统监控工具/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/05/16/部署OpenResty/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Linux系统监控工具
+          部署OpenResty
         
       </div>
     </a>
   
   
-    <a href="/2018/09/04/部署Gitea/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">部署Gitea</div>
+    <a href="/2015/09/23/部署博客/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">部署博客</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -495,7 +495,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本结构"><span class="toc-number">1.1.</span> <span class="toc-text">基本结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本命令"><span class="toc-number">1.2.</span> <span class="toc-text">基本命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建镜像"><span class="toc-number">1.3.</span> <span class="toc-text">创建镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注意事项"><span class="toc-number">1.4.</span> <span class="toc-text">注意事项</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Deploy"><span class="toc-number">1.</span> <span class="toc-text">Quick Deploy</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#部署准备"><span class="toc-number">1.1.</span> <span class="toc-text">部署准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装和配置"><span class="toc-number">1.2.</span> <span class="toc-text">安装和配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重要目录说明"><span class="toc-number">1.3.</span> <span class="toc-text">重要目录说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-工程发布（例如jenkin）"><span class="toc-number">1.4.</span> <span class="toc-text">web 工程发布（例如jenkin）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-项目路径结构"><span class="toc-number">1.5.</span> <span class="toc-text">web 项目路径结构</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -530,7 +530,7 @@ if(true){
   	repo: 'gitment',
   	owner: 'lightalight',
   	admin: ['lightalight'],
-  	id: 'Fri Oct 12 2018 19:55:23 GMT+0800',
+  	id: 'Mon Nov 23 2015 20:04:16 GMT+0800',
   	distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container') 
@@ -633,31 +633,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">监控</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">云计算</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">可靠性</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -665,11 +645,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+                <a href="javascript:void(0)" class="js-tag color4">云计算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">监控</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">可靠性</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">性能</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -690,6 +686,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>
