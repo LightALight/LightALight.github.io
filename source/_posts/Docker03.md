@@ -1,24 +1,45 @@
 ---
-title: Dockerfile常用命令
-date: 2018-10-12 19:55:23
+title: Docker（三）
+date: 2019-09-16 21:32:11
 tags: docker
 copyright: true
 password:
 toc: true
 ---
 
-Dockerfile 是记录了镜像是如何被构建出来的配置文件, 可以被 docker 直接执行以创建一个镜像。文章介绍Dockerfile常用命令。
+Dockerfile 是记录了镜像是如何被构建出来的配置文件, 可以被 docker 直接执行以创建一个镜像。文章介绍如何编写Dockerfile。
 <!--more-->
+
 ## Quick Guide
 
-### 基本结构
 
-分为四部分：基础镜像信息、维护者信息、镜像操作指令和容器启动时执行指令。‘#’ 为 Dockerfile 中的注释。例如:
+![](/image/Docker03/Docker03_001.png)
+
+### 编写Dockerfile 构建镜像
+
+- 1.创建文件
+
+```bash
+mkdir Dockerfile
+cd Dockerfile
+vi Dockerfile
+```
+
+- 2.编写镜像信息
+
+	分为四部分：
+    - 基础镜像信息
+    - 维护者信息
+    - 镜像操作指令
+    - 容器启动时执行指令。
+
+Dockerfile中每一个指令都会建立一层，** 最多127层镜像**， 可以用&&将各个所需命令串联起来简化为了1层。 ‘#’ 为 Dockerfile 中的注释。
+
 ```bash
 # This my first nginx Dockerfile
 # Version 1.0
 
-# Base images 基础镜像
+# Base images 基于基础镜像上构建
 FROM centos
 
 #MAINTAINER 维护者信息
@@ -50,29 +71,46 @@ EXPOSE 80
 CMD ["nginx"]
 ```
 
+- 3.构建镜像
 
-### 基本命令
+```
+docker build [options] PATH | URL
 
-|指令           |说明
-|---------------|-----------------------
-|FROM           |指定所创建镜像的基础镜像
-|MAINTAINER     |指定维护者信息
-|RUN            |运行命令
-|CMD            |指定启动容器时默认执行的命令
-|LABEL          |指定生成镜像的元数据标签信息
-|EXPOSE         |声明镜像内服务所监听的端口
-|ENV            |指定环境变量
-|ADD            |赋值指定的路径下的内容到容器中的路径下，可以为URL；如果为tar文件，会自动解压到路径下
-|COPY           |赋值本地主机的路径下的内容到容器中的路径下；一般情况下推荐使用COPY而不是ADD
-|ENTRYPOINT     |指定镜像的默认入口
-|VOLUME         |创建数据挂载点
-|USER           |指定运行容器时的用户名或UID
-|WORKDIR        |配置工作目录
-|ARG            |指定镜像内使用的参数(例如版本号信息等)
-|ONBUILD        |配置当前所创建的镜像作为其他镜像的基础镜像时，所执行的创建操作的命令
-|STOPSIGNAL     |容器退出的信号
-|HEALTHCHECK    |如何进行健康检查
-|SHELL          |指定使用SHELL时的默认SHELL类型
+# [OPTIONS]
+-t <指定镜像的名字>
+-f <指定构建镜像的 Dockerfile 文件（Dockerfile 可不在当前路径下）>
+PATH|URL # 指定构建镜像的上下文的路径，构建镜像的过程中，可以且只可以引用上下文中的任何文件 
+```
+
+
+```bash
+docker build -t nginx:test .
+```
+
+### Dockerfile 常用命令
+
+![](/image/Docker03/Docker03_002.png)
+
+|指令           |说明|
+|:---------------:|:-----------------------:|
+|FROM           |指定所创建镜像的基础镜像|
+|MAINTAINER     |指定维护者信息|
+|RUN            |运行命令|
+|CMD            |指定启动容器时默认执行的命令|
+|LABEL          |指定生成镜像的元数据标签信息|
+|EXPOSE         |声明镜像内服务所监听的端口|
+|ENV            |指定环境变量|
+|ADD            |赋值指定的路径下的内容到容器中的路径下，可以为URL；如果为tar文件，会自动解压到路径下|
+|COPY           |赋值本地主机的路径下的内容到容器中的路径下；一般情况下推荐使用COPY而不是ADD|
+|ENTRYPOINT     |指定镜像的默认入口|
+|VOLUME         |创建数据挂载点|
+|USER           |指定运行容器时的用户名或UID|
+|WORKDIR        |配置工作目录|
+|ARG            |指定镜像内使用的参数(例如版本号信息等)|
+|ONBUILD        |配置当前所创建的镜像作为其他镜像的基础镜像时，所执行的创建操作的命令|
+|STOPSIGNAL     |容器退出的信号|
+|HEALTHCHECK    |如何进行健康检查|
+|SHELL          |指定使用SHELL时的默认SHELL类型|
 
 
 * 1.FROM:指定基础镜像，要在哪个镜像建立
@@ -232,16 +270,6 @@ CMD ["nginx"]
     默认值为 ["bin/sh","-c"]
 
 
-### 创建镜像
-
-```bash
-docker build [options] PATH | URL
-
-# [OPTIONS]
--t <指定镜像的名字>
--f <指定构建镜像的 Dockerfile 文件（Dockerfile 可不在当前路径下）>
-PATH|URL # 指定构建镜像的上下文的路径，构建镜像的过程中，可以且只可以引用上下文中的任何文件 
-```
 
 
 ### 注意事项

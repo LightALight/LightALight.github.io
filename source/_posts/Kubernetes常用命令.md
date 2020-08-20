@@ -1,6 +1,6 @@
 ---
 title: Kubernetes常用命令
-date: 2018-11-11 22:15:53
+date: 2019-10-11 22:15:53
 tags: [k8s,docker]
 copyright: true
 password:

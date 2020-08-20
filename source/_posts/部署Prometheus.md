@@ -1,7 +1,7 @@
 ---
 title: 部署Prometheus
-date: 2019-02-11 21:23:32
-tags: [环境部署,接口]
+date: 2019-01-15 19:23:32
+tags: 监控
 copyright: true
 password:
 toc: true

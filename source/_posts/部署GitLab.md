@@ -1,6 +1,6 @@
 ---
 title: 部署GitLab
-date: 2018-08-21 22:01:52
+date: 2018-02-21 22:01:52
 tags: [环境部署,git]
 copyright: true
 password:

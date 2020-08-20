@@ -1,6 +1,6 @@
 ---
 title: 部署OpenResty
-date: 2018-05-16 21:03:06
+date: 2018-03-16 21:03:06
 tags: [环境部署,nginx]
 copyright: true
 password:

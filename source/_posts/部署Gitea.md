@@ -1,6 +1,6 @@
 ---
 title: 部署Gitea
-date: 2018-09-04 19:03:22
+date: 2018-01-04 19:03:22
 tags: [环境部署,git]
 copyright: true
 password:
