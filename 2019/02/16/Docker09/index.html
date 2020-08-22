@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://lightalight.github.io">
   <title>Docker（九） | Keep It Simple Do It Well</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在本章介绍如何Docker 命令。">
+  <meta name="description" content="在本章介绍 Docker 命令。">
 <meta name="keywords" content="docker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker（九）">
 <meta property="og:url" content="https://lightalight.github.io/2019/02/16/Docker09/index.html">
 <meta property="og:site_name" content="Keep It Simple Do It Well">
-<meta property="og:description" content="在本章介绍如何Docker 命令。">
+<meta property="og:description" content="在本章介绍 Docker 命令。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-08-22T02:10:09.227Z">
+<meta property="og:updated_time" content="2020-08-22T07:00:48.662Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker（九）">
-<meta name="twitter:description" content="在本章介绍如何Docker 命令。">
+<meta name="twitter:description" content="在本章介绍 Docker 命令。">
   
     <link rel="alternative" href="/atom.xml" title="Keep It Simple Do It Well" type="application/atom+xml">
   
@@ -177,7 +177,7 @@
     <div id="toc-article" class="toc-article">
         <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
       <strong class="toc-title">文章目录</strong>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#容器生命周期管理"><span class="toc-number">1.1.</span> <span class="toc-text">容器生命周期管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#run"><span class="toc-number">1.1.1.</span> <span class="toc-text">run</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#start-stop-restart"><span class="toc-number">1.1.2.</span> <span class="toc-text">start/stop/restart</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#kill"><span class="toc-number">1.1.3.</span> <span class="toc-text">kill</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rm"><span class="toc-number">1.1.4.</span> <span class="toc-text">rm</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pause-unpause"><span class="toc-number">1.1.5.</span> <span class="toc-text">pause/unpause</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#create"><span class="toc-number">1.1.6.</span> <span class="toc-text">create</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#exec"><span class="toc-number">1.1.7.</span> <span class="toc-text">exec</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#容器操作"><span class="toc-number">1.2.</span> <span class="toc-text">容器操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ps"><span class="toc-number">1.2.1.</span> <span class="toc-text">ps</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#inspect"><span class="toc-number">1.2.2.</span> <span class="toc-text">inspect</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#top"><span class="toc-number">1.2.3.</span> <span class="toc-text">top</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#attach"><span class="toc-number">1.2.4.</span> <span class="toc-text">attach</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#语法"><span class="toc-number">1.3.</span> <span class="toc-text">语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#events"><span class="toc-number">1.3.1.</span> <span class="toc-text">events</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#logs"><span class="toc-number">1.3.2.</span> <span class="toc-text">logs</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#wait"><span class="toc-number">1.3.3.</span> <span class="toc-text">wait</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#export"><span class="toc-number">1.3.4.</span> <span class="toc-text">export</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#port"><span class="toc-number">1.3.5.</span> <span class="toc-text">port</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#容器rootfs命令"><span class="toc-number">1.4.</span> <span class="toc-text">容器rootfs命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#commit"><span class="toc-number">1.4.1.</span> <span class="toc-text">commit</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cp"><span class="toc-number">1.4.2.</span> <span class="toc-text">cp</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#语法-1"><span class="toc-number">1.5.</span> <span class="toc-text">语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#diff"><span class="toc-number">1.5.1.</span> <span class="toc-text">diff</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#镜像仓库"><span class="toc-number">1.6.</span> <span class="toc-text">镜像仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#login"><span class="toc-number">1.6.1.</span> <span class="toc-text">login</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pull"><span class="toc-number">1.6.2.</span> <span class="toc-text">pull</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#push"><span class="toc-number">1.6.3.</span> <span class="toc-text">push</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#search"><span class="toc-number">1.6.4.</span> <span class="toc-text">search</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#本地镜像管理"><span class="toc-number">1.7.</span> <span class="toc-text">本地镜像管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#images"><span class="toc-number">1.7.1.</span> <span class="toc-text">images</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rmi"><span class="toc-number">1.7.2.</span> <span class="toc-text">rmi</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tag"><span class="toc-number">1.7.3.</span> <span class="toc-text">tag</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#build"><span class="toc-number">1.7.4.</span> <span class="toc-text">build</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#history"><span class="toc-number">1.7.5.</span> <span class="toc-text">history</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#save"><span class="toc-number">1.7.6.</span> <span class="toc-text">save</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#load"><span class="toc-number">1.7.7.</span> <span class="toc-text">load</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#import"><span class="toc-number">1.7.8.</span> <span class="toc-text">import</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他"><span class="toc-number">1.8.</span> <span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#info"><span class="toc-number">1.8.1.</span> <span class="toc-text">info</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#version"><span class="toc-number">1.8.2.</span> <span class="toc-text">version</span></a></li></ol></li></ol></li></ol>
           </div>
     <script type="text/javascript">
       function showToc(){
@@ -197,9 +197,307 @@
   <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在本章介绍如何Docker 命令。</p>
+        <p>在本章介绍 Docker 命令。</p>
 <a id="more"></a>
-<h2 id="Quick-Guide"><a href="#Quick-Guide" class="headerlink" title="Quick Guide"></a>Quick Guide</h2>
+<h2 id="Quick-Guide"><a href="#Quick-Guide" class="headerlink" title="Quick Guide"></a>Quick Guide</h2><h3 id="容器生命周期管理"><a href="#容器生命周期管理" class="headerlink" title="容器生命周期管理"></a>容器生命周期管理</h3><h4 id="run"><a href="#run" class="headerlink" title="run"></a>run</h4><p>docker run ：创建一个新的容器并运行一个命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run [OPTIONS] IMAGE [COMMAND] [ARG...]</span><br></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-a stdin:</strong> 指定标准输入输出内容类型，可选 STDIN/STDOUT/STDERR 三项；</li>
+<li><strong>-d:</strong> 后台运行容器，并返回容器ID；</li>
+<li><strong>-i:</strong> 以交互模式运行容器，通常与 -t 同时使用；</li>
+<li><strong>-P:</strong> 随机端口映射，容器内部端口<strong>随机</strong>映射到主机的端口</li>
+<li><strong>-p:</strong> 指定端口映射，格式为：<strong>主机(宿主)端口:容器端口</strong></li>
+<li><strong>-t:</strong> 为容器重新分配一个伪输入终端，通常与 -i 同时使用；</li>
+<li><strong>–name=”nginx-lb”:</strong> 为容器指定一个名称；</li>
+<li><strong>–dns 8.8.8.8:</strong> 指定容器使用的DNS服务器，默认和宿主一致；</li>
+<li><strong>–dns-search example.com:</strong> 指定容器DNS搜索域名，默认和宿主一致；</li>
+<li><strong>-h “mars”:</strong> 指定容器的hostname；</li>
+<li><strong>-e username=”ritchie”:</strong> 设置环境变量；</li>
+<li><strong>–env-file=[]:</strong> 从指定文件读入环境变量；</li>
+<li><strong>–cpuset=”0-2” or –cpuset=”0,1,2”:</strong> 绑定容器到指定CPU运行；</li>
+<li><strong>-m :</strong> 设置容器使用内存最大值；</li>
+<li><strong>–net=”bridge”:</strong> 指定容器的网络连接类型，支持 bridge/host/none/container: 四种类型；</li>
+<li><strong>–link=[]:</strong> 添加链接到另一个容器；</li>
+<li><strong>–expose=[]:</strong> 开放一个端口或一组端口；</li>
+<li><strong>–volume , -v:</strong> 绑定一个卷</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用docker镜像nginx:latest以后台模式启动一个容器,并将容器命名为mynginx。</span></span><br><span class="line">docker run --name mynginx -d nginx:latest</span><br></pre></td></tr></table></figure>
+<h4 id="start-stop-restart"><a href="#start-stop-restart" class="headerlink" title="start/stop/restart"></a>start/stop/restart</h4><p><strong>docker start</strong> :启动一个或多个已经被停止的容器</p>
+<p><strong>docker stop</strong> :停止一个运行中的容器</p>
+<p><strong>docker restart</strong> :重启容器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker start [OPTIONS] CONTAINER [CONTAINER...]</span><br><span class="line">docker stop [OPTIONS] CONTAINER [CONTAINER...]</span><br><span class="line">docker restart [OPTIONS] CONTAINER [CONTAINER...]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 启动已被停止的容器myrunoob</span><br><span class="line">docker start myrunoob</span><br><span class="line"># 停止运行中的容器myrunoob</span><br><span class="line">docker stop myrunoob</span><br><span class="line"># 重启容器myrunoob</span><br><span class="line">docker restart myrunoob</span><br></pre></td></tr></table></figure>
+<h4 id="kill"><a href="#kill" class="headerlink" title="kill"></a>kill</h4><p><strong>docker kill</strong> :杀掉一个运行中的容器。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker kill [OPTIONS] CONTAINER [CONTAINER...]</span><br></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-s :</strong> 向容器发送一个信号</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 杀掉运行中的容器mynginx</span><br><span class="line">runoob@runoob:~$ docker kill -s KILL mynginx</span><br></pre></td></tr></table></figure>
+<h4 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h4><p><strong>docker rm ：</strong> 删除一个或多个容器。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm [OPTIONS] CONTAINER [CONTAINER...]</span><br></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-f :</strong> 通过 SIGKILL 信号强制删除一个运行中的容器。</li>
+<li><strong>-l :</strong> 移除容器间的网络连接，而非容器本身。</li>
+<li><strong>-v :</strong> 删除与容器关联的卷。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 强制删除容器 db01、db02</span><br><span class="line">docker rm -f db01 db02</span><br></pre></td></tr></table></figure>
+<h4 id="pause-unpause"><a href="#pause-unpause" class="headerlink" title="pause/unpause"></a>pause/unpause</h4><p><strong>docker pause</strong> :暂停容器中所有的进程。</p>
+<p><strong>docker unpause</strong> :恢复容器中所有的进程。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pause [OPTIONS] CONTAINER [CONTAINER...]</span><br><span class="line">docker unpause [OPTIONS] CONTAINER [CONTAINER...]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 暂停数据库容器db01提供服务。</span><br><span class="line">docker pause db01</span><br><span class="line"># 恢复数据库容器db01提供服务。</span><br><span class="line">docker unpause db01</span><br></pre></td></tr></table></figure>
+<h4 id="create"><a href="#create" class="headerlink" title="create"></a>create</h4><p><strong>docker create ：</strong> 创建一个新的容器但不启动它</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker create [OPTIONS] IMAGE [COMMAND] [ARG...]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 使用docker镜像nginx:latest创建一个容器,并将容器命名为myrunoob</span><br><span class="line">runoob@runoob:~$ docker create  --name myrunoob  nginx:latest</span><br></pre></td></tr></table></figure>
+<h4 id="exec"><a href="#exec" class="headerlink" title="exec"></a>exec</h4><p><strong>docker exec ：</strong> 在运行的容器中执行命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec [OPTIONS] CONTAINER COMMAND [ARG...]</span><br></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-d :</strong> 分离模式: 在后台运行</li>
+<li><strong>-i :</strong> 即使没有附加也保持STDIN 打开</li>
+<li><strong>-t :</strong> 分配一个伪终端</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 在容器 mynginx 中以交互模式执行容器内 /root/runoob.sh 脚本:</span><br><span class="line">runoob@runoob:~$ docker exec -it mynginx /bin/sh /root/runoob.sh</span><br><span class="line"># 在容器 mynginx 中开启一个交互模式的终端:</span><br><span class="line">runoob@runoob:~$ docker exec -i -t  mynginx /bin/bash</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="容器操作"><a href="#容器操作" class="headerlink" title="容器操作"></a>容器操作</h3><h4 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h4><p><strong>docker ps :</strong> 列出容器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps [OPTIONS]</span><br></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-a :</strong>显示所有的容器，包括未运行的。</li>
+<li><strong>-f :</strong>根据条件过滤显示的内容。</li>
+<li><strong>–format :</strong>指定返回值的模板文件。</li>
+<li><strong>-l :</strong>显示最近创建的容器。</li>
+<li><strong>-n :</strong>列出最近创建的n个容器。</li>
+<li><strong>–no-trunc :</strong>不截断输出。</li>
+<li><strong>-q :</strong>静默模式，只显示容器编号。</li>
+<li><strong>-s :</strong>显示总的文件大小。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 列出所有在运行的容器信息。</span><br><span class="line">runoob@runoob:~$ docker ps</span><br><span class="line">CONTAINER ID   IMAGE          COMMAND                ...  PORTS                    NAMES</span><br><span class="line">09b93464c2f7   nginx:latest   &quot;nginx -g &apos;daemon off&quot; ...  80/tcp, 443/tcp          myrunoob</span><br><span class="line">96f7f14e99ab   mysql:5.6      &quot;docker-entrypoint.sh&quot; ...  0.0.0.0:3306-&gt;3306/tcp   mymysql</span><br></pre></td></tr></table></figure>
+<p>输出详情介绍：</p>
+<ul>
+<li><strong>CONTAINER ID:</strong> 容器 ID。</li>
+<li><strong>IMAGE:</strong> 使用的镜像。</li>
+<li><strong>COMMAND:</strong> 启动容器时运行的命令。</li>
+<li><strong>CREATED:</strong> 容器的创建时间。</li>
+<li><strong>STATUS:</strong> 容器状态。</li>
+<li><strong>PORTS:</strong> 容器的端口信息和使用的连接类型（tcp\udp）。</li>
+<li><strong>NAMES:</strong> 自动分配的容器名称。</li>
+</ul>
+<p>状态有7种：</p>
+<ul>
+<li>created（已创建）</li>
+<li>restarting（重启中）</li>
+<li>running（运行中）</li>
+<li>removing（迁移中）</li>
+<li>paused（暂停）</li>
+<li>exited（停止）</li>
+<li>dead（死亡）</li>
+</ul>
+<h4 id="inspect"><a href="#inspect" class="headerlink" title="inspect"></a>inspect</h4><p><strong>docker inspect :</strong> 获取容器/镜像的元数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker inspect [OPTIONS] NAME|ID [NAME|ID...]</span><br></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-f :</strong>指定返回值的模板文件。</li>
+<li><strong>-s :</strong>显示总的文件大小。</li>
+<li><strong>–type :</strong>为指定类型返回JSON。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"># 获取镜像mysql:5.6的元信息。</span><br><span class="line"></span><br><span class="line">runoob@runoob:~$ docker inspect mysql:5.6</span><br><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;Id&quot;: &quot;sha256:2c0964ec182ae9a045f866bbc2553087f6e42bfc16074a74fb820af235f070ec&quot;,</span><br><span class="line">        &quot;RepoTags&quot;: [</span><br><span class="line">            &quot;mysql:5.6&quot;</span><br><span class="line">        ],</span><br><span class="line">        &quot;RepoDigests&quot;: [],</span><br><span class="line">        &quot;Parent&quot;: &quot;&quot;,</span><br><span class="line">        &quot;Comment&quot;: &quot;&quot;,</span><br><span class="line">        &quot;Created&quot;: &quot;2016-05-24T04:01:41.168371815Z&quot;,</span><br><span class="line">        &quot;Container&quot;: &quot;e0924bc460ff97787f34610115e9363e6363b30b8efa406e28eb495ab199ca54&quot;,</span><br><span class="line">        &quot;ContainerConfig&quot;: &#123;</span><br><span class="line">            &quot;Hostname&quot;: &quot;b0cf605c7757&quot;,</span><br><span class="line">            &quot;Domainname&quot;: &quot;&quot;,</span><br><span class="line">            &quot;User&quot;: &quot;&quot;,</span><br><span class="line">            &quot;AttachStdin&quot;: false,</span><br><span class="line">            &quot;AttachStdout&quot;: false,</span><br><span class="line">            &quot;AttachStderr&quot;: false,</span><br><span class="line">            &quot;ExposedPorts&quot;: &#123;</span><br><span class="line">                &quot;3306/tcp&quot;: &#123;&#125;</span><br><span class="line">            &#125;,</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 获取正在运行的容器mymysql的 IP。</span><br><span class="line">runoob@runoob:~$ docker inspect --format=&apos;&#123;&#123;range .NetworkSettings.Networks&#125;&#125;&#123;&#123;.IPAddress&#125;&#125;&#123;&#123;end&#125;&#125;&apos; mymysql</span><br><span class="line">172.17.0.3</span><br></pre></td></tr></table></figure>
+<h4 id="top"><a href="#top" class="headerlink" title="top"></a>top</h4><p><strong>docker top :</strong>查看容器中运行的进程信息，支持 ps 命令参数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker top [OPTIONS] CONTAINER [ps OPTIONS]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 查看容器mymysql的进程信息。</span><br><span class="line">runoob@runoob:~/mysql$ docker top mymysql</span><br><span class="line">UID    PID    PPID    C      STIME   TTY  TIME       CMD</span><br><span class="line">999    40347  40331   18     00:58   ?    00:00:02   mysqld</span><br></pre></td></tr></table></figure>
+<h4 id="attach"><a href="#attach" class="headerlink" title="attach"></a>attach</h4><p><strong>docker attach :</strong>连接到正在运行中的容器。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker attach [OPTIONS] CONTAINER</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 容器mynginx将访问日志指到标准输出，连接到容器查看访问信息。</span><br><span class="line">runoob@runoob:~$ docker attach --sig-proxy=false mynginx</span><br><span class="line">192.168.239.1 - - [10/Jul/2016:16:54:26 +0000] &quot;GET / HTTP/1.1&quot; 304 0 &quot;-&quot; &quot;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.93 Safari/537.36&quot; &quot;-&quot;</span><br></pre></td></tr></table></figure>
+<h4 id="events"><a href="#events" class="headerlink" title="events"></a>events</h4><p><strong>docker events :</strong> 从服务器获取实时事件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker events [OPTIONS]</span><br></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-f ：</strong>根据条件过滤事件；</li>
+<li><strong>–since ：</strong>从指定的时间戳后显示所有事件;</li>
+<li><strong>–until ：</strong>流水时间显示到指定的时间为止；</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 显示docker 2016年7月1日后的所有事件。</span><br><span class="line">runoob@runoob:~/mysql$ docker events  --since=&quot;1467302400&quot;</span><br><span class="line">2016-07-08T19:44:54.501277677+08:00 network connect 66f958fd13dc4314ad20034e576d5c5eba72e0849dcc38ad9e8436314a4149d4 (container=b8573233d675705df8c89796a2c2687cd8e36e03646457a15fb51022db440e64, name=bridge, type=bridge)</span><br><span class="line">2016-07-08T19:44:54.723876221+08:00 container start b8573233d675705df8c89796a2c2687cd8e36e03646457a15fb51022db440e64 (image=nginx:latest, name=elegant_albattani)</span><br><span class="line">2016-07-08T19:44:54.726110498+08:00 container resize b8573233d675705df8c89796a2c2687cd8e36e03646457a15fb51022db440e64 (height=39, image=nginx:latest, name=elegant_albattani, width=167)</span><br><span class="line">2016-07-08T19:46:22.137250899+08:00 container die b8573233d675705df8c89796a2c2687cd8e36e03646457a15fb51022db440e64 (exitCode=0, image=nginx:latest, name=elegant_albattani)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h4 id="logs"><a href="#logs" class="headerlink" title="logs"></a>logs</h4><p><strong>docker logs :</strong> 获取容器的日志</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs [OPTIONS] CONTAINER</span><br></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-f :</strong> 跟踪日志输出</li>
+<li><strong>–since :</strong>显示某个开始时间的所有日志</li>
+<li><strong>-t :</strong> 显示时间戳</li>
+<li><strong>–tail :</strong>仅列出最新N条容器日志</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 跟踪查看容器mynginx的日志输出。</span><br><span class="line">runoob@runoob:~$ docker logs -f mynginx</span><br><span class="line">192.168.239.1 - - [10/Jul/2016:16:53:33 +0000] &quot;GET / HTTP/1.1&quot; 200 612 &quot;-&quot; &quot;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.93 Safari/537.36&quot; &quot;-&quot;</span><br><span class="line">2016/07/10 16:53:33 [error] 5#5: *1 open() &quot;/usr/share/nginx/html/favicon.ico&quot; failed (2: No such file or directory), client: 192.168.239.1, server: localhost, request: &quot;GET /favicon.ico HTTP/1.1&quot;, host: &quot;192.168.239.130&quot;, referrer: &quot;http://192.168.239.130/&quot;</span><br><span class="line">192.168.239.1 - - [10/Jul/2016:16:53:33 +0000] &quot;GET /favicon.ico HTTP/1.1&quot; 404 571 &quot;http://192.168.239.130/&quot; &quot;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.93 Safari/537.36&quot; &quot;-&quot;</span><br><span class="line">192.168.239.1 - - [10/Jul/2016:16:53:59 +0000] &quot;GET / HTTP/1.1&quot; 304 0 &quot;-&quot; &quot;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.93 Safari/537.36&quot; &quot;-&quot;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h4 id="wait"><a href="#wait" class="headerlink" title="wait"></a>wait</h4><p><strong>docker wait :</strong> 阻塞运行直到容器停止，然后打印出它的退出代码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker wait [OPTIONS] CONTAINER [CONTAINER...]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker wait CONTAINER</span><br></pre></td></tr></table></figure>
+<h4 id="export"><a href="#export" class="headerlink" title="export"></a>export</h4><p><strong>docker export :</strong>将文件系统作为一个tar归档文件导出到STDOUT。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker export [OPTIONS] CONTAINER</span><br></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-o :</strong>将输入内容写到文件。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 将id为a404c6c174a2的容器按日期保存为tar文件。</span><br><span class="line">runoob@runoob:~$ docker export -o mysql-`date +%Y%m%d`.tar a404c6c174a2</span><br><span class="line">runoob@runoob:~$ ls mysql-`date +%Y%m%d`.tar</span><br><span class="line">mysql-20160711.tar</span><br></pre></td></tr></table></figure>
+<h4 id="port"><a href="#port" class="headerlink" title="port"></a>port</h4><p><strong>docker port :</strong>列出指定的容器的端口映射，或者查找将PRIVATE_PORT NAT到面向公众的端口。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker port [OPTIONS] CONTAINER [PRIVATE_PORT[/PROTO]]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 查看容器mynginx的端口映射情况。</span><br><span class="line">runoob@runoob:~$ docker port mymysql</span><br><span class="line">3306/tcp -&gt; 0.0.0.0:3306</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="容器rootfs命令"><a href="#容器rootfs命令" class="headerlink" title="容器rootfs命令"></a>容器rootfs命令</h3><h4 id="commit"><a href="#commit" class="headerlink" title="commit"></a>commit</h4><p><strong>docker commit :</strong>从容器创建一个新的镜像。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]</span><br></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-a :</strong>提交的镜像作者；</li>
+<li><strong>-c :</strong>使用Dockerfile指令来创建镜像；</li>
+<li><strong>-m :</strong>提交时的说明文字；</li>
+<li><strong>-p :</strong>在commit时，将容器暂停。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 将容器a404c6c174a2 保存为新的镜像,并添加提交人信息和说明信息。</span><br><span class="line">runoob@runoob:~$ docker commit -a &quot;runoob.com&quot; -m &quot;my apache&quot; a404c6c174a2  mymysql:v1 </span><br><span class="line">sha256:37af1236adef1544e8886be23010b66577647a40bc02c0885a6600b33ee28057</span><br></pre></td></tr></table></figure>
+<h4 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h4><p><strong>docker cp :</strong>用于容器与主机之间的数据拷贝。</p>
+<h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|-</span><br><span class="line">docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH</span><br></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-L :</strong>保持源目标中的链接</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 将主机/www/runoob目录拷贝到容器96f7f14e99ab的/www目录下。</span><br><span class="line">docker cp /www/runoob 96f7f14e99ab:/www/</span><br></pre></td></tr></table></figure>
+<h4 id="diff"><a href="#diff" class="headerlink" title="diff"></a>diff</h4><p><strong>docker diff :</strong> 检查容器里文件结构的更改。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker diff [OPTIONS] CONTAINER</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 查看容器mymysql的文件结构更改。</span><br><span class="line">runoob@runoob:~$ docker diff mymysql</span><br><span class="line">A /logs</span><br></pre></td></tr></table></figure>
+<h3 id="镜像仓库"><a href="#镜像仓库" class="headerlink" title="镜像仓库"></a>镜像仓库</h3><h4 id="login"><a href="#login" class="headerlink" title="login"></a>login</h4><p><strong>docker login :</strong> 登陆到一个Docker镜像仓库，如果未指定镜像仓库地址，默认为官方仓库 Docker Hub</p>
+<p><strong>docker logout :</strong> 登出一个Docker镜像仓库，如果未指定镜像仓库地址，默认为官方仓库 Docker Hub</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker login [OPTIONS] [SERVER]</span><br><span class="line">docker logout [OPTIONS] [SERVER]</span><br></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-u :</strong>登陆的用户名</li>
+<li><strong>-p :</strong>登陆的密码</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 登陆到Docker Hub</span><br><span class="line">docker login -u 用户名 -p 密码</span><br><span class="line"># 登出Docker Hub</span><br><span class="line">docker logout</span><br></pre></td></tr></table></figure>
+<h4 id="pull"><a href="#pull" class="headerlink" title="pull"></a>pull</h4><p><strong>docker pull :</strong> 从镜像仓库中拉取或者更新指定镜像</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull [OPTIONS] NAME[:TAG|@DIGEST]</span><br></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-a :</strong>拉取所有 tagged 镜像  </li>
+<li><strong>–disable-content-trust :</strong>忽略镜像的校验,默认开启</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 从Docker Hub下载java最新版镜像。</span><br><span class="line">docker pull java</span><br></pre></td></tr></table></figure>
+<h4 id="push"><a href="#push" class="headerlink" title="push"></a>push</h4><p><strong>docker push :</strong> 将本地的镜像上传到镜像仓库,要先登陆到镜像仓库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker push [OPTIONS] NAME[:TAG]</span><br></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>–disable-content-trust :</strong>忽略镜像的校验,默认开启</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 上传本地镜像myapache:v1到镜像仓库中。</span><br><span class="line">docker push myapache:v1</span><br></pre></td></tr></table></figure>
+<h4 id="search"><a href="#search" class="headerlink" title="search"></a>search</h4><p><strong>docker search :</strong> 从Docker Hub查找镜像</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search [OPTIONS] TERM</span><br></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>–automated :</strong>只列出 automated build类型的镜像；</li>
+<li><strong>–no-trunc :</strong>显示完整的镜像描述；</li>
+<li><strong>-s :</strong>列出收藏数不小于指定值的镜像。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 从Docker Hub查找所有镜像名包含java，并且收藏数大于10的镜像</span><br><span class="line">runoob@runoob:~$ docker search -s 10 java</span><br><span class="line">NAME                  DESCRIPTION                           STARS   OFFICIAL   AUTOMATED</span><br><span class="line">java                  Java is a concurrent, class-based...   1037    [OK]       </span><br><span class="line">anapsix/alpine-java   Oracle Java 8 (and 7) with GLIBC ...   115                [OK]</span><br><span class="line">develar/java                                                 46                 [OK]</span><br><span class="line">isuper/java-oracle    This repository contains all java...   38                 [OK]</span><br><span class="line">lwieske/java-8        Oracle Java 8 Container - Full + ...   27                 [OK]</span><br><span class="line">nimmis/java-centos    This is docker images of CentOS 7...   13                 [OK]</span><br></pre></td></tr></table></figure>
+<p>参数说明：</p>
+<ul>
+<li><strong>NAME:</strong> 镜像仓库源的名称</li>
+<li><strong>DESCRIPTION:</strong> 镜像的描述</li>
+<li><strong>OFFICIAL:</strong> 是否 docker 官方发布</li>
+<li><strong>stars:</strong> 类似 Github 里面的 star，表示点赞、喜欢的意思。</li>
+<li><strong>AUTOMATED:</strong> 自动构建。</li>
+</ul>
+<hr>
+<h3 id="本地镜像管理"><a href="#本地镜像管理" class="headerlink" title="本地镜像管理"></a>本地镜像管理</h3><h4 id="images"><a href="#images" class="headerlink" title="images"></a>images</h4><p><strong>docker images :</strong> 列出本地镜像。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images [OPTIONS] [REPOSITORY[:TAG]]</span><br></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-a :</strong>列出本地所有的镜像（含中间映像层，默认情况下，过滤掉中间映像层）；</li>
+<li><strong>–digests :</strong>显示镜像的摘要信息；</li>
+<li><strong>-f :</strong>显示满足条件的镜像；</li>
+<li><strong>–format :</strong>指定返回值的模板文件；</li>
+<li><strong>–no-trunc :</strong>显示完整的镜像信息；  </li>
+<li><strong>-q :</strong>只显示镜像ID。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 查看本地镜像列表</span><br><span class="line">runoob@runoob:~$ docker images</span><br></pre></td></tr></table></figure>
+<h4 id="rmi"><a href="#rmi" class="headerlink" title="rmi"></a>rmi</h4><p><strong>docker rmi :</strong> 删除本地一个或多少镜像。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi [OPTIONS] IMAGE [IMAGE...]</span><br></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-f :</strong>强制删除；</li>
+<li><strong>–no-prune :</strong>不移除该镜像的过程镜像，默认移除；</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 强制删除本地镜像 runoob/ubuntu:v4</span><br><span class="line">root@runoob:~# docker rmi -f runoob/ubuntu:v4</span><br></pre></td></tr></table></figure>
+<h4 id="tag"><a href="#tag" class="headerlink" title="tag"></a>tag</h4><p><strong>docker tag :</strong> 标记本地镜像，将其归入某一仓库。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker tag [OPTIONS] IMAGE[:TAG] [REGISTRYHOST/][USERNAME/]NAME[:TAG]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 将镜像ubuntu:15.10标记为 runoob/ubuntu:v3 镜像</span><br><span class="line">root@runoob:~# docker tag ubuntu:15.10 runoob/ubuntu:v3</span><br></pre></td></tr></table></figure>
+<h4 id="build"><a href="#build" class="headerlink" title="build"></a>build</h4><p><strong>docker build</strong> 命令用于使用 Dockerfile 创建镜像。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build [OPTIONS] PATH | URL | -</span><br></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>–build-arg=[] :</strong>设置镜像创建时的变量；</li>
+<li><strong>–cpu-shares :</strong>设置 cpu 使用权重；</li>
+<li><strong>–cpu-period :</strong>限制 CPU CFS周期；</li>
+<li><strong>–cpu-quota :</strong>限制 CPU CFS配额；</li>
+<li><strong>–cpuset-cpus :</strong>指定使用的CPU id；</li>
+<li><strong>–cpuset-mems :</strong>指定使用的内存 id；</li>
+<li><strong>–disable-content-trust :</strong>忽略校验，默认开启；</li>
+<li><strong>-f :</strong>指定要使用的Dockerfile路径；</li>
+<li><strong>–force-rm :</strong>设置镜像过程中删除中间容器；</li>
+<li><strong>–isolation :</strong>使用容器隔离技术；</li>
+<li><strong>–label=[] :</strong>设置镜像使用的元数据；</li>
+<li><strong>-m :</strong>设置内存最大值；</li>
+<li><strong>–memory-swap :</strong>设置Swap的最大值为内存+swap，”-1”表示不限swap；</li>
+<li><strong>–no-cache :</strong>创建镜像的过程不使用缓存；</li>
+<li><strong>–pull :</strong>尝试去更新镜像的新版本；</li>
+<li><strong>–quiet, -q :</strong>安静模式，成功后只输出镜像 ID；</li>
+<li><strong>–rm :</strong>设置镜像成功后删除中间容器；</li>
+<li><strong>–shm-size :</strong>设置/dev/shm的大小，默认值是64M；</li>
+<li><strong>–ulimit :</strong>Ulimit配置。</li>
+<li><strong>–tag, -t:</strong> 镜像的名字及标签，通常 name:tag 或者 name 格式；可以在一次构建中为一个镜像设置多个标签。</li>
+<li><strong>–network:</strong> 默认 default。在构建期间设置RUN指令的网络模式</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 使用当前目录的 Dockerfile 创建镜像，标签为 runoob/ubuntu:v1</span><br><span class="line">docker build -t runoob/ubuntu:v1 .</span><br></pre></td></tr></table></figure>
+<h4 id="history"><a href="#history" class="headerlink" title="history"></a>history</h4><p><strong>docker history :</strong> 查看指定镜像的创建历史。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker history [OPTIONS] IMAGE</span><br></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-H :</strong>以可读的格式打印镜像大小和日期，默认为true；</li>
+<li><strong>–no-trunc :</strong>显示完整的提交记录； </li>
+<li><strong>-q :</strong>仅列出提交记录ID。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 查看本地镜像runoob/ubuntu:v3的创建历史</span><br><span class="line">root@runoob:~# docker history runoob/ubuntu:v3</span><br></pre></td></tr></table></figure>
+<h4 id="save"><a href="#save" class="headerlink" title="save"></a>save</h4><p><strong>docker save :</strong> 将指定镜像保存成 tar 归档文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker save [OPTIONS] IMAGE [IMAGE...]</span><br></pre></td></tr></table></figure>
+<p>OPTIONS 说明：</p>
+<ul>
+<li><strong>-o :</strong>输出到的文件。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 将镜像 runoob/ubuntu:v3 生成 my_ubuntu_v3.tar 文档</span><br><span class="line">runoob@runoob:~$ docker save -o my_ubuntu_v3.tar runoob/ubuntu:v3</span><br></pre></td></tr></table></figure>
+<h4 id="load"><a href="#load" class="headerlink" title="load"></a>load</h4><p><strong>docker load :</strong> 导入使用 <a href="#save">docker save</a> 命令导出的镜像。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker load [OPTIONS]</span><br></pre></td></tr></table></figure>
+<p>OPTIONS 说明：</p>
+<ul>
+<li><strong>–input , -i :</strong> 指定导入的文件，代替 STDIN。</li>
+<li><strong>–quiet , -q :</strong> 精简输出信息。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 导入镜像</span><br><span class="line">$ docker load &lt; busybox.tar.gz</span><br></pre></td></tr></table></figure>
+<h4 id="import"><a href="#import" class="headerlink" title="import"></a>import</h4><p><strong>docker import :</strong> 从归档文件中创建镜像。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker import [OPTIONS] file|URL|- [REPOSITORY[:TAG]]</span><br></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-c :</strong>应用docker 指令创建镜像； </li>
+<li><strong>-m :</strong>提交时的说明文字；</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 从镜像归档文件my_ubuntu_v3.tar创建镜像，命名为runoob/ubuntu:v4</span><br><span class="line">runoob@runoob:~$ docker import  my_ubuntu_v3.tar runoob/ubuntu:v4</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><h4 id="info"><a href="#info" class="headerlink" title="info"></a>info</h4><p>docker info : 显示 Docker 系统信息，包括镜像和容器数。。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker info [OPTIONS]</span><br></pre></td></tr></table></figure>
+<h4 id="version"><a href="#version" class="headerlink" title="version"></a>version</h4><p>docker version :显示 Docker 版本信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker version [OPTIONS]</span><br></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-f :</strong>指定返回值的模板文件。</li>
+</ul>
+
       
 
       
@@ -320,7 +618,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#容器生命周期管理"><span class="toc-number">1.1.</span> <span class="toc-text">容器生命周期管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#run"><span class="toc-number">1.1.1.</span> <span class="toc-text">run</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#start-stop-restart"><span class="toc-number">1.1.2.</span> <span class="toc-text">start/stop/restart</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#kill"><span class="toc-number">1.1.3.</span> <span class="toc-text">kill</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rm"><span class="toc-number">1.1.4.</span> <span class="toc-text">rm</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pause-unpause"><span class="toc-number">1.1.5.</span> <span class="toc-text">pause/unpause</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#create"><span class="toc-number">1.1.6.</span> <span class="toc-text">create</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#exec"><span class="toc-number">1.1.7.</span> <span class="toc-text">exec</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#容器操作"><span class="toc-number">1.2.</span> <span class="toc-text">容器操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ps"><span class="toc-number">1.2.1.</span> <span class="toc-text">ps</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#inspect"><span class="toc-number">1.2.2.</span> <span class="toc-text">inspect</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#top"><span class="toc-number">1.2.3.</span> <span class="toc-text">top</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#attach"><span class="toc-number">1.2.4.</span> <span class="toc-text">attach</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#语法"><span class="toc-number">1.3.</span> <span class="toc-text">语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#events"><span class="toc-number">1.3.1.</span> <span class="toc-text">events</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#logs"><span class="toc-number">1.3.2.</span> <span class="toc-text">logs</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#wait"><span class="toc-number">1.3.3.</span> <span class="toc-text">wait</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#export"><span class="toc-number">1.3.4.</span> <span class="toc-text">export</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#port"><span class="toc-number">1.3.5.</span> <span class="toc-text">port</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#容器rootfs命令"><span class="toc-number">1.4.</span> <span class="toc-text">容器rootfs命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#commit"><span class="toc-number">1.4.1.</span> <span class="toc-text">commit</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cp"><span class="toc-number">1.4.2.</span> <span class="toc-text">cp</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#语法-1"><span class="toc-number">1.5.</span> <span class="toc-text">语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#diff"><span class="toc-number">1.5.1.</span> <span class="toc-text">diff</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#镜像仓库"><span class="toc-number">1.6.</span> <span class="toc-text">镜像仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#login"><span class="toc-number">1.6.1.</span> <span class="toc-text">login</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pull"><span class="toc-number">1.6.2.</span> <span class="toc-text">pull</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#push"><span class="toc-number">1.6.3.</span> <span class="toc-text">push</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#search"><span class="toc-number">1.6.4.</span> <span class="toc-text">search</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#本地镜像管理"><span class="toc-number">1.7.</span> <span class="toc-text">本地镜像管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#images"><span class="toc-number">1.7.1.</span> <span class="toc-text">images</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rmi"><span class="toc-number">1.7.2.</span> <span class="toc-text">rmi</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tag"><span class="toc-number">1.7.3.</span> <span class="toc-text">tag</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#build"><span class="toc-number">1.7.4.</span> <span class="toc-text">build</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#history"><span class="toc-number">1.7.5.</span> <span class="toc-text">history</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#save"><span class="toc-number">1.7.6.</span> <span class="toc-text">save</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#load"><span class="toc-number">1.7.7.</span> <span class="toc-text">load</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#import"><span class="toc-number">1.7.8.</span> <span class="toc-text">import</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他"><span class="toc-number">1.8.</span> <span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#info"><span class="toc-number">1.8.1.</span> <span class="toc-text">info</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#version"><span class="toc-number">1.8.2.</span> <span class="toc-text">version</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -466,11 +764,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -510,11 +808,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>
