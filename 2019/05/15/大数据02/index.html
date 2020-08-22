@@ -16,21 +16,21 @@
 <meta property="og:site_name" content="Keep It Simple Do It Well">
 <meta property="og:description" content="本文章主要介绍Hadoop的基础知识。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://lightalight.github.io/image/大数据02_001.png">
-<meta property="og:image" content="https://lightalight.github.io/image/大数据02_002.png">
-<meta property="og:image" content="https://lightalight.github.io/image/大数据02_003.png">
-<meta property="og:image" content="https://lightalight.github.io/image/大数据02_004.png">
-<meta property="og:image" content="https://lightalight.github.io/image/大数据02_005.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/大数据02_006.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/大数据02_007.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/大数据02_008.png">
-<meta property="og:image" content="https://lightalight.github.io/image/大数据02_009.png">
-<meta property="og:image" content="https://lightalight.github.io/image/大数据02_010.png">
-<meta property="og:updated_time" content="2020-08-22T02:09:40.285Z">
+<meta property="og:image" content="https://lightalight.github.io/image/大数据02/大数据02_001.png">
+<meta property="og:image" content="https://lightalight.github.io/image/大数据02/大数据02_002.png">
+<meta property="og:image" content="https://lightalight.github.io/image/大数据02/大数据02_003.png">
+<meta property="og:image" content="https://lightalight.github.io/image/大数据02/大数据02_004.png">
+<meta property="og:image" content="https://lightalight.github.io/image/大数据02/大数据02_005.jpg">
+<meta property="og:image" content="https://lightalight.github.io/image/大数据02/大数据02_006.jpg">
+<meta property="og:image" content="https://lightalight.github.io/image/大数据02/大数据02_007.jpg">
+<meta property="og:image" content="https://lightalight.github.io/image/大数据02/大数据02_008.png">
+<meta property="og:image" content="https://lightalight.github.io/image/大数据02/大数据02_009.png">
+<meta property="og:image" content="https://lightalight.github.io/image/大数据02/大数据02_010.png">
+<meta property="og:updated_time" content="2020-08-22T08:08:41.497Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大数据（二）">
 <meta name="twitter:description" content="本文章主要介绍Hadoop的基础知识。">
-<meta name="twitter:image" content="https://lightalight.github.io/image/大数据02_001.png">
+<meta name="twitter:image" content="https://lightalight.github.io/image/大数据02/大数据02_001.png">
   
     <link rel="alternative" href="/atom.xml" title="Keep It Simple Do It Well" type="application/atom+xml">
   
@@ -223,15 +223,15 @@
 <li><strong>高效性</strong>：Hadoop能够在节点之间动态地移动数据，并保证各个节点的动态平衡，因此处理速度非常快  。</li>
 <li><strong>低成本：</strong>开源的，只需要一般的商用硬件。</li>
 </ol>
-<h3 id="生态系统和组件"><a href="#生态系统和组件" class="headerlink" title="生态系统和组件"></a>生态系统和组件</h3><p><img src="/image/大数据02_001.png" alt=""></p>
-<h3 id="Hadoop架构"><a href="#Hadoop架构" class="headerlink" title="Hadoop架构"></a>Hadoop架构</h3><p><img src="/image/大数据02_002.png" alt=""></p>
+<h3 id="生态系统和组件"><a href="#生态系统和组件" class="headerlink" title="生态系统和组件"></a>生态系统和组件</h3><p><img src="/image/大数据02/大数据02_001.png" alt=""></p>
+<h3 id="Hadoop架构"><a href="#Hadoop架构" class="headerlink" title="Hadoop架构"></a>Hadoop架构</h3><p><img src="/image/大数据02/大数据02_002.png" alt=""></p>
 <ul>
 <li>主节点：主节点允许您使用Hadoop MapReduce进行数据并行处理。</li>
 <li>从节点：从节点是Hadoop集群中的其他计算机，可让您存储数据以进行复杂的计算。此外，所有从属节点都随附有Task Tracker和一个DataNode。这使您可以分别与NameNode和Job Tracker同步进程。</li>
 <li>NameNode：NameNode表示名称空间中使用的每个文件和目录</li>
 <li>数据节点：DataNode可帮助您管理HDFS节点的状态，并允许您与块进行交互</li>
 </ul>
-<h3 id="Hadoop组成"><a href="#Hadoop组成" class="headerlink" title="Hadoop组成"></a>Hadoop组成</h3><p><img src="/image/大数据02_003.png" alt=""></p>
+<h3 id="Hadoop组成"><a href="#Hadoop组成" class="headerlink" title="Hadoop组成"></a>Hadoop组成</h3><p><img src="/image/大数据02/大数据02_003.png" alt=""></p>
 <ul>
 <li><p><strong>MapReduce:</strong> 分布式计算</p>
 </li>
@@ -242,7 +242,7 @@
 <li><p><strong>Others:</strong> 利用YARN的资源管理功能实现其他的数据处理方式</p>
 </li>
 </ul>
-<h4 id="HDFS"><a href="#HDFS" class="headerlink" title="HDFS"></a>HDFS</h4><p><img src="/image/大数据02_004.png" alt=""></p>
+<h4 id="HDFS"><a href="#HDFS" class="headerlink" title="HDFS"></a>HDFS</h4><p><img src="/image/大数据02/大数据02_004.png" alt=""></p>
 <ul>
 <li><strong>Block数据块</strong><ol>
 <li>基本存储单位，一般大小为64M(注:配置大的块 )<ol>
@@ -275,7 +275,7 @@
 </ol>
 </li>
 </ul>
-<h4 id="YARN"><a href="#YARN" class="headerlink" title="YARN"></a>YARN</h4><p><img src="/image/大数据02_005.jpg" alt=""></p>
+<h4 id="YARN"><a href="#YARN" class="headerlink" title="YARN"></a>YARN</h4><p><img src="/image/大数据02/大数据02_005.jpg" alt=""></p>
 <p>旧的MapReduce架构：存在<strong>单点</strong>和<strong>资源利用率</strong>问题</p>
 <ul>
 <li><strong>JobTracker:</strong> 负责资源管理，跟踪资源消耗和可用性，作业生命周期管理（调度作业任务，跟踪进度，为任务提供容错）</li>
@@ -288,8 +288,8 @@
 <li>ApplicationMaster: 单个作业的资源管理和任务监控</li>
 <li>Container: 资源申请的单位和任务运行的容器</li>
 </ul>
-<p><img src="/image/大数据02_006.jpg" alt=""><br><img src="/image/大数据02_007.jpg" alt=""></p>
-<h4 id="MapReduce"><a href="#MapReduce" class="headerlink" title="MapReduce"></a>MapReduce</h4><p>MapReduce主要是先读取文件数据，然后进行Map处理，接着Reduce处理，最后把处理结果写到文件中<br><img src="/image/大数据02_008.png" alt=""><br><img src="/image/大数据02_009.png" alt=""><br><img src="/image/大数据02_010.png" alt=""></p>
+<p><img src="/image/大数据02/大数据02_006.jpg" alt=""><br><img src="/image/大数据02/大数据02_007.jpg" alt=""></p>
+<h4 id="MapReduce"><a href="#MapReduce" class="headerlink" title="MapReduce"></a>MapReduce</h4><p>MapReduce主要是先读取文件数据，然后进行Map处理，接着Reduce处理，最后把处理结果写到文件中<br><img src="/image/大数据02/大数据02_008.png" alt=""><br><img src="/image/大数据02/大数据02_009.png" alt=""><br><img src="/image/大数据02/大数据02_010.png" alt=""></p>
 <p>More info: <a href="https://pennywong.gitbooks.io/hadoop-notebook/content/index
 .html" target="_blank" rel="noopener">Hadoop</a></p>
 
@@ -555,15 +555,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">监控</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -571,7 +567,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">可靠性</a>
+                <a href="javascript:void(0)" class="js-tag color3">监控</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -579,7 +575,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">性能</a>
+                <a href="javascript:void(0)" class="js-tag color4">可靠性</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -587,11 +583,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">接口</a>
+                <a href="javascript:void(0)" class="js-tag color3">性能</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">自动化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">接口</a>
               </li>
              
               <li class="article-tag-list-item">
