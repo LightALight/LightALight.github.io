@@ -1,6 +1,6 @@
 ---
 title: Docker（二）
-date: 2019-08-16 21:32:11
+date: 2018-07-16 21:32:11
 tags: docker
 copyright: true
 password:
@@ -235,6 +235,5 @@ docker run ubuntu:15.10 /bin/echo "Hello world"
     curl http://<私有仓库IP:端口>/v2/<image>/tags/list # 查看私有仓库中的镜像列表
     docker pull <私有仓库IP:端口/image:new_tag> # 拉取本地仓库中的镜像
     ```
-
 
 More info: [Docker教程](https://www.flux7.com/tutorial/docker-tutorial-series-part-1-an-introduction-docker-components/)
