@@ -16,42 +16,10 @@
 <meta property="og:site_name" content="Keep It Simple Do It Well">
 <meta property="og:description" content="在本章介绍如何Docker 命令。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://lightalight.github.io/image/Docker08/Docker08_001.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/Docker08/Docker08_002.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/Docker08/Docker08_003.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/Docker08/Docker08_004.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/Docker08/Docker08_005.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/Docker08/Docker08_006.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/Docker08/Docker08_007.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/Docker08/Docker08_008.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/Docker08/Docker08_009.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/Docker08/Docker08_010.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/Docker08/Docker08_011.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/Docker08/Docker08_012.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/Docker08/Docker08_013.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/Docker08/Docker08_014.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/Docker08/Docker08_015.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/Docker08/Docker08_016.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/Docker08/Docker08_017.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/Docker08/Docker08_018.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/Docker08/Docker08_019.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/Docker08/Docker08_020.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/Docker08/Docker08_021.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/Docker08/Docker08_022.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/Docker08/Docker08_023.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/Docker08/Docker08_024.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/Docker08/Docker08_025.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/Docker08/Docker08_026.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/Docker08/Docker08_027.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/Docker08/Docker08_028.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/Docker08/Docker08_029.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/Docker08/Docker08_030.jpg">
-<meta property="og:image" content="https://lightalight.github.io/image/Docker08/Docker08_031.jpg">
-<meta property="og:updated_time" content="2020-08-22T02:05:26.189Z">
+<meta property="og:updated_time" content="2020-08-22T02:10:09.227Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker（九）">
 <meta name="twitter:description" content="在本章介绍如何Docker 命令。">
-<meta name="twitter:image" content="https://lightalight.github.io/image/Docker08/Docker08_001.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Keep It Simple Do It Well" type="application/atom+xml">
   
@@ -209,7 +177,7 @@
     <div id="toc-article" class="toc-article">
         <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
       <strong class="toc-title">文章目录</strong>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker-API"><span class="toc-number">1.1.</span> <span class="toc-text">Docker API</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Docker-Registry-API"><span class="toc-number">1.1.1.</span> <span class="toc-text">Docker Registry API</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Docker-Hub-API"><span class="toc-number">1.1.2.</span> <span class="toc-text">Docker Hub API</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Docker-Remote-API"><span class="toc-number">1.1.3.</span> <span class="toc-text">Docker Remote API</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注意事项"><span class="toc-number">1.2.</span> <span class="toc-text">注意事项</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a></li></ol>
           </div>
     <script type="text/javascript">
       function showToc(){
@@ -231,299 +199,7 @@
       
         <p>在本章介绍如何Docker 命令。</p>
 <a id="more"></a>
-<h2 id="Quick-Guide"><a href="#Quick-Guide" class="headerlink" title="Quick Guide"></a>Quick Guide</h2><h3 id="Docker-API"><a href="#Docker-API" class="headerlink" title="Docker API"></a>Docker API</h3><p>Docker提供了很多的API以便用户使用。这些API包含四个方面：</p>
-<ul>
-<li>Docker Registry API：提供了与存储Docker镜像的Docker Registry集成的功能。</li>
-<li>Docker Hub API：：提供了与Docker HUB集成的功能</li>
-<li>Docker OAuth API: 提供了与OAuth的认证授权的功能</li>
-<li>Docker Remote API：：提供与Docker守护进程进行集成的功能</li>
-</ul>
-<h4 id="Docker-Registry-API"><a href="#Docker-Registry-API" class="headerlink" title="Docker Registry API"></a>Docker Registry API</h4><table>
-<thead>
-<tr>
-<th>用途</th>
-<th>方法</th>
-<th>url</th>
-<th>样例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>取出镜像层</td>
-<td>GET</td>
-<td>/v1/images/(image_id)/layer</td>
-<td><img src="/image/Docker08/Docker08_001.jpg" alt=""></td>
-</tr>
-<tr>
-<td>插入镜像层</td>
-<td>PUT</td>
-<td>/v1/images/(image_id)/layer</td>
-<td><img src="/image/Docker08/Docker08_002.jpg" alt=""></td>
-</tr>
-<tr>
-<td>检索镜像</td>
-<td>GET</td>
-<td>/v1/images/(image_id)/json</td>
-<td></td>
-</tr>
-<tr>
-<td>检索根镜像</td>
-<td>GET</td>
-<td>/v1/images/(image_id)/ancestry</td>
-<td></td>
-</tr>
-<tr>
-<td>获取库里所有的标签或者指定标签</td>
-<td>GET</td>
-<td>/v1/repositories/(namespace)/(repository)/tags</td>
-<td><img src="/image/Docker08/Docker08_003.jpg" alt=""></td>
-</tr>
-<tr>
-<td>获取库里所有的标签或者指定标签</td>
-<td>GET</td>
-<td>/v1/repositories/(namespace)/(repository)/tags/(tag*)</td>
-<td><img src="/image/Docker08/Docker08_004.jpg" alt=""></td>
-</tr>
-<tr>
-<td>删除标签</td>
-<td>DELETE</td>
-<td>/v1/repositories/(namespace)/(repository)/tags/(tag*)</td>
-<td><img src="/image/Docker08/Docker08_005.jpg" alt=""></td>
-</tr>
-<tr>
-<td>registry状态检查</td>
-<td>GET</td>
-<td>/v1/_ping</td>
-<td><img src="/image/Docker08/Docker08_006.jpg" alt=""></td>
-</tr>
-<tr>
-<td>创建镜像</td>
-<td>POST</td>
-<td>/images/create</td>
-<td><img src="/image/Docker08/Docker08_007.jpg" alt=""></td>
-</tr>
-<tr>
-<td>利用容器创建镜像</td>
-<td>POST</td>
-<td>/commit</td>
-<td><img src="/image/Docker08/Docker08_008.jpg" alt=""></td>
-</tr>
-<tr>
-<td>获取镜像清单</td>
-<td>GET</td>
-<td>/images/json</td>
-<td><img src="/image/Docker08/Docker08_009.jpg" alt=""></td>
-</tr>
-<tr>
-<td>导入指定的路径文件</td>
-<td>POST</td>
-<td>/images/(name)/insert</td>
-<td><img src="/image/Docker08/Docker08_010.jpg" alt=""></td>
-</tr>
-<tr>
-<td>删除镜像</td>
-<td>DELETE</td>
-<td>/images/(name)</td>
-<td><img src="/image/Docker08/Docker08_011.jpg" alt=""></td>
-</tr>
-<tr>
-<td>推送镜像到Registry</td>
-<td>POST</td>
-<td>/images/(name)/push</td>
-<td><img src="/image/Docker08/Docker08_012.jpg" alt=""></td>
-</tr>
-<tr>
-<td>Tag镜像</td>
-<td>POST</td>
-<td>/images/(name)/tag</td>
-<td><img src="/image/Docker08/Docker08_013.jpg" alt=""></td>
-</tr>
-<tr>
-<td>搜索镜像</td>
-<td>GET</td>
-<td>/images/search</td>
-<td><img src="/image/Docker08/Docker08_014.jpg" alt=""></td>
-</tr>
-<tr>
-<td>查看镜像历史</td>
-<td>GET</td>
-<td>/images/(name)/history</td>
-<td><img src="/image/Docker08/Docker08_015.jpg" alt=""></td>
-</tr>
-<tr>
-<td>构建镜像</td>
-<td>POST</td>
-<td>/build</td>
-<td><img src="/image/Docker08/Docker08_016.jpg" alt=""></td>
-</tr>
-</tbody>
-</table>
-<h4 id="Docker-Hub-API"><a href="#Docker-Hub-API" class="headerlink" title="Docker Hub API"></a>Docker Hub API</h4><table>
-<thead>
-<tr>
-<th>用途</th>
-<th>方法</th>
-<th>url</th>
-<th>样例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>创建一个新的仓库</strong></td>
-<td>PUT</td>
-<td>/v1/repositories/(repo_name)/</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>删除已经存在的仓库</strong></td>
-<td>DELETE</td>
-<td>/v1/repositories/(repo_name)/</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>更新仓库镜像</strong></td>
-<td>PUT</td>
-<td>/v1/repositories/(repo_name)/images</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>从仓库中获取镜像</strong></td>
-<td>GET</td>
-<td>/v1/repositories/(repo_name)/images</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>授权</strong></td>
-<td>PUT</td>
-<td>/v1/repositories/(repo_name)/auth</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>创建用户仓库</strong></td>
-<td>PUT</td>
-<td>/v1/repositories/(namespace)/(repo_name)/</td>
-<td><img src="/image/Docker08/Docker08_017.jpg" alt=""></td>
-</tr>
-<tr>
-<td><strong>删除用户仓库</strong></td>
-<td>DELETE</td>
-<td>/v1/repositories/(namespace)/(repo_name)/</td>
-<td><img src="/image/Docker08/Docker08_018.jpg" alt=""></td>
-</tr>
-<tr>
-<td><strong>更新用户仓库镜像</strong></td>
-<td>PUT</td>
-<td>/v1/repositories/(namespace)/(repo_name)/images</td>
-<td><img src="/image/Docker08/Docker08_019.jpg" alt=""></td>
-</tr>
-<tr>
-<td><strong>从仓库中下载镜像</strong></td>
-<td>GET</td>
-<td>/v1/repositories/(namespace)/(repo_name)/images</td>
-<td><img src="/image/Docker08/Docker08_020.jpg" alt=""></td>
-</tr>
-<tr>
-<td><strong>验证用户登录</strong></td>
-<td>GET</td>
-<td>/v1/users</td>
-<td><img src="/image/Docker08/Docker08_021.jpg" alt=""></td>
-</tr>
-<tr>
-<td><strong>添加新用户</strong></td>
-<td>POST</td>
-<td>/v1/users</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>更新用户信息</strong></td>
-<td>PUT</td>
-<td>/v1/users/(username)/</td>
-</tr>
-</tbody>
-</table>
-<h4 id="Docker-Remote-API"><a href="#Docker-Remote-API" class="headerlink" title="Docker Remote API"></a>Docker Remote API</h4><table>
-<thead>
-<tr>
-<th>用途</th>
-<th>方法</th>
-<th>url</th>
-<th>样例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>容器列表</strong></td>
-<td>GET</td>
-<td>/containers/json</td>
-<td><img src="/image/Docker08/Docker08_022.jpg" alt=""></td>
-</tr>
-<tr>
-<td><strong>创建新容器</strong></td>
-<td>POST</td>
-<td>/containers/create</td>
-<td><img src="/image/Docker08/Docker08_023.jpg" alt=""></td>
-</tr>
-<tr>
-<td><strong>监控容器</strong></td>
-<td>GET</td>
-<td>/containers/(id)/json</td>
-<td><img src="/image/Docker08/Docker08_024.jpg" alt=""></td>
-</tr>
-<tr>
-<td><strong>进程列表</strong></td>
-<td>GET</td>
-<td>/containers/(id)/top</td>
-<td><img src="/image/Docker08/Docker08_025.jpg" alt=""></td>
-</tr>
-<tr>
-<td><strong>容器日志</strong></td>
-<td>GET</td>
-<td>/containers/(id)/logs</td>
-<td><img src="/image/Docker08/Docker08_026.jpg" alt=""></td>
-</tr>
-<tr>
-<td><strong>导出容器</strong></td>
-<td>GET</td>
-<td>/containers/(id)/export</td>
-<td><img src="/image/Docker08/Docker08_027.jpg" alt=""></td>
-</tr>
-<tr>
-<td><strong>启动容器</strong></td>
-<td>POST</td>
-<td>/containers/(id)/start</td>
-<td><img src="/image/Docker08/Docker08_028.jpg" alt=""></td>
-</tr>
-<tr>
-<td><strong>停止容器</strong></td>
-<td>POST</td>
-<td>/containers/(id)/stop</td>
-<td><img src="/image/Docker08/Docker08_029.jpg" alt=""></td>
-</tr>
-<tr>
-<td><strong>重启容器</strong></td>
-<td>POST</td>
-<td>/containers/(id)/restart</td>
-<td><img src="/image/Docker08/Docker08_030.jpg" alt=""></td>
-</tr>
-<tr>
-<td><strong>终止容器</strong></td>
-<td>POST</td>
-<td>/containers/(id)/kill</td>
-<td><img src="/image/Docker08/Docker08_031.jpg" alt=""></td>
-</tr>
-</tbody>
-</table>
-<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
-<li>当Docker允许与访客容器目录共享而不限制其访问权限时，Docker Daemon的控制权应该只给授权用户。</li>
-<li>REST API支持Unix sockets，从而防止了cross-site-scripting攻击。</li>
-<li>REST API的HTTP接口应该在可信网络或者VPN下使用。</li>
-<li>在服务器上单独运行Docker时，需要与其它服务隔离。</li>
-<li>容器以非特权用户运行。</li>
-<li>Apparmor、SELinux、GRSEC解决方案，可用于额外的安全层。</li>
-<li>可以使用其它容器系统的安全功能。</li>
-</ul>
-<p>More info:<a href="https://docs.docker.com/engine/api/v1.37/#" target="_blank" rel="noopener">Docker API</a></p>
-
+<h2 id="Quick-Guide"><a href="#Quick-Guide" class="headerlink" title="Quick Guide"></a>Quick Guide</h2>
       
 
       
@@ -606,11 +282,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/04/15/大数据01/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/03/11/Docker10/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          大数据（一）
+          Kubernetes常用命令
         
       </div>
     </a>
@@ -644,7 +320,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker-API"><span class="toc-number">1.1.</span> <span class="toc-text">Docker API</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Docker-Registry-API"><span class="toc-number">1.1.1.</span> <span class="toc-text">Docker Registry API</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Docker-Hub-API"><span class="toc-number">1.1.2.</span> <span class="toc-text">Docker Hub API</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Docker-Remote-API"><span class="toc-number">1.1.3.</span> <span class="toc-text">Docker Remote API</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注意事项"><span class="toc-number">1.2.</span> <span class="toc-text">注意事项</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -790,11 +466,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">监控</a>
+                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">云计算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">监控</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -806,19 +486,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安全</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">性能</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">自动化</a>
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">接口</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">自动化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -830,15 +510,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>
