@@ -8,21 +8,20 @@
   <link rel="dns-prefetch" href="https://lightalight.github.io">
   <title>大数据（四） | Keep It Simple Do It Well</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="大数据是无法使用传统计算技术处理的大型数据集的集合，所以这些数据集的测试涉及各种要处理的工具，技术和框架，需要去了解和掌握。 大数据测试是大数据应用程序的测试，不是测试软件产品的各个功能，而是测试大数据应用程序对其数据处理的验证，数据处理功能和性能测试是关键。  本文章主要介绍大数据测试的基本知识。">
+  <meta name="description" content="海量数据就需要对应大数据技术去存储和处理它。 本文章主要介绍如何搭建大数据生态环境。">
 <meta name="keywords" content="大数据">
 <meta property="og:type" content="article">
 <meta property="og:title" content="大数据（四）">
 <meta property="og:url" content="https://lightalight.github.io/2019/07/15/大数据04/index.html">
 <meta property="og:site_name" content="Keep It Simple Do It Well">
-<meta property="og:description" content="大数据是无法使用传统计算技术处理的大型数据集的集合，所以这些数据集的测试涉及各种要处理的工具，技术和框架，需要去了解和掌握。 大数据测试是大数据应用程序的测试，不是测试软件产品的各个功能，而是测试大数据应用程序对其数据处理的验证，数据处理功能和性能测试是关键。  本文章主要介绍大数据测试的基本知识。">
+<meta property="og:description" content="海量数据就需要对应大数据技术去存储和处理它。 本文章主要介绍如何搭建大数据生态环境。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://lightalight.github.io/image/大数据04/大数据04_001.png">
-<meta property="og:image" content="https://lightalight.github.io/image/大数据04/大数据04_002.png">
-<meta property="og:updated_time" content="2020-08-22T08:09:11.643Z">
+<meta property="og:image" content="https://lightalight.github.io/image/大数据04/大数据04_001.jpg">
+<meta property="og:updated_time" content="2020-09-02T12:24:18.016Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大数据（四）">
-<meta name="twitter:description" content="大数据是无法使用传统计算技术处理的大型数据集的集合，所以这些数据集的测试涉及各种要处理的工具，技术和框架，需要去了解和掌握。 大数据测试是大数据应用程序的测试，不是测试软件产品的各个功能，而是测试大数据应用程序对其数据处理的验证，数据处理功能和性能测试是关键。  本文章主要介绍大数据测试的基本知识。">
-<meta name="twitter:image" content="https://lightalight.github.io/image/大数据04/大数据04_001.png">
+<meta name="twitter:description" content="海量数据就需要对应大数据技术去存储和处理它。 本文章主要介绍如何搭建大数据生态环境。">
+<meta name="twitter:image" content="https://lightalight.github.io/image/大数据04/大数据04_001.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Keep It Simple Do It Well" type="application/atom+xml">
   
@@ -180,7 +179,7 @@
     <div id="toc-article" class="toc-article">
         <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
       <strong class="toc-title">文章目录</strong>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#大数据测试类型"><span class="toc-number">1.1.</span> <span class="toc-text">大数据测试类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#大数据测试步骤"><span class="toc-number">1.2.</span> <span class="toc-text">大数据测试步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数据阶段验证"><span class="toc-number">1.2.1.</span> <span class="toc-text">数据阶段验证</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MapReduce-验证"><span class="toc-number">1.2.2.</span> <span class="toc-text">MapReduce 验证</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#输出阶段验证"><span class="toc-number">1.2.3.</span> <span class="toc-text">输出阶段验证</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#架构测试"><span class="toc-number">1.3.</span> <span class="toc-text">架构测试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#性能测试"><span class="toc-number">1.3.1.</span> <span class="toc-text">性能测试</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#性能测试方法"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">性能测试方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测试步骤"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">测试步骤</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#性能测试的参数"><span class="toc-number">1.3.1.3.</span> <span class="toc-text">性能测试的参数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试环境需求"><span class="toc-number">1.4.</span> <span class="toc-text">测试环境需求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#大数据测试-与-传统数据库测试-对比"><span class="toc-number">1.5.</span> <span class="toc-text">大数据测试 与 传统数据库测试 对比</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#大数据场景中使用的工具"><span class="toc-number">1.6.</span> <span class="toc-text">大数据场景中使用的工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#大数据测试中的挑战"><span class="toc-number">1.7.</span> <span class="toc-text">大数据测试中的挑战</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#机器准备"><span class="toc-number">1.1.</span> <span class="toc-text">机器准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#机器配置"><span class="toc-number">1.2.</span> <span class="toc-text">机器配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker-部署"><span class="toc-number">1.3.</span> <span class="toc-text">Docker 部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CM-CDH-部署"><span class="toc-number">1.4.</span> <span class="toc-text">CM + CDH 部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开源版本部署"><span class="toc-number">1.5.</span> <span class="toc-text">开源版本部署</span></a></li></ol></li></ol>
           </div>
     <script type="text/javascript">
       function showToc(){
@@ -200,176 +199,164 @@
   <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>大数据是无法使用传统计算技术处理的大型数据集的集合，所以这些数据集的测试涉及各种要处理的工具，技术和框架，需要去了解和掌握。</p>
-<p>大数据测试是大数据应用程序的测试，不是测试软件产品的各个功能，而是测试大数据应用程序对其数据处理的验证，<strong>数据处理功能和性能测试</strong>是关键。 </p>
-<p>本文章主要介绍大数据测试的基本知识。</p>
+        <p>海量数据就需要对应大数据技术去存储和处理它。</p>
+<p>本文章主要介绍如何搭建大数据生态环境。</p>
 <a id="more"></a>
-<h2 id="Quick-Guide"><a href="#Quick-Guide" class="headerlink" title="Quick Guide"></a>Quick Guide</h2><h3 id="大数据测试类型"><a href="#大数据测试类型" class="headerlink" title="大数据测试类型"></a>大数据测试类型</h3><ul>
-<li>数据处理<ul>
-<li>批量</li>
-<li>实时</li>
-<li>交互 </li>
-</ul>
-</li>
-<li>数据质量<ul>
-<li>一致性</li>
-<li>准确性</li>
-<li>有效性</li>
-<li>完整性 </li>
-</ul>
-</li>
-</ul>
-<h3 id="大数据测试步骤"><a href="#大数据测试步骤" class="headerlink" title="大数据测试步骤"></a>大数据测试步骤</h3><p><img src="/image/大数据04/大数据04_001.png" alt=""></p>
-<h4 id="数据阶段验证"><a href="#数据阶段验证" class="headerlink" title="数据阶段验证"></a>数据阶段验证</h4><p>大数据测试的第一步，也称作pre-hadoop阶段该过程包括如下验证：</p>
-<ol>
-<li>来自各方面的数据资源应该被验证，来确保正确的数据被加载进系统</li>
-<li>将源数据与推送到Hadoop系统中的数据进行比较，以确保它们匹配</li>
-<li>验证正确的数据被提取并被加载到HDFS正确的位置</li>
-</ol>
-<p>该阶段可以使用工具 <a href="https://www.talend.com/" target="_blank" rel="noopener">Talend</a> 或 <a href="http://www.datameer.com/" target="_blank" rel="noopener">Datameer</a>，进行数据阶段验证。</p>
-<h4 id="MapReduce-验证"><a href="#MapReduce-验证" class="headerlink" title="MapReduce 验证"></a>MapReduce 验证</h4><p>大数据测试的第二步是MapReduce的验证。在这个阶段，测试者在每个节点上进行业务逻辑验证，然后在运行多个节点后验证它们，确保如下操作的正确性：</p>
-<ol>
-<li>Map与Reduce进程正常工作</li>
-<li>在数据上实施数据聚合或隔离规则</li>
-<li>生成键值对</li>
-<li>在执行Map和Reduce进程后验证数据</li>
-</ol>
-<h4 id="输出阶段验证"><a href="#输出阶段验证" class="headerlink" title="输出阶段验证"></a>输出阶段验证</h4><p>大数据测试的最后或第三阶段是输出验证过程。生成输出数据文件，同时把文件移到一个EDW(Enterprise Data Warehouse:企业数据仓库)中或着把文件移动到任何其他基于需求的系统中。在第三阶段的活动包括：</p>
-<ol>
-<li>检查转换(Transformation)规则被正确应用</li>
-<li>检查数据完整性和成功的数据加载到目标系统中</li>
-<li>通过将目标数据与HDFS文件系统数据进行比较来检查没有数据损坏</li>
-</ol>
-<h3 id="架构测试"><a href="#架构测试" class="headerlink" title="架构测试"></a>架构测试</h3><p>Hadoop处理大量数据，并且资源非常密集。因此，架构测试对于确保大数据项目的成功至关重要。设计不良或不正确的系统可能会导致性能下降，并且系统可能无法满足要求。至少应在Hadoop环境中完成 <strong>性能</strong> 和 <strong>故障转移</strong> 测试服务。</p>
+<h2 id="Quick-Guide"><a href="#Quick-Guide" class="headerlink" title="Quick Guide"></a>Quick Guide</h2><p>现在搭建大数据环境有三种方式：</p>
 <ul>
-<li><strong>性能测试</strong> 包括测试作业完成时间，内存利用率，数据吞吐量和类似的系统指标。</li>
-<li><strong>故障转移</strong> 测试服务的目的是验证数据节点发生故障时无缝地进行数据处理</li>
-</ul>
-<h4 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h4><p>大数据性能测试包括两个主要措施</p>
+<li><p>1.docker方式: 利用docker-compose一键编排部署</p>
 <ul>
-<li><strong>数据提取和遍历</strong>：在此阶段，测试人员将验证快速系统如何使用各种数据源中的数据。测试涉及识别队列可以在给定时间范围内处理的其他消息。它还包括可以将数据插入基础数据存储库的速度，例如向Mongo和Cassandra数据库的插入率。</li>
-<li><strong>数据处理</strong>：它涉及验证查询或映射归约作业的执行速度。它还包括当基础数据存储区填充在数据集中时，单独测试数据处理。例如，在基础HDFS上运行Map Reduce作业。</li>
-</ul>
-<p><strong>注：由于系统由多个组件组成，并且必须单独测试每个组件。例如，对消息进行索引和使用的速度、MapReduce作业、查询性能和搜索等。</strong> </p>
-<h5 id="性能测试方法"><a href="#性能测试方法" class="headerlink" title="性能测试方法"></a>性能测试方法</h5><p>大数据应用性能测试涉及大量结构化和非结构化数据的测试，并且需要特定的测试方法来测试这些海量数据。</p>
-<p><img src="/image/大数据04/大数据04_002.png" alt=""></p>
-<h5 id="测试步骤"><a href="#测试步骤" class="headerlink" title="测试步骤"></a>测试步骤</h5><ol>
-<li>过程从设置要测试性能的大数据群集开始</li>
-<li>确定和设计相应的工作量</li>
-<li>准备个人客户(自定义脚本创建)</li>
-<li>执行测试并分析结果(如果不满足目标，则调整组件并重新执行)</li>
-<li>最佳配置</li>
-</ol>
-<h5 id="性能测试的参数"><a href="#性能测试的参数" class="headerlink" title="性能测试的参数"></a>性能测试的参数</h5><p>需要进行性能测试验证的各种参数是：</p>
-<ol>
-<li>数据存储：数据如何存储在不同的节点中</li>
-<li>提交日志：允许增长的提交日志有多大</li>
-<li>并发性：有多少个线程可以执行写入和读取操作</li>
-<li>缓存：调整缓存设置“行缓存”和“键缓存”。</li>
-<li>超时：连接超时值，查询超时值等</li>
-<li>JVM参数：堆大小，GC收集算法等</li>
-<li>地图降低性能：排序，合并等</li>
-<li>消息队列：消息速率，大小等</li>
-</ol>
-<h3 id="测试环境需求"><a href="#测试环境需求" class="headerlink" title="测试环境需求"></a>测试环境需求</h3><p>测试环境需要取决于您正在测试的应用程序的类型。对于大数据测试，测试环境应包含</p>
-<ul>
-<li>它应该有足够的空间用于存储和处理大量数据</li>
-<li>它应该具有包含分布式节点和数据的集群</li>
-<li>它应具有最低的CPU和内存利用率以保持高性能</li>
-</ul>
-<h3 id="大数据测试-与-传统数据库测试-对比"><a href="#大数据测试-与-传统数据库测试-对比" class="headerlink" title="大数据测试 与 传统数据库测试 对比"></a>大数据测试 与 传统数据库测试 对比</h3><table>
-<thead>
-<tr>
-<th style="text-align:center">类型</th>
-<th style="text-align:center">传统数据库测试</th>
-<th style="text-align:center">大数据测试</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">数据</td>
-<td style="text-align:center">使用结构化数据;<br>测试方法定义明确且经过时间检验;<br>测试人员可以选择手动执行采样策略或通过自动化工具选择”详尽验证”策略</td>
-<td style="text-align:center">使用结构化和非结构化数据;<br>测试方法类似开发工作;<br>大数据中的采样策略是一个挑战</td>
-</tr>
-<tr>
-<td style="text-align:center">环境</td>
-<td style="text-align:center">由于文件大小有限，因此不需要特殊的测试环境</td>
-<td style="text-align:center">由于数据量大和文件大（HDFS），因此需要特殊的测试环境</td>
-</tr>
-<tr>
-<td style="text-align:center">验证工具</td>
-<td style="text-align:center">使用基于Excel的宏或基于UI的自动化工具</td>
-<td style="text-align:center">没有定义的工具，范围从MapReduce到HiveQL等编程工具</td>
-</tr>
-</tbody>
-</table>
-<h3 id="大数据场景中使用的工具"><a href="#大数据场景中使用的工具" class="headerlink" title="大数据场景中使用的工具"></a>大数据场景中使用的工具</h3><table>
-<thead>
-<tr>
-<th style="text-align:center">类型</th>
-<th style="text-align:center">组件</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">数据处理</td>
-<td style="text-align:center"><a href="https://flink.apache.org/" target="_blank" rel="noopener">Apache Flink</a> <a href="https://spark.apache.org/" target="_blank" rel="noopener">Apache Spark</a></td>
-</tr>
-<tr>
-<td style="text-align:center">消息系统</td>
-<td style="text-align:center"><a href="https://kafka.apache.org/" target="_blank" rel="noopener">Apache Kafka</a> <strong><a href="https://pulsar.apache.org/" target="_blank" rel="noopener">Apache Pulsar</a></strong></td>
-</tr>
-<tr>
-<td style="text-align:center">数据查询引擎</td>
-<td style="text-align:center"><a href="https://hive.apache.org/" target="_blank" rel="noopener">Apache Hive</a> <a href="https://spark.apache.org/sql/" target="_blank" rel="noopener">Apache SparkSQL</a> <a href="https://impala.apache.org/" target="_blank" rel="noopener">Apache Impala</a> <a href="https://www.elastic.co/cn/" target="_blank" rel="noopener">Elasticsearch</a></td>
-</tr>
-<tr>
-<td style="text-align:center">数据采集</td>
-<td style="text-align:center"><a href="https://flume.apache.org/" target="_blank" rel="noopener">Apache Flume</a> <a href="https://www.elastic.co/cn/products/logstash" target="_blank" rel="noopener">Logstash</a></td>
-</tr>
-<tr>
-<td style="text-align:center">数据存储</td>
-<td style="text-align:center"><a href="https://hbase.apache.org/" target="_blank" rel="noopener">Apache HBase</a> <a href="http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsUserGuide.html" target="_blank" rel="noopener">HDFS</a></td>
-</tr>
-<tr>
-<td style="text-align:center">数据转换、同步</td>
-<td style="text-align:center"><a href="https://sqoop.apache.org/" target="_blank" rel="noopener">Apache Sqoop</a></td>
-</tr>
-<tr>
-<td style="text-align:center">资源管理</td>
-<td style="text-align:center"><a href="https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html" target="_blank" rel="noopener">Apache Hadoop YARN</a></td>
-</tr>
-<tr>
-<td style="text-align:center">应用协调</td>
-<td style="text-align:center"><a href="https://zookeeper.apache.org/" target="_blank" rel="noopener">Apache Zookeeper</a></td>
-</tr>
-<tr>
-<td style="text-align:center">数据分析和报告工具</td>
-<td style="text-align:center"><strong><a href="https://zeppelin.apache.org/" target="_blank" rel="noopener">Apache Zeppelin</a> <a href="http://gethue.com/" target="_blank" rel="noopener">Cloudera Hue</a></strong></td>
-</tr>
-</tbody>
-</table>
-<h3 id="大数据测试中的挑战"><a href="#大数据测试中的挑战" class="headerlink" title="大数据测试中的挑战"></a>大数据测试中的挑战</h3><ul>
-<li>自动化:大数据的自动化测试需要具有专业技术知识的人员。自动化工具不具备处理测试期间出现的意外问题的能力</li>
-<li>虚拟化:这是测试不可或缺的阶段之一。虚拟机延迟会在实时大数据测试中造成时序问题。在大数据中管理图像也很麻烦。</li>
-<li>大数据集<ul>
-<li>需要验证更多数据，并且需要更快地进行处理</li>
-<li>需要自动化测试工作</li>
-<li>需要能够在不同平台上进行测试</li>
+<li>优点：一键部署，快捷方便</li>
+<li>缺点：性能不高只适合测试环境或者学习</li>
 </ul>
 </li>
-<li>性能测试挑战<ul>
-<li>多种技术：每个子组件都属于不同的技术，并且需要单独进行测试</li>
-<li>特定工具不可用：没有单个工具可以执行端到端测试。例如，NoSQL可能不适用于消息队列</li>
-<li>测试脚本：设计测试方案和测试用例需要高度的脚本编写</li>
-<li>测试环境：由于数据量大，需要特殊的测试环境</li>
-<li>监视解决方案：存在可以监视整个环境的有限解决方案</li>
-<li>诊断解决方案：需要开发自定义解决方案来挖掘性能瓶颈区域</li>
+<li><p>2.使用成熟的发行版本去部署：例如 CM(Cloudera Manager)+CDH（Cloudera’s Distribution Including Apache Hadoop）或者Ambari+HDP(Hortonworks Data Platform)</p>
+<ul>
+<li>优点：集群安装部署和运维方便</li>
+<li>缺点：屏蔽太多细节，妨碍对组件理解</li>
+</ul>
+</li>
+<li><p>3.使用开源版本：</p>
+<ul>
+<li>优点：  完全开源免费，社区活跃， 文档、资料详实 ，</li>
+<li>缺点： 集群安装部署复杂，需要编写大量配置文件，需要考虑组件之间的兼容性问题、版本匹配问题、冲突问题、编译问题等；  集群运维复杂，需要安装第三方软件辅助。  </li>
 </ul>
 </li>
 </ul>
-<p>More info: <a href="https://www.guru99.com/big-data-testing-functional
--performance.html#1" target="_blank" rel="noopener">大数据测试</a></p>
+<h3 id="机器准备"><a href="#机器准备" class="headerlink" title="机器准备"></a>机器准备</h3><ul>
+<li>1.准备多台物理机或者使用VM安装多台虚机</li>
+<li>2.从官网下载centos系统包并安装</li>
+</ul>
+<h3 id="机器配置"><a href="#机器配置" class="headerlink" title="机器配置"></a>机器配置</h3><p>如果是docker方式部署，就不需要经历这个步骤</p>
+<ul>
+<li>0.修改服务器的ip地址</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-eth0</span><br><span class="line">BOOTPROTO=<span class="string">"static"</span></span><br><span class="line">ONBOOT=yes</span><br><span class="line">IPADDR=192.168.52.100</span><br><span class="line">NETMASK=255.255.255.0</span><br><span class="line">GATEWAY=192.168.52.1</span><br><span class="line">DNS1=8.8.8.8</span><br></pre></td></tr></table></figure>
+<p>例如：将准备好的三台服务器的IP地址分别设置成为如下：</p>
+<ul>
+<li>第一台机器IP地址：192.168.52.100</li>
+<li>第二台机器IP地址：192.168.52.110</li>
+<li>第三台机器IP地址：192.168.52.120</li>
+<li><p>第四台机器IP地址：192.168.52.130</p>
+</li>
+<li><p>1.关闭防火墙</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># centos 7 默认使用的是firewall，也可以使用iptables配置规则</span></span><br><span class="line">systemctl stop firewalld.service</span><br><span class="line">systemctl mask firewalld.service</span><br><span class="line"></span><br><span class="line">service iptables status <span class="comment"># 查看状态</span></span><br><span class="line">service iptables stop <span class="comment"># 临时关闭</span></span><br><span class="line">chkconfig iptables --list <span class="comment"># 查看防火墙启动级别</span></span><br><span class="line">chkconfig iptables off <span class="comment"># 永久关闭</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>2.关闭SELinux（所有节点）</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用root用户登录四台服务器，执行以下命令关闭selinux</span></span><br><span class="line">vim /etc/selinux/config</span><br><span class="line">SELINUX=enforcing <span class="comment"># 注释掉</span></span><br><span class="line">SELINUX=disabled <span class="comment"># 添加</span></span><br><span class="line">/usr/sbin/sestatus -v <span class="comment"># 查看状态</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>3.修改主机名</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在不同机器上执行</span></span><br><span class="line">hostnamectl <span class="built_in">set</span>-hostname master</span><br><span class="line">hostnamectl <span class="built_in">set</span>-hostname node01</span><br><span class="line">hostnamectl <span class="built_in">set</span>-hostname node02</span><br><span class="line">hostnamectl <span class="built_in">set</span>-hostname node03</span><br></pre></td></tr></table></figure>
+<ul>
+<li>4.更改主机名与IP地址映射</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/hosts</span><br><span class="line">192.168.52.100 master.kaikeba.com master</span><br><span class="line">192.168.52.110 node01.kaikeba.com node01</span><br><span class="line">192.168.52.120 node02.kaikeba.com node02</span><br><span class="line">192.168.52.130 node03.kaikeba.com node03</span><br></pre></td></tr></table></figure>
+<ul>
+<li>5.主机间ntp同步时间</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum -y install ntpdate</span><br><span class="line">crontab -e</span><br><span class="line">*/1 * * * * /usr/sbin/ntpdate time1.aliyun.com <span class="comment"># 这边使用的阿里云的ntp服务器，如果不能访问外网，就应该配置内网的ntp服务器</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>6.添加普通用户</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建hadoop，并设置密码为 hadoop </span></span><br><span class="line">sudo addgroup hadoop <span class="comment"># 新建用户组   </span></span><br><span class="line">sudo adduser --ingroup hadoop hadoop <span class="comment"># 新建用户</span></span><br><span class="line">passwd hadoop</span><br><span class="line"><span class="comment"># 给用户增加roo权限：在（root ALL=(ALL)ALL）在下面添加一行</span></span><br><span class="line">sudo vim /etc/sudoers</span><br><span class="line">hadoop ALL=(ALL) ALL</span><br></pre></td></tr></table></figure>
+<ul>
+<li>7.配置免密登录</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 生成私钥和公钥,在/home/当前用户/.ssh目录下找到id_rsa(私钥)和id_rsa.pub(公钥)</span></span><br><span class="line">ssh-keygen -t rsa</span><br><span class="line"> </span><br><span class="line"><span class="comment">#三台机器在hadoop用户下，执行以下命令将公钥拷贝到master服务器上面去</span></span><br><span class="line">ssh-copy-id master</span><br><span class="line"> </span><br><span class="line"><span class="comment"># master在hadoop用户下，执行以下命令，将authorized_keys拷贝到 node01、node02与node03服务器</span></span><br><span class="line"><span class="built_in">cd</span> /home/hadoop/.ssh/</span><br><span class="line">scp authorized_keys node01:<span class="variable">$PWD</span></span><br><span class="line">scp authorized_keys node02:<span class="variable">$PWD</span></span><br><span class="line">scp authorized_keys node03:<span class="variable">$PWD</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>8.定义统一目录</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /hadoop/soft <span class="comment"># 软件压缩包存放目录</span></span><br><span class="line">mkdir -p /hadoop/install <span class="comment"># 软件解压后存放目录</span></span><br><span class="line">chown -R hadoop:hadoop /hadoop <span class="comment"># 将文件夹权限更改为hadoop用户</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>9.安装java</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从官网下载jdk包，解压到目录</span></span><br><span class="line">tar -zxf jdk-8u141-linux-x64.tar.gz -C /hadoop/install</span><br><span class="line"> </span><br><span class="line">sudo vim /etc/profile</span><br><span class="line"></span><br><span class="line"><span class="comment">#添加以下配置内容，配置jdk环境变量</span></span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=/hadoop/install/jdk1.8.0_141</span><br><span class="line"><span class="built_in">export</span> PATH=:<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>10.在root用户下重启</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reoot -h now</span><br></pre></td></tr></table></figure>
+<h3 id="Docker-部署"><a href="#Docker-部署" class="headerlink" title="Docker 部署"></a>Docker 部署</h3><p>不少公司把所有的 大数据组件都做成了 docker image ，可以直接通过 docker-compose 一键按照，具体看一下参考下面的教程：</p>
+<ul>
+<li><a href="https://clubhouse.io/developer-how-to/how-to-set-up-a-hadoop-cluster-in-docker/" target="_blank" rel="noopener">安装教程1</a></li>
+<li><a href="https://hub.docker.com/r/bde2020/hadoop-namenode" target="_blank" rel="noopener">安装教程2</a></li>
+</ul>
+<h3 id="CM-CDH-部署"><a href="#CM-CDH-部署" class="headerlink" title="CM + CDH 部署"></a>CM + CDH 部署</h3><ul>
+<li>CM：Cloudera Manager，Cloudera公司编写的一个CDH的管理后台，类似各CMS的管理后台。</li>
+<li><p>CDH：Cloudera’s distribution,including Apache Hadoop，Cloudera公司制作的一个Hadoop发行版，集成了Hadoop及Hive等与Hadoop关系紧密的工具。</p>
+</li>
+<li><p>1.下载</p>
+<ul>
+<li>根据操作系统从<a href="http://archive.cloudera.com/cm5/redhat/6/x86_64/cm/" target="_blank" rel="noopener">CM bin文件</a>下载对应版本</li>
+<li>根据操作系统从[CM rpm包]<a href="http://archive.cloudera.com/cm5/redhat/6/x86_64/cm/)下载对应版本" target="_blank" rel="noopener">http://archive.cloudera.com/cm5/redhat/6/x86_64/cm/)下载对应版本</a></li>
+<li>根据操作系统从<a href="http://archive.cloudera.com/cdh5/parcels/" target="_blank" rel="noopener">CDH</a>下载对应版本的manifest.json、.parcel和.sha1文件</li>
+</ul>
+</li>
+<li><p>2.上传介质到master，上传目录为/hadoop/soft，并解压</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf cm5.5.1.tar.gz </span><br><span class="line">tar -zxvf cdh5.5.1.tar.gz</span><br></pre></td></tr></table></figure>
+<ul>
+<li>3.各个节点配置本地yum源（master）</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/yum.repos.d</span><br><span class="line">vi cloudera-manager.repo</span><br></pre></td></tr></table></figure>
+<p>添加下面内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[cloudera-manager]</span><br><span class="line">name=Cloudera Manager, Version 5.5.1</span><br><span class="line">baseurl=http://192.168.52.100/cm5.5.1</span><br><span class="line">gpgcheck=0</span><br></pre></td></tr></table></figure>
+<ul>
+<li>4.启动http服务</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">service httpd status <span class="comment"># 查看服务状态</span></span><br><span class="line">service httpd start <span class="comment"># 打开服务</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>5.验证本地yum源</p>
+<ul>
+<li>将上一步baseurl地址粘贴到浏览器</li>
+<li>确认是否能正常访问到已经上传安装文件的机器的安装文件目录。</li>
+</ul>
+</li>
+<li><p>6.运行CM安装</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 赋予bin文件执行权限</span></span><br><span class="line">chmod u+x cloudera-manager-installer5.5.1.bin</span><br><span class="line"><span class="built_in">cd</span> /hadoop/soft</span><br><span class="line"><span class="comment"># 运行bin文件</span></span><br><span class="line">./cloudera-manager-installer5.5.1.bin</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>7.验证CM安装是否完成</p>
+<ul>
+<li>使用命令查看服务状态：service cloudera-scm-server status</li>
+<li>点击 管理界面(<a href="http://192.168.52.100:7180/cmf" target="_blank" rel="noopener">http://192.168.52.100:7180/cmf</a>) 登陆，用户名和密码都为admin</li>
+</ul>
+</li>
+<li><p>8.修正参数</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> 0 &gt; /proc/sys/vm/swappiness</span><br><span class="line"><span class="built_in">echo</span> never &gt; /sys/kernel/mm/transparent_hugepage/defrag</span><br><span class="line"><span class="built_in">echo</span> never &gt; /sys/kernel/mm/transparent_hugepage/enabled</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>9.开始安装</p>
+<ul>
+<li>1.接受许可</li>
+<li>2.选择相应的版本</li>
+<li>3.选择主机：搜索主机，也可以自己输ip</li>
+<li>4.选择存储库：使用Parcel，远程Parcel 存储库URL指定安装源(本地源)</li>
+<li>5.勾选JDK</li>
+<li>6.填写用户（hadoop）密码</li>
+<li>7.开始安装</li>
+<li>8.自定义添加服务</li>
+<li>9.安装角色</li>
+<li>10.数据库选择：建议使用默认数据库。以后可以进行修改。</li>
+<li>11.指定数据目录</li>
+</ul>
+</li>
+<li><p>10.排错</p>
+<ul>
+<li>1.完成以上，说明集群已经安装成功，其他问题需要在后续过程调试。页面显示红色不等于服务没有安装成功，验证参数没有满足默认而已。</li>
+<li>2.关闭时钟同步</li>
+<li>3.验证安装：例如 到安装HDFS角色的服务器上任意目录执行如下命令（hadoop fs -ls /），能正常执行即代表功能可用</li>
+</ul>
+</li>
+</ul>
+<h3 id="开源版本部署"><a href="#开源版本部署" class="headerlink" title="开源版本部署"></a>开源版本部署</h3><p>从下图可以知道，使用开源版本部署比较麻烦，组件比较多，后面就一章一章慢慢说。</p>
+<p><img src="/image/大数据04/大数据04_001.jpg" alt=""></p>
 
       
 
@@ -491,7 +478,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#大数据测试类型"><span class="toc-number">1.1.</span> <span class="toc-text">大数据测试类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#大数据测试步骤"><span class="toc-number">1.2.</span> <span class="toc-text">大数据测试步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数据阶段验证"><span class="toc-number">1.2.1.</span> <span class="toc-text">数据阶段验证</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MapReduce-验证"><span class="toc-number">1.2.2.</span> <span class="toc-text">MapReduce 验证</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#输出阶段验证"><span class="toc-number">1.2.3.</span> <span class="toc-text">输出阶段验证</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#架构测试"><span class="toc-number">1.3.</span> <span class="toc-text">架构测试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#性能测试"><span class="toc-number">1.3.1.</span> <span class="toc-text">性能测试</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#性能测试方法"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">性能测试方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测试步骤"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">测试步骤</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#性能测试的参数"><span class="toc-number">1.3.1.3.</span> <span class="toc-text">性能测试的参数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试环境需求"><span class="toc-number">1.4.</span> <span class="toc-text">测试环境需求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#大数据测试-与-传统数据库测试-对比"><span class="toc-number">1.5.</span> <span class="toc-text">大数据测试 与 传统数据库测试 对比</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#大数据场景中使用的工具"><span class="toc-number">1.6.</span> <span class="toc-text">大数据场景中使用的工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#大数据测试中的挑战"><span class="toc-number">1.7.</span> <span class="toc-text">大数据测试中的挑战</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#机器准备"><span class="toc-number">1.1.</span> <span class="toc-text">机器准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#机器配置"><span class="toc-number">1.2.</span> <span class="toc-text">机器配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker-部署"><span class="toc-number">1.3.</span> <span class="toc-text">Docker 部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CM-CDH-部署"><span class="toc-number">1.4.</span> <span class="toc-text">CM + CDH 部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开源版本部署"><span class="toc-number">1.5.</span> <span class="toc-text">开源版本部署</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -637,11 +624,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color3">监控</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">监控</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -649,19 +636,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">可靠性</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">大数据</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">性能</a>
+                <a href="javascript:void(0)" class="js-tag color4">可靠性</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hive</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">性能</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -681,11 +676,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>
