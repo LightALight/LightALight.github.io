@@ -17,7 +17,7 @@
 <meta property="og:description" content="Hive是构建在Hadoop HDFS上的一个数据仓库，可以将结构化的数据文件映射为一张数据库表（Hive的表其实就是HDFS的目录/文件），并提供类SQL查询功能，其本质是将SQL转换为MapReduce程序。 本文章主要介绍在centos环境下如何安装Hive。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://lightalight.github.io/image/大数据07/大数据07_001.png">
-<meta property="og:updated_time" content="2020-09-02T13:19:14.060Z">
+<meta property="og:updated_time" content="2020-09-03T08:10:49.585Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大数据（七）">
 <meta name="twitter:description" content="Hive是构建在Hadoop HDFS上的一个数据仓库，可以将结构化的数据文件映射为一张数据库表（Hive的表其实就是HDFS的目录/文件），并提供类SQL查询功能，其本质是将SQL转换为MapReduce程序。 本文章主要介绍在centos环境下如何安装Hive。">
@@ -179,7 +179,7 @@
     <div id="toc-article" class="toc-article">
         <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
       <strong class="toc-title">文章目录</strong>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-安装"><span class="toc-number">1.1.</span> <span class="toc-text">一.安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-安装前准备"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.安装前准备</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-hive安装步骤"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.hive安装步骤</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二-常用命令"><span class="toc-number">1.2.</span> <span class="toc-text">二.常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-基础命令"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.基础命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-常用函数"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.常用函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-加载数据"><span class="toc-number">1.2.3.</span> <span class="toc-text">3.加载数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-配置优化"><span class="toc-number">1.2.4.</span> <span class="toc-text">4.配置优化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-常用技巧"><span class="toc-number">1.2.5.</span> <span class="toc-text">5. 常用技巧</span></a></li></ol></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-安装"><span class="toc-number">1.1.</span> <span class="toc-text">一.安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-安装前准备"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.安装前准备</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-hive安装步骤"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.hive安装步骤</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二-常用命令"><span class="toc-number">1.2.</span> <span class="toc-text">二.常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-基础命令"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.基础命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-常用函数"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.常用函数</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-数学函数"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">2.1 数学函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-集合函数"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">2.2 集合函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-类型转换函数"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">2.3 类型转换函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-4-日期函数"><span class="toc-number">1.2.2.4.</span> <span class="toc-text">2.4 日期函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-5-条件函数"><span class="toc-number">1.2.2.5.</span> <span class="toc-text">2.5 条件函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-6-字符函数"><span class="toc-number">1.2.2.6.</span> <span class="toc-text">2.6 字符函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-7-聚合函数"><span class="toc-number">1.2.2.7.</span> <span class="toc-text">2.7 聚合函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-8-表生成函数"><span class="toc-number">1.2.2.8.</span> <span class="toc-text">2.8 表生成函数</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-加载数据"><span class="toc-number">1.2.3.</span> <span class="toc-text">3.加载数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-配置优化"><span class="toc-number">1.2.4.</span> <span class="toc-text">4.配置优化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-常用技巧"><span class="toc-number">1.2.5.</span> <span class="toc-text">5. 常用技巧</span></a></li></ol></li></ol></li></ol>
           </div>
     <script type="text/javascript">
       function showToc(){
@@ -218,7 +218,7 @@
 <ul>
 <li>3.修改配置文件</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 复制一个"hive-default.xml.template",命名为hive-default.xml</span></span><br><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/apache-hive-3.1.2/conf/</span><br><span class="line">cp hive-log4j2.properties.template hive-log4j2.properties</span><br><span class="line"><span class="comment"># 创建hive-site.xml，并填入内容</span></span><br><span class="line">vi hive-site.xml</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 复制一个"hive-default.xml.template",命名为hive-default.xml</span></span><br><span class="line"><span class="built_in">cd</span> /hadoop/install/apache-hive-3.1.2/conf/</span><br><span class="line">cp hive-log4j2.properties.template hive-log4j2.properties</span><br><span class="line"><span class="comment"># 创建hive-site.xml，并填入内容</span></span><br><span class="line">vi hive-site.xml</span><br></pre></td></tr></table></figure>
 <p>hive-site.xml 的内容：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;</span><br><span class="line">&lt;?xml-stylesheet type="text/xsl" href="configuration.xsl"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- ########################### hive的 JDBC连接 ############################ --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- mysql 连接用户名 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>javax.jdo.option.ConnectionUserName<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>UserName<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- mysql 连接密码 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>javax.jdo.option.ConnectionPassword<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>Password!<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- mysql 连接URL 如果hive和mysql在同一服务器上，使用localhost --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>javax.jdo.option.ConnectionURL<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>jdbc:mysql://localhost:3306/myhive<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- mysql 连接驱动 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>javax.jdo.option.ConnectionDriverName<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>com.mysql.jdbc.Driver<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
@@ -236,7 +236,7 @@
 <li>6.配置hive环境变量</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打开profile文件</span></span><br><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure>
-<p>末尾添加如下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export HIVE_HOME=/install/install/apache-hive-3.1.2</span><br><span class="line">export PATH=$PATH:$HIVE_HOME/bin</span><br></pre></td></tr></table></figure></p>
+<p>末尾添加如下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export HIVE_HOME=/hadoop/install/apache-hive-3.1.2</span><br><span class="line">export PATH=$PATH:$HIVE_HOME/bin</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 环境变量生效</span></span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
 <ul>
 <li>7.启动hive</li>
@@ -249,7 +249,829 @@
 <h3 id="二-常用命令"><a href="#二-常用命令" class="headerlink" title="二.常用命令"></a>二.常用命令</h3><p>hiveql的命令大部分跟SQL一样,下面列一下差异点：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># 1 select distinct 后必须指定字段名</span><br><span class="line"># 2 join 条件仅支持等值关联且不支持or条件</span><br><span class="line"># 3 子查询不能在select中使用；</span><br><span class="line"># 4 HQL中没有UNION，可使用distinct+ union all 实现 UNION；</span><br><span class="line"># 5 HQL以分号分隔，必须在每个语句结尾写上分号；</span><br><span class="line"># 6 HQL中字符串的比较比较严格，区分大小写及空格，因此在比较时建议upper(trim(a))=upper(trim(b))</span><br><span class="line"># 7 日期判断，建议使用to_date(),如：to_date(orderdate)=‘2016-07-18’</span><br><span class="line"># 8 关键字必须在字段名上加``符号，如select `exchange` from xxdb.xxtb;</span><br><span class="line"># 9 数据库和表/视图之间仅有1个点，如xx_db.xx_tb;</span><br><span class="line"></span><br><span class="line"># HQL不支持update/delete</span><br><span class="line"># 实际采用union all + left join (is null)变相实现update</span><br><span class="line"># 思路：</span><br><span class="line"># 1 取出增量数据；</span><br><span class="line"># 2 使用昨日分区的全量数据通过主键左连接增量数据，并且只取增量表中主键为空的数据（即，取未发生变化的全量数据）；</span><br><span class="line"># 3 合并1、2的数据覆盖至最新的分区，即实现了update；</span><br><span class="line"></span><br><span class="line"># HQL delete实现</span><br><span class="line"># 采用not exists/left join(is null)的方法变相实现。</span><br><span class="line"># 1.取出已删除的主键数据（表B）；</span><br><span class="line"># 2.使用上一个分区的全量数据（表A）通过主键左连接A，并且只取A中主键为空的数据，然后直接insert overwrite至新的分区；</span><br></pre></td></tr></table></figure>
 <h4 id="1-基础命令"><a href="#1-基础命令" class="headerlink" title="1.基础命令"></a>1.基础命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"># 查看某个数据库</span><br><span class="line">show databases; </span><br><span class="line">use 数据库;      # 进入某个数据库</span><br><span class="line">show tables;    # 展示所有表</span><br><span class="line">desc 表名;            # 显示表结构</span><br><span class="line">show partitions 表名; # 显示表名的分区</span><br><span class="line">show create table_name;   # 显示创建表的结构</span><br><span class="line"></span><br><span class="line"># 建表语句</span><br><span class="line"># 内部表</span><br><span class="line">use xxdb; create table xxx;</span><br><span class="line"># 创建一个表，结构与其他一样</span><br><span class="line">create table xxx like xxx;</span><br><span class="line"># 外部表</span><br><span class="line">use xxdb; create external table xxx;</span><br><span class="line"># 分区表</span><br><span class="line">use xxdb; create external table xxx (l int) partitoned by (d string)</span><br><span class="line"># 内外部表转化</span><br><span class="line">alter table table_name set TBLPROPROTIES (&apos;EXTERNAL&apos;=&apos;TRUE&apos;); # 内部表转外部表</span><br><span class="line">alter table table_name set TBLPROPROTIES (&apos;EXTERNAL&apos;=&apos;FALSE&apos;);# 外部表转内部表</span><br><span class="line"></span><br><span class="line"># 表结构修改</span><br><span class="line"># 重命名表</span><br><span class="line">use xxxdb; alter table table_name rename to new_table_name;</span><br><span class="line"># 增加字段</span><br><span class="line">alter table table_name add columns (newcol1 int comment ‘新增’)；</span><br><span class="line"># 修改字段</span><br><span class="line">alter table table_name change col_name new_col_name new_type；</span><br><span class="line"># 删除字段(COLUMNS中只放保留的字段)</span><br><span class="line">alter table table_name replace columns (col1 int,col2 string,col3 string)；</span><br><span class="line"># 删除表</span><br><span class="line">use xxxdb; drop table table_name;</span><br><span class="line"># 删除分区</span><br><span class="line"># 注意：若是外部表，则还需要删除文件(hadoop fs -rm -r -f  hdfspath)</span><br><span class="line">alter table table_name drop if exists partitions (d=‘2016-07-01&apos;);</span><br></pre></td></tr></table></figure>
-<h4 id="2-常用函数"><a href="#2-常用函数" class="headerlink" title="2.常用函数"></a>2.常用函数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"># if 函数，如果满足条件，则返回A， 否则返回B</span><br><span class="line">if (boolean condition, T A, T B)</span><br><span class="line"># case 条件判断函数, 当a为b时则返回c；当a为d时，返回e；否则返回f</span><br><span class="line">case a when b then c when d then e else f end</span><br><span class="line"># 将字符串类型的数据读取为json类型，并得到其中的元素key的值</span><br><span class="line"># 第一个参数填写json对象变量，第二个参数使用$表示json变量标识，然后用.读取对象或数组；</span><br><span class="line">get_json_object(string s, &apos;$.key&apos;)</span><br><span class="line"># url解析</span><br><span class="line"># parse_url(&apos;http://facebook.com/path/p1.php?query=1&apos;,&apos;HOST&apos;)返回&apos;facebook.com&apos; </span><br><span class="line"># parse_url(&apos;http://facebook.com/path/p1.php?query=1&apos;,&apos;PATH&apos;)返回&apos;/path/p1.php&apos; </span><br><span class="line"># parse_url(&apos;http://facebook.com/path/p1.php?query=1&apos;,&apos;QUERY&apos;)返回&apos;query=1&apos;，</span><br><span class="line">parse_url()</span><br><span class="line"># explode就是将hive一行中复杂的array或者map结构拆分成多行</span><br><span class="line">explode(colname)</span><br><span class="line"># lateral view 将一行数据adid_list拆分为多行adid后，使用lateral view使之成为一个虚表adTable，使得每行的数据adid与之前的pageid一一对应, 因此最后pageAds表结构已发生改变，增加了一列adid</span><br><span class="line">select pageid, adid from pageAds</span><br><span class="line">lateral view explode(adid_list) adTable as adid</span><br><span class="line"># 去除两边空格</span><br><span class="line">trim()</span><br><span class="line"># 大小写转换</span><br><span class="line">lower(), upper()</span><br><span class="line"># 返回列表中第一个非空元素,如果所有值都为空，则返回null</span><br><span class="line">coalesce(v1, v2, v3, ...)</span><br><span class="line"># 返回当前时间</span><br><span class="line">from_unixtime(unix_timestamp(), &apos;yyyy-MM-dd HH:mm:ss&apos;)</span><br><span class="line"># 返回第二个参数在待查找字符串中的位置（找不到返回0）</span><br><span class="line">instr(string str, string search_str)</span><br><span class="line"># 字符串连接</span><br><span class="line">concat(string A, string B, string C, ...)</span><br><span class="line"># 自定义分隔符sep的字符串连接</span><br><span class="line">concat_ws(string sep, string A, string B, string C, ...)</span><br><span class="line"># 将分组中的某列的值转为一个数组返回 多条转一条</span><br><span class="line">collect_set(column_name)不去重</span><br><span class="line">collect_lis(column_name)去重</span><br><span class="line"># 按照分隔符拆分某个列返回多条 一条转多条</span><br><span class="line">lateral view explode(split(column_name,&apos;拆分符号&apos;)) </span><br><span class="line"># 返回字符串长度</span><br><span class="line">length()</span><br><span class="line"># 反转字符串</span><br><span class="line">reverse()</span><br><span class="line"># 字符串截取</span><br><span class="line">substring(string A, int start, int len)</span><br><span class="line"># 将字符串A中的符合java正则表达式pat的部分替换为C;</span><br><span class="line">regexp_replace(string A, string pat, string C)</span><br><span class="line"># 将字符串subject按照pattern正则表达式的规则进行拆分，返回index制定的字符</span><br><span class="line"># 0:显示与之匹配的整个字符串， 1：显示第一个括号里的， 2：显示第二个括号里的</span><br><span class="line">regexp_extract(string subject, string pattern, int index)</span><br><span class="line"># 按照pat字符串分割str，返回分割后的字符串数组</span><br><span class="line">split(string str, string pat)</span><br><span class="line"># 类型转换</span><br><span class="line">cast(expr as type)</span><br><span class="line"># 将字符串转为map, item_pat指定item之间的间隔符号，dict_pat指定键与值之间的间隔</span><br><span class="line">str_to_map(string A, string item_pat, string dict_pat)</span><br><span class="line"># 提取出map的key, 返回key的array</span><br><span class="line">map_keys(map m)</span><br><span class="line"># 日期函数</span><br><span class="line"># 日期比较函数，返回相差天数，datediff(&apos;$&#123;cur_date&#125;,d)</span><br><span class="line">    datediff(date1, date2)</span><br></pre></td></tr></table></figure>
+<h4 id="2-常用函数"><a href="#2-常用函数" class="headerlink" title="2.常用函数"></a>2.常用函数</h4><h5 id="2-1-数学函数"><a href="#2-1-数学函数" class="headerlink" title="2.1 数学函数"></a>2.1 数学函数</h5><table>
+<thead>
+<tr>
+<th>Name  (Signature)</th>
+<th>Description</th>
+<th>Return  Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>round(DOUBLE a)</td>
+<td>Returns the rounded BIGINT value of a.返回对a四舍五入的BIGINT值</td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>round(DOUBLE a, INT d)</td>
+<td>Returns a  rounded to d decimal  places.返回DOUBLE型d的保留n位小数的DOUBLW型的近似值</td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>bround(DOUBLE a)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-11103" target="_blank" rel="noopener">Returns the rounded BIGINT value of a using HALF_EVEN   rounding mode (as of Hive 1.3.0, 2.0.0). Also known as Gaussian rounding or   bankers’ rounding. Example: bround(2.5) = 2, bround(3.5) = 4.   银行家舍入法（1~4：舍，6~9：进，5-&gt;前位数是偶：舍，5-&gt;前位数是奇：进）</a></td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>bround(DOUBLE a, INT d)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-11103" target="_blank" rel="noopener">Returns a rounded to d decimal places using HALF_EVEN   rounding mode (as of Hive 1.3.0, 2.0.0). Example: bround(8.25, 1) = 8.2,   bround(8.35, 1) = 8.4. 银行家舍入法,保留d位小数</a></td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>floor(DOUBLE a)</td>
+<td>Returns the maximum BIGINT value that is equal to or less than a向下取整，最数轴上最接近要求的值的左边的值 如：6.10-&gt;6 -3.4-&gt;-4</td>
+<td>BIGINT</td>
+</tr>
+<tr>
+<td>ceil(DOUBLE a), ceiling(DOUBLE a)</td>
+<td>Returns the minimum BIGINT value that is equal to or greater  than a.求其不小于小给定实数的最小整数如：ceil(6) = ceil(6.1)= ceil(6.9) = 6</td>
+<td>BIGINT</td>
+</tr>
+<tr>
+<td>rand(), rand(INT seed)</td>
+<td>Returns a random number (that changes from row to row) that  is distributed uniformly from 0 to 1. Specifying the seed will make sure the  generated random number sequence is deterministic.每行返回一个DOUBLE型随机数seed是随机因子</td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>exp(DOUBLE a), exp(DECIMAL a)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-6327" target="_blank" rel="noopener">Returns ea where e is the base of the natural logarithm.   Decimal version added in Hive 0.13.0.返回e的a幂次方， a可为小数</a></td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>ln(DOUBLE a), ln(DECIMAL a)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-6327" target="_blank" rel="noopener">Returns the natural logarithm of the argument a. Decimal   version added in Hive 0.13.0.以自然数为底d的对数，a可为小数</a></td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>log10(DOUBLE a), log10(DECIMAL a)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-6327" target="_blank" rel="noopener">Returns the base-10 logarithm of the argument a. Decimal   version added in Hive 0.13.0.以10为底d的对数，a可为小数</a></td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>log2(DOUBLE a), log2(DECIMAL a)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-6327" target="_blank" rel="noopener">Returns the base-2 logarithm of the argument a. Decimal   version added in Hive 0.13.0.以2为底数d的对数，a可为小数</a></td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>log(DOUBLE base, DOUBLE a)log(DECIMAL base, DECIMAL a)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-6327" target="_blank" rel="noopener">Returns the base-base logarithm of the argument a. Decimal   versions added in Hive 0.13.0.以base为底的对数，base 与 a都是DOUBLE类型</a></td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>pow(DOUBLE a, DOUBLE p), power(DOUBLE a, DOUBLE p)</td>
+<td>Returns ap.计算a的p次幂</td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>sqrt(DOUBLE a), sqrt(DECIMAL a)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-6327" target="_blank" rel="noopener">Returns the square root of a. Decimal version added in Hive   0.13.0.计算a的平方根</a></td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>bin(BIGINT a)</td>
+<td><a href="http://dev.mysql.com/doc/refman/5.0/en/string-functions.html#function_bin" target="_blank" rel="noopener">Returns   the number in binary format (see   http://dev.mysql.com/doc/refman/5.0/en/string-functions.html#function_bin).计算二进制a的STRING类型，a为BIGINT类型</a></td>
+<td>STRING</td>
+</tr>
+<tr>
+<td>hex(BIGINT a) hex(STRING a) hex(BINARY a)</td>
+<td>If the argument is an INT or binary,  hex returns the number  as a STRING in  hexadecimal format. Otherwise if the number is a STRING, it converts each character into its hexadecimal  representation and returns the resulting STRING.  (See<a href="http://dev.mysql.com/doc/refman/5.0/en/string-functions.html#function_hex" target="_blank" rel="noopener">http://dev.mysql.com/doc/refman/5.0/en/string-functions.html#function_hex</a>,  BINARY version as of  Hive 0.12.0.)计算十六进制a的STRING类型，如果a为STRING类型就转换成字符相对应的十六进制</td>
+<td>STRING</td>
+</tr>
+<tr>
+<td>unhex(STRING a)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-2482" target="_blank" rel="noopener">Inverse of hex. Interprets each pair of characters as a   hexadecimal number and converts to the byte representation of the number.   (BINARY version as of Hive 0.12.0, used to return a string.)hex的逆方法</a></td>
+<td>BINARY</td>
+</tr>
+<tr>
+<td>conv(BIGINT num, INT from_base, INT to_base), conv(STRING  num, INT from_base, INT to_base)</td>
+<td><a href="http://dev.mysql.com/doc/refman/5.0/en/mathematical-functions.html#function_conv" target="_blank" rel="noopener">Converts   a number from a given base to another (see   http://dev.mysql.com/doc/refman/5.0/en/mathematical-functions.html#function_conv).将GIGINT/STRING类型的num从from_base进制转换成to_base进制</a></td>
+<td>STRING</td>
+</tr>
+<tr>
+<td>abs(DOUBLE a)</td>
+<td>Returns the absolute value.计算a的绝对值</td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>pmod(INT a, INT b), pmod(DOUBLE a, DOUBLE b)</td>
+<td>Returns the positive value of a mod b.a对b取模</td>
+<td>INT or DOUBLE</td>
+</tr>
+<tr>
+<td>sin(DOUBLE a), sin(DECIMAL a)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-6327" target="_blank" rel="noopener">Returns the sine of a (a is in radians). Decimal version   added in Hive 0.13.0.求a的正弦值</a></td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>asin(DOUBLE a), asin(DECIMAL a)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-6327" target="_blank" rel="noopener">Returns the arc sin of a if -1&lt;=a&lt;=1 or NULL   otherwise. Decimal version added in Hive 0.13.0.求d的反正弦值</a></td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>cos(DOUBLE a), cos(DECIMAL a)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-6327" target="_blank" rel="noopener">Returns the cosine of a (a is in radians). Decimal version   added in Hive 0.13.0.求余弦值</a></td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>acos(DOUBLE a), acos(DECIMAL a)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-6327" target="_blank" rel="noopener">Returns the arccosine of a if -1&lt;=a&lt;=1 or NULL   otherwise. Decimal version added in Hive 0.13.0.求反余弦值</a></td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>tan(DOUBLE a), tan(DECIMAL a)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-6327" target="_blank" rel="noopener">Returns the tangent of a (a is in radians). Decimal version   added in Hive 0.13.0.求正切值</a></td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>atan(DOUBLE a), atan(DECIMAL a)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-6327" target="_blank" rel="noopener">Returns the arctangent of a. Decimal version added in Hive   0.13.0.求反正切值</a></td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>degrees(DOUBLE a), degrees(DECIMAL a)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-6385" target="_blank" rel="noopener">Converts value of a from radians to degrees. Decimal version   added in Hive 0.13.0.奖弧度值转换角度值</a></td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>radians(DOUBLE a), radians(DOUBLE a)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-6327" target="_blank" rel="noopener">Converts value of a from degrees to radians. Decimal version   added in Hive 0.13.0.将角度值转换成弧度值</a></td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>positive(INT a), positive(DOUBLE a)</td>
+<td>Returns a.返回a</td>
+<td>INT or DOUBLE</td>
+</tr>
+<tr>
+<td>negative(INT a), negative(DOUBLE a)</td>
+<td>Returns -a.返回a的相反数</td>
+<td>INT or DOUBLE</td>
+</tr>
+<tr>
+<td>sign(DOUBLE a), sign(DECIMAL a)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-6246" target="_blank" rel="noopener">Returns the sign of a as ‘1.0’ (if a is positive) or ‘-1.0’   (if a is negative), ‘0.0’ otherwise. The decimal version returns INT instead   of DOUBLE. Decimal version added in Hive   0.13.0.如果a是正数则返回1.0，是负数则返回-1.0，否则返回0.0</a></td>
+<td>DOUBLE or INT</td>
+</tr>
+<tr>
+<td>e()</td>
+<td>Returns the value of e.数学常数e</td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>pi()</td>
+<td>Returns the value of pi.数学常数pi</td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>factorial(INT a)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-9857" target="_blank" rel="noopener">Returns the factorial of a (as of Hive 1.2.0). Valid a is   [0..20]. 求a的阶乘</a></td>
+<td>BIGINT</td>
+</tr>
+<tr>
+<td>cbrt(DOUBLE a)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-9858" target="_blank" rel="noopener">Returns the cube root of a double value (as of Hive 1.2.0).   求a的立方根</a></td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>shiftleft(TINYINT\</td>
+<td>SMALLINT\</td>
+<td>INT a, INT b)shiftleft(BIGINT a,  INT b)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-9859" target="_blank" rel="noopener">Bitwise left shift (as of Hive 1.2.0). Shifts a b positions   to the left.Returns int for tinyint, smallint and int a. Returns bigint for   bigint a.按位左移</a></td>
+<td>INT BIGINT</td>
+</tr>
+<tr>
+<td>shiftright(TINYINT\</td>
+<td>SMALLINT\</td>
+<td>INT a, INTb)shiftright(BIGINT a,  INT b)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-9859" target="_blank" rel="noopener">Bitwise right shift (as of Hive 1.2.0). Shifts a b positions   to the right.Returns int for tinyint, smallint and int a. Returns bigint for   bigint a.按拉右移</a></td>
+<td>INTBIGINT</td>
+</tr>
+<tr>
+<td>shiftrightunsigned(TINYINT\</td>
+<td>SMALLINT\</td>
+<td>INTa, INT  b),shiftrightunsigned(BIGINT a, INT b)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-9859" target="_blank" rel="noopener">Bitwise unsigned right shift (as of Hive 1.2.0). Shifts a b   positions to the right.Returns int for tinyint, smallint and int a. Returns   bigint for bigint a.无符号按位右移（&lt;&lt;&lt;）</a></td>
+<td>INTBIGINT</td>
+</tr>
+<tr>
+<td>greatest(T v1, T v2, …)</td>
+<td>Returns the greatest value of the list of values (as of Hive 1.1.0). Fixed to return NULL when one or more arguments are  NULL, and strict type restriction relaxed, consistent with “&gt;”  operator (as of Hive 2.0.0). 求最大值</td>
+<td>T</td>
+</tr>
+<tr>
+<td>least(T v1, T v2, …)</td>
+<td>Returns the least value of the list of values (as of Hive 1.1.0). Fixed to return NULL when one or more arguments are  NULL, and strict type restriction relaxed, consistent with “&lt;”  operator (as of Hive 2.0.0). 求最小值</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2-2-集合函数"><a href="#2-2-集合函数" class="headerlink" title="2.2 集合函数"></a>2.2 集合函数</h5><table>
+<thead>
+<tr>
+<th>Name(Signature)</th>
+<th>Description</th>
+<th>Return  Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>size(Map&lt;K.V&gt;)</td>
+<td>Returns the number of elements in the map type.求map的长度</td>
+<td>int</td>
+</tr>
+<tr>
+<td>size(Array<t>)</t></td>
+<td>Returns the number of elements in the array type.求数组的长度</td>
+<td>int</td>
+</tr>
+<tr>
+<td>map_keys(Map&lt;K.V&gt;)</td>
+<td>Returns an unordered array containing the keys of the input  map.返回map中的所有key</td>
+<td>array<k></k></td>
+</tr>
+<tr>
+<td>map_values(Map&lt;K.V&gt;)</td>
+<td>Returns an unordered array containing the values of the input  map.返回map中的所有value</td>
+<td>array<v></v></td>
+</tr>
+<tr>
+<td>array_contains(Array<t>, value)</t></td>
+<td>Returns TRUE if the array contains value.如该数组Array包含value返回true。，否则返回false</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>sort_array(Array<t>)</t></td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-2279" target="_blank" rel="noopener">Sorts the input array in ascending order according to the   natural ordering of the array elements and returns it (as of version   0.9.0).按自然顺序对数组进行排序并返回</a></td>
+<td>array</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2-3-类型转换函数"><a href="#2-3-类型转换函数" class="headerlink" title="2.3 类型转换函数"></a>2.3 类型转换函数</h5><table>
+<thead>
+<tr>
+<th><em>Name(Signature)</em></th>
+<th>Description</th>
+<th>Return  Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>binary(string\</td>
+<td>binary)</td>
+<td>Casts the parameter into a binary.将输入的值转换成二进制</td>
+<td>binary</td>
+</tr>
+<tr>
+<td>cast(expr as <type>)</type></td>
+<td>Converts the results of the expression expr to <type>. For example, cast(‘1’ as BIGINT) will convert the  string ‘1’ to its integral representation. A null is returned if the  conversion does not succeed. If cast(expr as boolean) Hive returns true for a  non-empty string.将expr转换成type类型  如：cast(“1” as BIGINT) 将字符串1转换成了BIGINT类型，如果转换失败将返回NULL</type></td>
+<td>Expected  “=” to follow “type”</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2-4-日期函数"><a href="#2-4-日期函数" class="headerlink" title="2.4 日期函数"></a>2.4 日期函数</h5><table>
+<thead>
+<tr>
+<th>Name(Signature)</th>
+<th>Description</th>
+<th>Return  Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>from_unixtime(bigint unixtime[, string format])</td>
+<td>Converts the number of seconds from unix epoch (1970-01-01  00:00:00 UTC) to a string representing the timestamp of that moment in the  current system time zone in the format of “1970-01-01 00:00:00”.将时间的秒值转换成format格式（format可为“yyyy-MM-dd hh:mm:ss”,“yyyy-MM-dd  hh”,“yyyy-MM-dd hh:mm”等等）如from_unixtime(1250111000,”yyyy-MM-dd”)  得到2009-03-12</td>
+<td>string</td>
+</tr>
+<tr>
+<td>unix_timestamp()</td>
+<td>Gets current Unix timestamp in seconds.获取本地时区下的时间戳</td>
+<td>bigint</td>
+</tr>
+<tr>
+<td>unix_timestamp(string date)</td>
+<td>Converts time string in format yyyy-MM-dd  HH:mm:ss to Unix timestamp (in seconds), using the  default timezone and the default locale, return 0 if fail:  unix_timestamp(‘2009-03-20 11:30:01’) = 1237573801将格式为yyyy-MM-dd  HH:mm:ss的时间字符串转换成时间戳 如unix_timestamp(‘2009-03-20 11:30:01’) = 1237573801</td>
+<td>bigint</td>
+</tr>
+<tr>
+<td>unix_timestamp(string date, string pattern)</td>
+<td><a href="http://docs.oracle.com/javase/tutorial/i18n/format/simpleDateFormat.html" target="_blank" rel="noopener">Convert   time string with given pattern (see   [http://docs.oracle.com/javase/tutorial/i18n/format/simpleDateFormat.html])   to Unix time stamp (in seconds), return 0 if fail:   unix_timestamp(‘2009-03-20’, ‘yyyy-MM-dd’) =   1237532400.将指定时间字符串格式字符串转换成Unix时间戳，如果格式不对返回0 如：unix_timestamp(‘2009-03-20’,   ‘yyyy-MM-dd’) = 1237532400</a></td>
+<td>bigint</td>
+</tr>
+<tr>
+<td>to_date(string timestamp)</td>
+<td>Returns the date part of a timestamp string:  to_date(“1970-01-01 00:00:00”) = “1970-01-01”.返回时间字符串的日期部分</td>
+<td>string</td>
+</tr>
+<tr>
+<td>year(string date)</td>
+<td>Returns the year part of a date or a timestamp string:  year(“1970-01-01 00:00:00”) = 1970, year(“1970-01-01”) =  1970.返回时间字符串的年份部分</td>
+<td>int</td>
+</tr>
+<tr>
+<td>quarter(date/timestamp/string)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-3404" target="_blank" rel="noopener">Returns the quarter of the year for a date, timestamp, or   string in the range 1 to 4 (as of Hive 1.3.0). Example: quarter(‘2015-04-08’)   = 2.返回当前时间属性哪个季度 如quarter(‘2015-04-08’) = 2</a></td>
+<td>int</td>
+</tr>
+<tr>
+<td>month(string date)</td>
+<td>Returns the month part of a date or a timestamp string:  month(“1970-11-01 00:00:00”) = 11, month(“1970-11-01”) =  11.返回时间字符串的月份部分</td>
+<td>int</td>
+</tr>
+<tr>
+<td>day(string date) dayofmonth(date)</td>
+<td>Returns the day part of a date or a timestamp string:  day(“1970-11-01 00:00:00”) = 1, day(“1970-11-01”) = 1.返回时间字符串的天</td>
+<td>int</td>
+</tr>
+<tr>
+<td>hour(string date)</td>
+<td>Returns the hour of the timestamp: hour(‘2009-07-30  12:58:59’) = 12, hour(‘12:58:59’) = 12.返回时间字符串的小时</td>
+<td>int</td>
+</tr>
+<tr>
+<td>minute(string date)</td>
+<td>Returns the minute of the timestamp.返回时间字符串的分钟</td>
+<td>int</td>
+</tr>
+<tr>
+<td>second(string date)</td>
+<td>Returns the second of the timestamp.返回时间字符串的秒</td>
+<td>int</td>
+</tr>
+<tr>
+<td>weekofyear(string date)</td>
+<td>Returns the week number of a timestamp string:  weekofyear(“1970-11-01 00:00:00”) = 44,  weekofyear(“1970-11-01”) = 44.返回时间字符串位于一年中的第几个周内  如weekofyear(“1970-11-01 00:00:00”) = 44,  weekofyear(“1970-11-01”) = 44</td>
+<td>int</td>
+</tr>
+<tr>
+<td>datediff(string enddate, string startdate)</td>
+<td>Returns the number of days from startdate to enddate:  datediff(‘2009-03-01’, ‘2009-02-27’) = 2.计算开始时间startdate到结束时间enddate相差的天数</td>
+<td>int</td>
+</tr>
+<tr>
+<td>date_add(string startdate, int days)</td>
+<td>Adds a number of days to startdate: date_add(‘2008-12-31’, 1)  = ‘2009-01-01’.从开始时间startdate加上days</td>
+<td>string</td>
+</tr>
+<tr>
+<td>date_sub(string startdate, int days)</td>
+<td>Subtracts a number of days to startdate:  date_sub(‘2008-12-31’, 1) = ‘2008-12-30’.从开始时间startdate减去days</td>
+<td>string</td>
+</tr>
+<tr>
+<td>from_utc_timestamp(timestamp, string timezone)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-2272" target="_blank" rel="noopener">Assumes given timestamp is UTC and converts to given   timezone (as of Hive 0.8.0). For example, from_utc_timestamp(‘1970-01-01   08:00:00’,’PST’) returns 1970-01-01 00:00:00.如果给定的时间戳并非UTC，则将其转化成指定的时区下时间戳</a></td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>to_utc_timestamp(timestamp, string timezone)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-2272" target="_blank" rel="noopener">Assumes given timestamp is in given timezone and converts to   UTC (as of Hive 0.8.0). For example, to_utc_timestamp(‘1970-01-01   00:00:00’,’PST’) returns 1970-01-01 08:00:00.如果给定的时间戳指定的时区下时间戳，则将其转化成UTC下的时间戳</a></td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>current_date</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-5472" target="_blank" rel="noopener">Returns the current date at the start of query evaluation   (as of Hive 1.2.0). All calls of current_date within the same query return   the same value.返回当前时间日期</a></td>
+<td>date</td>
+</tr>
+<tr>
+<td>current_timestamp</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-5472" target="_blank" rel="noopener">Returns the current timestamp at the start of query   evaluation (as of Hive 1.2.0). All calls of current_timestamp within the same   query return the same value.返回当前时间戳</a></td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>add_months(string start_date, int num_months)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-9357" target="_blank" rel="noopener">Returns the date that is num_months after start_date (as of   Hive 1.1.0). start_date is a string, date or timestamp. num_months is an   integer. The time part of start_date is ignored. If start_date is the last   day of the month or if the resulting month has fewer days than the day   component of start_date, then the result is the last day of the resulting   month. Otherwise, the result has the same day component as   start_date.返回当前时间下再增加num_months个月的日期</a></td>
+<td>string</td>
+</tr>
+<tr>
+<td>last_day(string date)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-9358" target="_blank" rel="noopener">Returns the last day of the month which the date belongs to   (as of Hive 1.1.0). date is a string in the format ‘yyyy-MM-dd HH:mm:ss’ or   ‘yyyy-MM-dd’. The time part of date is   ignored.返回这个月的最后一天的日期，忽略时分秒部分（HH:mm:ss）</a></td>
+<td>string</td>
+</tr>
+<tr>
+<td>next_day(string start_date, string day_of_week)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-9520" target="_blank" rel="noopener">Returns the first date which is later than start_date and   named as day_of_week (as of Hive1.2.0). start_date is a   string/date/timestamp. day_of_week is 2 letters, 3 letters or full name of   the day of the week (e.g. Mo, tue, FRIDAY). The time part of start_date is   ignored. Example: next_day(‘2015-01-14’, ‘TU’) =   2015-01-20.返回当前时间的下一个星期X所对应的日期 如：next_day(‘2015-01-14’, ‘TU’) = 2015-01-20   以2015-01-14为开始时间，其下一个星期二所对应的日期为2015-01-20</a></td>
+<td>string</td>
+</tr>
+<tr>
+<td>trunc(string date, string format)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-9480" target="_blank" rel="noopener">Returns date truncated to the unit specified by the format   (as of Hive 1.2.0). Supported formats: MONTH/MON/MM, YEAR/YYYY/YY. Example:   trunc(‘2015-03-17’, ‘MM’) = 2015-03-01.返回时间的最开始年份或月份   如trunc(“2016-06-26”,“MM”)=2016-06-01 trunc(“2016-06-26”,“YY”)=2016-01-01   注意所支持的格式为MONTH/MON/MM, YEAR/YYYY/YY</a></td>
+<td>string</td>
+</tr>
+<tr>
+<td>months_between(date1, date2)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-9518" target="_blank" rel="noopener">Returns number of months between dates date1 and date2 (as   of Hive 1.2.0). If date1 is later than date2, then the result is positive. If   date1 is earlier than date2, then the result is negative. If date1 and date2   are either the same days of the month or both last days of months, then the   result is always an integer. Otherwise the UDF calculates the fractional   portion of the result based on a 31-day month and considers the difference in   time components date1 and date2. date1 and date2 type can be date, timestamp   or string in the format ‘yyyy-MM-dd’ or ‘yyyy-MM-dd HH:mm:ss’. The result is   rounded to 8 decimal places. Example: months_between(‘1997-02-28 10:30:00’,   ‘1996-10-30’) = 3.94959677**返回date1与date2之间相差的月份，如date1&gt;date2，则返回正，如果date1</a></td>
+<td>double</td>
+</tr>
+<tr>
+<td>date_format(date/timestamp/string ts, string fmt)</td>
+<td>Converts a date/timestamp/string to a value of string in the  format specified by the date format fmt (as of Hive 1.2.0).  Supported formats are Java SimpleDateFormat formats  –<a href="https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html" target="_blank" rel="noopener">https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html</a>.  The second argument fmt should be constant. Example:  date_format(‘2015-04-08’, ‘y’) = ‘2015’.date_format can be used to implement  other UDFs, e.g.:dayname(date) is date_format(date, ‘EEEE’)dayofyear(date) is  date_format(date, ‘D’)按指定格式返回时间date  如：date_format(“2016-06-22”,”MM-dd”)=06-22</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2-5-条件函数"><a href="#2-5-条件函数" class="headerlink" title="2.5 条件函数"></a>2.5 条件函数</h5><table>
+<thead>
+<tr>
+<th>Name(Signature)</th>
+<th>Description</th>
+<th>Return  Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>if(boolean testCondition, T valueTrue, T valueFalseOrNull)</td>
+<td>Returns valueTrue when testCondition is true, returns  valueFalseOrNull otherwise.如果testCondition  为true就返回valueTrue,否则返回valueFalseOrNull ，（valueTrue，valueFalseOrNull为泛型）</td>
+<td>T</td>
+</tr>
+<tr>
+<td>nvl(T value, T default_value)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-2288" target="_blank" rel="noopener">Returns default value if value is null else returns value   (as of HIve 0.11).如果value值为NULL就返回default_value,否则返回value</a></td>
+<td>T</td>
+</tr>
+<tr>
+<td>COALESCE(T v1, T v2, …)</td>
+<td>Returns the first v that is not NULL, or NULL if all v’s are  NULL.返回第一非null的值，如果全部都为NULL就返回NULL 如：COALESCE  (NULL,44,55)=44/strong&gt;</td>
+<td>T</td>
+</tr>
+<tr>
+<td>CASE a WHEN b THEN c [WHEN d THEN e]* [ELSE f] END</td>
+<td>When a = b, returns c; when a = d, returns e; else returns f.如果a=b就返回c,a=d就返回e，否则返回f 如CASE 4 WHEN 5 THEN 5 WHEN 4 THEN 4  ELSE 3 END 将返回4</td>
+<td>T</td>
+</tr>
+<tr>
+<td>CASE WHEN a THEN b [WHEN c THEN d]* [ELSE e] END</td>
+<td>When a = true, returns b; when c = true, returns d; else  returns e.如果a=ture就返回b,c= ture就返回d，否则返回e 如：CASE WHEN  5&gt;0 THEN 5 WHEN 4&gt;0 THEN 4 ELSE 0 END 将返回5；CASE WHEN 5&lt;0 THEN 5 WHEN  4&lt;0 THEN 4 ELSE 0 END 将返回0</td>
+<td>T</td>
+</tr>
+<tr>
+<td>isnull( a )</td>
+<td>Returns true if a is NULL and false otherwise.如果a为null就返回true，否则返回false</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>isnotnull ( a )</td>
+<td>Returns true if a is not NULL and false otherwise.如果a为非null就返回true，否则返回false</td>
+<td>boolean</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2-6-字符函数"><a href="#2-6-字符函数" class="headerlink" title="2.6 字符函数"></a>2.6 字符函数</h5><table>
+<thead>
+<tr>
+<th>Name(Signature)</th>
+<th>Description</th>
+<th>Return  Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ascii(string str)</td>
+<td>Returns the numeric value of the first character of str.返回str中首个ASCII字符串的整数值</td>
+<td>int</td>
+</tr>
+<tr>
+<td>base64(binary bin)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-2482" target="_blank" rel="noopener">Converts the argument from binary to a base 64 string (as of   Hive 0.12.0)..将二进制bin转换成64位的字符串</a></td>
+<td>string</td>
+</tr>
+<tr>
+<td>concat(string\</td>
+<td>binary A, string\</td>
+<td>binary B…)</td>
+<td>Returns the string or bytes resulting from concatenating the  strings or bytes passed in as parameters in order. For example, concat(‘foo’,  ‘bar’) results in ‘foobar’. Note that this function can take any number of  input strings..对二进制字节码或字符串按次序进行拼接</td>
+<td>string</td>
+</tr>
+<tr>
+<td>context_ngrams(array&lt;array<string>&gt;,  array<string>, int K, int pf)</string></string></td>
+<td>Returns the top-k contextual N-grams from a set of tokenized  sentences, given a string of “context”. See StatisticsAndDataMining  for more information..与ngram类似，但context_ngram()允许你预算指定上下文(数组)来去查找子序列，具体看StatisticsAndDataMining(这里的解释更易懂)</td>
+<td>array&lt;struct&lt;string,double&gt;&gt;</td>
+</tr>
+<tr>
+<td>concat_ws(string SEP, string A, string B…)</td>
+<td>Like concat() above, but with custom separator SEP..与concat()类似，但使用指定的分隔符喜进行分隔</td>
+<td>string</td>
+</tr>
+<tr>
+<td>concat_ws(string SEP, array<string>)</string></td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-2203" target="_blank" rel="noopener">Like concat_ws() above, but taking an array of strings. (as   of Hive 0.9.0).拼接Array中的元素并用指定分隔符进行分隔</a></td>
+<td>string</td>
+</tr>
+<tr>
+<td>decode(binary bin, string charset)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-2482" target="_blank" rel="noopener">Decodes the first argument into a String using the provided   character set (one of ‘US-ASCII’, ‘ISO-8859-1’, ‘UTF-8’, ‘UTF-16BE’,   ‘UTF-16LE’, ‘UTF-16’). If either argument is null, the result will also be   null. (As of Hive 0.12.0.).使用指定的字符集charset将二进制值bin解码成字符串，支持的字符集有：’US-ASCII’,   ‘ISO-8859-1’, ‘UTF-8’, ‘UTF-16BE’, ‘UTF-16LE’, ‘UTF-16’，如果任意输入参数为NULL都将返回NULL</a></td>
+<td>string</td>
+</tr>
+<tr>
+<td>encode(string src, string charset)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-2482" target="_blank" rel="noopener">Encodes the first argument into a BINARY using the provided   character set (one of ‘US-ASCII’, ‘ISO-8859-1’, ‘UTF-8’, ‘UTF-16BE’,   ‘UTF-16LE’, ‘UTF-16’). If either argument is null, the result will also be   null. (As of Hive 0.12.0.).使用指定的字符集charset将字符串编码成二进制值，支持的字符集有：’US-ASCII’,   ‘ISO-8859-1’, ‘UTF-8’, ‘UTF-16BE’, ‘UTF-16LE’, ‘UTF-16’，如果任一输入参数为NULL都将返回NULL</a></td>
+<td>binary</td>
+</tr>
+<tr>
+<td>find_in_set(string str, string strList)</td>
+<td>Returns the first occurance of str in strList where strList  is a comma-delimited string. Returns null if either argument is null. Returns  0 if the first argument contains any commas. For example, find_in_set(‘ab’,  ‘abc,b,ab,c,def’) returns 3..返回以逗号分隔的字符串中str出现的位置，如果参数str为逗号或查找失败将返回0，如果任一参数为NULL将返回NULL回</td>
+<td>int</td>
+</tr>
+<tr>
+<td>format_number(number x, int d)</td>
+<td>Formats the number X to a format like ‘#,###,###.##’, rounded  to D decimal places, and returns the result as a string. If D is 0, the  result has no decimal point or fractional part. (As of Hive 0.10.0; bug with float types fixed in Hive 0.14.0, decimal type  support added in Hive 0.14.0).将数值X转换成”#,###,###.##”格式字符串，并保留d位小数，如果d为0，将进行四舍五入且不保留小数</td>
+<td>string</td>
+</tr>
+<tr>
+<td>get_json_object(string json_string, string path)</td>
+<td>Extracts json object from a json string based on json path  specified, and returns json string of the extracted json object. It will  return null if the input json string is invalid. NOTE:  The json path can only have the characters [0-9a-z_], i.e., no upper-case or  special characters. Also, the keys <em>cannot start with numbers.</em> This is due to restrictions on Hive column names..从指定路径上的JSON字符串抽取出JSON对象，并返回这个对象的JSON格式，如果输入的JSON是非法的将返回NULL,注意此路径上JSON字符串只能由数字  字母 下划线组成且不能有大写字母和特殊字符，且key不能由数字开头，这是由于Hive对列名的限制</td>
+<td>string</td>
+</tr>
+<tr>
+<td>in_file(string str, string filename)</td>
+<td>Returns true if the string str appears as an entire line in  filename..如果文件名为filename的文件中有一行数据与字符串str匹配成功就返回true</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>instr(string str, string substr)</td>
+<td>Returns the position of the first occurrence of substr in str. Returns null if either of the arguments are null and returns 0 if substr  could not be found in str.  Be aware that this is not zero based. The first character in str has index 1..查找字符串str中子字符串substr出现的位置，如果查找失败将返回0，如果任一参数为Null将返回null，注意位置为从1开始的</td>
+<td>int</td>
+</tr>
+<tr>
+<td>length(string A)</td>
+<td>Returns the length of the string..返回字符串的长度</td>
+<td>int</td>
+</tr>
+<tr>
+<td>locate(string substr, string str[, int pos])</td>
+<td>Returns the position of the first occurrence of substr in str  after position pos..查找字符串str中的pos位置后字符串substr第一次出现的位置</td>
+<td>int</td>
+</tr>
+<tr>
+<td>lower(string A) lcase(string A)</td>
+<td>Returns the string resulting from converting all characters  of B to lower case. For example, lower(‘fOoBaR’) results in ‘foobar’..将字符串A的所有字母转换成小写字母</td>
+<td>string</td>
+</tr>
+<tr>
+<td>lpad(string str, int len, string pad)</td>
+<td>Returns str, left-padded with pad to a length of len..从左边开始对字符串str使用字符串pad填充，最终len长度为止，如果字符串str本身长度比len大的话，将去掉多余的部分</td>
+<td>string</td>
+</tr>
+<tr>
+<td>ltrim(string A)</td>
+<td>Returns the string resulting from trimming spaces from the  beginning(left hand side) of A. For example, ltrim(‘ foobar ‘) results in  ‘foobar ‘..去掉字符串A前面的空格</td>
+<td>string</td>
+</tr>
+<tr>
+<td>ngrams(array&lt;array<string>&gt;,  int N, int K, int pf)</string></td>
+<td>Returns the top-k N-grams from a set of tokenized sentences,  such as those returned by the sentences() UDAF. See StatisticsAndDataMining  for more information..返回出现次数TOP  K的的子序列,n表示子序列的长度，具体看StatisticsAndDataMining (这里的解释更易懂)</td>
+<td>array&lt;struct&lt;string,double&gt;&gt;</td>
+</tr>
+<tr>
+<td>parse_url(string urlString, string partToExtract [, string  keyToExtract])</td>
+<td>Returns the specified part from the URL. Valid values for  partToExtract include HOST, PATH, QUERY, REF, PROTOCOL, AUTHORITY, FILE, and  USERINFO. For example, parse_url(‘<a href="http://facebook.com/path1/p.php?k1=v1&amp;k2=v2#Ref1&#39;" target="_blank" rel="noopener">http://facebook.com/path1/p.php?k1=v1&amp;k2=v2#Ref1&#39;</a>,  ‘HOST’) returns ‘facebook.com’. Also a value of a particular key in QUERY can  be extracted by providing the key as the third argument, for example,  parse_url(‘<a href="http://facebook.com/path1/p.php?k1=v1&amp;k2=v2#Ref1&#39;" target="_blank" rel="noopener">http://facebook.com/path1/p.php?k1=v1&amp;k2=v2#Ref1&#39;</a>, ‘QUERY’,  ‘k1’) returns ‘v1’..返回从URL中抽取指定部分的内容，参数url是URL字符串，而参数partToExtract是要抽取的部分，这个参数包含(HOST,  PATH, QUERY, REF, PROTOCOL, AUTHORITY, FILE, and  USERINFO,例如：parse_url(‘<a href="http://facebook.com/path1/p.php?k1=v1&amp;k2=v2#Ref1&#39;" target="_blank" rel="noopener">http://facebook.com/path1/p.php?k1=v1&amp;k2=v2#Ref1&#39;</a>,  ‘HOST’) =’facebook.com’，如果参数partToExtract值为QUERY则必须指定第三个参数key  如：parse_url(‘<a href="http://facebook.com/path1/p.php?k1=v1&amp;k2=v2#Ref1&#39;" target="_blank" rel="noopener">http://facebook.com/path1/p.php?k1=v1&amp;k2=v2#Ref1&#39;</a>, ‘QUERY’,  ‘k1’) =‘v1’</td>
+<td>string</td>
+</tr>
+<tr>
+<td>printf(String format, Obj… args)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-2695" target="_blank" rel="noopener">Returns the input formatted according do printf-style format   strings (as of Hive0.9.0)..按照printf风格格式输出字符串</a></td>
+<td>string</td>
+</tr>
+<tr>
+<td>regexp_extract(string subject, string pattern, int index)</td>
+<td>Returns the string extracted using the pattern. For example,  regexp_extract(‘foothebar’, ‘foo(.*?)(bar)’, 2) returns ‘bar.’ Note that some  care is necessary in using predefined character classes: using ‘\s’ as the  second argument will match the letter s; ‘\s’ is  necessary to match whitespace, etc. The ‘index’ parameter is the Java regex  Matcher group() method index. See docs/api/java/util/regex/Matcher.html for  more information on the ‘index’ or Java regex group() method..抽取字符串subject中符合正则表达式pattern的第index个部分的子字符串，注意些预定义字符的使用，如第二个参数如果使用’\s’将被匹配到s,’\s’才是匹配空格</td>
+<td>string</td>
+</tr>
+<tr>
+<td>regexp_replace(string INITIAL_STRING, string PATTERN, string  REPLACEMENT)</td>
+<td>Returns the string resulting from replacing all substrings in  INITIAL_STRING that match the java regular expression syntax defined in  PATTERN with instances of REPLACEMENT. For example,  regexp_replace(“foobar”, “oo\</td>
+<td>ar”, “”) returns  ‘fb.’ Note that some care is necessary in using predefined character classes:  using ‘\s’ as the second argument will match the letter s; ‘\s’ is necessary to match whitespace, etc..按照Java正则表达式PATTERN将字符串INTIAL_STRING中符合条件的部分成REPLACEMENT所指定的字符串，如里REPLACEMENT这空的话，抽符合正则的部分将被去掉  如：regexp_replace(“foobar”, “oo\</td>
+<td>ar”, “”) = ‘fb.’  注意些预定义字符的使用，如第二个参数如果使用’\s’将被匹配到s,’\s’才是匹配空格</td>
+<td>string</td>
+</tr>
+<tr>
+<td>repeat(string str, int n)</td>
+<td>Repeats str n times..重复输出n次字符串str</td>
+<td>string</td>
+</tr>
+<tr>
+<td>reverse(string A)</td>
+<td>Returns the reversed string..反转字符串</td>
+<td>string</td>
+</tr>
+<tr>
+<td>rpad(string str, int len, string pad)</td>
+<td>Returns str, right-padded with pad to a length of len..从右边开始对字符串str使用字符串pad填充，最终len长度为止，如果字符串str本身长度比len大的话，将去掉多余的部分</td>
+<td>string</td>
+</tr>
+<tr>
+<td>rtrim(string A)</td>
+<td>Returns the string resulting from trimming spaces from the  end(right hand side) of A. For example, rtrim(‘ foobar ‘) results in ‘  foobar’..去掉字符串后面出现的空格</td>
+<td>string</td>
+</tr>
+<tr>
+<td>sentences(string str, string lang, string locale)</td>
+<td>Tokenizes a string of natural language text into words and  sentences, where each sentence is broken at the appropriate sentence boundary  and returned as an array of words. The ‘lang’ and ‘locale’ are optional  arguments. For example, sentences(‘Hello there! How are you?’) returns (  (“Hello”, “there”), (“How”, “are”,  “you”) )..字符串str将被转换成单词数组，如：sentences(‘Hello  there! How are you?’) =( (“Hello”, “there”),  (“How”, “are”, “you”) )</td>
+<td>array&lt;array<string>&gt;</string></td>
+</tr>
+<tr>
+<td>space(int n)</td>
+<td>Returns a string of n spaces..返回n个空格</td>
+<td>string</td>
+</tr>
+<tr>
+<td>split(string str, string pat)</td>
+<td>Splits str around pat (pat is a regular expression)..按照正则表达式pat来分割字符串str,并将分割后的数组字符串的形式返回</td>
+<td>array</td>
+</tr>
+<tr>
+<td>str_to_map(text[, delimiter1, delimiter2])</td>
+<td>Splits text into key-value pairs using two delimiters.  Delimiter1 separates text into K-V pairs, and Delimiter2 splits each K-V  pair. Default delimiters are ‘,’ for delimiter1 and ‘=’ for delimiter2..将字符串str按照指定分隔符转换成Map，第一个参数是需要转换字符串，第二个参数是键值对之间的分隔符，默认为逗号;第三个参数是键值之间的分隔符，默认为”=”</td>
+<td>map&lt;string,string&gt;</td>
+</tr>
+<tr>
+<td>substr(string\</td>
+<td>binary A, int start) substring(string\</td>
+<td>binary A,  int start)</td>
+<td><a href="http://dev.mysql.com/doc/refman/5.0/en/string-functions.html#function_substr" target="_blank" rel="noopener">Returns   the substring or slice of the byte array of A starting from start position   till the end of string A. For example, substr(‘foobar’, 4) results in ‘bar’   (see   [http://dev.mysql.com/doc/refman/5.0/en/string-functions.html#function_substr])..对于字符串A,从start位置开始截取字符串并返回</a></td>
+<td>string</td>
+</tr>
+<tr>
+<td>substr(string\</td>
+<td>binary A, int start, int len)  substring(string\</td>
+<td>binary A, int start, int len)</td>
+<td><a href="http://dev.mysql.com/doc/refman/5.0/en/string-functions.html#function_substr" target="_blank" rel="noopener">Returns   the substring or slice of the byte array of A starting from start position   with length len. For example, substr(‘foobar’, 4, 1) results in ‘b’ (see   [http://dev.mysql.com/doc/refman/5.0/en/string-functions.html#function_substr])..对于二进制/字符串A,从start位置开始截取长度为length的字符串并返回</a></td>
+<td>string</td>
+</tr>
+<tr>
+<td>substring_index(string A, string delim, int count)</td>
+<td>Returns the substring from string A before count occurrences  of the delimiter delim (as of Hive 1.3.0). If count is  positive, everything to the left of the final delimiter (counting from the  left) is returned. If count is negative, everything to the right of the final  delimiter (counting from the right) is returned. Substring_index performs a  case-sensitive match when searching for delim. Example:  substring_index(‘<a href="http://www.apache.org&#39;" target="_blank" rel="noopener">www.apache.org&#39;</a>, ‘.’, 2) = ‘<a href="http://www.apache&#39;..截取第count分隔符之前的字符串，如count为正则从左边开始截取，如果为负则从右边开始截取" target="_blank" rel="noopener">www.apache&#39;..截取第count分隔符之前的字符串，如count为正则从左边开始截取，如果为负则从右边开始截取</a></td>
+<td>string</td>
+</tr>
+<tr>
+<td>translate(string\</td>
+<td>char\</td>
+<td>varchar input, string\</td>
+<td>char\</td>
+<td>varchar  from, string\</td>
+<td>char\</td>
+<td>varchar to)</td>
+<td>Translates the input string by replacing the characters  present in the from string  with the corresponding characters in the to string. This is similar to the translatefunction in PostgreSQL. If any of the parameters to this UDF  are NULL, the result is NULL as well. (Available as of Hive 0.10.0, for  string types)Char/varchar support added as of Hive 0.14.0..将input出现在from中的字符串替换成to中的字符串  如：translate(“MOBIN”,”BIN”,”M”)=”MOM”</td>
+<td>string</td>
+</tr>
+<tr>
+<td>trim(string A)</td>
+<td>Returns the string resulting from trimming spaces from both  ends of A. For example, trim(‘ foobar ‘) results in ‘foobar’.将字符串A前后出现的空格去掉</td>
+<td>string</td>
+</tr>
+<tr>
+<td>unbase64(string str)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-2482" target="_blank" rel="noopener">Converts the argument from a base 64 string to BINARY. (As   of Hive 0.12.0.).将64位的字符串转换二进制值</a></td>
+<td>binary</td>
+</tr>
+<tr>
+<td>upper(string A) ucase(string A)</td>
+<td>Returns the string resulting from converting all characters  of A to upper case. For example, upper(‘fOoBaR’) results in ‘FOOBAR’..将字符串A中的字母转换成大写字母</td>
+<td>string</td>
+</tr>
+<tr>
+<td>initcap(string A)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-3405" target="_blank" rel="noopener">Returns string, with the first letter of each word in   uppercase, all other letters in lowercase. Words are delimited by whitespace.   (As of Hive 1.1.0.).将字符串A转换第一个字母大写其余字母的字符串</a></td>
+<td>string</td>
+</tr>
+<tr>
+<td>levenshtein(string A, string B)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-9556" target="_blank" rel="noopener">Returns the Levenshtein distance between two strings (as of   Hive 1.2.0). For example, levenshtein(‘kitten’, ‘sitting’) results in   3..计算两个字符串之间的差异大小 如：levenshtein(‘kitten’, ‘sitting’) = 3</a></td>
+<td>int</td>
+</tr>
+<tr>
+<td>soundex(string A)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-9738" target="_blank" rel="noopener">Returns soundex code of the string (as of Hive 1.2.0). For   example, soundex(‘Miller’) results in M460..将普通字符串转换成soundex字符串</a></td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2-7-聚合函数"><a href="#2-7-聚合函数" class="headerlink" title="2.7 聚合函数"></a>2.7 聚合函数</h5><table>
+<thead>
+<tr>
+<th>Name(Signature)</th>
+<th>Description</th>
+<th>Return  Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>count(*), count(expr), count(DISTINCT expr[, expr…])</td>
+<td><a href="https://cwiki.apache.org/confluence/display/Hive/Configuration+Properties#ConfigurationProperties-hive.optimize.distinct.rewrite" target="_blank" rel="noopener">count(*) - Returns the total number of retrieved rows,   including rows containing NULL values.统计总行数，包括含有NULL值的行count(expr) - Returns   the number of rows for which the supplied expression is   non-NULL.统计提供非NULL的expr表达式值的行数count(DISTINCT expr[, expr]) - Returns the   number of rows for which the supplied expression(s) are unique and non-NULL.   Execution of this can be optimized with   hive.optimize.distinct.rewrite.统计提供非NULL且去重后的expr表达式值的行数</a></td>
+<td>BIGINT</td>
+</tr>
+<tr>
+<td>sum(col), sum(DISTINCT col)</td>
+<td>Returns the sum of the elements in the group or the sum of  the distinct values of the column in the group.sum(col),表示求指定列的和，sum(DISTINCT  col)表示求去重后的列的和</td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>avg(col), avg(DISTINCT col)</td>
+<td>Returns the average of the elements in the group or the  average of the distinct values of the column in the group.avg(col),表示求指定列的平均值，avg(DISTINCT  col)表示求去重后的列的平均值</td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>min(col)</td>
+<td>Returns the minimum of the column in the group.求指定列的最小值</td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>max(col)</td>
+<td>Returns the maximum value of the column in the group.求指定列的最大值</td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>variance(col), var_pop(col)</td>
+<td>Returns the variance of a numeric column in the group.求指定列数值的方差</td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>var_samp(col)</td>
+<td>Returns the unbiased sample variance of a numeric column in  the group.求指定列数值的样本方差</td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>stddev_pop(col)</td>
+<td>Returns the standard deviation of a numeric column in the  group.求指定列数值的标准偏差</td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>stddev_samp(col)</td>
+<td>Returns the unbiased sample standard deviation of a numeric  column in the group.求指定列数值的样本标准偏差</td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>covar_pop(col1, col2)</td>
+<td>Returns the population covariance of a pair of numeric  columns in the group.求指定列数值的协方差</td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>covar_samp(col1, col2)</td>
+<td>Returns the sample covariance of a pair of a numeric columns  in the group.求指定列数值的样本协方差</td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>corr(col1, col2)</td>
+<td>Returns the Pearson coefficient of correlation of a pair of a  numeric columns in the group.返回两列数值的相关系数</td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>percentile(BIGINT col, p)</td>
+<td>Returns the exact pth percentile of a column in the group  (does not work with floating point types). p must be between 0 and 1. NOTE: A  true percentile can only be computed for integer values. Use  PERCENTILE_APPROX if your input is non-integral.返回col的p%分位数</td>
+<td>DOUBLE</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2-8-表生成函数"><a href="#2-8-表生成函数" class="headerlink" title="2.8 表生成函数"></a>2.8 表生成函数</h5><table>
+<thead>
+<tr>
+<th>Name(Signature)</th>
+<th>Description</th>
+<th>Return  Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>explode(array<type> a)</type></td>
+<td>For each element in a, generates a row containing that  element.对于a中的每个元素，将生成一行且包含该元素</td>
+<td>Array Type</td>
+</tr>
+<tr>
+<td>explode(ARRAY)</td>
+<td>Returns one row for each element from the array..每行对应数组中的一个元素</td>
+<td>N rows</td>
+</tr>
+<tr>
+<td>explode(MAP)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-1735" target="_blank" rel="noopener">Returns one row for each key-value pair from the input map   with two columns in each row: one for the key and another for the value. (As   of Hive 0.8.0.).每行对应每个map键-值，其中一个字段是map的键，另一个字段是map的值</a></td>
+<td>N rows</td>
+</tr>
+<tr>
+<td>posexplode(ARRAY)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-4943" target="_blank" rel="noopener">Behaves like explode for arrays, but includes the position   of items in the original array by returning a tuple of (pos, value). (As of   Hive 0.13.0.).与explode类似，不同的是还返回各元素在数组中的位置</a></td>
+<td>N rows</td>
+</tr>
+<tr>
+<td>stack(INT n, v_1, v_2, …, v_k)</td>
+<td>Breaks up v_1, …, v_k into n rows. Each row will have k/n  columns. n must be constant..把M列转换成N行，每行有M/N个字段，其中n必须是个常数</td>
+<td>N rows</td>
+</tr>
+<tr>
+<td>json_tuple(jsonStr, k1, k2, …)</td>
+<td>Takes a set of names (keys) and a JSON string, and returns a  tuple of values. This is a more efficient version of the get_json_object UDF because it can get multiple keys with just one call..从一个JSON字符串中获取多个键并作为一个元组返回，与get_json_object不同的是此函数能一次获取多个键值</td>
+<td>tuple</td>
+</tr>
+<tr>
+<td>parse_url_tuple(url, p1, p2, …)</td>
+<td>This is similar to the parse_url() UDF but can extract multiple parts at once out of a URL. Valid  part names are: HOST, PATH, QUERY, REF, PROTOCOL, AUTHORITY, FILE, USERINFO,  QUERY:<key>..返回从URL中抽取指定N部分的内容，参数url是URL字符串，而参数p1,p2,….是要抽取的部分，这个参数包含HOST,  PATH, QUERY, REF, PROTOCOL, AUTHORITY, FILE, USERINFO, QUERY:</key></td>
+<td>tuple</td>
+</tr>
+<tr>
+<td>inline(ARRAY&lt;STRUCT[,STRUCT]&gt;)</td>
+<td><a href="https://issues.apache.org/jira/browse/HIVE-3238" target="_blank" rel="noopener">Explodes an array of structs into a table. (As of Hive   0.10.).将结构体数组提取出来并插入到表中</a></td>
+</tr>
+</tbody>
+</table>
 <h4 id="3-加载数据"><a href="#3-加载数据" class="headerlink" title="3.加载数据"></a>3.加载数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"># array</span><br><span class="line">create table person(name string,work_locations array&lt;string&gt;)</span><br><span class="line">ROW FORMAT DELIMITED</span><br><span class="line">FIELDS TERMINATED BY &apos;\t&apos;</span><br><span class="line">COLLECTION ITEMS TERMINATED BY &apos;,&apos;;</span><br><span class="line"># 数据</span><br><span class="line">biansutao beijing,shanghai,tianjin,hangzhou</span><br><span class="line">linan changchu,chengdu,wuhan</span><br><span class="line"># 入库数据</span><br><span class="line">LOAD DATA LOCAL INPATH &apos;/home/hadoop/person.txt&apos; OVERWRITE INTO TABLE person;</span><br><span class="line">select * from person;</span><br><span class="line"># biansutao       [&quot;beijing&quot;,&quot;shanghai&quot;,&quot;tianjin&quot;,&quot;hangzhou&quot;]</span><br><span class="line"># linan           [&quot;changchu&quot;,&quot;chengdu&quot;,&quot;wuhan&quot;]</span><br><span class="line"></span><br><span class="line"># map</span><br><span class="line">create table score(name string, score map&lt;string,int&gt;)</span><br><span class="line">ROW FORMAT DELIMITED</span><br><span class="line">FIELDS TERMINATED BY &apos;\t&apos;</span><br><span class="line">COLLECTION ITEMS TERMINATED BY &apos;,&apos;</span><br><span class="line">MAP KEYS TERMINATED BY &apos;:&apos;;</span><br><span class="line"># 数据</span><br><span class="line">biansutao &apos;数学&apos;:80,&apos;语文&apos;:89,&apos;英语&apos;:95</span><br><span class="line">jobs &apos;语文&apos;:60,&apos;数学&apos;:80,&apos;英语&apos;:99</span><br><span class="line"># 入库数据</span><br><span class="line">LOAD DATA LOCAL INPATH &apos;/home/hadoop/score.txt&apos; OVERWRITE INTO TABLE score;</span><br><span class="line">select * from score;</span><br><span class="line"># biansutao       &#123;&quot;数学&quot;:80,&quot;语文&quot;:89,&quot;英语&quot;:95&#125;</span><br><span class="line"># jobs            &#123;&quot;语文&quot;:60,&quot;数学&quot;:80,&quot;英语&quot;:99&#125;</span><br><span class="line"></span><br><span class="line"># struct</span><br><span class="line">CREATE TABLE test(id int,course struct&lt;course:string,score:int&gt;)</span><br><span class="line">ROW FORMAT DELIMITED</span><br><span class="line">FIELDS TERMINATED BY &apos;\t&apos;</span><br><span class="line">COLLECTION ITEMS TERMINATED BY &apos;,&apos;;</span><br><span class="line"># 数据</span><br><span class="line">1 english,80</span><br><span class="line">2 math,89</span><br><span class="line">3 chinese,95</span><br><span class="line"># 入库</span><br><span class="line">LOAD DATA LOCAL INPATH &apos;/home/hadoop/test.txt&apos; OVERWRITE INTO TABLE test;</span><br><span class="line"># 查询</span><br><span class="line">select * from test;</span><br><span class="line"># 1       &#123;&quot;course&quot;:&quot;english&quot;,&quot;score&quot;:80&#125;</span><br><span class="line"># 2       &#123;&quot;course&quot;:&quot;math&quot;,&quot;score&quot;:89&#125;</span><br><span class="line"># 3       &#123;&quot;course&quot;:&quot;chinese&quot;,&quot;score&quot;:95&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="4-配置优化"><a href="#4-配置优化" class="headerlink" title="4.配置优化"></a>4.配置优化</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"># 开启任务并行执行</span><br><span class="line">set hive.exec.parallel=true</span><br><span class="line"># 设置运行内存</span><br><span class="line">set mapreduce.map.memory.mb=1024;</span><br><span class="line">set mapreduce.reduce.memory.mb=1024;</span><br><span class="line"># 指定队列</span><br><span class="line">set mapreduce.job.queuename=jppkg_high;</span><br><span class="line"># 动态分区，为了防止一个reduce处理写入一个分区导致速度严重降低，下面需设置为false</span><br><span class="line"># 默认为true</span><br><span class="line">set hive.optimize.sort.dynamic.partition=false;</span><br><span class="line"># 设置变量</span><br><span class="line">set hivevar:factor_timedecay=-0.3;</span><br><span class="line">set hivevar:pre_month=$&#123;zdt.addDay(-30).format(&quot;yyyy-MM-dd&quot;)&#125;;</span><br><span class="line">set hivevar:pre_date=$&#123;zdt.addDay(-1).format(&quot;yyyy-MM-dd&quot;)&#125;;</span><br><span class="line">set hivevar:cur_date=$&#123;zdt.format(&quot;yyyy-MM-dd&quot;)&#125;;</span><br><span class="line"># 添加第三方jar包, 添加临时函数</span><br><span class="line">add jar ***.jar;</span><br><span class="line"># 压缩输出，ORC默认自带压缩，不需要额外指定,如果使用非ORCFile,则设置如下</span><br><span class="line">hive.exec.compress.output=true</span><br><span class="line"># 如果一个大文件可以拆分，为防止一个Map读取过大的数据，拖慢整体流程，需设置</span><br><span class="line">hive.hadoop.suports.splittable.combineinputformat</span><br><span class="line"># 避免因数据倾斜造成的计算效率，默认false</span><br><span class="line">hive.groupby.skewindata</span><br><span class="line"># 避免因join引起的数据倾斜</span><br><span class="line">hive.optimize.skewjoin</span><br><span class="line"># map中会做部分聚集操作，效率高，但需要更多内存</span><br><span class="line">hive.map.aggr   -- 默认打开</span><br><span class="line">hive.groupby.mapaggr.checkinterval  -- 在Map端进行聚合操作的条目数目</span><br><span class="line"># 当多个group by语句有相同的分组列，则会优化为一个MR任务。默认关闭。</span><br><span class="line">hive.multigroupby.singlemr</span><br><span class="line"># 自动使用索引，默认不开启，需配合row group index，可以提高计算速度</span><br><span class="line">hive.optimize.index.filter</span><br></pre></td></tr></table></figure>
 <h4 id="5-常用技巧"><a href="#5-常用技巧" class="headerlink" title="5. 常用技巧"></a>5. 常用技巧</h4><ul>
@@ -260,6 +1082,14 @@
 <li>2.更新数据</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert overwrite table temp.tbl_test  values (&apos;1&apos;,&apos;2&apos;,&apos;3&apos;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>3.按照分隔符拆分某个列返回多条 一条转多条</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select  new_column_name from tbl_test lateral view explode(split(column_list_name,&apos;拆分符号&apos;))  as new_column_name;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>4.将分组中多条的某列的值转为一条的一个数组返回</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-- column_name字段不去重</span><br><span class="line">select username, collect_set(column_name) as new_column_list_name from tbl_test group by username;</span><br><span class="line">-- column_name字段去重</span><br><span class="line">select username, collect_list(column_name) as new_column_list_name from tbl_test group by username;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -384,7 +1214,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-安装"><span class="toc-number">1.1.</span> <span class="toc-text">一.安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-安装前准备"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.安装前准备</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-hive安装步骤"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.hive安装步骤</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二-常用命令"><span class="toc-number">1.2.</span> <span class="toc-text">二.常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-基础命令"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.基础命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-常用函数"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.常用函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-加载数据"><span class="toc-number">1.2.3.</span> <span class="toc-text">3.加载数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-配置优化"><span class="toc-number">1.2.4.</span> <span class="toc-text">4.配置优化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-常用技巧"><span class="toc-number">1.2.5.</span> <span class="toc-text">5. 常用技巧</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-安装"><span class="toc-number">1.1.</span> <span class="toc-text">一.安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-安装前准备"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.安装前准备</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-hive安装步骤"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.hive安装步骤</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二-常用命令"><span class="toc-number">1.2.</span> <span class="toc-text">二.常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-基础命令"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.基础命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-常用函数"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.常用函数</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-数学函数"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">2.1 数学函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-集合函数"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">2.2 集合函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-类型转换函数"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">2.3 类型转换函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-4-日期函数"><span class="toc-number">1.2.2.4.</span> <span class="toc-text">2.4 日期函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-5-条件函数"><span class="toc-number">1.2.2.5.</span> <span class="toc-text">2.5 条件函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-6-字符函数"><span class="toc-number">1.2.2.6.</span> <span class="toc-text">2.6 字符函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-7-聚合函数"><span class="toc-number">1.2.2.7.</span> <span class="toc-text">2.7 聚合函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-8-表生成函数"><span class="toc-number">1.2.2.8.</span> <span class="toc-text">2.8 表生成函数</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-加载数据"><span class="toc-number">1.2.3.</span> <span class="toc-text">3.加载数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-配置优化"><span class="toc-number">1.2.4.</span> <span class="toc-text">4.配置优化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-常用技巧"><span class="toc-number">1.2.5.</span> <span class="toc-text">5. 常用技巧</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -526,10 +1356,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
@@ -538,11 +1364,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">云计算</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">可靠性</a>
+                <a href="javascript:void(0)" class="js-tag color4">云计算</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -550,15 +1376,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">可靠性</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">impala</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hive</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">hbase</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -570,11 +1412,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">接口</a>
+                <a href="javascript:void(0)" class="js-tag color5">环境部署</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">环境部署</a>
+                <a href="javascript:void(0)" class="js-tag color3">接口</a>
               </li>
              
               <li class="article-tag-list-item">

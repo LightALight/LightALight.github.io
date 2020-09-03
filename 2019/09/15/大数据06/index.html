@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://lightalight.github.io/image/大数据06/大数据06_007.png">
 <meta property="og:image" content="https://lightalight.github.io/image/大数据06/大数据06_009.png">
 <meta property="og:image" content="https://lightalight.github.io/image/大数据06/大数据06_010.png">
-<meta property="og:updated_time" content="2020-09-02T07:02:47.899Z">
+<meta property="og:updated_time" content="2020-09-03T07:31:51.968Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大数据（六）">
 <meta name="twitter:description" content="本文章主要介绍在centos环境下如何安装Hadoop。">
@@ -211,12 +211,12 @@
         <p>本文章主要介绍在centos环境下如何安装Hadoop。</p>
 <a id="more"></a>
 <h2 id="Quick-Guide"><a href="#Quick-Guide" class="headerlink" title="Quick Guide"></a>Quick Guide</h2><h3 id="下载并安装Hadoop"><a href="#下载并安装Hadoop" class="headerlink" title="下载并安装Hadoop"></a>下载并安装Hadoop</h3><ul>
-<li>1.使用以下命令添加Hadoop系统用户<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo addgroup hadoop <span class="comment"># 新建用户组   </span></span><br><span class="line">sudo adduser --ingroup hadoop hduser <span class="comment"># 新建用户</span></span><br></pre></td></tr></table></figure>
+<li>1.使用以下命令添加Hadoop系统用户<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo addgroup hadoop <span class="comment"># 新建用户组   </span></span><br><span class="line">sudo adduser --ingroup hadoop hadoop <span class="comment"># 新建用户</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p><strong>注意：</strong>出现这个报错’”hduser is not in the sudoers file. This incident will be reported.”‘,可以通过以root用户身份登录解决此错误</p>
+<p><strong>注意：</strong>出现这个报错’”hadoop is not in the sudoers file. This incident will be reported.”‘,可以通过以root用户身份登录解决此错误</p>
 <ul>
-<li>2.配置SSH<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">su - hduser <span class="comment"># 切换用户</span></span><br><span class="line">ssh-keygen -t rsa -P <span class="string">""</span> <span class="comment"># 创建一个新密钥</span></span><br><span class="line">cat <span class="variable">$HOME</span>/.ssh/id_rsa.pub &gt;&gt; <span class="variable">$HOME</span>/.ssh/authorized_keys <span class="comment"># 启用密钥</span></span><br><span class="line">ssh localhost <span class="comment"># 测试是否可用</span></span><br></pre></td></tr></table></figure>
+<li>2.配置SSH<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">su - hadoop <span class="comment"># 切换用户</span></span><br><span class="line">ssh-keygen -t rsa -P <span class="string">""</span> <span class="comment"># 创建一个新密钥</span></span><br><span class="line">cat <span class="variable">$HOME</span>/.ssh/id_rsa.pub &gt;&gt; <span class="variable">$HOME</span>/.ssh/authorized_keys <span class="comment"># 启用密钥</span></span><br><span class="line">ssh localhost <span class="comment"># 测试是否可用</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p><strong>注意：</strong>出现 openssh-server没安装的错误，请使用下面命令安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum openssh-server</span><br></pre></td></tr></table></figure></p>
@@ -232,7 +232,7 @@
 </ul>
 </li>
 <li><p>4.放到服务器解压</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo tar xzf hadoop-3.2.1.tar.gz <span class="comment"># 解压</span></span><br><span class="line">sudo mv hadoop-3.2.1 hadoop <span class="comment"># 修改文件名</span></span><br><span class="line">sudo chown -R hduser:hadoop hadoop <span class="comment"># 目录增加用户权限</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo tar xzf hadoop-3.2.1.tar.gz -C /hadoop/install <span class="comment"># 解压</span></span><br><span class="line"><span class="built_in">cd</span> /hadoop/install</span><br><span class="line">sudo mv hadoop-3.2.1 hadoop <span class="comment"># 修改文件名</span></span><br><span class="line">sudo chown -R hadoop:hadoop hadoop <span class="comment"># 目录增加用户权限</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="配置Hadoop"><a href="#配置Hadoop" class="headerlink" title="配置Hadoop"></a>配置Hadoop</h3><h4 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> HADOOP_HOME=&lt;Hadoop的安装路径&gt; <span class="comment"># 设置HADOOP_HOME</span></span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=&lt;Java的安装路径&gt; <span class="comment"># 设置JAVA_HOME</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$HADOOP_HOME</span>/bin <span class="comment"># 将Hadoop的bin目录添加到PATH</span></span><br><span class="line">. ~/.bashrc <span class="comment"># 环境下应用该配置</span></span><br></pre></td></tr></table></figure>
@@ -248,29 +248,29 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit <span class="variable">$HADOOP_HOME</span>/etc/hadoop/core-site.xml</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>2.复制下面配置到 文件内容的 <configuration> 和 </configuration> 之间</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.tmp.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>/app/hadoop/tmp<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">description</span>&gt;</span>Parent directory for other temporary directories.<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>fs.defaultFS <span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://localhost:54310<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">description</span>&gt;</span>The name of the default file system. <span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.tmp.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>/hadoop/install/hadoop/tmp<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">description</span>&gt;</span>Parent directory for other temporary directories.<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>fs.defaultFS <span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://localhost:54310<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">description</span>&gt;</span>The name of the default file system. <span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p><img src="/image/大数据06/大数据06_006.png" alt=""></p>
 <ul>
-<li>3.移动到目录 <strong>$HADOOP_HOME/etc/Hadoop</strong></li>
+<li>3.移动到目录 <strong>$HADOOP_HOME/etc/hadoop</strong></li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p &lt;以上设置中使用的目录路径&gt;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>4.授权目录权限</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R hduser:Hadoop &lt;在上一步中创建的目录路径&gt;</span><br><span class="line">sudo chmod 750 &lt;在上一步中创建的目录路径&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R hadoop:hadoop &lt;在上一步中创建的目录路径&gt;</span><br><span class="line">sudo chmod 750 &lt;在上一步中创建的目录路径&gt;</span><br></pre></td></tr></table></figure>
 <h5 id="配置文件系统"><a href="#配置文件系统" class="headerlink" title="配置文件系统"></a>配置文件系统</h5><ul>
 <li><p>1.打开文件 $HADOOP_HOME/etc/hadoop/hdfs-site.xml </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit <span class="variable">$HADOOP_HOME</span>/etc/hadoop/hdfs-site.xml</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>2.复制下面配置到 文件内容的 <configuration> 和 </configuration> 之间</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.replication<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>1<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">description</span>&gt;</span>Default block replication.<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.datanode.data.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>/home/hduser/hdfs<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.replication<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>1<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">description</span>&gt;</span>Default block replication.<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.datanode.data.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>/hadoop/install/hadoop/hdfs<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p><img src="/image/大数据06/大数据06_008.png" alt=""></p>
 <ul>
-<li>3.创建以上设置中指定的目录并授权<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /home/hduser/hdfs</span><br><span class="line">sudo chown -R hduser:hadoop /home/hduser/hdfs</span><br><span class="line">sudo chmod 750 /home/hduser/hdfs</span><br></pre></td></tr></table></figure>
+<li>3.创建以上设置中指定的目录并授权<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /hadoop/install/hadoop/hdfs</span><br><span class="line">sudo chown -R hadoop:hadoop /hadoop/install/hadoop/hdfs</span><br><span class="line">sudo chmod 750 /hadoop/install/hadoop/hdfs</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h4 id="配置-Map-Reduce"><a href="#配置-Map-Reduce" class="headerlink" title="配置 Map Reduce"></a>配置 <strong>Map Reduce</strong></h4><h5 id="配置环境变量-2"><a href="#配置环境变量-2" class="headerlink" title="配置环境变量"></a>配置环境变量</h5><ul>
@@ -312,7 +312,6 @@
 </li>
 </ul>
 <h3 id="停止Hadoop"><a href="#停止Hadoop" class="headerlink" title="停止Hadoop"></a>停止Hadoop</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$HADOOP_HOME</span>/sbin/stop-dfs.sh</span><br><span class="line"><span class="variable">$HADOOP_HOME</span>/sbin/stop-yarn.sh</span><br></pre></td></tr></table></figure>
-
       
 
       
@@ -579,10 +578,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
@@ -591,11 +586,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">云计算</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">可靠性</a>
+                <a href="javascript:void(0)" class="js-tag color4">云计算</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -603,15 +598,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">可靠性</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">impala</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hive</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">hbase</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -623,11 +634,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">接口</a>
+                <a href="javascript:void(0)" class="js-tag color5">环境部署</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">环境部署</a>
+                <a href="javascript:void(0)" class="js-tag color3">接口</a>
               </li>
              
               <li class="article-tag-list-item">
