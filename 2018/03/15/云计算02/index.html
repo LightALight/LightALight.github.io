@@ -251,7 +251,7 @@
 <ul>
 <li>顶部的服务层定义了云服务消费者访问计算资源的接口（简称访问接口）——IaaS、PaaS 和 SaaS。</li>
 <li><p>中间层是资源抽象与控制层，包括两类系统组件：</p>
-<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1）抽象组件</span><br><span class="line">主要用于对物理计算资源进行虚拟化，虚拟化之后的资源就可以放入资源池中，以便将来供云服务消费者弹性租赁。抽象组件包括虚拟机管理平台（Hypervisor）、虚拟机软件（VM）、软件定义存储（SDS）、软件定义网络（SDN）等，其中虚拟机技术是最常见的资源抽象组件。无论如何，抽象组件必须能确保高效、安全和可靠地运用底层的物理资源。</span><br><span class="line"><span class="section">2）控制组件:</span></span><br><span class="line">主要负责资源分配、访问控制和监控资源使用等。总之，本层的主要功能是把物理资源池化并有效管理被池化后的资源。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1）抽象组件</span><br><span class="line">主要用于对物理计算资源进行虚拟化，虚拟化之后的资源就可以放入资源池中，以便将来供云服务消费者弹性租赁。抽象组件包括虚拟机管理平台（Hypervisor）、虚拟机软件（VM）、软件定义存储（SDS）、软件定义网络（SDN）等，其中虚拟机技术是最常见的资源抽象组件。无论如何，抽象组件必须能确保高效、安全和可靠地运用底层的物理资源。</span><br><span class="line">2）控制组件:</span><br><span class="line">主要负责资源分配、访问控制和监控资源使用等。总之，本层的主要功能是把物理资源池化并有效管理被池化后的资源。</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>底层是物理资源层，包含所有的物理计算资源——物理服务器（主要包含 CPU、内存计算资源）、网络设备（路由器、防火墙、交换机、网卡等）、存储设备（如硬盘、存储阵列），以及其他物理的计算设施；也包含基础设施资源，如加热器、空调、通风设备、供电设备等。</p>
 </li>
@@ -357,19 +357,21 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">云计算</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<div class="article-tag tagcloud">
+	<i class="icon-price-tags icon"></i>
+	<ul class="article-tag-list">
+		
+		
+		<li class="article-tag-list-item">
+			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">
+				云计算</a>
+		</li>
+		
+		
+	</ul>
+</div>
 
       
-
       
 
       
@@ -612,15 +614,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">监控</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -628,7 +626,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">可靠性</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -636,11 +634,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
+                <a href="javascript:void(0)" class="js-tag color4">可靠性</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hive</a>
+                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -648,11 +646,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">impala</a>
+                <a href="javascript:void(0)" class="js-tag color5">hive</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">hbase</a>
+                <a href="javascript:void(0)" class="js-tag color2">impala</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -660,15 +658,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">hbase</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">sqoop</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">性能</a>
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+                <a href="javascript:void(0)" class="js-tag color3">性能</a>
               </li>
              
               <li class="article-tag-list-item">

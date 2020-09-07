@@ -239,13 +239,13 @@
 <ul>
 <li><p>1.Sqoop1的架构图：</p>
 <p><img src="/image/大数据13/大数据13_003.png" alt=""></p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">版本号：1.4.X以后的Sqoop1</span><br><span class="line">在架构上：Sqoop1使用Sqoop客户端直接提交代码方式</span><br><span class="line">访问方式：<span class="keyword">CLI</span>命令行控制台方式访问</span><br><span class="line">安全性：命令或者脚本指定用户数据库名和密码</span><br><span class="line">原理：Sqoop工具接收到客户端的<span class="keyword">shell</span>命令或者Java api命令后，通过Sqoop中的任务翻译器(Task <span class="keyword">Translator</span>)将命令转换为对应的MapReduce任务，而后将关系型数据库和Hadoop中的数据进行相互转移，进而完成数据的拷贝</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">版本号：1.4.X以后的Sqoop1</span><br><span class="line">在架构上：Sqoop1使用Sqoop客户端直接提交代码方式</span><br><span class="line">访问方式：CLI命令行控制台方式访问</span><br><span class="line">安全性：命令或者脚本指定用户数据库名和密码</span><br><span class="line">原理：Sqoop工具接收到客户端的shell命令或者Java api命令后，通过Sqoop中的任务翻译器(Task Translator)将命令转换为对应的MapReduce任务，而后将关系型数据库和Hadoop中的数据进行相互转移，进而完成数据的拷贝</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>2.Sqoop2架构图：<br><img src="/image/大数据13/大数据13_004.png" alt=""></p>
-<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">版本号：1.99.X以上的版本Sqoop2   </span><br><span class="line">在架构上：Sqoop2引入了 Sqoop server,对对connector实现了集中的管理访问方式：REST API、 JAVA API、 WEB UI以及CLI控制台方式进行访问    </span><br><span class="line">   CLI方式访问，会通过交互过程界面，输入的密码信息会被看到，同时Sqoop2引入基亍角色的安全机制，Sqoop2比Sqoop多了一个Server端。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">版本号：1.99.X以上的版本Sqoop2   </span><br><span class="line">在架构上：Sqoop2引入了 Sqoop server,对对connector实现了集中的管理访问方式：REST API、 JAVA API、 WEB UI以及CLI控制台方式进行访问    </span><br><span class="line">   CLI方式访问，会通过交互过程界面，输入的密码信息会被看到，同时Sqoop2引入基亍角色的安全机制，Sqoop2比Sqoop多了一个Server端。</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>3.Sqoop1和Sqoop2优缺点：</p>
-<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Sqoop1优点：架构部署简单</span><br><span class="line">Sqoop1缺点：命令行方式容易出错，格式紧耦合，无法支持所有数据类型，安全机制不够完善，例如密码暴漏，安装需要root权限，connector必须符合JDBC模型</span><br><span class="line">Sqoop2优点：多种交互方式，命令行，web UI，rest API，conncetor集中化管理，所有的链接安装在Sqoop server上，完善权限管理机制，connector规范化，仅仅负责数据的读写</span><br><span class="line">Sqoop2缺点：Sqoop2的缺点，架构稍复杂，配置部署更繁琐</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Sqoop1优点：架构部署简单</span><br><span class="line">Sqoop1缺点：命令行方式容易出错，格式紧耦合，无法支持所有数据类型，安全机制不够完善，例如密码暴漏，安装需要root权限，connector必须符合JDBC模型</span><br><span class="line">Sqoop2优点：多种交互方式，命令行，web UI，rest API，conncetor集中化管理，所有的链接安装在Sqoop server上，完善权限管理机制，connector规范化，仅仅负责数据的读写</span><br><span class="line">Sqoop2缺点：Sqoop2的缺点，架构稍复杂，配置部署更繁琐</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -276,7 +276,7 @@
 <li><p>6.增加驱动</p>
 <ul>
 <li>1.从<a href="https://downloads.mysql.com/archives/c-j/" target="_blank" rel="noopener">mysql官网</a>下载对于版本驱动</li>
-<li>2.把驱动放入sqoop1.4.7/lib 目录下<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /hadoop/software/mysql-connector-java-<span class="number">5.1</span>.<span class="number">38</span>-bin.jar /hadoop/install/sqoop1.<span class="number">4.7</span>/<span class="class"><span class="keyword">lib</span>/</span></span><br></pre></td></tr></table></figure>
+<li>2.把驱动放入sqoop1.4.7/lib 目录下<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /hadoop/software/mysql-connector-java-5.1.38-bin.jar /hadoop/install/sqoop1.4.7/lib/</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -290,7 +290,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqoop list-databases --connect jdbc:mysql://master:3306/ --username root --password root</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>2.列出MySQL中的某个数据库有哪些数据表</p>
-<figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">sqoop </span><span class="built_in">list-tables</span> <span class="built_in">--connect</span> <span class="string">jdbc:mysql:</span>//<span class="string">master:3306/</span> <span class="built_in">--username</span> <span class="string">root </span><span class="built_in">--password</span> <span class="string">root</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqoop list-tables --connect jdbc:mysql://master:3306/ --username root --password root</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>3.创建一张跟mysql中的tbl_test表一样的hive表tbl_hive：</p>
 </li>
@@ -300,7 +300,7 @@
 <li>4.从RDBMS导入到HDFS中</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqoop import (generic-args) (import-args)</span><br></pre></td></tr></table></figure>
-<p>常用参数<br><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">-<span class="ruby">-connect &lt;jdbc-uri&gt; jdbc 连接地址</span></span><br><span class="line"><span class="ruby">--connection-manager &lt;<span class="class"><span class="keyword">class</span>-<span class="title">name</span>&gt; 连接管理者</span></span></span><br><span class="line"><span class="ruby">--connection-param-file &lt;filename&gt; 可选参数</span></span><br><span class="line"><span class="ruby">--column-family：列族</span></span><br><span class="line"><span class="ruby">--driver &lt;<span class="class"><span class="keyword">class</span>-<span class="title">name</span>&gt; 驱动类</span></span></span><br><span class="line"><span class="ruby">--hadoop-mapred-home &lt;dir&gt; $HADOOP_MAPRED_HOME</span></span><br><span class="line"><span class="ruby">--hbase-table：hbase中的table</span></span><br><span class="line"><span class="ruby">--hbase-row-key：指定rowkey</span></span><br><span class="line"><span class="ruby">--help help 信息</span></span><br><span class="line"><span class="ruby">--password &lt;password&gt; 密码</span></span><br><span class="line"><span class="ruby">-P 从命令行输入密码</span></span><br><span class="line"><span class="ruby">--table ：需要sqoop的表</span></span><br><span class="line"><span class="ruby">--username &lt;username&gt; 账号</span></span><br><span class="line"><span class="ruby">--verbose 打印流程信息</span></span><br></pre></td></tr></table></figure></p>
+<p>常用参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">--connect &lt;jdbc-uri&gt; jdbc 连接地址</span><br><span class="line">--connection-manager &lt;class-name&gt; 连接管理者</span><br><span class="line">--connection-param-file &lt;filename&gt; 可选参数</span><br><span class="line">--column-family：列族</span><br><span class="line">--driver &lt;class-name&gt; 驱动类</span><br><span class="line">--hadoop-mapred-home &lt;dir&gt; $HADOOP_MAPRED_HOME</span><br><span class="line">--hbase-table：hbase中的table</span><br><span class="line">--hbase-row-key：指定rowkey</span><br><span class="line">--help help 信息</span><br><span class="line">--password &lt;password&gt; 密码</span><br><span class="line">-P 从命令行输入密码</span><br><span class="line">--table ：需要sqoop的表</span><br><span class="line">--username &lt;username&gt; 账号</span><br><span class="line">--verbose 打印流程信息</span><br></pre></td></tr></table></figure></p>
 <p>例子: 导入mysql库中的 tbl_test 的数据到HDFS上</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqoop import  --connect jdbc:mysql://master:3306/ --username root --password root  --table tbl_test  -m 1</span><br></pre></td></tr></table></figure>
 <ul>
@@ -308,7 +308,7 @@
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqoop import  --connect jdbc:mysql://master:3306/ --username root --password root  --table tbl_test --hive-import -m 1</span><br></pre></td></tr></table></figure>
 <p>导入过程:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">第一步：导入<span class="selector-tag">mysql</span><span class="selector-class">.tbl_test</span>的数据到<span class="selector-tag">hdfs</span>的默认路径</span><br><span class="line">第二步：自动仿造<span class="selector-tag">mysql</span><span class="selector-class">.help_keyword</span>去创建一张<span class="selector-tag">hive</span>表, 创建在默认的<span class="selector-tag">default</span>库中</span><br><span class="line">第三步：把临时目录中的数据导入到<span class="selector-tag">hive</span>表中</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">第一步：导入mysql.tbl_test的数据到hdfs的默认路径</span><br><span class="line">第二步：自动仿造mysql.help_keyword去创建一张hive表, 创建在默认的default库中</span><br><span class="line">第三步：把临时目录中的数据导入到hive表中</span><br></pre></td></tr></table></figure>
 <ul>
 <li>6.把MySQL数据库中的表数据导入到hbase</li>
 </ul>
@@ -321,23 +321,28 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">大数据</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">sqoop</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<div class="article-tag tagcloud">
+	<i class="icon-price-tags icon"></i>
+	<ul class="article-tag-list">
+		
+		
+		<li class="article-tag-list-item">
+			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">
+				大数据</a>
+		</li>
+		
+		
+		
+		<li class="article-tag-list-item">
+			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">
+				sqoop</a>
+		</li>
+		
+		
+	</ul>
+</div>
 
       
-
       
 
       
@@ -571,15 +576,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">监控</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -587,7 +588,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">可靠性</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -595,11 +596,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
+                <a href="javascript:void(0)" class="js-tag color4">可靠性</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hive</a>
+                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -607,11 +608,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">impala</a>
+                <a href="javascript:void(0)" class="js-tag color5">hive</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">hbase</a>
+                <a href="javascript:void(0)" class="js-tag color2">impala</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -619,15 +620,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">hbase</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">sqoop</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">性能</a>
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+                <a href="javascript:void(0)" class="js-tag color3">性能</a>
               </li>
              
               <li class="article-tag-list-item">

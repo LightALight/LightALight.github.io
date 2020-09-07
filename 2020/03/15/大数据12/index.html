@@ -330,7 +330,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /hadoop/install/apache-flume-1.8.0/conf</span><br><span class="line">cp flume-conf.properties.template flume-conf2.properties</span><br><span class="line">vi flume-conf2.properties</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>2.配置2内容</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">a1<span class="selector-class">.sources</span> = r1</span><br><span class="line">a1<span class="selector-class">.sinks</span> = k1</span><br><span class="line">a1<span class="selector-class">.channels</span> = c1</span><br><span class="line">a1<span class="selector-class">.sources</span><span class="selector-class">.r1</span><span class="selector-class">.type</span> = exec</span><br><span class="line">a1<span class="selector-class">.sources</span><span class="selector-class">.r1</span><span class="selector-class">.channels</span> = c1</span><br><span class="line">a1<span class="selector-class">.sources</span><span class="selector-class">.r1</span><span class="selector-class">.command</span> = tail -F /hadoop/install/hadoop/logs/hadoop-namenode-b393a04554e1.log</span><br><span class="line">a1<span class="selector-class">.sinks</span><span class="selector-class">.k1</span><span class="selector-class">.type</span> = hdfs</span><br><span class="line">a1<span class="selector-class">.sinks</span><span class="selector-class">.k1</span><span class="selector-class">.channel</span> = c1</span><br><span class="line">a1<span class="selector-class">.sinks</span><span class="selector-class">.k1</span><span class="selector-class">.hdfs</span><span class="selector-class">.path</span> = hdfs:<span class="comment">//master:54310/class12/out_flume</span></span><br><span class="line">a1<span class="selector-class">.sinks</span><span class="selector-class">.k1</span><span class="selector-class">.hdfs</span><span class="selector-class">.filePrefix</span> = events-</span><br><span class="line">a1<span class="selector-class">.sinks</span><span class="selector-class">.k1</span><span class="selector-class">.hdfs</span><span class="selector-class">.round</span> = true</span><br><span class="line">a1<span class="selector-class">.sinks</span><span class="selector-class">.k1</span><span class="selector-class">.hdfs</span><span class="selector-class">.roundValue</span> = <span class="number">10</span></span><br><span class="line">a1<span class="selector-class">.sinks</span><span class="selector-class">.k1</span><span class="selector-class">.hdfs</span><span class="selector-class">.roundUnit</span> = minute</span><br><span class="line">a1<span class="selector-class">.sinks</span><span class="selector-class">.k1</span><span class="selector-class">.hdfs</span><span class="selector-class">.rollSize</span> = <span class="number">4000000</span></span><br><span class="line">a1<span class="selector-class">.sinks</span><span class="selector-class">.k1</span><span class="selector-class">.hdfs</span><span class="selector-class">.rollCount</span> = <span class="number">0</span></span><br><span class="line">a1<span class="selector-class">.sinks</span><span class="selector-class">.k1</span><span class="selector-class">.hdfs</span><span class="selector-class">.writeFormat</span> = Text</span><br><span class="line">a1<span class="selector-class">.sinks</span><span class="selector-class">.k1</span><span class="selector-class">.hdfs</span><span class="selector-class">.fileType</span> = DataStream</span><br><span class="line">a1<span class="selector-class">.sinks</span><span class="selector-class">.k1</span><span class="selector-class">.hdfs</span><span class="selector-class">.batchSize</span> = <span class="number">10</span></span><br><span class="line">a1<span class="selector-class">.channels</span><span class="selector-class">.c1</span><span class="selector-class">.type</span> = memory</span><br><span class="line">a1<span class="selector-class">.channels</span><span class="selector-class">.c1</span><span class="selector-class">.capacity</span> = <span class="number">1000</span></span><br><span class="line">a1<span class="selector-class">.channels</span><span class="selector-class">.c1</span><span class="selector-class">.transactionCapacity</span> = <span class="number">100</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">a1.sources = r1</span><br><span class="line">a1.sinks = k1</span><br><span class="line">a1.channels = c1</span><br><span class="line">a1.sources.r1.type = exec</span><br><span class="line">a1.sources.r1.channels = c1</span><br><span class="line">a1.sources.r1.command = tail -F /hadoop/install/hadoop/logs/hadoop-namenode-b393a04554e1.log</span><br><span class="line">a1.sinks.k1.type = hdfs</span><br><span class="line">a1.sinks.k1.channel = c1</span><br><span class="line">a1.sinks.k1.hdfs.path = hdfs://master:54310/class12/out_flume</span><br><span class="line">a1.sinks.k1.hdfs.filePrefix = events-</span><br><span class="line">a1.sinks.k1.hdfs.round = true</span><br><span class="line">a1.sinks.k1.hdfs.roundValue = 10</span><br><span class="line">a1.sinks.k1.hdfs.roundUnit = minute</span><br><span class="line">a1.sinks.k1.hdfs.rollSize = 4000000</span><br><span class="line">a1.sinks.k1.hdfs.rollCount = 0</span><br><span class="line">a1.sinks.k1.hdfs.writeFormat = Text</span><br><span class="line">a1.sinks.k1.hdfs.fileType = DataStream</span><br><span class="line">a1.sinks.k1.hdfs.batchSize = 10</span><br><span class="line">a1.channels.c1.type = memory</span><br><span class="line">a1.channels.c1.capacity = 1000</span><br><span class="line">a1.channels.c1.transactionCapacity = 100</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>3.使用配置2启动</p>
 </li>
@@ -344,23 +344,28 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">大数据</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">flume</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<div class="article-tag tagcloud">
+	<i class="icon-price-tags icon"></i>
+	<ul class="article-tag-list">
+		
+		
+		<li class="article-tag-list-item">
+			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">
+				大数据</a>
+		</li>
+		
+		
+		
+		<li class="article-tag-list-item">
+			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">
+				flume</a>
+		</li>
+		
+		
+	</ul>
+</div>
 
       
-
       
 
       
@@ -603,15 +608,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">监控</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -619,7 +620,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">可靠性</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -627,11 +628,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
+                <a href="javascript:void(0)" class="js-tag color4">可靠性</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hive</a>
+                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -639,11 +640,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">impala</a>
+                <a href="javascript:void(0)" class="js-tag color5">hive</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">hbase</a>
+                <a href="javascript:void(0)" class="js-tag color2">impala</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -651,15 +652,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">hbase</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">sqoop</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">性能</a>
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+                <a href="javascript:void(0)" class="js-tag color3">性能</a>
               </li>
              
               <li class="article-tag-list-item">
