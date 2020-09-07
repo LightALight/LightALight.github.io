@@ -8,22 +8,22 @@
   <link rel="dns-prefetch" href="https://lightalight.github.io">
   <title>大数据（十三） | Keep It Simple Do It Well</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="传统的应用程序管理系统，即应用程序与使用RDBMS的关系数据库的交互，是产生大数据的来源之一。由RDBMS生成的这种大数据存储在关系数据库结构中的关系数据库服务器中。当大数据存储和Hadoop生态系统的MapReduce，Hive，HBase，Cassandra，Pig等分析器出现时，他们需要一种工具来与关系数据库服务器进行交互，以导入和导出驻留在其中的大数据。在这里，Sqoop在Hadoop生态">
+  <meta name="description" content="传统的应用程序管理系统，即应用程序与使用RDBMS的关系数据库的交互，是产生大数据的来源之一。由RDBMS生成的这种大数据存储在关系数据库结构中的关系数据库服务器中。 当大数据存储和Hadoop生态系统的MapReduce，Hive，HBase，Cassandra，Pig等分析器出现时，他们需要一种工具来与关系数据库服务器进行交互，以导入和导出驻留在其中的大数据。在这里，Sqoop在Hadoop生">
 <meta name="keywords" content="大数据,sqoop">
 <meta property="og:type" content="article">
 <meta property="og:title" content="大数据（十三）">
 <meta property="og:url" content="https://lightalight.github.io/2020/04/15/大数据13/index.html">
 <meta property="og:site_name" content="Keep It Simple Do It Well">
-<meta property="og:description" content="传统的应用程序管理系统，即应用程序与使用RDBMS的关系数据库的交互，是产生大数据的来源之一。由RDBMS生成的这种大数据存储在关系数据库结构中的关系数据库服务器中。当大数据存储和Hadoop生态系统的MapReduce，Hive，HBase，Cassandra，Pig等分析器出现时，他们需要一种工具来与关系数据库服务器进行交互，以导入和导出驻留在其中的大数据。在这里，Sqoop在Hadoop生态">
+<meta property="og:description" content="传统的应用程序管理系统，即应用程序与使用RDBMS的关系数据库的交互，是产生大数据的来源之一。由RDBMS生成的这种大数据存储在关系数据库结构中的关系数据库服务器中。 当大数据存储和Hadoop生态系统的MapReduce，Hive，HBase，Cassandra，Pig等分析器出现时，他们需要一种工具来与关系数据库服务器进行交互，以导入和导出驻留在其中的大数据。在这里，Sqoop在Hadoop生">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://lightalight.github.io/image/大数据13/大数据13_001.png">
 <meta property="og:image" content="https://lightalight.github.io/image/大数据13/大数据13_002.png">
 <meta property="og:image" content="https://lightalight.github.io/image/大数据13/大数据13_003.png">
 <meta property="og:image" content="https://lightalight.github.io/image/大数据13/大数据13_004.png">
-<meta property="og:updated_time" content="2020-09-07T13:35:02.791Z">
+<meta property="og:updated_time" content="2020-09-07T13:47:53.003Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大数据（十三）">
-<meta name="twitter:description" content="传统的应用程序管理系统，即应用程序与使用RDBMS的关系数据库的交互，是产生大数据的来源之一。由RDBMS生成的这种大数据存储在关系数据库结构中的关系数据库服务器中。当大数据存储和Hadoop生态系统的MapReduce，Hive，HBase，Cassandra，Pig等分析器出现时，他们需要一种工具来与关系数据库服务器进行交互，以导入和导出驻留在其中的大数据。在这里，Sqoop在Hadoop生态">
+<meta name="twitter:description" content="传统的应用程序管理系统，即应用程序与使用RDBMS的关系数据库的交互，是产生大数据的来源之一。由RDBMS生成的这种大数据存储在关系数据库结构中的关系数据库服务器中。 当大数据存储和Hadoop生态系统的MapReduce，Hive，HBase，Cassandra，Pig等分析器出现时，他们需要一种工具来与关系数据库服务器进行交互，以导入和导出驻留在其中的大数据。在这里，Sqoop在Hadoop生">
 <meta name="twitter:image" content="https://lightalight.github.io/image/大数据13/大数据13_001.png">
   
     <link rel="alternative" href="/atom.xml" title="Keep It Simple Do It Well" type="application/atom+xml">
@@ -202,7 +202,10 @@
   <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>传统的应用程序管理系统，即应用程序与使用RDBMS的关系数据库的交互，是产生大数据的来源之一。由RDBMS生成的这种大数据存储在关系数据库结构中的关系数据库服务器中。<br>当大数据存储和Hadoop生态系统的MapReduce，Hive，HBase，Cassandra，Pig等分析器出现时，他们需要一种工具来与关系数据库服务器进行交互，以导入和导出驻留在其中的大数据。在这里，Sqoop在Hadoop生态系统中占据一席之地，以便在关系数据库服务器和Hadoop的HDFS之间提供可行的交互。<br>Sqoop(“SQL到Hadoop和Hadoop到SQL):是一个用于在Hadoop和关系数据库服务器之间传输数据的工具。它用于从关系数据库（如MySQL，Oracle）导入数据到Hadoop HDFS，并从Hadoop文件系统导出到关系数据库。它由Apache软件基金会提供。<br>本文章主要介绍 Sqoop 和 在centos环境下如何安装 。</p>
+        <p>传统的应用程序管理系统，即应用程序与使用RDBMS的关系数据库的交互，是产生大数据的来源之一。由RDBMS生成的这种大数据存储在关系数据库结构中的关系数据库服务器中。</p>
+<p>当大数据存储和Hadoop生态系统的MapReduce，Hive，HBase，Cassandra，Pig等分析器出现时，他们需要一种工具来与关系数据库服务器进行交互，以导入和导出驻留在其中的大数据。在这里，Sqoop在Hadoop生态系统中占据一席之地，以便在关系数据库服务器和Hadoop的HDFS之间提供可行的交互。</p>
+<p>Sqoop(“SQL到Hadoop和Hadoop到SQL):是一个用于在Hadoop和关系数据库服务器之间传输数据的工具。它用于从关系数据库（如MySQL，Oracle）导入数据到Hadoop HDFS，并从Hadoop文件系统导出到关系数据库。它由Apache软件基金会提供。</p>
+<p>本文章主要介绍 Sqoop 和 在centos环境下如何安装 。</p>
 <a id="more"></a>
 <h2 id="Quick-Guide"><a href="#Quick-Guide" class="headerlink" title="Quick Guide"></a>Quick Guide</h2><h3 id="一、流程"><a href="#一、流程" class="headerlink" title="一、流程"></a>一、流程</h3><p><img src="/image/大数据13/大数据13_001.png" alt=""></p>
 <ul>
@@ -583,19 +586,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">监控</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">云计算</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+                <a href="javascript:void(0)" class="js-tag color3">监控</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">可靠性</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -607,19 +610,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">impala</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">hbase</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">impala</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flume</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -632,6 +631,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">性能</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">flume</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -651,11 +654,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
               </li>
             
             <div class="clearfix"></div>
