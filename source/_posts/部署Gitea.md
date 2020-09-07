@@ -26,9 +26,11 @@ Gitea是一个极易安装，运行非常快速，安装和使用体验良好的
     ```
 
     # Ubuntu系统和Debian系统
-    wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh && sudo bash install.sh
+    
+    ```bash
+    wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh && sudo bash install.sh  
     ```
-
+   
 * 2.安装Git
 
     ```bash
