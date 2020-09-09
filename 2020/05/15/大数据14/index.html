@@ -23,7 +23,7 @@
 <meta property="og:image" content="https://lightalight.github.io/image/大数据14/大数据14_005.jpg">
 <meta property="og:image" content="https://lightalight.github.io/image/大数据14/大数据14_006.jpg">
 <meta property="og:image" content="https://lightalight.github.io/image/大数据14/大数据14_007.jpg">
-<meta property="og:updated_time" content="2020-09-08T12:11:49.867Z">
+<meta property="og:updated_time" content="2020-09-09T13:15:50.937Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大数据（十四）">
 <meta name="twitter:description" content="Apache Spark 是专为大规模数据处理而设计的快速通用的计算引擎。 本文章主要介绍 Spark 和 在centos环境下如何安装 。">
@@ -327,47 +327,44 @@
 <li><p>0.从<a href="http://spark.apache.org/downloads.html" target="_blank" rel="noopener">官网</a>下载安装包到/hadoop/software</p>
 </li>
 <li><p>1.解压到指定文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /hadoop/software</span><br><span class="line">tar -zxvf spark-2.3.3-bin-hadoop2.7.tgz -C  /haddop/install</span><br><span class="line"><span class="built_in">cd</span> /haddop/install</span><br><span class="line">mv spark-2.3.3-bin-hadoop2.7 spark</span><br></pre></td></tr></table></figure>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /hadoop/software</span><br><span class="line">tar -zxvf spark-2.3.3-bin-hadoop2.7.tgz -C  /haddop/install</span><br><span class="line"><span class="built_in">cd</span> /haddop/install</span><br><span class="line">mv spark-2.3.3-bin-hadoop2.7 spark</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <ul>
 <li><p>2.修改环境变量</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/profile</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在末尾追加内容</span></span><br><span class="line"><span class="built_in">export</span> SPARK_HOME=/hadoop/install/spark</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$SPARK_HOME</span>/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/profile</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在末尾追加内容</span></span><br><span class="line"><span class="built_in">export</span> SPARK_HOME=/hadoop/install/spark</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$SPARK_HOME</span>/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>3.使环境变量生效</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h4 id="3-设置部署模式"><a href="#3-设置部署模式" class="headerlink" title="3.设置部署模式"></a>3.设置部署模式</h4><ul>
-<li>local模式</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spark-shell</span><br></pre></td></tr></table></figure>
-<ul>
+<li><p>local模式</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spark-shell</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>Standalone模式</p>
 <ul>
 <li><p>1.配置文件slaves.template</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /haddop/install/spark/conf</span><br><span class="line">cp slaves.template slaves</span><br><span class="line">vi slaves</span><br></pre></td></tr></table></figure>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /haddop/install/spark/conf</span><br><span class="line">cp slaves.template slaves</span><br><span class="line">vi slaves</span><br></pre></td></tr></table></figure>
 <p>添加以下内容 slavexx(看节点数量)：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Master</span><br><span class="line">Slave1</span><br><span class="line">Slave2</span><br><span class="line">Slave3</span><br></pre></td></tr></table></figure>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Master</span><br><span class="line">Slave1</span><br><span class="line">Slave2</span><br><span class="line">Slave3</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-</li>
-</ul>
-<pre><code>- 2.配置spark-env.sh
+<li><p>2.配置spark-env.sh</p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp spark-env.sh.template spark-env.sh</span><br><span class="line">vi spark-env.sh</span><br></pre></td></tr></table></figure>
+<p>添加以下内容 ：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># JAVA的路径</span></span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=<span class="variable">$&#123;JAVA_HOMRE&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># SCALA的路径</span></span><br><span class="line"><span class="built_in">export</span> SCALA_HOME=<span class="variable">$&#123;SCALA_HOME&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># HADOOP的路径</span></span><br><span class="line"><span class="built_in">export</span> HADOOP_CONF_DIR=<span class="variable">$&#123;HADOOP_HOME&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># master的ip或host</span></span><br><span class="line"><span class="built_in">export</span> SPARK_MASTER_IP=master</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交任务的端口</span></span><br><span class="line"><span class="built_in">export</span> SPARK_MASTER_PORT=7077</span><br><span class="line"></span><br><span class="line"><span class="comment"># 浏览器访问master的端口</span></span><br><span class="line"><span class="built_in">export</span> SPARK_MASTER_WEBUI_PORT=8080</span><br><span class="line"></span><br><span class="line"><span class="comment"># 每个worker从节点能够支配的core的个数</span></span><br><span class="line"><span class="built_in">export</span> SPARK_WORKER_CORES=2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 每个worker从节点能够支配的内存数</span></span><br><span class="line"><span class="built_in">export</span> SPARK_WORKER_MEMORY=内存大小</span><br><span class="line"></span><br><span class="line"><span class="comment">#每个worker</span></span><br><span class="line"><span class="built_in">export</span> SPARK_WORKER_PORT=7078</span><br><span class="line"><span class="built_in">export</span> SPARK_WORKER_WEBUI_PORT=8081</span><br><span class="line"><span class="built_in">export</span> SPARK_WORKER_INSTANCES=1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 每个worker的数据存放</span></span><br><span class="line"><span class="built_in">export</span> SPARK_WORKER_DIR=<span class="variable">$&#123;SPARK_HOME&#125;</span>/data/tmp</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定Spark executor的内存大小</span></span><br><span class="line"><span class="built_in">export</span> SPARK_EXECUTOR_MEMORY=1G</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定Spark executor 使用的cpu的核的数量</span></span><br><span class="line"><span class="built_in">export</span> SPARK_EXECUTOR_CORES=1</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>- 3.配置修改Spark-defaults.conf
 
-  添加以下内容 ：
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># JAVA的路径</span></span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=<span class="variable">$&#123;JAVA_HOMRE&#125;</span></span><br><span class="line">  </span><br><span class="line"><span class="comment"># SCALA的路径</span></span><br><span class="line"><span class="built_in">export</span> SCALA_HOME=<span class="variable">$&#123;SCALA_HOME&#125;</span></span><br><span class="line">  </span><br><span class="line"><span class="comment"># HADOOP的路径</span></span><br><span class="line"><span class="built_in">export</span> HADOOP_CONF_DIR=<span class="variable">$&#123;HADOOP_HOME&#125;</span></span><br><span class="line">  </span><br><span class="line"><span class="comment"># master的ip或host</span></span><br><span class="line"><span class="built_in">export</span> SPARK_MASTER_IP=master</span><br><span class="line">  </span><br><span class="line"><span class="comment"># 提交任务的端口</span></span><br><span class="line"><span class="built_in">export</span> SPARK_MASTER_PORT=7077</span><br><span class="line">  </span><br><span class="line"><span class="comment"># 浏览器访问master的端口</span></span><br><span class="line"><span class="built_in">export</span> SPARK_MASTER_WEBUI_PORT=8080</span><br><span class="line">  </span><br><span class="line"><span class="comment"># 每个worker从节点能够支配的core的个数</span></span><br><span class="line"><span class="built_in">export</span> SPARK_WORKER_CORES=2</span><br><span class="line">  </span><br><span class="line"><span class="comment"># 每个worker从节点能够支配的内存数</span></span><br><span class="line"><span class="built_in">export</span> SPARK_WORKER_MEMORY=内存大小</span><br><span class="line">  </span><br><span class="line"><span class="comment">#每个worker</span></span><br><span class="line"><span class="built_in">export</span> SPARK_WORKER_PORT=7078</span><br><span class="line"><span class="built_in">export</span> SPARK_WORKER_WEBUI_PORT=8081</span><br><span class="line"><span class="built_in">export</span> SPARK_WORKER_INSTANCES=1</span><br><span class="line">  </span><br><span class="line"><span class="comment"># 每个worker的数据存放</span></span><br><span class="line"><span class="built_in">export</span> SPARK_WORKER_DIR=<span class="variable">$&#123;SPARK_HOME&#125;</span>/data/tmp</span><br><span class="line">  </span><br><span class="line"><span class="comment"># 设定Spark executor的内存大小</span></span><br><span class="line"><span class="built_in">export</span> SPARK_EXECUTOR_MEMORY=1G</span><br><span class="line">  </span><br><span class="line"><span class="comment"># 设定Spark executor 使用的cpu的核的数量</span></span><br><span class="line"><span class="built_in">export</span> SPARK_EXECUTOR_CORES=1</span><br></pre></td></tr></table></figure>
-
-
-- 3.配置修改Spark-defaults.conf
-
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp spark-defaults.conf.template spark-defaults.conf</span><br><span class="line">vi spark-defaults.conf</span><br></pre></td></tr></table></figure>
+    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp spark-defaults.conf.template spark-defaults.conf</span><br><span class="line">vi spark-defaults.conf</span><br></pre></td></tr></table></figure>
 
   添加以下内容：
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置事件日志为true</span></span><br><span class="line">spark.eventlog.enabled=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置记录删除时间</span></span><br><span class="line">spark.history.fs.cleaner.interval=1d</span><br><span class="line">spark.history.fs.cleaner.maxAge=7d</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定事件日志目录</span></span><br><span class="line">spark.eventlog.dir hdfs://nn/user/spark/<span class="built_in">history</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定Driver的内存大小</span></span><br><span class="line">spark.driver.memory 1g</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定历史操作日志操作保存路径</span></span><br><span class="line">spark.history.fs.logDirectory hdfs://nn/usr/spark/<span class="built_in">history</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定仓库目录</span></span><br><span class="line">spark.sql.warehouse.dir /user/spark/warehouse</span><br></pre></td></tr></table></figure>
+    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置事件日志为true</span></span><br><span class="line">spark.eventlog.enabled=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置记录删除时间</span></span><br><span class="line">spark.history.fs.cleaner.interval=1d</span><br><span class="line">spark.history.fs.cleaner.maxAge=7d</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定事件日志目录</span></span><br><span class="line">spark.eventlog.dir hdfs://nn/user/spark/<span class="built_in">history</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定Driver的内存大小</span></span><br><span class="line">spark.driver.memory 1g</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定历史操作日志操作保存路径</span></span><br><span class="line">spark.history.fs.logDirectory hdfs://nn/usr/spark/<span class="built_in">history</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定仓库目录</span></span><br><span class="line">spark.sql.warehouse.dir /user/spark/warehouse</span><br></pre></td></tr></table></figure>
 </code></pre><ul>
-<li>Yarn模式:在standalone模式的基础上，在客户端的spark-env.sh文件中配置<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> HADOOP_CONF_DIR=<span class="variable">$HADOOP_HOME</span>/etc/hadoop</span><br></pre></td></tr></table></figure></li>
+<li>Yarn模式:在standalone模式的基础上，在客户端的spark-env.sh文件中配置  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> HADOOP_CONF_DIR=<span class="variable">$HADOOP_HOME</span>/etc/hadoop</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
@@ -460,6 +457,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/06/15/大数据15/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          大数据（十五）
+        
+      </div>
+    </a>
   
   
     <a href="/2020/04/15/大数据13/" id="article-nav-older" class="article-nav-link-wrap">
@@ -632,19 +638,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">监控</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color3">监控</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">云计算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -660,6 +666,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hive</a>
               </li>
              
@@ -668,7 +678,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+                <a href="javascript:void(0)" class="js-tag color1">spark</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">flink</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -680,15 +694,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安全</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">flume</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">spark</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -696,11 +702,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">接口</a>
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">自动化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">接口</a>
               </li>
              
               <li class="article-tag-list-item">
