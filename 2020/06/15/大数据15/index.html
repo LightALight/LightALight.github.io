@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="https://lightalight.github.io">
   <title>大数据（十五） | Keep It Simple Do It Well</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这几年大数据的飞速发展，出现了很多热门的开源社区，其中著名的有 Hadoop、Storm，以及后来的 Spark ，他们都有着各自专注的应用场景。Spark 掀开了内存计算的先河，也以内存为赌注，赢得了内存计算的飞速发展。Spark 的火热地掩盖了其他分布式计算的系统身影，例如 Flink在这个时候默默地发展着。   在国外一些社区，有很多人将大数据的计算引擎分成了 4 代，当然也有很多人不">
+  <meta name="description" content="这几年大数据的飞速发展，出现了很多热门的开源社区，其中著名的有 Hadoop、Storm，以及后来的 Spark ，他们都有着各自专注的应用场景。Spark 掀开了内存计算的先河，也以内存为赌注，赢得了内存计算的飞速发展。Spark 的火热地掩盖了其他分布式计算的系统身影，例如 Flink在这个时候默默地发展着。在国外一些社区，有很多人将大数据的计算引擎分成了 4 代，当然也有很多人不会认同。我们">
 <meta name="keywords" content="大数据,flink">
 <meta property="og:type" content="article">
 <meta property="og:title" content="大数据（十五）">
 <meta property="og:url" content="https://lightalight.github.io/2020/06/15/大数据15/index.html">
 <meta property="og:site_name" content="Keep It Simple Do It Well">
-<meta property="og:description" content="这几年大数据的飞速发展，出现了很多热门的开源社区，其中著名的有 Hadoop、Storm，以及后来的 Spark ，他们都有着各自专注的应用场景。Spark 掀开了内存计算的先河，也以内存为赌注，赢得了内存计算的飞速发展。Spark 的火热地掩盖了其他分布式计算的系统身影，例如 Flink在这个时候默默地发展着。   在国外一些社区，有很多人将大数据的计算引擎分成了 4 代，当然也有很多人不">
+<meta property="og:description" content="这几年大数据的飞速发展，出现了很多热门的开源社区，其中著名的有 Hadoop、Storm，以及后来的 Spark ，他们都有着各自专注的应用场景。Spark 掀开了内存计算的先河，也以内存为赌注，赢得了内存计算的飞速发展。Spark 的火热地掩盖了其他分布式计算的系统身影，例如 Flink在这个时候默默地发展着。在国外一些社区，有很多人将大数据的计算引擎分成了 4 代，当然也有很多人不会认同。我们">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://lightalight.github.io/image/大数据15/大数据15_001.png">
 <meta property="og:image" content="https://lightalight.github.io/image/大数据15/大数据15_002.png">
@@ -25,10 +25,10 @@
 <meta property="og:image" content="https://lightalight.github.io/image/大数据15/大数据15_007.png">
 <meta property="og:image" content="https://lightalight.github.io/image/大数据15/大数据15_008.png">
 <meta property="og:image" content="https://lightalight.github.io/image/大数据15/大数据15_009.png">
-<meta property="og:updated_time" content="2020-09-09T13:28:11.986Z">
+<meta property="og:updated_time" content="2020-09-10T12:08:14.209Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大数据（十五）">
-<meta name="twitter:description" content="这几年大数据的飞速发展，出现了很多热门的开源社区，其中著名的有 Hadoop、Storm，以及后来的 Spark ，他们都有着各自专注的应用场景。Spark 掀开了内存计算的先河，也以内存为赌注，赢得了内存计算的飞速发展。Spark 的火热地掩盖了其他分布式计算的系统身影，例如 Flink在这个时候默默地发展着。   在国外一些社区，有很多人将大数据的计算引擎分成了 4 代，当然也有很多人不">
+<meta name="twitter:description" content="这几年大数据的飞速发展，出现了很多热门的开源社区，其中著名的有 Hadoop、Storm，以及后来的 Spark ，他们都有着各自专注的应用场景。Spark 掀开了内存计算的先河，也以内存为赌注，赢得了内存计算的飞速发展。Spark 的火热地掩盖了其他分布式计算的系统身影，例如 Flink在这个时候默默地发展着。在国外一些社区，有很多人将大数据的计算引擎分成了 4 代，当然也有很多人不会认同。我们">
 <meta name="twitter:image" content="https://lightalight.github.io/image/大数据15/大数据15_001.png">
   
     <link rel="alternative" href="/atom.xml" title="Keep It Simple Do It Well" type="application/atom+xml">
@@ -207,8 +207,8 @@
   <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>   这几年大数据的飞速发展，出现了很多热门的开源社区，其中著名的有 Hadoop、Storm，以及后来的 Spark<br> ，他们都有着各自专注的应用场景。Spark 掀开了内存计算的先河，也以内存为赌注，赢得了内存计算的飞速发展。Spark 的火热地掩盖了其他分布式计算的系统身影，例如 Flink在这个时候默默地发展着。<br>   在国外一些社区，有很多人将大数据的计算引擎分成了 4 代，当然也有很多人不会认同。我们先姑且这么认为和讨论。<br>   首先第一代的计算引擎，无疑就是 Hadoop 承载的 MapReduce。这里大家应该都不会对 MapReduce 陌生，它将计算分为两个阶段，分别为 Map 和 Reduce。对于上层应用来说，就不得不想方设法去拆分算法，甚至于不得不在上层应用实现多个 Job 的串联，以完成一个完整的算法，例如迭代计算。<br>   由于这样的弊端，催生了支持 DAG 框架的产生。因此，支持 DAG 的框架被划分为第二代计算引擎，如 Tez 以及更上层的 Oozie。这里我们不去细究各种 DAG 实现之间的区别，不过对于当时的 Tez 和 Oozie 来说，大多还是批处理的任务。<br>   接下来就是以 Spark 为代表的第三代的计算引擎。第三代计算引擎的特点主要是 Job 内部的 DAG 支持（不跨越 Job），以及强调的实时计算。在这里，很多人也会认为第三代计算引擎也能够很好的运行批处理的 Job。<br>   随着第三代计算引擎的出现，促进了上层应用快速发展，例如各种迭代计算的性能以及对流计算和 SQL 等的支持。Flink 的诞生就被归在了第四代。这应该主要表现在 Flink 对流计算的支持，以及更一步的实时性上面。当然 Flink 也可以支持 Batch 的任务，以及 DAG 的运算。</p>
-<p>   本文章主要介绍 Flink 和 在centos环境下如何安装 。</p>
+        <p>这几年大数据的飞速发展，出现了很多热门的开源社区，其中著名的有 Hadoop、Storm，以及后来的 Spark<br> ，他们都有着各自专注的应用场景。<br>Spark 掀开了内存计算的先河，也以内存为赌注，赢得了内存计算的飞速发展。Spark 的火热地掩盖了其他分布式计算的系统身影，例如 Flink在这个时候默默地发展着。<br>在国外一些社区，有很多人将大数据的计算引擎分成了 4 代，当然也有很多人不会认同。我们先姑且这么认为和讨论。<br>首先第一代的计算引擎，无疑就是 Hadoop 承载的 MapReduce。这里大家应该都不会对 MapReduce 陌生，它将计算分为两个阶段，分别为 Map 和 Reduce。对于上层应用来说，就不得不想方设法去拆分算法，甚至于不得不在上层应用实现多个 Job 的串联，以完成一个完整的算法，例如迭代计算。<br>由于这样的弊端，催生了支持 DAG 框架的产生。因此，支持 DAG 的框架被划分为第二代计算引擎，如 Tez 以及更上层的 Oozie。这里我们不去细究各种 DAG 实现之间的区别，不过对于当时的 Tez 和 Oozie 来说，大多还是批处理的任务。<br>接下来就是以 Spark 为代表的第三代的计算引擎。第三代计算引擎的特点主要是 Job 内部的 DAG 支持（不跨越 Job），以及强调的实时计算。在这里，很多人也会认为第三代计算引擎也能够很好的运行批处理的 Job。<br>随着第三代计算引擎的出现，促进了上层应用快速发展，例如各种迭代计算的性能以及对流计算和 SQL 等的支持。Flink 的诞生就被归在了第四代。这应该主要表现在 Flink 对流计算的支持，以及更一步的实时性上面。当然 Flink 也可以支持 Batch 的任务，以及 DAG 的运算。</p>
+<p>本文章主要介绍 Flink 和 在centos环境下如何安装 。</p>
 <a id="more"></a>
 <h2 id="Quick-Guide"><a href="#Quick-Guide" class="headerlink" title="Quick Guide"></a>Quick Guide</h2><h3 id="Flink-介绍"><a href="#Flink-介绍" class="headerlink" title="Flink 介绍"></a>Flink 介绍</h3><p>Apache Flink是一个框架和分布式处理引擎，用于对无界和有界数据流进行有状态计算。Flink设计为在所有常见的集群环境中运行，以内存速度和任何规模执行计算。</p>
 <h4 id="1-批处理和流处理"><a href="#1-批处理和流处理" class="headerlink" title="1. 批处理和流处理"></a>1. 批处理和流处理</h4><p>数据集分为有界数据集和无界数据集：</p>
@@ -423,7 +423,6 @@
   <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&lt;property&gt;</span></span><br><span class="line">  <span class="string">&lt;name&gt;yarn.resourcemanager.am.max-attempts&lt;/name&gt;</span></span><br><span class="line">  <span class="string">&lt;value&gt;4&lt;/value&gt;</span></span><br><span class="line">  <span class="string">&lt;description&gt;The</span> <span class="string">maximum</span> <span class="string">number</span> <span class="string">of</span> <span class="string">application</span> <span class="string">master</span> <span class="string">execution</span> <span class="string">attempts&lt;/description&gt;</span></span><br><span class="line"><span class="string">&lt;/property&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>大数据06+</p>
 <p>More info: <a href="https://www.jianshu.com/p/3b1bccbfa322" target="_blank" rel="noopener">flink</a></p>
 
       
@@ -696,15 +695,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">云计算</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">监控</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -712,7 +703,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">hbase</a>
+                <a href="javascript:void(0)" class="js-tag color4">云计算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -720,15 +715,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">impala</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hive</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sqoop</a>
+                <a href="javascript:void(0)" class="js-tag color2">impala</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -736,7 +727,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flume</a>
+                <a href="javascript:void(0)" class="js-tag color1">hbase</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -744,7 +735,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">spark</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">flume</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">sqoop</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -752,15 +755,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+                <a href="javascript:void(0)" class="js-tag color3">接口</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">自动化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">接口</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -772,11 +771,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>
