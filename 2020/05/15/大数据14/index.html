@@ -23,7 +23,7 @@
 <meta property="og:image" content="https://lightalight.github.io/image/大数据14/大数据14_005.jpg">
 <meta property="og:image" content="https://lightalight.github.io/image/大数据14/大数据14_006.jpg">
 <meta property="og:image" content="https://lightalight.github.io/image/大数据14/大数据14_007.jpg">
-<meta property="og:updated_time" content="2020-09-10T14:05:07.124Z">
+<meta property="og:updated_time" content="2020-09-10T14:09:20.866Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大数据（十四）">
 <meta name="twitter:description" content="Apache Spark 是专为大规模数据处理而设计的快速通用的计算引擎。 本文章主要介绍 Spark 和 在centos环境下如何安装 。">
@@ -354,16 +354,15 @@
 <p>添加以下内容 ：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># JAVA的路径</span></span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=<span class="variable">$&#123;JAVA_HOMRE&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># SCALA的路径</span></span><br><span class="line"><span class="built_in">export</span> SCALA_HOME=<span class="variable">$&#123;SCALA_HOME&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># HADOOP的路径</span></span><br><span class="line"><span class="built_in">export</span> HADOOP_CONF_DIR=<span class="variable">$&#123;HADOOP_HOME&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># master的ip或host</span></span><br><span class="line"><span class="built_in">export</span> SPARK_MASTER_IP=master</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交任务的端口</span></span><br><span class="line"><span class="built_in">export</span> SPARK_MASTER_PORT=7077</span><br><span class="line"></span><br><span class="line"><span class="comment"># 浏览器访问master的端口</span></span><br><span class="line"><span class="built_in">export</span> SPARK_MASTER_WEBUI_PORT=8080</span><br><span class="line"></span><br><span class="line"><span class="comment"># 每个worker从节点能够支配的core的个数</span></span><br><span class="line"><span class="built_in">export</span> SPARK_WORKER_CORES=2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 每个worker从节点能够支配的内存数</span></span><br><span class="line"><span class="built_in">export</span> SPARK_WORKER_MEMORY=内存大小</span><br><span class="line"></span><br><span class="line"><span class="comment">#每个worker</span></span><br><span class="line"><span class="built_in">export</span> SPARK_WORKER_PORT=7078</span><br><span class="line"><span class="built_in">export</span> SPARK_WORKER_WEBUI_PORT=8081</span><br><span class="line"><span class="built_in">export</span> SPARK_WORKER_INSTANCES=1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 每个worker的数据存放</span></span><br><span class="line"><span class="built_in">export</span> SPARK_WORKER_DIR=<span class="variable">$&#123;SPARK_HOME&#125;</span>/data/tmp</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定Spark executor的内存大小</span></span><br><span class="line"><span class="built_in">export</span> SPARK_EXECUTOR_MEMORY=1G</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定Spark executor 使用的cpu的核的数量</span></span><br><span class="line"><span class="built_in">export</span> SPARK_EXECUTOR_CORES=1</span><br></pre></td></tr></table></figure>
 </li>
+<li><p>3.配置修改Spark-defaults.conf</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp spark-defaults.conf.template spark-defaults.conf</span><br><span class="line">vi spark-defaults.conf</span><br></pre></td></tr></table></figure>
+<p>添加以下内容 ：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置事件日志为true</span></span><br><span class="line">spark.eventlog.enabled=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置记录删除时间</span></span><br><span class="line">spark.history.fs.cleaner.interval=1d</span><br><span class="line">spark.history.fs.cleaner.maxAge=7d</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定事件日志目录</span></span><br><span class="line">spark.eventlog.dir hdfs://nn/user/spark/<span class="built_in">history</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定Driver的内存大小</span></span><br><span class="line">spark.driver.memory 1g</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定历史操作日志操作保存路径</span></span><br><span class="line">spark.history.fs.logDirectory hdfs://nn/usr/spark/<span class="built_in">history</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定仓库目录</span></span><br><span class="line">spark.sql.warehouse.dir /user/spark/warehouse</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
 </ul>
-<pre><code>- 3.配置修改Spark-defaults.conf
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp spark-defaults.conf.template spark-defaults.conf</span><br><span class="line">vi spark-defaults.conf</span><br></pre></td></tr></table></figure>
-
-添加以下内容：
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置事件日志为true</span></span><br><span class="line">spark.eventlog.enabled=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置记录删除时间</span></span><br><span class="line">spark.history.fs.cleaner.interval=1d</span><br><span class="line">spark.history.fs.cleaner.maxAge=7d</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定事件日志目录</span></span><br><span class="line">spark.eventlog.dir hdfs://nn/user/spark/<span class="built_in">history</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定Driver的内存大小</span></span><br><span class="line">spark.driver.memory 1g</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定历史操作日志操作保存路径</span></span><br><span class="line">spark.history.fs.logDirectory hdfs://nn/usr/spark/<span class="built_in">history</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定仓库目录</span></span><br><span class="line">spark.sql.warehouse.dir /user/spark/warehouse</span><br></pre></td></tr></table></figure>
-</code></pre><ul>
+<ul>
 <li>Yarn模式:在standalone模式的基础上，在客户端的spark-env.sh文件中配置  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> HADOOP_CONF_DIR=<span class="variable">$HADOOP_HOME</span>/etc/hadoop</span><br></pre></td></tr></table></figure></li>
 </ul>
 
@@ -646,15 +645,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">监控</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">云计算</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+                <a href="javascript:void(0)" class="js-tag color3">监控</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -662,7 +657,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hive</a>
+                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -670,15 +665,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hive</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">impala</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flume</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">hbase</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -686,11 +677,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sqoop</a>
+                <a href="javascript:void(0)" class="js-tag color1">hbase</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">spark</a>
+                <a href="javascript:void(0)" class="js-tag color1">sqoop</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -698,11 +689,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flink</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">hue</a>
+                <a href="javascript:void(0)" class="js-tag color1">spark</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -710,15 +697,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">hue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">flink</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">flume</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">自动化</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">接口</a>
+                <a href="javascript:void(0)" class="js-tag color5">环境部署</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">环境部署</a>
+                <a href="javascript:void(0)" class="js-tag color3">接口</a>
               </li>
              
               <li class="article-tag-list-item">
