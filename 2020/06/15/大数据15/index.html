@@ -25,7 +25,7 @@
 <meta property="og:image" content="https://lightalight.github.io/image/大数据15/大数据15_007.png">
 <meta property="og:image" content="https://lightalight.github.io/image/大数据15/大数据15_008.png">
 <meta property="og:image" content="https://lightalight.github.io/image/大数据15/大数据15_009.png">
-<meta property="og:updated_time" content="2020-09-10T13:41:19.268Z">
+<meta property="og:updated_time" content="2020-09-10T13:52:12.266Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大数据（十五）">
 <meta name="twitter:description" content="这几年大数据的飞速发展，出现了很多热门的开源社区，其中著名的有 Hadoop、Storm，以及后来的 Spark，他们都有着各自专注的应用场景。 Spark 掀开了内存计算的先河，也以内存为赌注，赢得了内存计算的飞速发展。Spark 的火热地掩盖了其他分布式计算的系统身影，例如 Flink在这个时候默默地发展着。在国外一些社区，有很多人将大数据的计算引擎分成了 4 代，当然也有很多人不会认同,我们">
@@ -219,7 +219,7 @@
 <li>有界数据集：有界数据流就是指输入的数据有始有终。例如数据可能是一分钟或者一天的交易数据等等。处理这种有界数据流的方式也被称之为批处理；</li>
 <li>无界数据集：有界数据流就是指有始无终的数据，数据一旦开始生成就会持续不断的产生新的数据，即数据没有时间边界源源不断（比如日志），处理这种有界数据流的方式也被称之为流处理。</li>
 </ul>
-<p><strong>我们一般所说的数据流是指数据集，而流数据则是指数据流中的数据。</strong><br><strong>流处理更复杂，因为需要考虑到数据的顺序错乱和系统容错等。</strong></p>
+<p><strong>我们一般所说的数据流是指数据集，而流数据则是指数据流中的数据。流处理更复杂，因为需要考虑到数据的顺序错乱和系统容错等。</strong></p>
 <p><img src="/image/大数据15/大数据15_001.png" alt=""></p>
 <h4 id="二、架构的演变"><a href="#二、架构的演变" class="headerlink" title="二、架构的演变"></a>二、架构的演变</h4><ul>
 <li>1.传统单体数据架构<br>传统单体数据架构中，数据集中存储，架构分成计算层和存储层。这种架构初期效率很高，但是随着 业务种类越来越多，系统越来越难以维护升级，此外 database 是唯一准确的数据源，每个 application 都需要访问 database 来获取对应的数据，一旦 database 发生改变或者出现问题，将会对整个业务系统产生影响。</li>
@@ -375,11 +375,9 @@
 <pre><code>- 每个JobManager（jobmanager.heap.mb）的可用内存量
 - 每个TaskManager（taskmanager.heap.mb）的可用内存量
 - 每台机器的可用CPU数量（taskmanager.numberOfTaskSlots）
-- 集群中的CPU总数（parallelism.default）和
-</code></pre><ul>
-<li>临时目录（taskmanager.tmp.dirs）</li>
-</ul>
-</li>
+- 集群中的CPU总数（parallelism.default）
+- 临时目录（taskmanager.tmp.dirs
+</code></pre></li>
 <li><p>3.<strong>拷贝安装包到各节点</strong></p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scp -r flink/ hadoop@node1:`<span class="built_in">pwd</span>`</span><br><span class="line">scp -r flink/ hadoop@node2:`<span class="built_in">pwd</span>`</span><br><span class="line">scp -r flink/ hadoop@node3:`<span class="built_in">pwd</span>`</span><br></pre></td></tr></table></figure>
 </li>
@@ -394,11 +392,8 @@
 <p><strong>注：这里只是集群模式而已，在实际场景中，我们一般需要配置为HA，防止Jobmanager突然挂掉，导致整个集群或者任务执行失败的情况发生。下面介绍一下Standalone HA模式的搭建安装</strong></p>
 <h4 id="3-Standalone-HA模式"><a href="#3-Standalone-HA模式" class="headerlink" title="3.Standalone HA模式"></a>3.Standalone HA模式</h4><p>依赖于 Zookeeper 来实现 JobManager 的 HA。在 Zookeeper 的帮助下，一个 Standalone 的 Flink 集群会同时有多个活着的 JobManager，其中只有一个处于工作状态，其他处于 Standby 状态。当工作中的 JobManager 失去连接后（如宕机或 Crash），Zookeeper 会从 Standby 中选举新的 JobManager 来接管 Flink 集群。 </p>
 <ul>
-<li><ol>
-<li><p>更改conf/flink-conf.yaml配置文件 </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#jobmanager.rpc.address: master</span></span><br><span class="line">high-availability:zookeeper                             <span class="comment">#指定高可用模式（必须）</span></span><br><span class="line">high-availability.zookeeper.quorum:master:2181,node1:2181,node2:2181,node3:2181 <span class="comment"># ZooKeeper仲裁是ZooKeeper服务器的复制组，它提供分布式协调服务（必须）</span></span><br><span class="line">high-availability.storageDir:hdfs:///flink/ha/       <span class="comment">#JobManager元数据保存在文件系统storageDir中，只有指向此状态的指针存储在ZooKeeper中（必须）</span></span><br><span class="line">high-availability.zookeeper.path.root:/flink         <span class="comment">#根ZooKeeper节点，在该节点下放置所有集群节点（推荐） </span></span><br><span class="line">high-availability.cluster-id:/flinkCluster           ＃自定义集群（推荐）</span><br><span class="line">state.backend: filesystem</span><br><span class="line">state.checkpoints.dir: hdfs:///flink/checkpoints</span><br><span class="line">state.savepoints.dir: hdfs:///flink/checkpoints</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
+<li><p>1.更改conf/flink-conf.yaml配置文件 </p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#jobmanager.rpc.address: master</span></span><br><span class="line">high-availability:zookeeper                             <span class="comment">#指定高可用模式（必须）</span></span><br><span class="line">high-availability.zookeeper.quorum:master:2181,node1:2181,node2:2181,node3:2181 <span class="comment"># ZooKeeper仲裁是ZooKeeper服务器的复制组，它提供分布式协调服务（必须）</span></span><br><span class="line">high-availability.storageDir:hdfs:///flink/ha/       <span class="comment">#JobManager元数据保存在文件系统storageDir中，只有指向此状态的指针存储在ZooKeeper中（必须）</span></span><br><span class="line">high-availability.zookeeper.path.root:/flink         <span class="comment">#根ZooKeeper节点，在该节点下放置所有集群节点（推荐） </span></span><br><span class="line">high-availability.cluster-id:/flinkCluster           ＃自定义集群（推荐）</span><br><span class="line">state.backend: filesystem</span><br><span class="line">state.checkpoints.dir: hdfs:///flink/checkpoints</span><br><span class="line">state.savepoints.dir: hdfs:///flink/checkpoints</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>2.修改conf/masters</p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">master:8081</span><br><span class="line">node1:8081</span><br></pre></td></tr></table></figure>
@@ -699,6 +694,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">监控</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
@@ -707,11 +710,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">监控</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
+                <a href="javascript:void(0)" class="js-tag color4">可靠性</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -719,11 +718,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">可靠性</a>
+                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
+                <a href="javascript:void(0)" class="js-tag color2">impala</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -743,10 +742,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">impala</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">sqoop</a>
               </li>
              
@@ -759,7 +754,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">hue</a>
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -767,7 +762,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+                <a href="javascript:void(0)" class="js-tag color4">hue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -787,11 +782,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
               </li>
             
             <div class="clearfix"></div>
