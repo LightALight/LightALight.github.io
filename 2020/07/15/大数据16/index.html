@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lightalight.github.io">
-  <title>大数据（十五） | Keep It Simple Do It Well</title>
+  <title>大数据（十六） | Keep It Simple Do It Well</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Hue （Hadoop User Experience Hadoop用户体验）是一个开源的 Apache Hadoop UI系统，由Cloudera Desktop演化而来，最后Cloudera公司将其贡献给Apache基金会的Hadoop社区，它是基于Python Web框架Django实现的。通过使用HUE我们可以在浏览器端的Web控制台上与Hadoop集群进行交互，来分析处理数据。 本文章主">
 <meta name="keywords" content="大数据,hue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="大数据（十五）">
+<meta property="og:title" content="大数据（十六）">
 <meta property="og:url" content="https://lightalight.github.io/2020/07/15/大数据16/index.html">
 <meta property="og:site_name" content="Keep It Simple Do It Well">
 <meta property="og:description" content="Hue （Hadoop User Experience Hadoop用户体验）是一个开源的 Apache Hadoop UI系统，由Cloudera Desktop演化而来，最后Cloudera公司将其贡献给Apache基金会的Hadoop社区，它是基于Python Web框架Django实现的。通过使用HUE我们可以在浏览器端的Web控制台上与Hadoop集群进行交互，来分析处理数据。 本文章主">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://lightalight.github.io/2020/07/15/大数据16/架构.png">
-<meta property="og:updated_time" content="2020-09-10T12:34:26.940Z">
+<meta property="og:updated_time" content="2020-09-10T13:46:40.827Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="大数据（十五）">
+<meta name="twitter:title" content="大数据（十六）">
 <meta name="twitter:description" content="Hue （Hadoop User Experience Hadoop用户体验）是一个开源的 Apache Hadoop UI系统，由Cloudera Desktop演化而来，最后Cloudera公司将其贡献给Apache基金会的Hadoop社区，它是基于Python Web框架Django实现的。通过使用HUE我们可以在浏览器端的Web控制台上与Hadoop集群进行交互，来分析处理数据。 本文章主">
 <meta name="twitter:image" content="https://lightalight.github.io/2020/07/15/大数据16/架构.png">
   
@@ -154,7 +154,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      大数据（十五）
+      大数据（十六）
     </h1>
   
 
@@ -179,7 +179,7 @@
     <div id="toc-article" class="toc-article">
         <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
       <strong class="toc-title">文章目录</strong>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、用途"><span class="toc-number">1.1.</span> <span class="toc-text">一、用途</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、架构"><span class="toc-number">1.2.</span> <span class="toc-text">二、架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、安装"><span class="toc-number">1.3.</span> <span class="toc-text">三、安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-前置"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.前置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-配置"><span class="toc-number">1.3.2.</span> <span class="toc-text">2.配置</span></a></li></ol></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、用途"><span class="toc-number">1.1.</span> <span class="toc-text">一、用途</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、架构"><span class="toc-number">1.2.</span> <span class="toc-text">二、架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、安装"><span class="toc-number">1.3.</span> <span class="toc-text">三、安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-前置"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.前置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-hue集成hadoop"><span class="toc-number">1.3.2.</span> <span class="toc-text">3.hue集成hadoop</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-hue集成hive配置"><span class="toc-number">1.3.3.</span> <span class="toc-text">4.hue集成hive配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-hue集成spark配置"><span class="toc-number">1.3.4.</span> <span class="toc-text">5.hue集成spark配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-MySql初始化"><span class="toc-number">1.3.5.</span> <span class="toc-text">6.MySql初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-启动hue"><span class="toc-number">1.3.6.</span> <span class="toc-text">7.启动hue</span></a></li></ol></li></ol></li></ol>
           </div>
     <script type="text/javascript">
       function showToc(){
@@ -223,43 +223,84 @@
 <h3 id="三、安装"><a href="#三、安装" class="headerlink" title="三、安装"></a>三、安装</h3><h4 id="1-前置"><a href="#1-前置" class="headerlink" title="1.前置"></a>1.前置</h4><ul>
 <li>1.安装python</li>
 <li>2.安装maven</li>
-<li><p>3.创建应用类服务专有用户</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useradd -g hadoop hue</span><br></pre></td></tr></table></figure>
-</li>
+<li>3.创建应用类服务专有用户</li>
 </ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useradd -g hadoop hue</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>4.安装依赖包</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install ant asciidoc cyrus-sasl-devel cyrus-sasl-gssapi gcc gcc-c++ krb5-devel libtidy libxml2-devel libxslt-devel openldap-devel python-devel sqlite-devel openssl-devel mysql-devel gmp-devel</span><br></pre></td></tr></table></figure>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line"></span><br><span class="line">#### 2.安装</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">- 1.下载安装包(从[官网](http://gethue.com)或者github)</span><br><span class="line">	```bash</span><br><span class="line">	yum install git -y</span><br><span class="line">	cd /hadoop/software</span><br><span class="line">	git clone https://github.com/cloudera/hue.git branch-4.4</span><br></pre></td></tr></table></figure>
-</li>
+<li>4.安装依赖包</li>
 </ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install ant asciidoc cyrus-sasl-devel cyrus-sasl-gssapi gcc gcc-c++ krb5-devel libtidy libxml2-devel libxslt-devel openldap-devel python-devel sqlite-devel openssl-devel mysql-devel gmp-devel</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line"></span><br><span class="line">#### 2.安装</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">- 2.1.下载安装包(从[官网](http://gethue.com)或者github)</span><br><span class="line"></span><br><span class="line">```bash</span><br><span class="line">yum install git -y</span><br><span class="line">cd /hadoop/install</span><br><span class="line">git clone https://github.com/cloudera/hue.git branch-4.7</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 重命名</span><br><span class="line">mv branch-4.7 hue</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>1.下载安装包</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /hadoop/software</span><br><span class="line">wget http://archive.cloudera.com/cdh5/cdh/5/hue-3.9.0-cdh5.14.0.tar.gz</span><br></pre></td></tr></table></figure>
+<li><p>2.2.切换用户 hue</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chown -R  hue:hadoop hue</span><br><span class="line">su hue</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>2.解压文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf hue-3.9.0-cdh5.14.0.tar.gz  -C /hadoop/install</span><br><span class="line">mv</span><br></pre></td></tr></table></figure>
+<li><p>2.3.编译</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> hue</span><br><span class="line">make apps</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>2.4.修改/usr/local/hue/desktop/conf/pseudo-distributed.ini</p>
 </li>
 </ul>
-<h4 id="2-配置"><a href="#2-配置" class="headerlink" title="2.配置"></a>2.配置</h4><ul>
-<li><p>3.配置hue：可以使用两种方式（ WebHDFS 和 HttpFS ）访问hadoop文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">[desktop]</span><br><span class="line">    # 安全秘钥，存储session的加密处理</span><br><span class="line">    secret_key=dfsahjfhflsajdhfljahl</span><br><span class="line">    # Time zone name</span><br><span class="line">    time_zone=Asia/Shanghai</span><br><span class="line">    # Enable or disable debug mode.</span><br><span class="line">    django_debug_mode=false</span><br><span class="line">    # Enable or disable backtrace for server error</span><br><span class="line">    http_500_debug_mode=false</span><br><span class="line">    # This should be the hadoop cluster admin</span><br><span class="line">    ## default_hdfs_superuser=hdfs</span><br><span class="line">    default_hdfs_superuser=root</span><br><span class="line">    # 不启用的模块</span><br><span class="line">    # app_blacklist=impala,security,rdbms,jobsub,pig,hbase,sqoop,zookeeper,metastore,indexer</span><br><span class="line">[[database]]</span><br><span class="line">       # 数据库引擎类型</span><br><span class="line">       engine=mysql</span><br><span class="line">       # 数据库主机地址</span><br><span class="line">       host=master</span><br><span class="line">       # 数据库端口</span><br><span class="line">       port=3306</span><br><span class="line">       # 数据库用户名</span><br><span class="line">       user=root</span><br><span class="line">       # 数据库密码</span><br><span class="line">       password=123456</span><br><span class="line">       # 数据库库名</span><br><span class="line">       name=hue</span><br></pre></td></tr></table></figure>
+<h4 id="3-hue集成hadoop"><a href="#3-hue集成hadoop" class="headerlink" title="3.hue集成hadoop"></a>3.hue集成hadoop</h4><ul>
+<li>3.1.修改配置文件，增加代理用户hue<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi <span class="variable">$HADOOP_HOME</span>/etc/hadoop/core-site.xml</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>新增内容：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.proxyuser.hue.hosts<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>*<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.proxyuser.hue.groups<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>*<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <ul>
-<li><p>3.1.修改配置文件，增加代理用户hue</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi <span class="variable">$HADOOP_HOME</span>/etc/hadoop/core-site.xml</span><br></pre></td></tr></table></figure>
-<p>新增内容：</p>
-  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.proxyuser.hue.hosts<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>*<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.proxyuser.hue.groups<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>*<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi <span class="variable">$HADOOP_HOME</span>/etc/hadoop/hdfs-site.xml</span><br></pre></td></tr></table></figure>
-<p>修改内容：</p>
-  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.webhdfs.enabled<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>true<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi $HADOOP_HOME/etc/hadoop/httpfs-site.xml</span><br></pre></td></tr></table></figure>
-  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>httpfs.proxyuser.hue.hosts<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>*<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>httpfs.proxyuser.hue.groups<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>*<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>  分发配置文件</p>
-</li>
-<li>3.1.修改配置文件，增加代理用户hue</li>
+<li>3.2.配置hue:修改 desktop/conf/pseudo-distributed.ini文件</li>
 </ul>
+<p>修改标签 [[hdfs_clusters]] 如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">[hadoop]</span><br><span class="line"></span><br><span class="line">  # Configuration for HDFS NameNode</span><br><span class="line">  # ------------------------------------------------------------------------</span><br><span class="line">  [[hdfs_clusters]]</span><br><span class="line">    # HA support by using HttpFs</span><br><span class="line"></span><br><span class="line">    [[[default]]]</span><br><span class="line">      # Enter the filesystem uri</span><br><span class="line">      fs_defaultfs=hdfs://master:54310</span><br><span class="line"></span><br><span class="line">      # NameNode logical name.</span><br><span class="line">      logical_name=master</span><br><span class="line"></span><br><span class="line">      # Use WebHdfs/HttpFs as the communication mechanism.</span><br><span class="line">      # Domain should be the NameNode or HttpFs host.</span><br><span class="line">      # Default port is 14000 for HttpFs.</span><br><span class="line">      ## webhdfs_url=http://localhost:50070/webhdfs/v1</span><br><span class="line">      webhdfs_url=http://master:9870/webhdfs/v1</span><br><span class="line"></span><br><span class="line">      # Change this if your HDFS cluster is Kerberos-secured</span><br><span class="line">      ## security_enabled=false</span><br><span class="line"></span><br><span class="line">      # In secure mode (HTTPS), if SSL certificates from YARN Rest APIs</span><br><span class="line">      # have to be verified against certificate authority</span><br><span class="line">      ## ssl_cert_ca_verify=True</span><br><span class="line"></span><br><span class="line">      # Directory of the Hadoop configuration</span><br><span class="line">      ## hadoop_conf_dir=$HADOOP_CONF_DIR when set or &apos;/etc/hadoop/conf&apos;</span><br><span class="line">      hadoop_conf_dir=$HADOOP_CONF_DIR</span><br></pre></td></tr></table></figure></p>
+<p>修改标签 [[yarn_clusters]] 如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"># Configuration for YARN (MR2)</span><br><span class="line">  # ------------------------------------------------------------------------</span><br><span class="line">  [[yarn_clusters]]</span><br><span class="line"></span><br><span class="line">    [[[default]]]</span><br><span class="line">      # Enter the host on which you are running the ResourceManager</span><br><span class="line">      ## resourcemanager_host=localhost</span><br><span class="line">      resourcemanager_host=master</span><br><span class="line"></span><br><span class="line">      # The port where the ResourceManager IPC listens on</span><br><span class="line">      ## resourcemanager_port=8032</span><br><span class="line"></span><br><span class="line">      # Whether to submit jobs to this cluster</span><br><span class="line">      submit_to=True</span><br><span class="line"></span><br><span class="line">      # Resource Manager logical name (required for HA)</span><br><span class="line">      ## logical_name=</span><br><span class="line"></span><br><span class="line">      # Change this if your YARN cluster is Kerberos-secured</span><br><span class="line">      ## security_enabled=false</span><br><span class="line"></span><br><span class="line">      # URL of the ResourceManager API</span><br><span class="line">      ## resourcemanager_api_url=http://localhost:8088</span><br><span class="line">      resourcemanager_api_url=http://master:8088</span><br><span class="line"></span><br><span class="line">      # URL of the ProxyServer API</span><br><span class="line">      ## proxy_api_url=http://localhost:8088</span><br><span class="line">      proxy_api_url=http://master:8088</span><br><span class="line"></span><br><span class="line">      # URL of the HistoryServer API</span><br><span class="line">      ## history_server_api_url=http://localhost:19888</span><br><span class="line">      history_server_api_url=http://master:19888</span><br><span class="line"></span><br><span class="line">      # URL of the Spark History Server</span><br><span class="line">      ## spark_history_server_url=http://localhost:18088</span><br><span class="line">      spark_history_server_url=http://master:18080</span><br><span class="line"></span><br><span class="line">      # Change this if your Spark History Server is Kerberos-secured</span><br><span class="line">      ## spark_history_server_security_enabled=false</span><br><span class="line"></span><br><span class="line">      # In secure mode (HTTPS), if SSL certificates from YARN Rest APIs</span><br><span class="line">      # have to be verified against certificate authority</span><br><span class="line">      ## ssl_cert_ca_verify=True</span><br></pre></td></tr></table></figure></p>
+<h4 id="4-hue集成hive配置"><a href="#4-hue集成hive配置" class="headerlink" title="4.hue集成hive配置"></a>4.hue集成hive配置</h4><ul>
+<li><p>4.1.拷贝配置 hive-site.xml 到目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /usr/<span class="built_in">local</span>/hue/hive/conf</span><br><span class="line">cp /hadoop/install/apache-hive-3.1.2/conf/hive-site.xml /usr/<span class="built_in">local</span>/hue/hive</span><br><span class="line">/conf/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>4.2.修改desktop/conf/pseudo-distributed.ini的标签[beeswax]</p>
 </li>
 </ul>
-<p><a href="https://blog.csdn.net/wangkai_123456/article/details/90180471" target="_blank" rel="noopener">https://blog.csdn.net/wangkai_123456/article/details/90180471</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[beeswax]</span><br><span class="line">    # hiveServer2 服务地址(填主机名，kerberos要用)</span><br><span class="line">    hive_server_host=master</span><br><span class="line">    # hiveServer2服务端口</span><br><span class="line">    hive_server_port=10000</span><br><span class="line">    # hiveServer2 hive-site.xml配置文件存放位置</span><br><span class="line">    hive_conf_dir=/usr/local/hue/hive/conf</span><br></pre></td></tr></table></figure>
+<h4 id="5-hue集成spark配置"><a href="#5-hue集成spark配置" class="headerlink" title="5.hue集成spark配置"></a>5.hue集成spark配置</h4><ul>
+<li><p>5.1.启动spark的thrift server</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /hadoop/install/spark/sbin</span><br><span class="line">start-thriftserver.sh --master yarn --deploy-mode client</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>5.2.安装livy</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /hadoop/software</span><br><span class="line">wget http://livy.incubator.apache.org/download/apache-livy-0.6.0-incubating-bin</span><br><span class="line">.zip</span><br><span class="line">unzip apache-livy-0.6.0-incubating-bin.zip -C </span><br><span class="line">mv apache-livy-0.6.0-incubating-bin /hadoop/install/livy-0.6.0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>5.3.创建livy的 <code>livy-env.sh</code> 配置文件和log目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd livy-0.6.0/conf/</span><br><span class="line">cp livy-env.sh.template livy-env.sh</span><br><span class="line">mkdir -p /data/livy/logs</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>5.4.在 <code>livy-env.sh</code> 新建配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export HADOOP_CONF_DIR=/hadoop/install/hadoop/etc/hadoop</span><br><span class="line">export SPARK_HOME=/hadoop/install/spark</span><br><span class="line">export LIVY_LOG_DIR=/data/livy/logs</span><br><span class="line">export LIVY_PID_DIR=/data/livy/pid</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>5.5.配置 <code>livy.conf</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp livy.conf.template livy.conf</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>5.6.在<code>livy.conf</code>文件中加入以下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># What port to start the server on.</span><br><span class="line">livy.server.port = 8998</span><br><span class="line"># What spark master Livy sessions should use.</span><br><span class="line">livy.spark.master = yarn</span><br><span class="line"># What spark deploy mode Livy sessions should use.</span><br><span class="line">livy.spark.deploy-mode = client</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>5.7.启动livy</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/hadoop/install/livy-0.6.0/bin/livy-server start</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>5.8.修改 desktop/conf/pseudo-distributed.ini 文件的标签[spark]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">###########################################################################</span><br><span class="line"># Settings to configure the Spark application.</span><br><span class="line">###########################################################################</span><br><span class="line"></span><br><span class="line">[spark]</span><br><span class="line">  # The Livy Server URL.</span><br><span class="line">  ## livy_server_url=http://localhost:8998</span><br><span class="line">  livy_server_url=http://master:8998</span><br><span class="line"></span><br><span class="line">  # Configure Livy to start in local &apos;process&apos; mode, or &apos;yarn&apos; workers.</span><br><span class="line">  ## livy_server_session_kind=yarn</span><br><span class="line">  livy_server_session_kind=yarn</span><br><span class="line"></span><br><span class="line">  # Whether Livy requires client to perform Kerberos authentication.</span><br><span class="line">  ## security_enabled=false</span><br><span class="line"></span><br><span class="line">  # Whether Livy requires client to use csrf protection.</span><br><span class="line">  ## csrf_enabled=false</span><br><span class="line"></span><br><span class="line">  # Host of the Sql Server</span><br><span class="line">  ## sql_server_host=localhost</span><br><span class="line">  sql_server_host=master</span><br><span class="line"></span><br><span class="line">  # Port of the Sql Server</span><br><span class="line">  ## sql_server_port=10000</span><br><span class="line">  sql_server_port=10000</span><br><span class="line"></span><br><span class="line">  # Choose whether Hue should validate certificates received from the server.</span><br><span class="line">  ## ssl_cert_ca_verify=true</span><br><span class="line"></span><br><span class="line">###########################################################################</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="6-MySql初始化"><a href="#6-MySql初始化" class="headerlink" title="6.MySql初始化"></a>6.MySql初始化</h4><ul>
+<li><p>1.建一个名为hue的库</p>
+<figure class="highlight plain"><figcaption><span>based</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 登录mysql数据库</span><br><span class="line">mysql -u root -p</span><br><span class="line"># 创建数据库hue</span><br><span class="line">create database hue;</span><br><span class="line"># 创建用户</span><br><span class="line">create user &apos;hue&apos;@&apos;%&apos; identified by &apos;123456&apos;;</span><br><span class="line"># 授权</span><br><span class="line">grant all privileges on hue.* to &apos;hue&apos;@&apos;%&apos;;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>2.生成表</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">build/env/bin/hue syncdb</span><br><span class="line">build/env/bin/hue migrate</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="7-启动hue"><a href="#7-启动hue" class="headerlink" title="7.启动hue"></a>7.启动hue</h4><ol>
+<li>启动hue<figure class="highlight plain"><figcaption><span>based</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">build/env/bin/supervisor &amp;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li>2.验证:访问 <a href="http://master:8000" target="_blank" rel="noopener">http://master:8000</a></li>
+</ul>
 
       
 
@@ -381,7 +422,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、用途"><span class="toc-number">1.1.</span> <span class="toc-text">一、用途</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、架构"><span class="toc-number">1.2.</span> <span class="toc-text">二、架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、安装"><span class="toc-number">1.3.</span> <span class="toc-text">三、安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-前置"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.前置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-配置"><span class="toc-number">1.3.2.</span> <span class="toc-text">2.配置</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、用途"><span class="toc-number">1.1.</span> <span class="toc-text">一、用途</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、架构"><span class="toc-number">1.2.</span> <span class="toc-text">二、架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、安装"><span class="toc-number">1.3.</span> <span class="toc-text">三、安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-前置"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.前置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-hue集成hadoop"><span class="toc-number">1.3.2.</span> <span class="toc-text">3.hue集成hadoop</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-hue集成hive配置"><span class="toc-number">1.3.3.</span> <span class="toc-text">4.hue集成hive配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-hue集成spark配置"><span class="toc-number">1.3.4.</span> <span class="toc-text">5.hue集成spark配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-MySql初始化"><span class="toc-number">1.3.5.</span> <span class="toc-text">6.MySql初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-启动hue"><span class="toc-number">1.3.6.</span> <span class="toc-text">7.启动hue</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -523,15 +564,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">监控</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -539,7 +572,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">可靠性</a>
+                <a href="javascript:void(0)" class="js-tag color3">监控</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -547,11 +584,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
+                <a href="javascript:void(0)" class="js-tag color4">可靠性</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -559,7 +596,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">impala</a>
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -567,11 +604,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sqoop</a>
+                <a href="javascript:void(0)" class="js-tag color1">flume</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flume</a>
+                <a href="javascript:void(0)" class="js-tag color2">impala</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">sqoop</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -579,11 +620,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">hue</a>
+                <a href="javascript:void(0)" class="js-tag color1">flink</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+                <a href="javascript:void(0)" class="js-tag color4">hue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -591,7 +632,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flink</a>
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
               </li>
              
               <li class="article-tag-list-item">
