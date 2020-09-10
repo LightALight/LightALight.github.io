@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://lightalight.github.io/image/大数据06/大数据06_007.png">
 <meta property="og:image" content="https://lightalight.github.io/image/大数据06/大数据06_009.png">
 <meta property="og:image" content="https://lightalight.github.io/image/大数据06/大数据06_010.png">
-<meta property="og:updated_time" content="2020-09-10T02:33:15.616Z">
+<meta property="og:updated_time" content="2020-09-10T12:20:27.319Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大数据（六）">
 <meta name="twitter:description" content="本文章主要介绍在centos环境下如何安装Hadoop。">
@@ -214,7 +214,7 @@
 <li>1.使用以下命令添加Hadoop系统用户<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo addgroup hadoop <span class="comment"># 新建用户组   </span></span><br><span class="line">sudo adduser --ingroup hadoop hadoop <span class="comment"># 新建用户</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p><strong>注意：</strong>出现这个报错’”hadoop is not in the sudoers file. This incident will be reported.”‘,可以通过以root用户身份登录解决此错误</p>
+<p><strong>注意：</strong>出现这个报错”hadoop is not in the sudoers file. This incident will be reported.”,可以通过以root用户身份登录解决此错误</p>
 <ul>
 <li>2.配置SSH<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">su - hadoop <span class="comment"># 切换用户</span></span><br><span class="line">ssh-keygen -t rsa -P <span class="string">""</span> <span class="comment"># 创建一个新密钥</span></span><br><span class="line">cat <span class="variable">$HOME</span>/.ssh/id_rsa.pub &gt;&gt; <span class="variable">$HOME</span>/.ssh/authorized_keys <span class="comment"># 启用密钥</span></span><br><span class="line">ssh localhost <span class="comment"># 测试是否可用</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -241,8 +241,8 @@
 <p>配置后：<br><img src="/image/大数据06/大数据06_005.png" alt=""></p>
 <h5 id="配置核心组件文件"><a href="#配置核心组件文件" class="headerlink" title="配置核心组件文件"></a>配置核心组件文件</h5><p><strong>$HADOOP_HOME/etc/hadoop/core-site.xml</strong> 中有两个参数</p>
 <ul>
-<li><strong>‘hadoop.tmp.dir’ -</strong>  用于Hadoop的存储数据文件的目录 </li>
-<li><p><strong>‘fs.default.name’ -</strong> 指定默认的文件系统 </p>
+<li><strong>hadoop.tmp.dir -</strong>  用于Hadoop的存储数据文件的目录 </li>
+<li><p><strong>fs.default.name -</strong> 指定默认的文件系统 </p>
 </li>
 <li><p>1.打开文件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit <span class="variable">$HADOOP_HOME</span>/etc/hadoop/core-site.xml</span><br></pre></td></tr></table></figure>
@@ -583,6 +583,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">监控</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
@@ -595,7 +599,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">监控</a>
+                <a href="javascript:void(0)" class="js-tag color4">可靠性</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -603,19 +607,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">可靠性</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+                <a href="javascript:void(0)" class="js-tag color5">hive</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hive</a>
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -627,7 +627,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">spark</a>
+                <a href="javascript:void(0)" class="js-tag color1">sqoop</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">flume</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">hue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -635,11 +643,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sqoop</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flume</a>
+                <a href="javascript:void(0)" class="js-tag color1">spark</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -651,11 +655,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">自动化</a>
+                <a href="javascript:void(0)" class="js-tag color3">接口</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">接口</a>
+                <a href="javascript:void(0)" class="js-tag color4">自动化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -663,7 +667,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -671,7 +675,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
             
             <div class="clearfix"></div>
