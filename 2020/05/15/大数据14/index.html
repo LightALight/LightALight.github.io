@@ -23,7 +23,7 @@
 <meta property="og:image" content="https://lightalight.github.io/image/大数据14/大数据14_005.jpg">
 <meta property="og:image" content="https://lightalight.github.io/image/大数据14/大数据14_006.jpg">
 <meta property="og:image" content="https://lightalight.github.io/image/大数据14/大数据14_007.jpg">
-<meta property="og:updated_time" content="2020-09-10T12:17:01.703Z">
+<meta property="og:updated_time" content="2020-09-10T12:24:34.452Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大数据（十四）">
 <meta name="twitter:description" content="Apache Spark 是专为大规模数据处理而设计的快速通用的计算引擎。 本文章主要介绍 Spark 和 在centos环境下如何安装 。">
@@ -362,6 +362,7 @@
     <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp spark-defaults.conf.template spark-defaults.conf</span><br><span class="line">vi spark-defaults.conf</span><br></pre></td></tr></table></figure>
 
   添加以下内容：
+
     <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置事件日志为true</span></span><br><span class="line">spark.eventlog.enabled=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置记录删除时间</span></span><br><span class="line">spark.history.fs.cleaner.interval=1d</span><br><span class="line">spark.history.fs.cleaner.maxAge=7d</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定事件日志目录</span></span><br><span class="line">spark.eventlog.dir hdfs://nn/user/spark/<span class="built_in">history</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定Driver的内存大小</span></span><br><span class="line">spark.driver.memory 1g</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定历史操作日志操作保存路径</span></span><br><span class="line">spark.history.fs.logDirectory hdfs://nn/usr/spark/<span class="built_in">history</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定仓库目录</span></span><br><span class="line">spark.sql.warehouse.dir /user/spark/warehouse</span><br></pre></td></tr></table></figure>
 </code></pre><ul>
 <li>Yarn模式:在standalone模式的基础上，在客户端的spark-env.sh文件中配置  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> HADOOP_CONF_DIR=<span class="variable">$HADOOP_HOME</span>/etc/hadoop</span><br></pre></td></tr></table></figure></li>
@@ -638,19 +639,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">监控</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color3">监控</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">云计算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -678,19 +679,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">hbase</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sqoop</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">flume</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">hue</a>
+                <a href="javascript:void(0)" class="js-tag color1">hbase</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -698,15 +691,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">sqoop</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">spark</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">性能</a>
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+                <a href="javascript:void(0)" class="js-tag color4">hue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">性能</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -722,7 +723,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -730,7 +731,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>
