@@ -25,7 +25,7 @@
 <meta property="og:image" content="https://lightalight.github.io/image/大数据15/大数据15_007.png">
 <meta property="og:image" content="https://lightalight.github.io/image/大数据15/大数据15_008.png">
 <meta property="og:image" content="https://lightalight.github.io/image/大数据15/大数据15_009.png">
-<meta property="og:updated_time" content="2020-09-10T13:52:12.266Z">
+<meta property="og:updated_time" content="2020-09-10T14:02:45.359Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大数据（十五）">
 <meta name="twitter:description" content="这几年大数据的飞速发展，出现了很多热门的开源社区，其中著名的有 Hadoop、Storm，以及后来的 Spark，他们都有着各自专注的应用场景。 Spark 掀开了内存计算的先河，也以内存为赌注，赢得了内存计算的飞速发展。Spark 的火热地掩盖了其他分布式计算的系统身影，例如 Flink在这个时候默默地发展着。在国外一些社区，有很多人将大数据的计算引擎分成了 4 代，当然也有很多人不会认同,我们">
@@ -364,22 +364,19 @@
 <h3 id="七、部署"><a href="#七、部署" class="headerlink" title="七、部署"></a>七、部署</h3><p>Flink 有三种部署模式，分别是 Local、Standalone Cluster（ 依赖于 Zookeeper 来实现 JobManager 的 HA ） 和 Yarn Cluster（ 依靠 Yarn 本身来对 JobManager 做 HA  ）。</p>
 <h4 id="1-Local-模式"><a href="#1-Local-模式" class="headerlink" title="1.Local 模式"></a>1.Local 模式</h4><p>对于 Local 模式来说，JobManager 和 TaskManager 会公用一个 JVM 来完成 Workload。如果要验证一个简单的应用，Local 模式是最方便的。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start-local.sh</span><br></pre></td></tr></table></figure>
-<h4 id="2-Standalone-模式"><a href="#2-Standalone-模式" class="headerlink" title="2.Standalone 模式"></a>2.Standalone 模式</h4><p>可以参考<a href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/quickstart/setup_quickstart.html" target="_blank" rel="noopener">快速入门教程地址</a></p>
+<h4 id="2-Standalone-模式"><a href="#2-Standalone-模式" class="headerlink" title="2.Standalone 模式"></a>2.Standalone 模式</h4><p>参考<a href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/quickstart/setup_quickstart.html" target="_blank" rel="noopener">入门教程</a></p>
 <ul>
 <li><p>1.<strong>部署规划</strong></p>
 <p>  | 节点名称 | master | worker | zookeeper |<br>  | ——– | —— | —— | ——— |<br>  | master   | master |        | zookeeper |<br>  | node1    |        | worker | zookeeper |<br>  | node2    |        | worker | zookeeper |<br>  | node3    |        | worker | zookeeper |</p>
 </li>
 <li><p>2.<strong>修改配置文件</strong></p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> flink/conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># 1.修改masters</span></span><br><span class="line">vi masters</span><br><span class="line"></span><br><span class="line">修改内容如下：</span><br><span class="line">master:8081</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.修改slaves</span></span><br><span class="line">vi slaves</span><br><span class="line"></span><br><span class="line">修改内容如下：</span><br><span class="line">node1</span><br><span class="line">node2</span><br><span class="line">node3</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.修改flink-conf.yaml </span></span><br><span class="line">vi flink-conf.yaml </span><br><span class="line"></span><br><span class="line">修改内容如下：</span><br><span class="line">taskmanager.numberOfTaskSlots：2</span><br><span class="line">jobmanager.rpc.address: master</span><br></pre></td></tr></table></figure>
-<p>  可选配置：</p>
-<pre><code>- 每个JobManager（jobmanager.heap.mb）的可用内存量
-- 每个TaskManager（taskmanager.heap.mb）的可用内存量
-- 每台机器的可用CPU数量（taskmanager.numberOfTaskSlots）
-- 集群中的CPU总数（parallelism.default）
-- 临时目录（taskmanager.tmp.dirs
-</code></pre></li>
-<li><p>3.<strong>拷贝安装包到各节点</strong></p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scp -r flink/ hadoop@node1:`<span class="built_in">pwd</span>`</span><br><span class="line">scp -r flink/ hadoop@node2:`<span class="built_in">pwd</span>`</span><br><span class="line">scp -r flink/ hadoop@node3:`<span class="built_in">pwd</span>`</span><br></pre></td></tr></table></figure>
+<p>  可选配置:</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">每个JobManager（jobmanager.heap.mb）的可用内存量</span><br><span class="line">每个TaskManager（taskmanager.heap.mb）的可用内存量</span><br><span class="line">每台机器的可用CPU数量（taskmanager.numberOfTaskSlots）</span><br><span class="line">集群中的CPU总数（parallelism.default）</span><br><span class="line">临时目录（taskmanager.tmp.dirs</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>3.<strong>拷贝安装包到各节点</strong>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scp -r flink/ hadoop@node1:`<span class="built_in">pwd</span>`</span><br><span class="line">scp -r flink/ hadoop@node2:`<span class="built_in">pwd</span>`</span><br><span class="line">scp -r flink/ hadoop@node3:`<span class="built_in">pwd</span>`</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <ul>
@@ -694,7 +691,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color3">监控</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -702,11 +699,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">监控</a>
+                <a href="javascript:void(0)" class="js-tag color4">云计算</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">云计算</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -726,15 +723,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">impala</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">hbase</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">spark</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -746,11 +747,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">spark</a>
+                <a href="javascript:void(0)" class="js-tag color1">flink</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flink</a>
+                <a href="javascript:void(0)" class="js-tag color3">性能</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -759,10 +760,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">安全</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">性能</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -782,11 +779,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>
