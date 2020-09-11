@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="https://lightalight.github.io">
   <title>ELK（一） | Keep It Simple Do It Well</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Elasticsearch（ 数据搜索引擎持久化 ）、Logstash （ 数据收集 ） 、 Kibana （ 数据分析工具 ）的分析和可视化平台一起开发的。这三个产品被设计成一个集成解决方案，称为“Elastic Stack”（以前称为“ELK stack”）。 本文章主要介绍 Elasticsearch 的入门知识。">
+  <meta name="description" content="Elasticsearch（ 数据搜索引擎持久化 ）、Logstash （ 数据收集 ） 、 Kibana （ 数据分析工具 ）的分析和可视化平台一起开发的。这三个产品被设计成一个集成解决方案，称为“Elastic Stack”（以前称为“ELK stack”）。　　本文章主要介绍 Elasticsearch 的入门知识。">
 <meta name="keywords" content="elk,elasticsearch">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ELK（一）">
 <meta property="og:url" content="https://lightalight.github.io/2020/08/15/ELK01/index.html">
 <meta property="og:site_name" content="Keep It Simple Do It Well">
-<meta property="og:description" content="Elasticsearch（ 数据搜索引擎持久化 ）、Logstash （ 数据收集 ） 、 Kibana （ 数据分析工具 ）的分析和可视化平台一起开发的。这三个产品被设计成一个集成解决方案，称为“Elastic Stack”（以前称为“ELK stack”）。 本文章主要介绍 Elasticsearch 的入门知识。">
+<meta property="og:description" content="Elasticsearch（ 数据搜索引擎持久化 ）、Logstash （ 数据收集 ） 、 Kibana （ 数据分析工具 ）的分析和可视化平台一起开发的。这三个产品被设计成一个集成解决方案，称为“Elastic Stack”（以前称为“ELK stack”）。　　本文章主要介绍 Elasticsearch 的入门知识。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://lightalight.github.io/image/ELK01/ELK01_001.png">
-<meta property="og:updated_time" content="2020-09-11T14:24:39.468Z">
+<meta property="og:updated_time" content="2020-09-11T14:34:18.896Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ELK（一）">
-<meta name="twitter:description" content="Elasticsearch（ 数据搜索引擎持久化 ）、Logstash （ 数据收集 ） 、 Kibana （ 数据分析工具 ）的分析和可视化平台一起开发的。这三个产品被设计成一个集成解决方案，称为“Elastic Stack”（以前称为“ELK stack”）。 本文章主要介绍 Elasticsearch 的入门知识。">
+<meta name="twitter:description" content="Elasticsearch（ 数据搜索引擎持久化 ）、Logstash （ 数据收集 ） 、 Kibana （ 数据分析工具 ）的分析和可视化平台一起开发的。这三个产品被设计成一个集成解决方案，称为“Elastic Stack”（以前称为“ELK stack”）。　　本文章主要介绍 Elasticsearch 的入门知识。">
 <meta name="twitter:image" content="https://lightalight.github.io/image/ELK01/ELK01_001.png">
   
     <link rel="alternative" href="/atom.xml" title="Keep It Simple Do It Well" type="application/atom+xml">
@@ -199,12 +199,10 @@
   <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Elasticsearch（ 数据搜索引擎持久化 ）、Logstash （ 数据收集 ） 、 Kibana （ 数据分析工具 ）的分析和可视化平台一起开发的。这三个产品被设计成一个集成解决方案，称为“Elastic Stack”（以前称为“ELK stack”）。</p>
-<p>本文章主要介绍 Elasticsearch 的入门知识。</p>
+        <p>　　Elasticsearch（ 数据搜索引擎持久化 ）、Logstash （ 数据收集 ） 、 Kibana （ 数据分析工具 ）的分析和可视化平台一起开发的。这三个产品被设计成一个集成解决方案，称为“Elastic Stack”（以前称为“ELK stack”）。<br>　　本文章主要介绍 Elasticsearch 的入门知识。</p>
 <a id="more"></a>
 <h2 id="Quick-Guide"><a href="#Quick-Guide" class="headerlink" title="Quick Guide"></a>Quick Guide</h2><p>  Elasticsearch是一个开源的分布式. RESTful 风格的搜索和数据分析引擎，它的底层是开源库Apache Lucene。<br>  <a href="https://lucene.apache.org/" target="_blank" rel="noopener">Lucene</a> 可以说是当下最先进. 高性能. 全功能的搜索引擎库——无论是开源还是私有，但它也仅仅只是一个库。为了充分发挥其功能，你需要使用 Java 把 Lucene 集成到应用程序中，使用比较复杂。<br>  为了解决Lucene使用时的繁复性，于是Elasticsearch便应运而生。它使用 Java 对Lucene 做了一层封装，提供了一套简单一致的 RESTful API 来帮助我们实现存储和检索。</p>
-<h3 id="一、基本概念"><a href="#一、基本概念" class="headerlink" title="一、基本概念"></a>一、基本概念</h3><p>Elasticsearch 本质上是一个分布式数据库，允许多台服务器协同工作，每台服务器可以运行多个 Elastic 实例。</p>
-<p>单个 Elastic 实例称为一个节点（node）。一组节点构成一个集群（cluster）。</p>
+<h3 id="一、基本概念"><a href="#一、基本概念" class="headerlink" title="一、基本概念"></a>一、基本概念</h3><p>　　Elasticsearch 本质上是一个分布式数据库，允许多台服务器协同工作，每台服务器可以运行多个 Elastic 实例。单个 Elastic 实例称为一个节点（node）。一组节点构成一个集群（cluster）。</p>
 <table>
 <thead>
 <tr>
@@ -231,10 +229,9 @@
 </tr>
 </tbody>
 </table>
-<p>Elasticsearch 的文件存储是面向文档型数据库，一条数据在这里就是一个文档，用JSON作为文档序列化的格式，比如下面这条用户数据：</p>
+<p>　　Elasticsearch 的文件存储是面向文档型数据库，一条数据在这里就是一个文档，用JSON作为文档序列化的格式，比如下面这条用户数据：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"name"</span> :     <span class="string">"John"</span>,</span><br><span class="line">    <span class="attr">"sex"</span> :      <span class="string">"Male"</span>,</span><br><span class="line">    <span class="attr">"age"</span> :      <span class="number">25</span>,</span><br><span class="line">    <span class="attr">"birthDate"</span>: <span class="string">"1990/05/01"</span>,</span><br><span class="line">    <span class="attr">"about"</span> :    <span class="string">"I love to go rock climbing"</span>,</span><br><span class="line">    <span class="attr">"interests"</span>: [ <span class="string">"sports"</span>, <span class="string">"music"</span> ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>用Mysql这样的数据库存储就会容易想到建立一张User表，有name、sex等字段，在 Elasticsearch 里这就是一个属于User的类型，各种各样的类型存在于一个索引当中。</p>
-<p>一个 Elasticsearch 集群可以包含多个索引(数据库)，也就是说其中包含了很多类型(表)。这些类型中包含了很多的文档(行)，然后每个文档中又包含了很多的字段(列)。Elasticsearch的交互，可以使用Java API，也可以直接使用HTTP的Restful API方式。</p>
+<p>　　用Mysql这样的数据库存储就会容易想到建立一张User表，有name、sex等字段，在 Elasticsearch 里这就是一个属于User的类型，各种各样的类型存在于一个索引当中。<br>　　一个 Elasticsearch 集群可以包含多个索引(数据库)，也就是说其中包含了很多类型(表)。这些类型中包含了很多的文档(行)，然后每个文档中又包含了很多的字段(列)。Elasticsearch的交互，可以使用Java API，也可以直接使用HTTP的Restful API方式。</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 插入一条记录，可以简单发送一个HTTP的请求</span><br><span class="line">PUT /megacorp/employee/1  ( /&lt;索引名称&gt;/&lt;类型名称&gt;/&lt;指定id&gt; )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">"name"</span> :     <span class="string">"John"</span>,</span><br><span class="line">    <span class="attr">"sex"</span> :      <span class="string">"Male"</span>,</span><br><span class="line">    <span class="attr">"age"</span> :      <span class="number">25</span>,</span><br><span class="line">    <span class="attr">"about"</span> :    <span class="string">"I love to go rock climbing"</span>,</span><br><span class="line">    <span class="attr">"interests"</span>: [ <span class="string">"sports"</span>, <span class="string">"music"</span> ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>更新、查询也是类似这样的操作，具体操作手册可以参考 <a href="https://www.elastic.co/guide/cn/elasticsearch/guide/current/index.html" target="_blank" rel="noopener">Elasticsearch权威指南</a></p>
 <h3 id="二、Elasticsearch-模块结构"><a href="#二、Elasticsearch-模块结构" class="headerlink" title="二、Elasticsearch 模块结构"></a>二、Elasticsearch 模块结构</h3><p><img src="/image/ELK01/ELK01_001.png" alt=""></p>
@@ -264,10 +261,9 @@
 <li>3.验证</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl localhost:9200</span><br></pre></td></tr></table></figure>
-<h3 id="四、使用"><a href="#四、使用" class="headerlink" title="四、使用"></a>四、使用</h3><p>Elasticsearch提供了多种交互使用方式，包括Java API和RESTful API 。现在主要介绍RESTful API ，所有其他语言可以使用RESTful API 通过端口 9200 和 Elasticsearch 进行通信，你可以用你最喜爱的 web 客户端访问 Elasticsearch ，也可以使用 curl 命令来和 Elasticsearch 交互。</p>
-<p>一个Elasticsearch请求和任何 HTTP 请求一样，都由若干相同的部件组成：</p>
+<h3 id="四、使用"><a href="#四、使用" class="headerlink" title="四、使用"></a>四、使用</h3><p>　　Elasticsearch提供了多种交互使用方式，包括Java API和RESTful API 。现在主要介绍RESTful API ，所有其他语言可以使用RESTful API 通过端口 9200 和 Elasticsearch 进行通信，你可以用你最喜爱的 web 客户端访问 Elasticsearch ，也可以使用 curl 命令来和 Elasticsearch 交互。<br>　　一个Elasticsearch请求和任何 HTTP 请求一样，都由若干相同的部件组成：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -X &lt;VERB&gt;  <span class="string">'&lt;PROTOCOL&gt;://&lt;HOST&gt;:&lt;PORT&gt;/&lt;PATH&gt;?&lt;QUERY_STRING&gt;'</span>  -d  <span class="string">'&lt;BODY&gt;'</span></span><br></pre></td></tr></table></figure>
-<p>返回的数据格式为JSON，因为Elasticsearch中的文档以JSON格式储存。其中被 &lt; &gt; 标记的部件：</p>
+<p>　　返回的数据格式为JSON，因为Elasticsearch中的文档以JSON格式储存。其中被 &lt; &gt; 标记的部件：</p>
 <table>
 <thead>
 <tr>
@@ -609,14 +605,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">elasticsearch</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">logstash</a>
               </li>
              
@@ -625,7 +613,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -637,7 +625,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+                <a href="javascript:void(0)" class="js-tag color4">elasticsearch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -645,15 +637,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hive</a>
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+                <a href="javascript:void(0)" class="js-tag color5">hive</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -681,6 +677,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">flink</a>
               </li>
              
@@ -689,15 +689,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+                <a href="javascript:void(0)" class="js-tag color3">接口</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">自动化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">接口</a>
               </li>
              
               <li class="article-tag-list-item">

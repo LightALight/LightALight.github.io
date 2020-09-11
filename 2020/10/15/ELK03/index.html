@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="https://lightalight.github.io">
   <title>ELK（三） | Keep It Simple Do It Well</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Kibana 是一个针对Elasticsearch的开源分析及可视化平台，用来搜索、查看交互存储在Elasticsearch索引中的数据。使用 Kibana，可以通过各种图表进行高级数据分析及展示。  本文章主要介绍 Kibana 的入门知识。">
+  <meta name="description" content="Kibana 是一个针对Elasticsearch的开源分析及可视化平台，用来搜索、查看交互存储在Elasticsearch索引中的数据。使用 Kibana，可以通过各种图表进行高级数据分析及展示。　　本文章主要介绍 Kibana 的入门知识。">
 <meta name="keywords" content="elk,kibana">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ELK（三）">
 <meta property="og:url" content="https://lightalight.github.io/2020/10/15/ELK03/index.html">
 <meta property="og:site_name" content="Keep It Simple Do It Well">
-<meta property="og:description" content="Kibana 是一个针对Elasticsearch的开源分析及可视化平台，用来搜索、查看交互存储在Elasticsearch索引中的数据。使用 Kibana，可以通过各种图表进行高级数据分析及展示。  本文章主要介绍 Kibana 的入门知识。">
+<meta property="og:description" content="Kibana 是一个针对Elasticsearch的开源分析及可视化平台，用来搜索、查看交互存储在Elasticsearch索引中的数据。使用 Kibana，可以通过各种图表进行高级数据分析及展示。　　本文章主要介绍 Kibana 的入门知识。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://lightalight.github.io/image//ELK03/ELK03_001.png">
 <meta property="og:image" content="https://lightalight.github.io/image//ELK03/ELK03_002.png">
@@ -28,10 +28,10 @@
 <meta property="og:image" content="https://lightalight.github.io/image//ELK03/ELK03_010.png">
 <meta property="og:image" content="https://lightalight.github.io/image//ELK03/ELK03_011.png">
 <meta property="og:image" content="https://lightalight.github.io/image//ELK03/ELK03_012.png">
-<meta property="og:updated_time" content="2020-09-11T14:25:46.880Z">
+<meta property="og:updated_time" content="2020-09-11T14:33:29.630Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ELK（三）">
-<meta name="twitter:description" content="Kibana 是一个针对Elasticsearch的开源分析及可视化平台，用来搜索、查看交互存储在Elasticsearch索引中的数据。使用 Kibana，可以通过各种图表进行高级数据分析及展示。  本文章主要介绍 Kibana 的入门知识。">
+<meta name="twitter:description" content="Kibana 是一个针对Elasticsearch的开源分析及可视化平台，用来搜索、查看交互存储在Elasticsearch索引中的数据。使用 Kibana，可以通过各种图表进行高级数据分析及展示。　　本文章主要介绍 Kibana 的入门知识。">
 <meta name="twitter:image" content="https://lightalight.github.io/image//ELK03/ELK03_001.png">
   
     <link rel="alternative" href="/atom.xml" title="Keep It Simple Do It Well" type="application/atom+xml">
@@ -210,25 +210,17 @@
   <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p> Kibana 是一个针对Elasticsearch的开源分析及可视化平台，用来搜索、查看交互存储在Elasticsearch索引中的数据。使用 Kibana，可以通过各种图表进行高级数据分析及展示。 </p>
-<p>本文章主要介绍 Kibana 的入门知识。</p>
+        <p>　　Kibana 是一个针对Elasticsearch的开源分析及可视化平台，用来搜索、查看交互存储在Elasticsearch索引中的数据。使用 Kibana，可以通过各种图表进行高级数据分析及展示。<br>　　本文章主要介绍 Kibana 的入门知识。</p>
 <a id="more"></a>
 <h2 id="Quick-Guide"><a href="#Quick-Guide" class="headerlink" title="Quick Guide"></a>Quick Guide</h2><p>　　Kibana架构为Elasticsearch定制，可以将任何结构化和非结构化数据加入Elasticsearch索引。Kibana还充分利用了Elasticsearch强大的搜索和分析功能。</p>
 <h3 id="一、优点"><a href="#一、优点" class="headerlink" title="一、优点"></a>一、优点</h3><ul>
-<li><p>整合你的数据：Kibana能够更好地处理海量数据，并据此创建柱形图、折线图、散点图、直方图、饼图和地图。</p>
-</li>
-<li><p>复杂数据分析：Kibana提升了Elasticsearch分析能力，能够更加智能地分析数据，执行数学转换并且根据要求对数据切割分块。</p>
-</li>
-<li><p>让更多团队成员受益：强大的数据库可视化接口让各业务岗位都能够从数据集合受益。</p>
-</li>
-<li><p>接口灵活，分享更容易：使用Kibana可以更加方便地创建、保存、分享数据，并将可视化数据快速交流。</p>
-</li>
-<li><p>配置简单：Kibana的配置和启用非常简单，用户体验非常友好。Kibana 4自带Web服务器，可以快速启动运行。</p>
-</li>
-<li><p>可视化多数据源： Kibana可以非常方便地把来自<a href="https://www.elastic.co/products/logstash" target="_blank" rel="noopener">Logstash</a>、<a href="https://www.elastic.co/products/hadoop" target="_blank" rel="noopener">ES-Hadoop</a>、<a href="https://www.elastic.co/products/beats" target="_blank" rel="noopener">Beats</a>或第三方技术的数据整合到Elasticsearch，支持的第三方技术包括<a href="http://flume.apache.org/" target="_blank" rel="noopener">Apache Flume</a>、<a href="http://www.fluentd.org/" target="_blank" rel="noopener">Fluentd</a>等。 </p>
-</li>
-<li><p>简单数据导出： Kibana可以方便地导出感兴趣的数据，与其它数据集合并融合后快速建模分析，发现新结果。 </p>
-</li>
+<li>整合你的数据：Kibana能够更好地处理海量数据，并据此创建柱形图、折线图、散点图、直方图、饼图和地图。</li>
+<li>复杂数据分析：Kibana提升了Elasticsearch分析能力，能够更加智能地分析数据，执行数学转换并且根据要求对数据切割分块。</li>
+<li>让更多团队成员受益：强大的数据库可视化接口让各业务岗位都能够从数据集合受益。</li>
+<li>接口灵活，分享更容易：使用Kibana可以更加方便地创建、保存、分享数据，并将可视化数据快速交流。</li>
+<li>配置简单：Kibana的配置和启用非常简单，用户体验非常友好。Kibana 4自带Web服务器，可以快速启动运行。</li>
+<li>可视化多数据源： Kibana可以非常方便地把来自<a href="https://www.elastic.co/products/logstash" target="_blank" rel="noopener">Logstash</a>、<a href="https://www.elastic.co/products/hadoop" target="_blank" rel="noopener">ES-Hadoop</a>、<a href="https://www.elastic.co/products/beats" target="_blank" rel="noopener">Beats</a>或第三方技术的数据整合到Elasticsearch，支持的第三方技术包括<a href="http://flume.apache.org/" target="_blank" rel="noopener">Apache Flume</a>、<a href="http://www.fluentd.org/" target="_blank" rel="noopener">Fluentd</a>等。 </li>
+<li>简单数据导出： Kibana可以方便地导出感兴趣的数据，与其它数据集合并融合后快速建模分析，发现新结果。 </li>
 </ul>
 <h3 id="二、安装部署"><a href="#二、安装部署" class="headerlink" title="二、安装部署"></a>二、安装部署</h3><ul>
 <li>1.已经安装Elasticsearch</li>
@@ -272,7 +264,7 @@
 <li>6.出来如下界面，列出了所有index中的字段<br><img src="/image//ELK03/ELK03_009.png" alt=""></li>
 <li>7.接下来，我们再来使用一下kibana查看已经导入的索引数据<br><img src="/image//ELK03/ELK03_010.png" alt=""><br><img src="/image//ELK03/ELK03_011.png" alt=""></li>
 </ul>
-<h3 id="四、搜索数据"><a href="#四、搜索数据" class="headerlink" title="四、搜索数据"></a>四、搜索数据</h3><p>左上方是 填入条件过滤，右上方是数据的时间范围，左侧栏是 搜索结果的展示字段（具体参考<a href="https://www.elastic.co/guide/cn/kibana/current/discover.html" target="_blank" rel="noopener">官方文档</a>）</p>
+<h3 id="四、搜索数据"><a href="#四、搜索数据" class="headerlink" title="四、搜索数据"></a>四、搜索数据</h3><p>　　左上方是 填入条件过滤，右上方是数据的时间范围，左侧栏是 搜索结果的展示字段（具体参考<a href="https://www.elastic.co/guide/cn/kibana/current/discover.html" target="_blank" rel="noopener">官方文档</a>）</p>
 <p><img src="/image//ELK03/ELK03_012.png" alt=""></p>
 <p>More info: <a href="https://www.cnblogs.com/chenqionghe/p/12503181.html?utm_source=tuicool&amp;utm_medium=referral" target="_blank" rel="noopener">Kibana</a></p>
 
@@ -542,14 +534,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">elasticsearch</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">logstash</a>
               </li>
              
@@ -558,7 +542,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -570,7 +554,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+                <a href="javascript:void(0)" class="js-tag color4">elasticsearch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -578,15 +566,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hive</a>
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+                <a href="javascript:void(0)" class="js-tag color5">hive</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -614,6 +606,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">flink</a>
               </li>
              
@@ -622,15 +618,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+                <a href="javascript:void(0)" class="js-tag color3">接口</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">自动化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">接口</a>
               </li>
              
               <li class="article-tag-list-item">

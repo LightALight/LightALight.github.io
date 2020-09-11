@@ -8,21 +8,21 @@
   <link rel="dns-prefetch" href="https://lightalight.github.io">
   <title>ELK（二） | Keep It Simple Do It Well</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Logstash 是一个开源数据收集引擎，具有实时管道功能。Logstash 可以动态地将来自不同数据源的数据统一起来，并将数据标准化到你所选择的目的地。  本文章主要介绍 Logstash 的入门知识。">
+  <meta name="description" content="Logstash 是一个开源数据收集引擎，具有实时管道功能。Logstash 可以动态地将来自不同数据源的数据统一起来，并将数据标准化到你所选择的目的地。　　本文章主要介绍 Logstash 的入门知识。">
 <meta name="keywords" content="elk,logstash">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ELK（二）">
 <meta property="og:url" content="https://lightalight.github.io/2020/09/15/ELK02/index.html">
 <meta property="og:site_name" content="Keep It Simple Do It Well">
-<meta property="og:description" content="Logstash 是一个开源数据收集引擎，具有实时管道功能。Logstash 可以动态地将来自不同数据源的数据统一起来，并将数据标准化到你所选择的目的地。  本文章主要介绍 Logstash 的入门知识。">
+<meta property="og:description" content="Logstash 是一个开源数据收集引擎，具有实时管道功能。Logstash 可以动态地将来自不同数据源的数据统一起来，并将数据标准化到你所选择的目的地。　　本文章主要介绍 Logstash 的入门知识。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://lightalight.github.io/image/ELK02/ELK02_001.png">
 <meta property="og:image" content="https://lightalight.github.io/image/ELK02/ELK02_002.png">
 <meta property="og:image" content="https://lightalight.github.io/image/ELK02/ELK02_003.png">
-<meta property="og:updated_time" content="2020-09-11T14:11:54.244Z">
+<meta property="og:updated_time" content="2020-09-11T14:34:58.931Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ELK（二）">
-<meta name="twitter:description" content="Logstash 是一个开源数据收集引擎，具有实时管道功能。Logstash 可以动态地将来自不同数据源的数据统一起来，并将数据标准化到你所选择的目的地。  本文章主要介绍 Logstash 的入门知识。">
+<meta name="twitter:description" content="Logstash 是一个开源数据收集引擎，具有实时管道功能。Logstash 可以动态地将来自不同数据源的数据统一起来，并将数据标准化到你所选择的目的地。　　本文章主要介绍 Logstash 的入门知识。">
 <meta name="twitter:image" content="https://lightalight.github.io/image/ELK02/ELK02_001.png">
   
     <link rel="alternative" href="/atom.xml" title="Keep It Simple Do It Well" type="application/atom+xml">
@@ -201,14 +201,12 @@
   <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p> Logstash 是一个开源数据收集引擎，具有实时管道功能。Logstash 可以动态地将来自不同数据源的数据统一起来，并将数据标准化到你所选择的目的地。 </p>
-<p>本文章主要介绍 Logstash 的入门知识。</p>
+        <p>　　Logstash 是一个开源数据收集引擎，具有实时管道功能。Logstash 可以动态地将来自不同数据源的数据统一起来，并将数据标准化到你所选择的目的地。<br>　　本文章主要介绍 Logstash 的入门知识。</p>
 <a id="more"></a>
-<h2 id="Quick-Guide"><a href="#Quick-Guide" class="headerlink" title="Quick Guide"></a>Quick Guide</h2><p><strong>Logstash</strong>是一个开源的服务器端数据处理管道，可以同时从多个数据源获取数据，并对其进行转换，然后将其发送到你最喜欢的“存储”。（Elasticsearch）</p>
-<h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><h4 id="1-输入：采集各种样式、大小和来源的数据"><a href="#1-输入：采集各种样式、大小和来源的数据" class="headerlink" title="1.输入：采集各种样式、大小和来源的数据"></a>1.输入：采集各种样式、大小和来源的数据</h4><p>数据往往以各种各样的形式，或分散或集中地存在于很多系统中。Logstash 支持各种输入选择 ，可以在同一时间从众多常用来源捕捉事件。能够以连续的流式传输方式，轻松地从您的日志、指标、Web 应用、数据存储以及各种 AWS 服务采集数据。</p>
+<h2 id="Quick-Guide"><a href="#Quick-Guide" class="headerlink" title="Quick Guide"></a>Quick Guide</h2><p>　　<strong>Logstash</strong>是一个开源的服务器端数据处理管道，可以同时从多个数据源获取数据，并对其进行转换，然后将其发送到你最喜欢的“存储”。（Elasticsearch）</p>
+<h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><h4 id="1-输入：采集各种样式、大小和来源的数据"><a href="#1-输入：采集各种样式、大小和来源的数据" class="headerlink" title="1.输入：采集各种样式、大小和来源的数据"></a>1.输入：采集各种样式、大小和来源的数据</h4><p>　　数据往往以各种各样的形式，或分散或集中地存在于很多系统中。Logstash 支持各种输入选择 ，可以在同一时间从众多常用来源捕捉事件。能够以连续的流式传输方式，轻松地从您的日志、指标、Web 应用、数据存储以及各种 AWS 服务采集数据。</p>
 <p><img src="/image/ELK02/ELK02_001.png" alt=""></p>
-<h4 id="2-过滤器：实时解析和转换数据"><a href="#2-过滤器：实时解析和转换数据" class="headerlink" title="2.过滤器：实时解析和转换数据"></a>2.过滤器：实时解析和转换数据</h4><p>数据从源传输到存储库的过程中，Logstash 过滤器能够解析各个事件，识别已命名的字段以构建结构，并将它们转换成通用格式，以便更轻松、更快速地分析和实现商业价值。</p>
-<p>Logstash 能够动态地转换和解析数据，不受格式或复杂度的影响：</p>
+<h4 id="2-过滤器：实时解析和转换数据"><a href="#2-过滤器：实时解析和转换数据" class="headerlink" title="2.过滤器：实时解析和转换数据"></a>2.过滤器：实时解析和转换数据</h4><p>　　数据从源传输到存储库的过程中，Logstash 过滤器能够解析各个事件，识别已命名的字段以构建结构，并将它们转换成通用格式，以便更轻松、更快速地分析和实现商业价值。<br>　　Logstash 能够动态地转换和解析数据，不受格式或复杂度的影响：</p>
 <ul>
 <li>利用 Grok 从非结构化数据中派生出结构</li>
 <li>从 IP 地址破译出地理坐标</li>
@@ -216,8 +214,7 @@
 <li>整体处理不受数据源、格式或架构的影响</li>
 </ul>
 <p><img src="/image/ELK02/ELK02_002.png" alt=""></p>
-<h4 id="3-输出：选择你的存储，导出你的数据"><a href="#3-输出：选择你的存储，导出你的数据" class="headerlink" title="3.输出：选择你的存储，导出你的数据"></a>3.输出：选择你的存储，导出你的数据</h4><p>尽管 Elasticsearch 是我们的首选输出方向，能够为我们的搜索和分析带来无限可能，但它并非唯一选择。</p>
-<p>Logstash 提供众多输出选择，您可以将数据发送到您要指定的地方，并且能够灵活地解锁众多下游用例。</p>
+<h4 id="3-输出：选择你的存储，导出你的数据"><a href="#3-输出：选择你的存储，导出你的数据" class="headerlink" title="3.输出：选择你的存储，导出你的数据"></a>3.输出：选择你的存储，导出你的数据</h4><p>　　尽管 Elasticsearch 是我们的首选输出方向，能够为我们的搜索和分析带来无限可能，但它并非唯一选择。<br>　　Logstash 提供众多输出选择，您可以将数据发送到您要指定的地方，并且能够灵活地解锁众多下游用例。</p>
 <p><img src="/image/ELK02/ELK02_003.png" alt=""></p>
 <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h4 id="1-前置"><a href="#1-前置" class="headerlink" title="1.前置"></a>1.前置</h4><p>安装 java 8 以上版本（包含）</p>
 <h4 id="2-官网下载解压"><a href="#2-官网下载解压" class="headerlink" title="2.官网下载解压"></a>2.<a href="https://www.elastic.co/downloads/logstash" target="_blank" rel="noopener">官网</a>下载解压</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https://artifacts.elastic.co/downloads/logstash/logstash-5.6.1.tar.gz -o /hadoop/software</span><br><span class="line">tar -zxvf /hadoop/software/logstash-5.6.1.tar.gz -C /hadoop/install</span><br><span class="line">mv /hadoop/install/logstash-5.6.1 /hadoop/install/logstash</span><br></pre></td></tr></table></figure>
@@ -514,14 +511,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">elasticsearch</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">logstash</a>
               </li>
              
@@ -530,7 +519,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -542,7 +531,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+                <a href="javascript:void(0)" class="js-tag color4">elasticsearch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -550,15 +543,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hive</a>
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+                <a href="javascript:void(0)" class="js-tag color5">hive</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -586,6 +583,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">flink</a>
               </li>
              
@@ -594,15 +595,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+                <a href="javascript:void(0)" class="js-tag color3">接口</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">自动化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">接口</a>
               </li>
              
               <li class="article-tag-list-item">
