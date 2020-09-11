@@ -17,7 +17,7 @@
 <meta property="og:description" content="Hue （Hadoop User Experience Hadoop用户体验）是一个开源的 Apache Hadoop UI系统，由Cloudera Desktop演化而来，最后Cloudera公司将其贡献给Apache基金会的Hadoop社区，它是基于Python Web框架Django实现的。通过使用HUE我们可以在浏览器端的Web控制台上与Hadoop集群进行交互，来分析处理数据。 本文章主">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://lightalight.github.io/image/大数据16/大数据16_001.png">
-<meta property="og:updated_time" content="2020-09-10T13:59:57.473Z">
+<meta property="og:updated_time" content="2020-09-11T02:16:25.430Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大数据（十六）">
 <meta name="twitter:description" content="Hue （Hadoop User Experience Hadoop用户体验）是一个开源的 Apache Hadoop UI系统，由Cloudera Desktop演化而来，最后Cloudera公司将其贡献给Apache基金会的Hadoop社区，它是基于Python Web框架Django实现的。通过使用HUE我们可以在浏览器端的Web控制台上与Hadoop集群进行交互，来分析处理数据。 本文章主">
@@ -221,8 +221,8 @@
 <h3 id="二、架构"><a href="#二、架构" class="headerlink" title="二、架构"></a>二、架构</h3><p>从总体上来讲，Hue应用采用的是B/S架构，该web应用的后台采用python编程语言别写的。大体上可以分为三层，分别是前端view层、Web服务层和Backend服务层。Web服务层和Backend服务层之间使用RPC的方式调用。</p>
 <p><img src="/image/大数据16/大数据16_001.png" alt=""></p>
 <h3 id="三、安装"><a href="#三、安装" class="headerlink" title="三、安装"></a>三、安装</h3><h4 id="1-前置"><a href="#1-前置" class="headerlink" title="1.前置"></a>1.前置</h4><ul>
-<li>1.安装python</li>
-<li>2.安装maven</li>
+<li>1.安装 <code>python</code> 和 <code>maven</code></li>
+<li>2.安装 <code>hadoop</code> 和 <code>hive</code> </li>
 <li>3.创建应用类服务专有用户</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useradd -g hadoop hue</span><br></pre></td></tr></table></figure>
@@ -396,6 +396,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2020/08/15/ELK01/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          ELK（一）
+        
+      </div>
+    </a>
+  
   
     <a href="/2020/06/15/大数据15/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">大数据（十五）</div>
@@ -567,11 +576,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
+                <a href="javascript:void(0)" class="js-tag color4">elk</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">监控</a>
+                <a href="javascript:void(0)" class="js-tag color4">logstash</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">elasticsearch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">kibana</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -579,7 +596,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">监控</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">云计算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -599,7 +624,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">hbase</a>
+                <a href="javascript:void(0)" class="js-tag color2">impala</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -607,15 +632,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">impala</a>
+                <a href="javascript:void(0)" class="js-tag color1">hbase</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sqoop</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flume</a>
+                <a href="javascript:void(0)" class="js-tag color4">hue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -628,10 +649,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">安全</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">hue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -655,11 +672,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color1">flume</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">sqoop</a>
               </li>
             
             <div class="clearfix"></div>
