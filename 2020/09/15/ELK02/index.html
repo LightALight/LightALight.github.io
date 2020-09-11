@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://lightalight.github.io/image/ELK02/ELK02_001.png">
 <meta property="og:image" content="https://lightalight.github.io/image/ELK02/ELK02_002.png">
 <meta property="og:image" content="https://lightalight.github.io/image/ELK02/ELK02_003.png">
-<meta property="og:updated_time" content="2020-09-11T14:34:58.931Z">
+<meta property="og:updated_time" content="2020-09-11T14:50:46.114Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ELK（二）">
 <meta name="twitter:description" content="Logstash 是一个开源数据收集引擎，具有实时管道功能。Logstash 可以动态地将来自不同数据源的数据统一起来，并将数据标准化到你所选择的目的地。　　本文章主要介绍 Logstash 的入门知识。">
@@ -206,7 +206,7 @@
 <h2 id="Quick-Guide"><a href="#Quick-Guide" class="headerlink" title="Quick Guide"></a>Quick Guide</h2><p>　　<strong>Logstash</strong>是一个开源的服务器端数据处理管道，可以同时从多个数据源获取数据，并对其进行转换，然后将其发送到你最喜欢的“存储”。（Elasticsearch）</p>
 <h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><h4 id="1-输入：采集各种样式、大小和来源的数据"><a href="#1-输入：采集各种样式、大小和来源的数据" class="headerlink" title="1.输入：采集各种样式、大小和来源的数据"></a>1.输入：采集各种样式、大小和来源的数据</h4><p>　　数据往往以各种各样的形式，或分散或集中地存在于很多系统中。Logstash 支持各种输入选择 ，可以在同一时间从众多常用来源捕捉事件。能够以连续的流式传输方式，轻松地从您的日志、指标、Web 应用、数据存储以及各种 AWS 服务采集数据。</p>
 <p><img src="/image/ELK02/ELK02_001.png" alt=""></p>
-<h4 id="2-过滤器：实时解析和转换数据"><a href="#2-过滤器：实时解析和转换数据" class="headerlink" title="2.过滤器：实时解析和转换数据"></a>2.过滤器：实时解析和转换数据</h4><p>　　数据从源传输到存储库的过程中，Logstash 过滤器能够解析各个事件，识别已命名的字段以构建结构，并将它们转换成通用格式，以便更轻松、更快速地分析和实现商业价值。<br>　　Logstash 能够动态地转换和解析数据，不受格式或复杂度的影响：</p>
+<h4 id="2-过滤器：实时解析和转换数据"><a href="#2-过滤器：实时解析和转换数据" class="headerlink" title="2.过滤器：实时解析和转换数据"></a>2.过滤器：实时解析和转换数据</h4><p>　　数据从源传输到存储库的过程中，Logstash 过滤器能够解析各个事件，识别已命名的字段以构建结构，并将它们转换成通用格式，以便更轻松、更快速地分析和实现商业价值。Logstash 能够动态地转换和解析数据，不受格式或复杂度的影响：</p>
 <ul>
 <li>利用 Grok 从非结构化数据中派生出结构</li>
 <li>从 IP 地址破译出地理坐标</li>
@@ -507,15 +507,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">elk</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">logstash</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">k8s</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">elk</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -527,11 +523,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">监控</a>
+                <a href="javascript:void(0)" class="js-tag color4">云计算</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">云计算</a>
+                <a href="javascript:void(0)" class="js-tag color4">logstash</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -539,7 +535,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">可靠性</a>
+                <a href="javascript:void(0)" class="js-tag color3">监控</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -547,11 +543,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
+                <a href="javascript:void(0)" class="js-tag color4">可靠性</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hive</a>
+                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -559,7 +555,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">impala</a>
+                <a href="javascript:void(0)" class="js-tag color5">hive</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -567,11 +563,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flume</a>
+                <a href="javascript:void(0)" class="js-tag color2">impala</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">sqoop</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">flume</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -583,7 +583,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">hue</a>
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -591,7 +591,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+                <a href="javascript:void(0)" class="js-tag color4">hue</a>
               </li>
              
               <li class="article-tag-list-item">
