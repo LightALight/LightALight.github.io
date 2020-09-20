@@ -1,5 +1,5 @@
 ---
-title: ELK（三）
+title: ELK（三）Kibana
 date: 2020-10-15 19:23:32
 tags: [elk,kibana]
 copyright: true

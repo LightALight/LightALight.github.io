@@ -1,5 +1,5 @@
 ---
-title: ELK（一）
+title: ELK（一）Elasticsearch
 date: 2020-08-15 19:23:32
 tags: [elk,elasticsearch]
 copyright: true
