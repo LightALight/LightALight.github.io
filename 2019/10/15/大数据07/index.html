@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lightalight.github.io">
-  <title>大数据（七） | Keep It Simple Do It Well</title>
+  <title>大数据（七）Hive的部署 | Keep It Simple Do It Well</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Hive是构建在Hadoop HDFS上的一个数据仓库，可以将结构化的数据文件映射为一张数据库表（Hive的表其实就是HDFS的目录/文件），并提供类SQL查询功能，其本质是将SQL转换为MapReduce程序。 本文章主要介绍在centos环境下如何安装Hive。">
 <meta name="keywords" content="大数据,hive">
 <meta property="og:type" content="article">
-<meta property="og:title" content="大数据（七）">
+<meta property="og:title" content="大数据（七）Hive的部署">
 <meta property="og:url" content="https://lightalight.github.io/2019/10/15/大数据07/index.html">
 <meta property="og:site_name" content="Keep It Simple Do It Well">
 <meta property="og:description" content="Hive是构建在Hadoop HDFS上的一个数据仓库，可以将结构化的数据文件映射为一张数据库表（Hive的表其实就是HDFS的目录/文件），并提供类SQL查询功能，其本质是将SQL转换为MapReduce程序。 本文章主要介绍在centos环境下如何安装Hive。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://lightalight.github.io/image/大数据07/大数据07_001.png">
-<meta property="og:updated_time" content="2020-09-03T08:10:49.585Z">
+<meta property="og:updated_time" content="2020-09-20T09:51:24.208Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="大数据（七）">
+<meta name="twitter:title" content="大数据（七）Hive的部署">
 <meta name="twitter:description" content="Hive是构建在Hadoop HDFS上的一个数据仓库，可以将结构化的数据文件映射为一张数据库表（Hive的表其实就是HDFS的目录/文件），并提供类SQL查询功能，其本质是将SQL转换为MapReduce程序。 本文章主要介绍在centos环境下如何安装Hive。">
 <meta name="twitter:image" content="https://lightalight.github.io/image/大数据07/大数据07_001.png">
   
@@ -154,7 +154,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      大数据（七）
+      大数据（七）Hive的部署
     </h1>
   
 
@@ -1185,14 +1185,14 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          大数据（八）
+          大数据（八）hive的开窗函数
         
       </div>
     </a>
   
   
     <a href="/2019/09/15/大数据06/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">大数据（六）</div>
+      <div class="article-nav-title">大数据（六）Hadoop的部署</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -1369,7 +1369,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">kibana</a>
+                <a href="javascript:void(0)" class="js-tag color4">logstash</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1381,19 +1381,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">logstash</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">监控</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+                <a href="javascript:void(0)" class="js-tag color2">kibana</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1401,11 +1389,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
+                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1413,11 +1401,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">hbase</a>
+                <a href="javascript:void(0)" class="js-tag color2">impala</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">impala</a>
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">flume</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1425,7 +1417,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flume</a>
+                <a href="javascript:void(0)" class="js-tag color1">hbase</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1437,7 +1429,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">hue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">监控</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1445,15 +1449,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">hue</a>
+                <a href="javascript:void(0)" class="js-tag color4">自动化</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">接口</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">自动化</a>
               </li>
              
               <li class="article-tag-list-item">
