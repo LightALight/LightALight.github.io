@@ -1,0 +1,18 @@
+[submodule "themes/Aero-Dual"]
+	path = themes/Aero-Dual
+	url = git@test.github.com:levblanc/hexo-theme-aero-dual.git
+[submodule "themes/aria"]
+	path = themes/aria
+	url = git@test.github.com:AlynxZhou/hexo-theme-aria.git
+[submodule "themes/concise"]
+	path = themes/concise
+	url = git@test.github.com:kingofctrl/hexo-theme-concise.git
+[submodule "themes/landscape"]
+	path = themes/landscape
+	url = git@test.github.com:hexojs/hexo-theme-landscape.git
+[submodule "themes/next"]
+	path = themes/next
+	url = git@test.github.com:next-theme/hexo-theme-next.git
+[submodule "themes/yilia"]
+	path = themes/yilia
+	url = git@test.github.com:LightALight/hexo-theme-yilia.git
