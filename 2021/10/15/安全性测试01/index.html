@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Keep It Simple Do It Well">
 <meta property="og:description" content="软件因为漏洞，导致产品的数据泄露、功能受到影响和系统被入侵等危害。安全测试就是为了发现这些问题，并给予一定的安全评估。本文章主要介绍如何进行软件的安全性测试。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2022-07-12T14:39:50.711Z">
+<meta property="og:updated_time" content="2022-08-11T14:36:39.043Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="安全性测试（一）安全性测试的基本概念">
 <meta name="twitter:description" content="软件因为漏洞，导致产品的数据泄露、功能受到影响和系统被入侵等危害。安全测试就是为了发现这些问题，并给予一定的安全评估。本文章主要介绍如何进行软件的安全性测试。">
@@ -177,7 +177,7 @@
     <div id="toc-article" class="toc-article">
         <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
       <strong class="toc-title">文章目录</strong>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安全方面"><span class="toc-number">1.1.</span> <span class="toc-text">安全方面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安全测试的要求"><span class="toc-number">1.2.</span> <span class="toc-text">安全测试的要求</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#漏洞"><span class="toc-number">1.2.1.</span> <span class="toc-text">漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#攻击方式"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">攻击方式</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#外部"><span class="toc-number">1.2.1.1.1.</span> <span class="toc-text">外部</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#内部"><span class="toc-number">1.2.1.1.2.</span> <span class="toc-text">内部</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#检测"><span class="toc-number">1.2.2.</span> <span class="toc-text">检测</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#安全测试工具"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">安全测试工具</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测试场景设计"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">测试场景设计</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#正向安全测试"><span class="toc-number">1.2.2.2.1.</span> <span class="toc-text">正向安全测试</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#反向安全测试"><span class="toc-number">1.2.2.2.2.</span> <span class="toc-text">反向安全测试</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测试方法"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">测试方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#如何练习"><span class="toc-number">1.2.2.4.</span> <span class="toc-text">如何练习</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安全性评估"><span class="toc-number">1.2.3.</span> <span class="toc-text">安全性评估</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安全建议"><span class="toc-number">1.3.</span> <span class="toc-text">安全建议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#层面"><span class="toc-number">1.3.1.</span> <span class="toc-text">层面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#原则"><span class="toc-number">1.3.2.</span> <span class="toc-text">原则</span></a></li></ol></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安全方面"><span class="toc-number">1.1.</span> <span class="toc-text">安全方面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安全测试的要求"><span class="toc-number">1.2.</span> <span class="toc-text">安全测试的要求</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#漏洞"><span class="toc-number">1.2.1.</span> <span class="toc-text">漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#外部攻击方式"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">外部攻击方式</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#内部攻击方式"><span class="toc-number">1.2.1.1.1.</span> <span class="toc-text">内部攻击方式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#检测"><span class="toc-number">1.2.2.</span> <span class="toc-text">检测</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#安全测试工具"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">安全测试工具</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测试场景设计"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">测试场景设计</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#正向安全测试"><span class="toc-number">1.2.2.2.1.</span> <span class="toc-text">正向安全测试</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#反向安全测试"><span class="toc-number">1.2.2.2.2.</span> <span class="toc-text">反向安全测试</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测试方法"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">测试方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#如何练习"><span class="toc-number">1.2.2.4.</span> <span class="toc-text">如何练习</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安全性评估"><span class="toc-number">1.2.3.</span> <span class="toc-text">安全性评估</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安全建议"><span class="toc-number">1.3.</span> <span class="toc-text">安全建议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#层面"><span class="toc-number">1.3.1.</span> <span class="toc-text">层面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#原则"><span class="toc-number">1.3.2.</span> <span class="toc-text">原则</span></a></li></ol></li></ol></li></ol>
           </div>
     <script type="text/javascript">
       function showToc(){
@@ -213,7 +213,7 @@
 <li>较强编程能力，能使用脚本或者安全工具检测漏洞</li>
 <li>做好安全评估</li>
 </ol>
-<h4 id="漏洞"><a href="#漏洞" class="headerlink" title="漏洞"></a>漏洞</h4><h5 id="攻击方式"><a href="#攻击方式" class="headerlink" title="攻击方式"></a>攻击方式</h5><h6 id="外部"><a href="#外部" class="headerlink" title="外部"></a>外部</h6><table>
+<h4 id="漏洞"><a href="#漏洞" class="headerlink" title="漏洞"></a>漏洞</h4><h5 id="外部攻击方式"><a href="#外部攻击方式" class="headerlink" title="外部攻击方式"></a>外部攻击方式</h5><table>
 <thead>
 <tr>
 <th style="text-align:center">种类</th>
@@ -334,7 +334,7 @@
 </tr>
 </tbody>
 </table>
-<h6 id="内部"><a href="#内部" class="headerlink" title="内部"></a>内部</h6><p>社会工程学：通过对人的习惯、心里和数据分析，伪装或者欺骗内部人员获取信息。</p>
+<h6 id="内部攻击方式"><a href="#内部攻击方式" class="headerlink" title="内部攻击方式"></a>内部攻击方式</h6><p>社会工程学：通过对人的习惯、心里和数据分析，伪装或者欺骗内部人员获取信息。</p>
 <h4 id="检测"><a href="#检测" class="headerlink" title="检测"></a>检测</h4><p>使用专业的具有特定功能的安全扫描软件来寻找潜在的漏洞，将已经发生的缺陷纳入缺陷库，然后通过自动化测试方法来使用自动化缺陷库进行轰炸测试。</p>
 <h5 id="安全测试工具"><a href="#安全测试工具" class="headerlink" title="安全测试工具"></a>安全测试工具</h5><ul>
 <li><p><a href="https://www.kali.org/" target="_blank" rel="noopener">Kali Linux</a>：基于Debian的Linux发行版， 设计用于数字取证操作系统。Kali Linux预装了许多渗透测试软件，包括nmap 、Wireshark 、msfvenom、John the Ripper，以及Aircrack-ng，超过300个渗透测试工具，永久免费，开源.</p>
@@ -568,7 +568,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安全方面"><span class="toc-number">1.1.</span> <span class="toc-text">安全方面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安全测试的要求"><span class="toc-number">1.2.</span> <span class="toc-text">安全测试的要求</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#漏洞"><span class="toc-number">1.2.1.</span> <span class="toc-text">漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#攻击方式"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">攻击方式</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#外部"><span class="toc-number">1.2.1.1.1.</span> <span class="toc-text">外部</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#内部"><span class="toc-number">1.2.1.1.2.</span> <span class="toc-text">内部</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#检测"><span class="toc-number">1.2.2.</span> <span class="toc-text">检测</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#安全测试工具"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">安全测试工具</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测试场景设计"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">测试场景设计</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#正向安全测试"><span class="toc-number">1.2.2.2.1.</span> <span class="toc-text">正向安全测试</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#反向安全测试"><span class="toc-number">1.2.2.2.2.</span> <span class="toc-text">反向安全测试</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测试方法"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">测试方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#如何练习"><span class="toc-number">1.2.2.4.</span> <span class="toc-text">如何练习</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安全性评估"><span class="toc-number">1.2.3.</span> <span class="toc-text">安全性评估</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安全建议"><span class="toc-number">1.3.</span> <span class="toc-text">安全建议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#层面"><span class="toc-number">1.3.1.</span> <span class="toc-text">层面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#原则"><span class="toc-number">1.3.2.</span> <span class="toc-text">原则</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Guide"><span class="toc-number">1.</span> <span class="toc-text">Quick Guide</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安全方面"><span class="toc-number">1.1.</span> <span class="toc-text">安全方面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安全测试的要求"><span class="toc-number">1.2.</span> <span class="toc-text">安全测试的要求</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#漏洞"><span class="toc-number">1.2.1.</span> <span class="toc-text">漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#外部攻击方式"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">外部攻击方式</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#内部攻击方式"><span class="toc-number">1.2.1.1.1.</span> <span class="toc-text">内部攻击方式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#检测"><span class="toc-number">1.2.2.</span> <span class="toc-text">检测</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#安全测试工具"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">安全测试工具</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测试场景设计"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">测试场景设计</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#正向安全测试"><span class="toc-number">1.2.2.2.1.</span> <span class="toc-text">正向安全测试</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#反向安全测试"><span class="toc-number">1.2.2.2.2.</span> <span class="toc-text">反向安全测试</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测试方法"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">测试方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#如何练习"><span class="toc-number">1.2.2.4.</span> <span class="toc-text">如何练习</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安全性评估"><span class="toc-number">1.2.3.</span> <span class="toc-text">安全性评估</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安全建议"><span class="toc-number">1.3.</span> <span class="toc-text">安全建议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#层面"><span class="toc-number">1.3.1.</span> <span class="toc-text">层面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#原则"><span class="toc-number">1.3.2.</span> <span class="toc-text">原则</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -710,19 +710,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">adb</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">AndroidStudio</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color2">monkey</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">monkey</a>
+                <a href="javascript:void(0)" class="js-tag color4">adb</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -738,11 +738,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">kibana</a>
+                <a href="javascript:void(0)" class="js-tag color4">logstash</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">logstash</a>
+                <a href="javascript:void(0)" class="js-tag color2">kibana</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -778,11 +778,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">可靠性</a>
+                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+                <a href="javascript:void(0)" class="js-tag color4">可靠性</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -806,19 +806,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sqoop</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">flume</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">spark</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+                <a href="javascript:void(0)" class="js-tag color1">sqoop</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -826,7 +818,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">spark</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">hue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -834,11 +834,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">自动化</a>
+                <a href="javascript:void(0)" class="js-tag color3">接口</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">接口</a>
+                <a href="javascript:void(0)" class="js-tag color4">自动化</a>
               </li>
              
               <li class="article-tag-list-item">
