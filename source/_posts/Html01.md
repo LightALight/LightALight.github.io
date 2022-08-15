@@ -300,7 +300,7 @@ HTML 使用超级链接与网络上的另一个文档相连，点击链接可以
 </map>
 ```
 
-##### HTML 文件路径
+- HTML 文件路径
 
 | 路径                   | 描述                                         |
 | :------------------- | :--------------------------- |
@@ -527,23 +527,22 @@ HTML 标签拥有属性。属性提供了有关 HTML 元素的更多信息。
 ```
 
 - 独立的样式表中（CSS 文件）
-	- 外部样式表
+  - 外部样式表
+    ```html
+    <head>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    </head>
+    ```
+  - 内部样式表
 	```html
 	<head>
-	<link rel="stylesheet" type="text/css" href="mystyle.css">
-	</head>
-	```
-	
-	- 内部样式表
-	```html
-	<head>
-	
+		
 	<style type="text/css">
 	body {background-color: red}
 	p {margin-left: 20px}
 	</style>
 	</head>
-	```
+  ```
 
 
 #### HTML 类
@@ -1052,6 +1051,7 @@ form elements
 |button| 定义按钮|
 
 设置属性：
+
 | 属性      | 描述                               |
 | :-------- | :--------------------------------- |
 | disabled  | 规定输入字段应该被禁用。           |
